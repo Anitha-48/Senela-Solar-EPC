@@ -1,0 +1,52 @@
+.footer { background: #081F4D; color: rgba(255,255,255,0.75); }
+.footer__top { padding: 72px 0 48px; }
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+.footer__brand { max-width: 300px; }
+.footer__logo { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.footer__logo-mark {
+  width: 36px; height: 36px; background: var(--pro-blue);
+  display: flex; align-items: center; justify-content: center; color: var(--white); flex-shrink: 0;
+}
+.footer__logo strong { color: var(--white); font-size: 1.02rem; }
+.footer__brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+.footer__social { display: flex; gap: 12px; margin-top: 20px; }
+.footer__social a {
+  width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.footer__social a:hover { background: var(--pro-blue); border-color: var(--pro-blue); transform: translateY(-3px); }
+.footer__social svg { width: 16px; height: 16px; color: var(--white); }
+
+.footer__col h4 {
+  color: var(--white); font-size: 0.92rem; margin-bottom: 18px;
+  font-weight: 600;
+}
+.footer__col ul { list-style: none; padding: 0; margin: 0; }
+.footer__col li { margin-bottom: 12px; }
+.footer__col a { font-size: 0.9rem; color: rgba(255,255,255,0.65); transition: color 0.2s, padding-left 0.2s; }
+.footer__col a:hover { color: var(--sky-blue); padding-left: 4px; }
+
+.footer__contact-item { display: flex; gap: 10px; margin-bottom: 16px; font-size: 0.9rem; }
+.footer__contact-item svg { width: 17px; height: 17px; color: var(--sky-blue); flex-shrink: 0; margin-top: 2px; }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 22px 0;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+}
+.footer__bottom-links { display: flex; gap: 24px; }
+.footer__bottom-links a:hover { color: var(--sky-blue); }
+
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+}
+@media (max-width: 560px) {
+  .footer__grid { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+}

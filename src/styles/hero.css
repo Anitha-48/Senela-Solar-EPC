@@ -1,0 +1,519 @@
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #061a33;
+  isolation: isolate;
+}
+
+
+/* =========================================
+   BACKGROUND VIDEO
+========================================= */
+
+.hero__video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* =========================================
+   VIDEO DARK / BLUE OVERLAY
+========================================= */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 20, 40, 0.94) 0%,
+      rgba(3, 20, 40, 0.78) 25%,
+      rgba(3, 20, 40, 0.48) 48%,
+      rgba(3, 20, 40, 0.18) 72%,
+      rgba(3, 20, 40, 0.05) 100%
+    );
+ 
+}
+
+
+/* Additional bottom protection */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(3, 17, 34, 0.45) 100%
+    );
+}
+
+
+/* =========================================
+   GRID OVERLAY
+========================================= */
+
+.hero__grid-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  opacity: 0.12;
+
+  background-image:
+    linear-gradient(
+      rgba(100, 190, 255, 0.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(100, 190, 255, 0.18) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    transparent
+  );
+}
+
+
+/* =========================================
+   BLUE GLOW
+========================================= */
+
+.hero__glow {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  right: -180px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 2;
+  pointer-events: none;
+
+  background: rgba(38, 145, 255, 0.20);
+  filter: blur(100px);
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   DECORATIVE LINES
+========================================= */
+
+.hero__line {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+
+  display: block;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(90, 190, 255, 0.6),
+    transparent
+  );
+
+  opacity: 0.45;
+}
+
+.hero__line--1 {
+  width: 420px;
+  right: 8%;
+  top: 28%;
+  transform: rotate(-20deg);
+}
+
+.hero__line--2 {
+  width: 300px;
+  right: 15%;
+  bottom: 25%;
+  transform: rotate(18deg);
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero__inner {
+  position: relative;
+  z-index: 5;
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   TEXT CONTENT
+========================================= */
+
+.hero__inner > div {
+  width: min(650px, 52%);
+  padding: 45px 0 45px 45px;
+  position: relative;
+}
+
+
+/* Small vertical blue accent */
+
+.hero__inner > div::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 48px;
+
+  width: 4px;
+  height: 85px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    to bottom,
+    #56c7ff,
+    #1674d1
+  );
+
+  box-shadow: 0 0 25px rgba(60, 180, 255, 0.45);
+}
+
+
+/* =========================================
+   HERO HEADING
+========================================= */
+
+.hero h1 {
+  margin: 0 0 24px;
+
+  max-width: 650px;
+
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(42px, 4.2vw, 68px);
+  line-height: 1.08;
+  font-weight: 700;
+
+  letter-spacing: -1.8px;
+
+  text-shadow:
+    0 3px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero__sub {
+  margin: 0 0 34px;
+
+  max-width: 590px;
+
+  color: rgba(235, 247, 255, 0.88);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 17px;
+  line-height: 1.75;
+  font-weight: 400;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   CTA CONTAINER
+========================================= */
+
+.hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================================
+   BUTTON COMMON
+========================================= */
+
+.hero .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 52px;
+  padding: 0 24px;
+
+  border-radius: 6px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.hero .btn--primary {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #1674d1,
+    #249de0
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 10px 30px rgba(0, 105, 200, 0.30);
+}
+
+
+.hero .btn--primary:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    135deg,
+    #1b84e8,
+    #35a9eb
+  );
+
+  box-shadow:
+    0 15px 35px rgba(0, 130, 230, 0.40);
+}
+
+
+.hero .btn--primary svg {
+  transition: transform 0.3s ease;
+}
+
+.hero .btn--primary:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   OUTLINE BUTTON
+========================================= */
+
+.hero .btn--outline {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(180, 225, 255, 0.55);
+
+  backdrop-filter: blur(8px);
+}
+
+
+.hero .btn--outline:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.13);
+
+  border-color: #75cfff;
+
+  box-shadow:
+    0 10px 30px rgba(40, 160, 255, 0.18);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .hero__inner {
+    width: min(100% - 60px, 900px);
+  }
+
+  .hero__inner > div {
+    width: 60%;
+    padding-left: 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 5vw, 58px);
+  }
+
+  .hero__sub {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .hero__video-bg {
+    object-position: center;
+  }
+
+  /* Stronger overlay for mobile readability */
+  .hero::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 20, 40, 0.35) 0%,
+        rgba(3, 20, 40, 0.55) 45%,
+        rgba(3, 20, 40, 0.92) 100%
+      );
+  }
+
+  .hero__inner {
+    width: calc(100% - 40px);
+    min-height: 100svh;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    padding: 110px 0 60px;
+  }
+
+  .hero__inner > div {
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero__inner > div::before {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 9vw, 48px);
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 20px;
+  }
+
+  .hero__sub {
+    font-size: 15px;
+    line-height: 1.65;
+
+    margin-bottom: 28px;
+  }
+
+  .hero__ctas {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero .btn {
+    min-height: 50px;
+    padding: 0 18px;
+  }
+
+  .hero__glow {
+    width: 350px;
+    height: 350px;
+
+    right: -150px;
+    top: 40%;
+  }
+
+  .hero__line {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .hero__inner {
+    width: calc(100% - 32px);
+    padding-top: 100px;
+    padding-bottom: 45px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero__sub {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .btn {
+    width: 100%;
+  }
+
+}

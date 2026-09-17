@@ -10,6 +10,7 @@ import OffGridSolar from "./pages/OffGridSolar";
 import SolarSolutionsPage from "./pages/SolarSolutionsPage";
 import ProjectDetail from "./pages/ProjectDetail";
 import ServicePage from "./pages/ServicePage";
+import ServiceMain from "./pages/ServiceMain";
 import SolarCalculatorPage from "./pages/SolarCalculatorPage";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -37,7 +38,7 @@ export default function App() {
           <Route path="/solar-solutions/on-grid" element={<OnGridSolar />} />
           <Route path="/solar-solutions/off-grid" element={<OffGridSolar />} />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
-          <Route path="/services" element={<ServicePage />} />
+          <Route path="/services" element={<ServiceMain />} />
           <Route path="/services/:serviceSlug" element={<ServicePage />} />
           <Route path="/solar-calculator" element={<SolarCalculatorPage />} />
           <Route path="/contact" element={<Contact />} />

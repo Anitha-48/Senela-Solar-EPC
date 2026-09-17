@@ -160,9 +160,7 @@ export default function OffGridSolar() {
   return (
     <>
       <PageHero
-        crumb="Solar Solutions / Off-grid Solar"
-        title="Off-grid Solar Systems"
-        description="Independent solar and battery storage systems for sites where grid access is limited, unreliable, or unavailable."
+        
       />
 
       <motion.section

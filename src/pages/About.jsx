@@ -32,9 +32,7 @@ export default function About() {
           HERO
       ===================================================== */}
       <PageHero
-        crumb="About"
-        title={`About ${siteConfig.companyName}`}
-        description=""
+        
       />
 
       {/* =====================================================

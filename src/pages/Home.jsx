@@ -173,46 +173,7 @@ export default function Home() {
 
 
 
-      {/* Featured Project */}
-      <section className="section section--light" id="projects">
-        <div className="container">
-          <SectionTitle
-            eyebrow="FEATURED PROJECT"
-            title="Solar Projects Built for Real-World Performance"
-            description="Explore selected solar EPC projects delivered by Senela International, covering engineering, procurement, installation, testing and commissioning."
-          />
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginTop: '40px' }}>
-            <ScrollReveal>
-              <div style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.1)' }}>
-                <img src={featuredProject.image} alt={featuredProject.title} style={{ width: '100%', height: 'auto', display: 'block' }} />
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={1}>
-              <div style={{ padding: '20px', borderLeft: '4px solid var(--pro-blue)', background: 'var(--white)', borderRadius: '0 16px 16px 0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
-                <div style={{ color: 'var(--pro-blue)', fontWeight: 'bold', fontSize: '0.85rem', letterSpacing: '1px', marginBottom: '12px' }}>{featuredProject.category}</div>
-                <h3 style={{ fontSize: '2rem', marginBottom: '24px', lineHeight: '1.2' }}>{featuredProject.title}</h3>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px', color: 'var(--grey-600)', fontSize: '0.95rem' }}>
-                  <div><strong style={{ color: 'var(--pro-blue)' }}>Location:</strong> {featuredProject.location}</div>
-                  <div><strong style={{ color: 'var(--pro-blue)' }}>Capacity:</strong> {featuredProject.capacity}</div>
-                  <div><strong style={{ color: 'var(--pro-blue)' }}>Project Type:</strong> {featuredProject.type}</div>
-                  <div><strong style={{ color: 'var(--pro-blue)' }}>Status:</strong> {featuredProject.status}</div>
-                </div>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
-                  {featuredProject.scope.map(item => (
-                    <span key={item} style={{ fontSize: '0.8rem', color: 'var(--grey-500)', border: '1px solid var(--grey-200)', padding: '4px 10px', borderRadius: '4px' }}>{item}</span>
-                  ))}
-                </div>
-
-                <NavLink to={featuredProject.path} className="btn btn--primary">
-                  View Project <ArrowRight size={18} />
-                </NavLink>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+           
 
 
 

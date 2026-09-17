@@ -6,7 +6,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import "../styles/solarsolutions.css";
 
 const solutionData = {
-  title: "Our Solar Energy Solutions",
+  title: "",
   description: "",
   benefits: [
     "Custom-engineered systems for maximum yield",

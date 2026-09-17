@@ -7,7 +7,7 @@ export const siteConfig = {
   email: "info@senelainternational.com",
   address: {
     line1: "K&T Business Tower, No.3, 3A, 3rd Floor, Gowriammal First Street, Rajagopal Nagar, Porur, Chennai - 600116, Tamil Nadu, India",
-    line2: "Guindy, Chennai, Tamil Nadu 600032",
+    line2: " Chennai, Tamil Nadu 600032",
     country: "India",
   },
   workingHours: "Mon – Sat, 9:30 AM – 6:00 PM IST",

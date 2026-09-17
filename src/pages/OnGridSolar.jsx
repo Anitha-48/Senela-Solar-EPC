@@ -60,9 +60,7 @@ export default function OnGridSolar() {
     <div className="on-grid-page">
       {/* Hero */}
       <PageHero
-        crumb="Solar Solutions / On-grid Solar"
-        title="On-grid Solar Systems"
-        description=""
+        
       />
 
       {/* Overview */}

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Zap, MapPin, Phone, Mail, Clock, Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Linkedin, Facebook, Instagram } from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
 import { navigation } from "../config/navigation";
 
@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="container footer__grid"> 
           <div className="footer__brand">
             <div className="footer__logo">
-              <span className="footer__logo-mark"><Zap size={18} /></span>
+              <span className="footer__logo-mark"></span>
               <strong>{siteConfig.companyName}</strong>
             </div>
             <p>
@@ -24,8 +24,7 @@ export default function Footer() {
               <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
               <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook /></a>
               <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram /></a>
-              <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube"><Youtube /></a>
-            </div>
+                          </div>
           </div>
 
           <div className="footer__col">
@@ -83,8 +82,7 @@ export default function Footer() {
       <div className="container footer__bottom">
         <span>© {new Date().getFullYear()} {siteConfig.companyName}. All Rights Reserved.</span>
         <div className="footer__bottom-links">
-          <NavLink to="/privacy-policy">Privacy Policy</NavLink>
-          <NavLink to="/terms-conditions">Terms &amp; Conditions</NavLink>
+          
         </div>
       </div>
     </footer>

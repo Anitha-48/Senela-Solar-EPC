@@ -99,9 +99,7 @@ export default function ServicePage() {
 
       {/* HERO */}
       <PageHero
-        eyebrow="OUR SERVICES"
-        title="Solar Energy Solutions Built for Long-Term Performance"
-        description="From solar project development and manufacturing to operation, maintenance, and residential installations, we provide reliable solutions across the solar energy lifecycle."
+       
       />
 
       {/* INTRODUCTION */}

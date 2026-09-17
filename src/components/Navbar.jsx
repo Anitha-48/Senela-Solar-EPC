@@ -54,7 +54,7 @@ export default function Navbar() {
             Get Solar Estimate <ArrowRight size={16} />
           </NavLink>
 
-          <button className="navbar__hamburger" onClick={() => setMobileOpen(true)} aria-label="Open menu">
+          <button className="navbar__hamburger menu-toggle" onClick={() => setMobileOpen(true)} aria-label="Open menu">
             <Menu size={26} />
           </button>
         </div>

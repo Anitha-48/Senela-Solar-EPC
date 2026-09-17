@@ -24,15 +24,25 @@
     backdrop-filter 0.3s ease;
 }
 
-
+.menu-toggle{
+  display: none;
+}
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: flex;
+    position: relative;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+  }
+}
 /* =========================================
    SCROLLED NAVBAR
 ========================================= */
-
 .navbar.is-scrolled {
   height: 100px;
 
-  background: rgba(255, 255, 255, 0.94);
+  background:white;
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -54,6 +64,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   gap: 30px;
 }
@@ -80,11 +91,32 @@
 
   object-fit: contain;
   object-position: left center;
-background: transparent;
+  background:transparent;
   transition:
     width 0.3s ease,
     height 0.3s ease,
     transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+  .navbar__inner {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  .navbar__logo-img {
+    width: 180px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo-img {
+    width: 150px;
+    height: 50px;
+  }
 }
 
 /* Removed scrolled logo size change to maintain constant size */
@@ -156,7 +188,8 @@ background: transparent;
 
   transition:
     color 0.25s ease,
-    background 0.25s ease;
+    background 0.25s ease,
+    padding-left 0.2s ease;
 }
 
 
@@ -709,35 +742,29 @@ background: transparent;
 ========================================= */
 
 @media (max-width: 900px) {
-
   .navbar {
-    height: 74px;
+    height: 74px !important;
   }
-
   .navbar.is-scrolled {
-    height: 68px;
+    height: 68px !important;
   }
-
   .navbar__inner {
-    width: calc(100% - 32px);
-
-    justify-content: space-between;
+    width: calc(100% - 32px) !important;
+    justify-content: space-between !important;
+    display: flex !important;
+    align-items: center !important;
   }
-
   .navbar__links,
   .navbar__cta {
-    display: none;
+    display: none !important;
   }
-
   .navbar__hamburger {
-    display: inline-flex;
+    display: inline-flex !important;
   }
-
   .navbar__logo-img {
-    width: 140px;
-    height: 50px;
+    width: 140px !important;
+    height: 50px !important;
   }
-
 }
 
 

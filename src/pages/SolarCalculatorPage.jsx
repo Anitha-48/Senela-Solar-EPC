@@ -5,9 +5,7 @@ export default function SolarCalculatorPage() {
   return (
     <>
       <PageHero
-        crumb="Solar Calculator"
-        title="Solar Calculator"
-        description=""
+       
       />
       <section className="section">
         <div className="container">

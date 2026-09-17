@@ -2,4 +2,4 @@ node_modules
 dist
 .env
 .DS_Store
-src/assets/videos/bg-video.mp4
+src/assets/videos/bg-video.mp4 

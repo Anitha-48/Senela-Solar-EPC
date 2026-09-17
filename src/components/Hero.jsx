@@ -1,41 +1,57 @@
 import { NavLink } from "react-router-dom";
-import { ArrowRight, Calculator } from "lucide-react";
-import bgVideo from "../assets/videos/bg-video.mp4";
+import SolarForm from "./SolarForm";
+import BgImage from "../assets/images/solar.jpeg" ;
 
 export default function Hero() {
   return (
-    <section className="hero">
-      <video
-        src={bgVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="hero__video-bg"
-      />
-      <div className="hero__grid-overlay" />
-      <div className="hero__glow" />
-      <span className="hero__line hero__line--1" />
-      <span className="hero__line hero__line--2" />
+    <section 
+      className="hero" 
+      style={{ backgroundImage: ` url(${BgImage})` }}
+    >
       <div className="hero__inner">
-        <div>
-          
-          <h1>Powering Progress Through Solar &amp; Engineering Excellence</h1>
-          <p className="hero__sub">
-            We design, build and commission solar power plants, transmission
-            networks and electrical infrastructure — engineered for
-            performance and built to operate for decades.
-          </p>
-          <div className="hero__ctas">
-            <NavLink to="/services" className="btn btn--primary">
-              Explore Solutions <ArrowRight />
-            </NavLink>
-            <NavLink to="/solar-calculator" className="btn btn--outline">
-              Get Solar Estimate <Calculator size={18} />
-            </NavLink>
+        <div className="hero__content-wrapper">
+          <div className="hero__text-section">
+            {/* ...existing code... */}
+            <div className="hero__badges">
+              <div className="hero__badge">
+                {/* <span className="hero__badge-icon">🍃</span>
+                <p>Clean Energy</p> */}
+              </div>
+              <div className="hero__badge">
+                {/* <span className="hero__badge-icon">🏠</span>
+                <p>A Greener Future</p> */}
+              </div>
+            </div>
+
+            <h1 className="hero__title">
+              Power Your Home with Solar. <br />
+              Save More Every Month.
+            </h1>
+            
+            <h2 className="hero__offer">
+              Get a 3 kW Solar System Starting at ₹1,99,000
+            </h2>
+            
+            <p className="hero__description">
+              Reduce your electricity bills with a professionally designed and installed 
+              solar power system built for long-term savings.
+            </p>
+
+            <div className="hero__footer-tags">
+              <span className="hero__tag">☀ Subsidy Support Available</span>
+              <span className="hero__tag">⚡ Quick Installation</span>
+              <span className="hero__tag">🛡 Long-Term Warranty</span>
+            </div>
+
+            <div className="hero__call-now">
+              📞 Call Now: 9585901999
+            </div>
+          </div>
+
+          <div className="hero__form-section">
+            <SolarForm />
           </div>
         </div>
-        
       </div>
     </section>
   );

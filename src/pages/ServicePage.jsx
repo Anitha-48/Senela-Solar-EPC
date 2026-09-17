@@ -1,4 +1,4 @@
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Navigate } from "react-router-dom";
 import {
   ShieldCheck,
   Zap,

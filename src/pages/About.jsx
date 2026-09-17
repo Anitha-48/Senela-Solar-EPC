@@ -382,7 +382,7 @@ export default function About() {
 
               {
                 image:
-                  "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+                  "https://media.istockphoto.com/id/1405880267/photo/two-engineers-installing-solar-panels-on-roof.jpg?s=612x612&w=0&k=20&c=OvQDbJaTnMM4jPfIA3y5vrO88i98NZJRahZtnYFZCq0=",
                 title: "Cleaner Energy",
                 text:
                   "Every project helps customers lower energy costs while building a more sustainable future.",

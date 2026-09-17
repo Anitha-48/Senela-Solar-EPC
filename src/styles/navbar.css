@@ -77,10 +77,23 @@
 .navbar__logo {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   flex-shrink: 0;
 
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
   text-decoration: none;
+  transition: none;
+}
+
+.navbar__logo:hover {
+  box-shadow: none;
+  transform: none;
 }
 
 .navbar__logo-img {

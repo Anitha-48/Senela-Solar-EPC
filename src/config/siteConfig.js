@@ -10,10 +10,9 @@ export const siteConfig = {
     line2: " Chennai, Tamil Nadu 600032",
     country: "India",
   },
-  workingHours: "",
-  social: {
+   social: {
     linkedin: "https://www.linkedin.com/in/senela-international-901730315/",
-    facebook: "",
-    instagram: "",
+    facebook: "https://www.facebook.com/senelasolar/",
+    instagram: "https://www.instagram.com/senelasolar/",
   },
 }

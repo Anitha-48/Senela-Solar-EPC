@@ -1,6 +1,4 @@
-
 import { NavLink } from "react-router-dom";
-
 import {
   ArrowRight,
   Target,
@@ -118,14 +116,10 @@ export default function About() {
                       Powering a brighter future
                     </span>
                   </div>
-
                 </div>
-
               </div>
 
             </ScrollReveal>
-
-
             {/* RIGHT CONTENT */}
             <div className="why-senela__content">
 

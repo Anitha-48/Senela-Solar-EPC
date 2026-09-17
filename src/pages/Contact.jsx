@@ -12,7 +12,7 @@ export default function Contact() {
       <section className="section contact-section">
         <div className="container contact-layout">
 
-          {/* Contact Information */}
+          {/* Contact Information */} 
           <div className="contact-info">
 
             <div className="eyebrow-line">

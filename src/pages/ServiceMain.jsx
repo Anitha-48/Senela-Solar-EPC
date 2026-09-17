@@ -97,11 +97,7 @@ export default function ServicePage() {
   return (
     <div className="services-page">
 
-      {/* HERO */}
-      <PageHero
-       
-      />
-
+      
       {/* INTRODUCTION */}
       <section className="services-intro section">
         <div className="container services-intro__grid">

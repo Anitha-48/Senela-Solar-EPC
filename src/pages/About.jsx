@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+
 import {
   ArrowRight,
   Target,
@@ -29,9 +30,7 @@ export default function About() {
       {/* =====================================================
           HERO
       ===================================================== */}
-      <PageHero
-        
-      />
+      
 
       {/* =====================================================
           COMPANY OVERVIEW

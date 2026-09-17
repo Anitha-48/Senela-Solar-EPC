@@ -729,10 +729,6 @@
     letter-spacing: 1.2px;
   }
 
-  .eyebrow-line::before {
-    width: 22px;
-  }
-
   .split-section__media img {
     height: 280px;
   }

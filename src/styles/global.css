@@ -107,10 +107,10 @@ button { font-family: var(--font-body); cursor: pointer; }
 .section--blue { background: var(--light-blue); }
 
 .page-hero {
-  margin-top: 82px;
+  margin-top: 0;
   background: linear-gradient(135deg, rgba(11,61,145,0.96), rgba(21,101,192,0.9));
   color: var(--white);
-  padding: 72px 0 64px;
+  padding: 24px 0 18px;
 }
 
 .page-hero__inner {
@@ -131,9 +131,9 @@ button { font-family: var(--font-body); cursor: pointer; }
 }
 
 .page-hero h1 {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: var(--white);
-  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 
 .page-hero p {
@@ -208,12 +208,6 @@ button { font-family: var(--font-body); cursor: pointer; }
   font-size: 0.82rem;
   margin-bottom: 14px;
 }
-.eyebrow-line::before {
-  content: '';
-  width: 28px;
-  height: 1.5px;
-  background: var(--sky-blue);
-}
 
 .grid-bg {
   background-image:
@@ -262,8 +256,8 @@ button { font-family: var(--font-body); cursor: pointer; }
   }
 
   .page-hero {
-    margin-top: 72px;
-    padding: 56px 0 48px;
+    margin-top: 12px;
+    padding: 42px 0 36px;
   }
 
   .page-hero__inner {

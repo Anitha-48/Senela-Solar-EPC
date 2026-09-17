@@ -42,9 +42,20 @@ export default function ContactForm() {
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length === 0) {
-      // Placeholder submit handler — wire this to your backend/API endpoint
-      // (e.g. POST /api/contact) or an email service to receive enquiries.
-      console.log("Contact form submitted:", form);
+      const subject = encodeURIComponent(`New enquiry from ${form.fullName} - ${form.interestedService}`);
+      const body = encodeURIComponent(
+        `Full Name: ${form.fullName}\n` +
+        `Company Name: ${form.companyName || 'N/A'}\n` +
+        `Email: ${form.email}\n` +
+        `Phone: ${form.phone}\n` +
+        `Country: ${form.country || 'N/A'}\n` +
+        `Interested Service: ${form.interestedService}\n` +
+        `Project Type: ${form.projectType || 'N/A'}\n` +
+        `Estimated Capacity: ${form.estimatedCapacity || 'N/A'}\n\n` +
+        `Message:\n${form.message}`
+      );
+
+      window.location.href = `mailto:info@senelainternational.com?subject=${subject}&body=${body}`;
       setSubmitted(true);
       setForm(initialState);
     }

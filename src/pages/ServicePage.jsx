@@ -2,10 +2,9 @@ import { useParams, NavLink } from "react-router-dom";
 import {
   ShieldCheck, Leaf, Zap, Clock3, ArrowRight, Building2, RadioTower,
   ClipboardCheck, CircleGauge, Search, PenTool, Settings, CheckCircle2,
-  Cable, TrainFront, Sun, Droplets, Calculator, Mail, ChevronDown,
+  Cable, TrainFront, Sun, Droplets,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 import { services } from "../config/services";
 
@@ -48,58 +47,49 @@ const defaultSpecifications = [
 
 export default function ServicePage() {
   const { serviceSlug } = useParams();
-  const [servicesOpen, setServicesOpen] = useState(true);
+  const service = services[serviceSlug] || services["power-distribution-transmission"];
 
-  const service =
-    services[serviceSlug] || services["power-distribution-transmission"];
+/* =====================================================
+   FALLBACK IMAGES
+===================================================== */
 
-  const categories = Object.entries(services).map(([slug, item]) => ({
-    slug,
-    title: item.shortTitle || item.title,
-    icon: item.icon,
-  }));
+const serviceImages = {
+  "power-distribution-transmission": [
+    "https://www.tatapower.com/adobe/dynamicmedia/deliver/dm-p-oid--xoiKJFyY4kqwBXocriZrmRglbhyjMgNeoZG4whF-UwrRwMKccPcsDJ-OoCe9x0BA3MOy8_FdN0QieFcTr5u8FH2nXxOjpKnwjHO0K_7iXTuZOOCkb5qAgSAlCjIAR13dpPfbzwQUHCy-LK_HaSPgNB-eY87N8XrR1aPb5iFQRio/body-img-01.png?preferwebp=true&quality=85",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbLUbza_NVO7OuCuYhHoNzDfZhjWgSWwucJL4t-Ll8LgWgoFA2uWzhUr0&s=10",
+    "https://img.etimg.com/thumb/width-1200,height-900,imgsize-203516,resizemode-75,msid-133433235/prime/et-prime-special-bigger-better-or-both-understanding-business-to-figure-out-the-mystery-power-grid-corp-part-1.jpg",
+  ],
 
-  /* =====================================================
-     FALLBACK IMAGES
-  ===================================================== */
+  "ehv-substation": [
+    "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=2000&q=90",
+    "https://www.tpsdi.com/coursesimages/transmission-mobile.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHqLN99dwzU1pAcwy-dwSPxcjC5N6_OKt3mUE5kuDnKtz-a-s8RMfe-fk&s=10",
+  ],
 
-  const serviceImages = {
-    "power-distribution-transmission": [
-      "https://www.tatapower.com/adobe/dynamicmedia/deliver/dm-p-oid--xoiKJFyY4kqwBXocriZrmRglbhyjMgNeoZG4whF-UwrRwMKccPcsDJ-OoCe9x0BA3MOy8_FdN0QieFcTr5u8FH2nXxOjpKnwjHO0K_7iXTuZOOCkb5qAgSAlCjIAR13dpPfbzwQUHCy-LK_HaSPgNB-eY87N8XrR1aPb5iFQRio/body-img-01.png?preferwebp=true&quality=85",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbLUbza_NVO7OuCuYhHoNzDfZhjWgSWwucJL4t-Ll8LgWgoFA2uWzhUr0&s=10",
-      "https://img.etimg.com/thumb/width-1200,height-900,imgsize-203516,resizemode-75,msid-133433235/prime/et-prime-special-bigger-better-or-both-understanding-business-to-figure-out-the-mystery-power-grid-corp-part-1.jpg",
-    ],
+  "re-conductoring-htls-conductors": [
+    "https://luminoindustries.com/wp-content/uploads/2024/04/htls-banner.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbMEwm4mEeYlP00LnzMGd8sg9bQ3YyAvfMCAHk_Mnkb9f1o9AX4kbF7_U&s=10",
+    "https://apar.com/wp-content/uploads/2025/09/turn2-scaled.jpg.webp",
+  ],
 
-    "ehv-substation": [
-      "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=2000&q=90",
-      "https://www.tpsdi.com/coursesimages/transmission-mobile.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHqLN99dwzU1pAcwy-dwSPxcjC5N6_OKt3mUE5kuDnKtz-a-s8RMfe-fk&s=10",
-    ],
+  "railway-electrification": [
+    "https://powerline.net.in/wp-content/uploads/2017/08/46-1-678x381.jpg",
+    "https://2.wlimg.com/product_images/bc-full/2020/6/5091148/railway-electrification-structure-1591765339-4644716.jpeg",
+    "https://metrorailnews.in/wp-content/uploads/2025/11/image-37.png",
+  ],
 
-    "re-conductoring-htls-conductors": [
-      "https://luminoindustries.com/wp-content/uploads/2024/04/htls-banner.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbMEwm4mEeYlP00LnzMGd8sg9bQ3YyAvfMCAHk_Mnkb9f1o9AX4kbF7_U&s=10",
-      "https://apar.com/wp-content/uploads/2025/09/turn2-scaled.jpg.webp",
-    ],
+  "solar-power-projects": [
+    "https://www.cincoland.com/wp-content/uploads/2024/04/Solar-Energy-3-1.png",
+    "https://bsmedia.business-standard.com/_media/bs/img/article/2024-08/28/full/1724835314-5004.jpg",
+    "https://comsite-s3.s3.ap-southeast-3.amazonaws.com/images/post/tb5dqVvqLGrkPU9EfA10E5zJ04urB2aaqT4aqyQ1.webp",
+  ],
 
-    "railway-electrification": [
-      "https://powerline.net.in/wp-content/uploads/2017/08/46-1-678x381.jpg",
-      "https://2.wlimg.com/product_images/bc-full/2020/6/5091148/railway-electrification-structure-1591765339-4644716.jpeg",
-      "https://metrorailnews.in/wp-content/uploads/2025/11/image-37.png",
-    ],
-
-    "solar-power-projects": [
-      "https://www.cincoland.com/wp-content/uploads/2024/04/Solar-Energy-3-1.png",
-      "https://bsmedia.business-standard.com/_media/bs/img/article/2024-08/28/full/1724835314-5004.jpg",
-      "https://comsite-s3.s3.ap-southeast-3.amazonaws.com/images/post/tb5dqVvqLGrkPU9EfA10E5zJ04urB2aaqT4aqyQ1.webp",
-    ],
-
-    "water-management": [
-      "https://thumbs.dreamstime.com/b/solar-powered-water-pump-agricultural-field-operates-providing-efficient-irrigation-to-crops-harnessing-renewable-337695757.jpg",
-      "https://australianpremiumsolar.co.in/wp-content/uploads/2024/09/Highly-Efficient-Solar-PV-Modules.png",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDBMxKlNjM2lSfzNbxcd7cBCe4Zpwuj7XcvUbDjAlS3nDeq4dwVJP5sJM&s=10",
-    ],
-  };
+  "water-management": [
+    "https://thumbs.dreamstime.com/b/solar-powered-water-pump-agricultural-field-operates-providing-efficient-irrigation-to-crops-harnessing-renewable-337695757.jpg",
+    "https://australianpremiumsolar.co.in/wp-content/uploads/2024/09/Highly-Efficient-Solar-PV-Modules.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDBMxKlNjM2lSfzNbxcd7cBCe4Zpwuj7XcvUbDjAlS3nDeq4dwVJP5sJM&s=10",
+  ],
+};
 
   const fallbackImages = serviceImages["power-distribution-transmission"];
 
@@ -109,12 +99,9 @@ export default function ServicePage() {
     serviceImages[serviceSlug] ||
     fallbackImages;
 
-  const heroImage =
-    service.heroImage || images[0] || fallbackImages[0];
-  const overviewImage =
-    service.overviewImage || images[1] || images[0] || fallbackImages[1];
-  const processImage =
-    service.processImage || images[2] || images[0] || fallbackImages[2];
+  const heroImage = service.heroImage || images[0] || fallbackImages[0];
+  const overviewImage = service.overviewImage || images[1] || images[0] || fallbackImages[1];
+  const processImage = service.processImage || images[2] || images[0] || fallbackImages[2];
 
   const specifications =
     (Array.isArray(service.specifications) && service.specifications.length && service.specifications) ||
@@ -126,7 +113,8 @@ export default function ServicePage() {
   return (
     <>
       <main className="service-page">
-        <div className="service-main">
+        <div className="service-layout">
+          <div className="service-main">
 
             {/* HERO */}
             <section className="service-hero">
@@ -395,6 +383,7 @@ export default function ServicePage() {
             </section>
 
           </div>
+        </div>
       </main>
 
       {/* =====================================================
@@ -412,6 +401,16 @@ export default function ServicePage() {
           overflow: hidden;
         }
 
+        /* MAIN LAYOUT */
+        .service-layout {
+          width: 100%;
+          max-width: 1500px;
+          margin: 0 auto;
+          padding: 35px 4% 70px;
+          display: block;
+        }
+
+        /* MAIN CONTENT */
         .service-main {
           min-width: 0;
           width: 100%;
@@ -729,12 +728,14 @@ export default function ServicePage() {
 
         /* TABLET */
         @media (max-width: 1100px) {
+          .service-layout { padding: 25px 2.5% 50px; }
           .service-intro-grid { gap: 40px; }
           .process-content { padding: 60px 6%; }
         }
 
         /* TABLET / MOBILE */
         @media (max-width: 850px) {
+          .service-layout { display: block; padding: 20px 15px 40px; }
           .service-main { width: 100%; }
           .service-hero { height: 520px; }
           .service-intro-grid { grid-template-columns: 1fr; gap: 45px; }
@@ -748,6 +749,7 @@ export default function ServicePage() {
 
         /* MOBILE */
         @media (max-width: 600px) {
+          .service-layout { padding: 10px 0 30px; }
           .service-hero { height: 510px; }
           .service-hero-content { padding: 40px 25px; }
           .service-hero h1 { font-size: 46px; }

@@ -1126,47 +1126,6 @@ export default function About() {
       
 
 
-      {/* =====================================================
-          CTA
-      ===================================================== */}
-      <section className="cta-band">
-
-        <div className="container">
-
-          <ScrollReveal>
-
-            <h2>
-              Let's Build a Cleaner Energy Future
-            </h2>
-
-          </ScrollReveal>
-
-
-          <ScrollReveal delay={1}>
-
-            <NavLink
-              to="/contact"
-              className="btn btn--primary"
-            >
-
-              Talk to Our Solar Experts
-
-              <ArrowRight />
-
-            </NavLink>
-
-          </ScrollReveal>
-
-        </div>
-
-      </section>
-
-      {/* ====================================================
-          DIRECT IMAGE SECTION (no import) – added to all pages
-      ===================================================== */}
-      <section className="page-direct-image">
-        <img src="/placeholder.jpg" alt="Placeholder illustration" style={{ width: "100%", height: "auto" }} />
-      </section>
 
     </div>
   );

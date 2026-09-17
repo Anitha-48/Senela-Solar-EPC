@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Linkedin, Facebook, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Linkedin, Facebook, Instagram } from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
 import { navigation } from "../config/navigation";
 
@@ -61,7 +61,7 @@ export default function Footer() {
               <span>{siteConfig.email}</span>
             </div>
             <div className="footer__contact-item">
-              <Clock />
+             
               <span>{siteConfig.workingHours}</span>
             </div>
           </div>

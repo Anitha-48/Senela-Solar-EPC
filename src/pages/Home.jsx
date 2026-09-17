@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import {
   ArrowRight, CheckCircle2, ShieldCheck, Users, Cpu, Leaf, Clock, Award,
-  Zap, Sun, BatteryCharging,
+  Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail,
 } from "lucide-react";
 import Hero from "../components/Hero";
 import SectionTitle from "../components/SectionTitle";
@@ -213,20 +213,27 @@ export default function Home() {
 
 
 
-      {/* Solar Calculator CTA */}
-      <section className="section">
-        <div className="container" style={{ textAlign: "center" }}>
-          <SectionTitle
-            eyebrow="SOLAR CALCULATOR"
-            title="Estimate Your Solar System in Minutes"
-            description="Get an approximate system size, generation, savings and payback period based on your electricity usage."
-            center
-          />
-          <NavLink to="/solar-calculator" className="btn btn--primary">
-            Open Solar Calculator <ArrowRight />
-          </NavLink>
+      {/* Home contact CTA
+      <section className="home-contact-cta">
+        <div className="container">
+          <h2>Power Your Home. Power Your Future.</h2>
+          <p>Join thousands of customers who have already made the switch to solar.</p>
+          <div className="home-contact-cta__actions" aria-label="Contact options">
+            <a className="home-contact-cta__button home-contact-cta__button--phone" href="tel:+919962492612">
+              <Phone size={21} aria-hidden="true" />
+              <span>9585901999</span>
+            </a>
+            <a className="home-contact-cta__button" href="https://wa.me/9585901999" target="_blank" rel="noreferrer">
+              <MessageCircle size={21} aria-hidden="true" />
+              <span>WhatsApp</span>
+            </a>
+            <a className="home-contact-cta__button" href="info@senelainternational.com">
+              <Mail size={21} aria-hidden="true" />
+              <span>info@senelainternational.com</span>
+            </a>
+          </div>
         </div>
-      </section>
+      </section> */}
 
 
 
@@ -265,9 +272,9 @@ export default function Home() {
       {/* Contact CTA */}
       <section className="cta-band">
         <div className="container">
-          <h2>Ready to Start Your Next Project?</h2>
+          <h2>Book Your Solar Consultation</h2>
           <p style={{ margin: "0 auto 8px", maxWidth: 500 }}>
-            Talk to our engineering team about your solar or infrastructure requirements.
+            Connect with solar experts discuss your energy needs, system size, and the right solar solution for your property.
           </p>
           <NavLink to="/contact" className="btn btn--primary">
             Contact Us <ArrowRight />

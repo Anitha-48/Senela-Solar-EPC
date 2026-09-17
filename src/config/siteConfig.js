@@ -10,17 +10,10 @@ export const siteConfig = {
     line2: " Chennai, Tamil Nadu 600032",
     country: "India",
   },
-  workingHours: "Mon – Sat, 9:30 AM – 6:00 PM IST",
+  workingHours: "",
   social: {
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/senela-international-901730315/",
     facebook: "",
     instagram: "",
   },
-  stats: [
-    { label: "Projects Delivered", value: 210, suffix: "+" },
-    { label: "MW Capacity Installed", value: 340, suffix: "+" },
-    { label: "Years of Engineering Experience", value: 14, suffix: "+" },
-    { label: "States Served", value: 12, suffix: "" },
-  ],
-  founded: 2011,
-};
+}

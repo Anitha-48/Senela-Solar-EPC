@@ -427,6 +427,73 @@
 .impact-card__label { color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-top: 6px; }
 @media (max-width: 768px) { .impact-grid { grid-template-columns: 1fr; } }
 
+/* ===== Home Contact CTA ===== */
+.home-contact-cta {
+  background: #081438;
+  color: var(--white);
+  padding: 88px 0 70px;
+  text-align: center;
+}
+.home-contact-cta h2 {
+  color: var(--white);
+  font-size: clamp(2.15rem, 4vw, 3.55rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  margin-bottom: 14px;
+}
+.home-contact-cta p {
+  color: #d7e1ff;
+  font-size: clamp(1rem, 1.7vw, 1.27rem);
+  margin: 0 auto 30px;
+  max-width: none;
+}
+.home-contact-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.home-contact-cta__button {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 11px;
+  color: #07183f;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 800;
+  gap: 9px;
+  justify-content: center;
+  min-height: 64px;
+  padding: 14px 28px;
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.home-contact-cta__button--phone {
+  background: #2038ce;
+  border-color: #2038ce;
+  color: var(--white);
+}
+.home-contact-cta__button:hover {
+  background: #dfe7ff;
+  border-color: #dfe7ff;
+  transform: translateY(-3px);
+}
+.home-contact-cta__button--phone:hover {
+  background: #304be8;
+  border-color: #304be8;
+}
+
+@media (max-width: 768px) {
+  .home-contact-cta { padding: 62px 0 56px; }
+  .home-contact-cta__actions { align-items: stretch; flex-direction: column; max-width: 360px; margin: 0 auto; }
+  .home-contact-cta__button { width: 100%; }
+}
+
+
+
+
+
+
 /* ===== Contact CTA Band ===== */
 .cta-band {
   background: var(--light-blue);
@@ -471,6 +538,11 @@
   .cta-band h2 { font-size: 1.8rem; }
   .cta-band p { font-size: 1rem; }
 }
+
+
+
+
+
 
 /* ===== Home Solar Solutions Cards ===== */
 .home-solution-card {

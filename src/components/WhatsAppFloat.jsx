@@ -15,7 +15,7 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer" 
       className="whatsapp-float"
       aria-label="Chat with us on WhatsApp"
-    >
+    > 
       <MessageCircle size={32} fill="currentColor" />
       <span className="whatsapp-tooltip">Chat with us</span>
     </a>

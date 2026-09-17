@@ -247,7 +247,12 @@ button { font-family: var(--font-body); cursor: pointer; }
   outline-offset: 2px;
 }
 
+
+
+
+
 /* WhatsApp Floating Button */
+
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -270,7 +275,7 @@ button { font-family: var(--font-body); cursor: pointer; }
 
 .whatsapp-float:hover {
   transform: scale(1.1) translateY(-5px);
-  background: #128C7E;
+  background:#25D366 ;
   color: white;
 }
 

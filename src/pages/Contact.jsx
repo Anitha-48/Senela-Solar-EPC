@@ -83,21 +83,7 @@ export default function Contact() {
               </div>
 
               {/* Working Hours */}
-              <div className="contact-item">
-                <div className="contact-item__icon">
-                  <Clock size={20} />
-                </div>
-
-                <div>
-                  <span className="contact-item__label">
-                    Working Hours
-                  </span>
-
-                  <span className="contact-item__text">
-                    {siteConfig.workingHours}
-                  </span>
-                </div>
-              </div>
+              
 
             </div>
           </div>

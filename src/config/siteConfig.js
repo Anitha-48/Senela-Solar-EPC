@@ -13,6 +13,6 @@ export const siteConfig = {
    social: {
     linkedin: "https://www.linkedin.com/in/senela-international-901730315/",
     facebook: "https://www.facebook.com/senelasolar/",
-    instagram: "https://www.instagram.com/senelasolar/",
+    instagram: "https://www.instagram.com/senela_solar/",
   },
 }

@@ -63,6 +63,7 @@ export default function Home() {
             />
           </ScrollReveal>
           <ScrollReveal delay={1}>
+            
             <div className="eyebrow-line">WHO WE ARE</div>
             <h2>Engineering Energy. Building a Sustainable Future.</h2>
             <p>
@@ -88,11 +89,6 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
-
-
-
-
-
 
 
       {/* Solar Solutions */}

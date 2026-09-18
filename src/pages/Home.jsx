@@ -100,7 +100,7 @@ export default function Home() {
         <div className="container">
           <SectionTitle
             eyebrow="SOLAR SOLUTIONS"
-            title="Solar Systems Engineered for Your Site"
+            title="Solar System Engineered for Your Site"
             description="From grid-connected rooftop systems to fully independent off-grid installations, we design for the way each site actually uses power."
           />
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>

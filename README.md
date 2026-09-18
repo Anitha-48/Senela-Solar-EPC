@@ -12,8 +12,6 @@ npm run dev
 Open the local URL Vite prints (typically http://localhost:5173).
 
 To build for production:
-
-```bash
 npm run build
 npm run preview
 ```

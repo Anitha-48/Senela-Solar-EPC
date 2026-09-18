@@ -59,11 +59,7 @@ export default function OnGridSolar() {
   return (
     <div className="on-grid-page">
       {/* Hero */}
-      <PageHero
-        
-      />
-
-      {/* Overview */}
+            {/* Overview */}
       <section className="section">
         <div className="container split-section">
 
@@ -211,45 +207,44 @@ export default function OnGridSolar() {
           <ul className="two-col-list">
 
             <li>
-              <CheckCircle2 />
+              
               Reduce electricity expenses through on-site solar generation
             </li>
 
             <li>
-              <CheckCircle2 />
+              
               No battery bank required for standard grid-connected operation
             </li>
 
             <li>
-              <CheckCircle2 />
+            
               Utilise surplus generation through applicable grid-export or
               net-metering arrangements
             </li>
 
             <li>
-              <CheckCircle2 />
+              
               Lower long-term dependence on conventional grid electricity
             </li>
 
             <li>
-              <CheckCircle2 />
+             
               Low routine maintenance with no large battery bank to maintain
             </li>
 
             <li>
-              <CheckCircle2 />
               Scalable solutions for residential, commercial and industrial
               applications
             </li>
 
             <li>
-              <CheckCircle2 />
+              
               Make productive use of available rooftop and open installation
               space
             </li>
 
             <li>
-              <CheckCircle2 />
+             
               Generate clean renewable electricity and reduce your carbon
               footprint
             </li>
@@ -280,7 +275,7 @@ export default function OnGridSolar() {
                 </div>
 
                 <span className="solution-card__icon">
-                  <HomeIcon size={22} />
+                  {/* <HomeIcon size={22} /> */}
                 </span>
 
                 <h3>Residential Rooftops</h3>
@@ -304,7 +299,7 @@ export default function OnGridSolar() {
                 </div>
 
                 <span className="solution-card__icon">
-                  <Building size={22} />
+                  {/* <Building size={22} /> */}
                 </span>
 
                 <h3>Commercial Buildings</h3>
@@ -328,7 +323,7 @@ export default function OnGridSolar() {
                 </div>
 
                 <span className="solution-card__icon">
-                  <Factory size={22} />
+                  {/* <Factory size={22} /> */}
                 </span>
 
                 <h3>Industrial Facilities</h3>
@@ -362,7 +357,7 @@ export default function OnGridSolar() {
               <div className="bracket-frame">
 
                 <span className="solution-card__icon">
-                  <Sun size={22} />
+                  {/* <Sun size={22} /> */}
                 </span>
 
                 <h3>Solar Potential</h3>
@@ -398,7 +393,7 @@ export default function OnGridSolar() {
               <div className="bracket-frame">
 
                 <span className="solution-card__icon">
-                  <ShieldCheck size={22} />
+                  {/* <ShieldCheck size={22} /> */}
                 </span>
 
                 <h3>Electrical Safety</h3>

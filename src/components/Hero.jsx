@@ -19,37 +19,37 @@ export default function Hero() {
             <div className="hero__overlay">
               <div className="hero__text-panel">
                 <h1 className="hero__headline">
-                  <span>Power Your Home with</span>
-                  <span>Solar.</span>
-                  <span>Save More Every Month.</span>
+                  <span>{t("hero.titleLine1")}</span>
+                  <span>{t("hero.titleLine2")}</span>
+                  <span>{t("hero.titleLine3")}</span>
                 </h1>
 
                 <div className="hero__price-line">
-                  Get a 3 kW Solar System Starting at <span>₹1,99,000</span>
+                  {t("hero.priceLine")} <span>₹1,99,000</span>
                 </div>
 
                 <p className="hero__subtext">
-                  Reduce your electricity bills with a professionally designed solar power system.
+                  {t("hero.subtext")}
                 </p>
 
                 <div className="hero__feature-row">
                   <div className="hero__feature-pill">
                     <span className="hero__feature-icon">✦</span>
-                    Subsidy Support
+                    {t("hero.subsidy")}
                   </div>
                   <div className="hero__feature-pill">
                     <Zap size={16} />
-                    Quick Installation
+                    {t("hero.quickInstallation")}
                   </div>
                   <div className="hero__feature-pill">
                     <ShieldCheck size={16} />
-                    Long-Term Warranty
+                    {t("hero.longTermWarranty")}
                   </div>
                 </div>
 
                 <a href="tel:9585901999" className="hero__contact-btn">
                   <Phone size={18} />
-                  Call Now: 9585901999
+                  {t("hero.callNow")}: 9585901999
                 </a>
               </div>
 

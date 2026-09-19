@@ -29,6 +29,15 @@ const translation = {
 
   hero: {
     alt: "Solar powered home",
+    titleLine1: "Power Your Home with",
+    titleLine2: "Solar.",
+    titleLine3: "Save More Every Month.",
+    priceLine: "Get a 3 kW Solar System Starting at",
+    subtext: "Reduce your electricity bills with a professionally designed solar power system.",
+    subsidy: "Subsidy Support",
+    quickInstallation: "Quick Installation",
+    longTermWarranty: "Long-Term Warranty",
+    callNow: "Call Now",
     whoWeAre: "WHO WE ARE",
     aboutCompany: "About Our Company",
     solarSolutions: "SOLAR SOLUTIONS",

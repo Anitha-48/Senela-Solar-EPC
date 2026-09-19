@@ -1,21 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, Sun, BatteryCharging, CheckCircle2 } from "lucide-react";
-import PageHero from "../components/PageHero";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import "../styles/solarsolutions.css";
-
-const solutionData = {
-  title: "",
-  description: "",
-  benefits: [
-    "Custom-engineered systems for maximum yield",
-    "Tier-1 components from global manufacturers",
-    "Strict adherence to IEC and CEA safety standards",
-    "Complete regulatory and net-metering support",
-    "Long-term performance monitoring and O&M",
-  ]
-};
 
 const solutions = [
   {
@@ -56,23 +44,21 @@ const projectHighlights = [
 ];
 
 export default function SolarSolutionsPage() {
+  const { t } = useTranslation();
+  const translatedSolutions = t("solutions.items", { returnObjects: true });
+  const translatedHighlights = t("solutions.projectHighlights", { returnObjects: true });
+
   return (
     <>
-      <PageHero 
-        crumb="Solar Solutions" 
-        title={solutionData.title} 
-        description={solutionData.description} 
-      />
-
       <section className="section">
         <div className="container">
           <div className="split-section">
             <ScrollReveal className="split-section__media">
-              <img src="https://sunapecopower.com/wp-content/uploads/2024/08/choose-and-install-solar-panels.png" alt="Solar Installation" />
+              <img src="https://sunapecopower.com/wp-content/uploads/2024/08/choose-and-install-solar-panels.png" alt={t("accessibility.solarInstallation")} />
             </ScrollReveal>
             <ScrollReveal delay={1}>
-              <div className="eyebrow-line">OUR SPECIALIZATION</div>
-              <h2>Solar Solutions</h2>
+              <div className="eyebrow-line">{t("solutions.specialization")}</div>
+              <h2>{t("solutions.title")}</h2>
               <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', fontWeight: '500' }}>
                   <span style={{ color: 'var(--pro-blue)', fontWeight: 'bold' }}>1.</span> On-grid Solar System
@@ -89,19 +75,21 @@ export default function SolarSolutionsPage() {
       <section className="section section--light">
         <div className="container">
           <SectionTitle 
-            eyebrow="OUR OFFERINGS" 
-            title="Choose the Right System for Your Site" 
-            description="Depending on your location and energy requirements, we recommend either an On-grid or Off-grid configuration."
+            eyebrow={t("solutions.offerings")} 
+            title={t("solutions.chooseSystemTitle")} 
+            description={t("solutions.chooseSystemDescription")}
           />
           
           <div className="detailed-solutions-grid">
-            {solutions.map((s, i) => (
+            {solutions.map((s, i) => {
+              const translated = translatedSolutions[i];
+              return (
               <ScrollReveal key={s.id} delay={i}>
                 <div
                   className={`detailed-solution-card ${i % 2 !== 0 ? "is-reversed" : ""}`}
                 >
                   <div className="detailed-solution-card__media">
-                    <img src={s.image} alt={s.title} />
+                    <img src={s.image} alt={translated.title} />
                   </div>
 
                   <div className="detailed-solution-card__body">
@@ -109,12 +97,12 @@ export default function SolarSolutionsPage() {
                       <s.icon size={22} />
                     </span>
 
-                    <h3>{s.title}</h3>
+                    <h3>{translated.title}</h3>
 
-                    <p>{s.description}</p>
+                    <p>{translated.description}</p>
 
                     <div className="detailed-solution-points">
-                      {s.points.map((point, idx) => (
+                      {translated.points.map((point, idx) => (
                         <div key={idx} className="detailed-solution-point">
                           <CheckCircle2 size={16} />
                           <span>{point}</span>
@@ -126,7 +114,7 @@ export default function SolarSolutionsPage() {
                       to={s.path}
                       className="btn btn--outline-blue btn--sm"
                     >
-                      View More
+                      {t("solutions.viewMore")}
                       <ArrowRight
                         size={16}
                         style={{
@@ -137,7 +125,8 @@ export default function SolarSolutionsPage() {
                   </div>
                 </div>
               </ScrollReveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -145,9 +134,9 @@ export default function SolarSolutionsPage() {
       <section className="section">
         <div className="container">
           <SectionTitle 
-            eyebrow="PROJECT MILESTONES" 
-            title="Our Proven Track Record" 
-            description="From residential rooftops to utility-scale plants, we deliver excellence in every kilowatt."
+            eyebrow={t("solutions.milestones")} 
+            title={t("solutions.trackRecordTitle")} 
+            description={t("solutions.trackRecordDescription")}
           />
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
@@ -158,8 +147,8 @@ export default function SolarSolutionsPage() {
                     <Sun size={24} />
                   </div>
                   <div className="why-card__content">
-                    <h3 style={{ marginBottom: '5px', fontSize: '1.2rem' }}>{project.title} - {project.capacity}</h3>
-                    <p>{project.description}</p>
+                    <h3 style={{ marginBottom: '5px', fontSize: '1.2rem' }}>{translatedHighlights[i].title} - {translatedHighlights[i].capacity}</h3>
+                    <p>{translatedHighlights[i].description}</p>
                   </div>
                 </div>
               </ScrollReveal>

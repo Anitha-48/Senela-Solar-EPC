@@ -1,11 +1,29 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { MapPin, Phone, Mail, Linkedin, Facebook, Instagram } from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
 import { navigation } from "../config/navigation";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const solutions = navigation.find((n) => n.label === "Solar Solutions").children;
   const services = navigation.find((n) => n.label === "Services").children;
+  const labelKeys = {
+    "/about": "nav.about",
+    "/about#vision-mission": "footer.visionMission",
+    "/#projects": "footer.projects",
+    "/contact": "footer.contact",
+    "/solar-solutions/on-grid": "nav.onGridSolar",
+    "/solar-solutions/off-grid": "nav.offGridSolar",
+    "/solar-calculator": "footer.solarCalculator",
+    "/services/power-distribution-transmission": "nav.powerDistributionTransmission",
+    "/services/ehv-substation": "nav.ehvSubstation",
+    "/services/htls-reconductoring": "nav.htlsReconductoring",
+    "/services/railway-electrification": "nav.railwayElectrification",
+    "/services/solar-power-projects": "nav.solarPowerProjects",
+    "/services/water-management": "nav.waterManagement",
+  };
+  const label = (path, fallback) => t(labelKeys[path] || "", fallback);
 
   return (
     <footer className="footer">
@@ -17,37 +35,36 @@ export default function Footer() {
               <strong>{siteConfig.companyName}</strong>
             </div>
             <p>
-              {siteConfig.tagline} We deliver solar EPC and electrical infrastructure
-              projects engineered for long-term reliability across India.
+              {t("footer.description", { tagline: siteConfig.tagline })}
             </p>
             <div className="footer__social">
-              <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
-              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook /></a>
-              <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram /></a>
+              <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label={t("accessibility.linkedin")}><Linkedin /></a>
+              <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label={t("accessibility.facebook")}><Facebook /></a>
+              <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label={t("accessibility.instagram")}><Instagram /></a>
                           </div>
           </div>
 
           <div className="footer__col">
-            <h4>Company</h4>
+            <h4>{t("footer.company")}</h4>
             <ul>
-              <li><NavLink to="/about">About</NavLink></li>
-              <li><NavLink to="/about#vision-mission">Vision &amp; Mission</NavLink></li>
-              <li><NavLink to="/#projects">Projects</NavLink></li>
-              <li><NavLink to="/contact">Contact</NavLink></li>
+              <li><NavLink to="/about">{label("/about", "About")}</NavLink></li>
+              <li><NavLink to="/about#vision-mission">{label("/about#vision-mission", "Vision & Mission")}</NavLink></li>
+              <li><NavLink to="/#projects">{label("/#projects", "Projects")}</NavLink></li>
+              <li><NavLink to="/contact">{label("/contact", "Contact")}</NavLink></li>
             </ul>
           </div>
 
           <div className="footer__col">
-            <h4>Solar Solutions</h4>
+            <h4>{t("footer.solarSolutions")}</h4>
             <ul>
-              {solutions.map((s) => <li key={s.path}><NavLink to={s.path}>{s.label}</NavLink></li>)}
-              <li><NavLink to="/#projects">Solar Power Projects</NavLink></li>
-              <li><NavLink to="/solar-calculator">Solar Calculator</NavLink></li>
+              {solutions.map((s) => <li key={s.path}><NavLink to={s.path}>{label(s.path, s.label)}</NavLink></li>)}
+              <li><NavLink to="/#projects">{t("footer.solarPowerProjects")}</NavLink></li>
+              <li><NavLink to="/solar-calculator">{t("footer.solarCalculator")}</NavLink></li>
             </ul>
           </div>
 
           <div className="footer__col">
-            <h4>Contact</h4>
+            <h4>{t("footer.contact")}</h4>
             <div className="footer__contact-item">
               <MapPin />
               <span>{siteConfig.address.line1}, {siteConfig.address.line2}, {siteConfig.address.country}</span>
@@ -68,11 +85,11 @@ export default function Footer() {
         </div>
 
         <div className="container" style={{ marginTop: 8 }}>
-          <h4 style={{ color: "var(--site)", fontSize: "0.92rem", marginBottom: 18 }}>Services</h4>
+          <h4 style={{ color: "var(--site)", fontSize: "0.92rem", marginBottom: 18 }}>{t("footer.services")}</h4>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexWrap: "wrap", gap: "12px 28px" }}>
             {services.map((s) => (
               <li key={s.path}>
-                <NavLink to={s.path} style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.65)" }}>{s.label}</NavLink>
+                <NavLink to={s.path} style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.65)" }}>{label(s.path, s.label)}</NavLink>
               </li>
             ))}
           </ul>
@@ -80,7 +97,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <span>© {new Date().getFullYear()} {siteConfig.companyName}. All Rights Reserved.</span>
+        <span>© {new Date().getFullYear()} {siteConfig.companyName}. {t("footer.allRightsReserved")}</span>
         <div className="footer__bottom-links">
           
         </div>

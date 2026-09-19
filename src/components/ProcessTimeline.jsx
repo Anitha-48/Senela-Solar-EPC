@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { User, MapPin, Settings, ShoppingBag, Wrench, CheckCircle, PlayCircle, LifeBuoy } from "lucide-react";
 
 const defaultSteps = [
@@ -53,8 +54,12 @@ const defaultSteps = [
 ];
 
 export default function ProcessTimeline({ steps = defaultSteps }) {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const ref = useRef(null);
+  const translatedSteps = steps === defaultSteps
+    ? t("process.steps", { returnObjects: true }).map((step, index) => ({ ...defaultSteps[index], ...step }))
+    : steps;
 
   useEffect(() => {
     const node = ref.current;
@@ -77,7 +82,7 @@ export default function ProcessTimeline({ steps = defaultSteps }) {
         {/* Left Side: The Interactive Navigation Timeline */}
         <div className="epc-flow-nav">
           <div className="epc-flow-track">
-            {steps.map((step, i) => {
+            {translatedSteps.map((step, i) => {
               const Icon = step.icon;
               return (
                 <div 
@@ -103,7 +108,7 @@ export default function ProcessTimeline({ steps = defaultSteps }) {
 
         {/* Right Side: The Detailed Content View */}
         <div className="epc-flow-display">
-          {steps.map((step, i) => (
+          {translatedSteps.map((step, i) => (
             <div 
               className={`epc-flow-panel ${i === activeIndex ? "is-visible" : ""}`} 
               key={step.title}
@@ -118,7 +123,7 @@ export default function ProcessTimeline({ steps = defaultSteps }) {
                 <div className="epc-flow-panel__meta">
                   <div className="epc-flow-panel__meta-item">
                     {step.icon && <step.icon size={18} />}
-                    <span>Specialized EPC Phase</span>
+                    <span>{t("process.specializedPhase")}</span>
                   </div>
                 </div>
               </div>

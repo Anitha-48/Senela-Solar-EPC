@@ -1,9 +1,10 @@
-* {
+*{
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  
 }
 
 .service-page {
@@ -11,6 +12,7 @@ body {
   background: #f5f9fc;
   color: #123b5a;
   overflow: hidden;
+  
 }
 
 

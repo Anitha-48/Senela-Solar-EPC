@@ -1,6 +1,16 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+
+const billOptions = [
+  "Less than ₹1500",
+  "₹1500 - ₹2500",
+  "₹2500 - ₹4000",
+  "₹4000 - ₹8000",
+  "More than ₹8000",
+];
 
 export default function SolarForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     fullName: "",
     whatsappNumber: "",
@@ -55,11 +65,10 @@ export default function SolarForm() {
     return (
       <div className="solar-form-card">
         <div className="solar-form-header">
-          <h3>Thank you for your enquiry</h3>
+          <h3>{t("solarForm.thankYou")}</h3>
 
           <p>
-            Your mail application should open with a pre-filled message for
-            info@senelainternational.com.
+            {t("solarForm.mailOpened")}
           </p>
         </div>
 
@@ -68,7 +77,7 @@ export default function SolarForm() {
           className="submit-btn"
           onClick={() => setIsSubmitted(false)}
         >
-          Submit another enquiry
+          {t("solarForm.submitAnother")}
         </button>
       </div>
     );
@@ -78,10 +87,10 @@ export default function SolarForm() {
     <div className="solar-form-card">
 
       <div className="solar-form-header">
-        <h3>Book Your FREE Solar Consultation</h3>
+        <h3>{t("solarForm.consultationTitle")}</h3>
 
         <p>
-          Start saving on your electricity bills with solar.
+          {t("solarForm.consultationDescription")}
         </p>
       </div>
 
@@ -90,7 +99,7 @@ export default function SolarForm() {
         <input
           type="text"
           name="fullName"
-          placeholder="Full Name"
+          placeholder={t("solarForm.fullName")}
           value={formData.fullName}
           onChange={handleChange}
           required
@@ -99,23 +108,17 @@ export default function SolarForm() {
         <input
           type="tel"
           name="whatsappNumber"
-          placeholder="WhatsApp Number"
+          placeholder={t("solarForm.whatsappNumber")}
           value={formData.whatsappNumber}
           onChange={handleChange}
           required
         />
 
         <div className="form-group">
-          <label>Monthly Electricity Bill</label>
+          <label>{t("solarForm.monthlyElectricityBill")}</label>
 
           <div className="bill-options">
-            {[
-              "Less than ₹1500",
-              "₹1500 - ₹2500",
-              "₹2500 - ₹4000",
-              "₹4000 - ₹8000",
-              "More than ₹8000",
-            ].map((option) => (
+            {billOptions.map((option, index) => (
               <button
                 key={option}
                 type="button"
@@ -131,7 +134,7 @@ export default function SolarForm() {
                   }))
                 }
               >
-                {option}
+                {t("solarForm.billOptions", { returnObjects: true })[index]}
               </button>
             ))}
           </div>
@@ -140,7 +143,7 @@ export default function SolarForm() {
         <input
           type="text"
           name="pinCode"
-          placeholder="PIN Code"
+          placeholder={t("solarForm.pinCode")}
           value={formData.pinCode}
           onChange={handleChange}
           required
@@ -154,12 +157,12 @@ export default function SolarForm() {
           />
 
           <label htmlFor="terms">
-            I agree to the Terms & Conditions and Privacy Policy.
+            {t("solarForm.terms")}
           </label>
         </div>
 
         <button type="submit" className="submit-btn">
-          BOOK YOUR FREE SOLAR CONSULTATION
+          {t("solarForm.submit")}
         </button>
 
       </form>

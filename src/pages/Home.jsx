@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   ArrowRight, CheckCircle2, ShieldCheck, Users, Cpu, Leaf, Clock, Award,
   Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail,
@@ -47,6 +48,17 @@ const projectImages = [
 ];
 
 export default function Home() {
+  const { t } = useTranslation();
+  const whyItems = t("home.whyChooseUsItems", { returnObjects: true });
+  const serviceKeyMap = {
+    "power-distribution-transmission": "powerDistributionTransmission",
+    "ehv-substation": "ehvSubstation",
+    "htls-reconductoring": "htlsReconductoring",
+    "railway-electrification": "railwayElectrification",
+    "solar-power-projects": "solarPowerProjects",
+    "water-management": "waterManagement",
+  };
+
   return (
     <>
       <Hero />
@@ -59,34 +71,23 @@ export default function Home() {
           <ScrollReveal className="split-section__media">
             <img
               src="https://sol-ark.com/wp-content/uploads/2025/07/commercial_solar_installations.jpeg"
-              alt="Engineers reviewing plans at a solar and electrical infrastructure site"
+              alt={t("home.companyOverviewAlt")}
             />
           </ScrollReveal>
           <ScrollReveal delay={1}>
             
-            <div className="eyebrow-line">WHO WE ARE</div>
-            <h2>Engineering Energy. Building a Sustainable Future.</h2>
+            <div className="eyebrow-line">{t("home.whoWeAre")}</div>
+            <h2>{t("home.aboutTitle")}</h2>
             <p>
-              {siteConfig.companyName} is a Solar EPC and electrical infrastructure company delivering
-               integrated solutions across renewable energy, power transmission, substations, railway electrification, 
-               and water management. 
-              our engineering teams have executed projects for utilities, industrial clients
-              and government infrastructure programmes.
+              {t("home.aboutDescriptionOne", { companyName: siteConfig.companyName })}
             </p>
             <p>
-             Our approach combines strong engineering capabilities with disciplined project execution, supporting projects
-              from initial feasibility and detailed design through 
-             installation, testing, commissioning, and ongoing support.
+             {t("home.aboutDescriptionTwo")}
             </p>
             <NavLink to="/about" className="btn btn--primary">
-              About Our Company <ArrowRight />
+              {t("home.aboutButton")} <ArrowRight />
             </NavLink>
-            {/* <div className="split-section__mini-stats">
-              <div><strong>{siteConfig.stats[0].value}+</strong><span>Projects Delivered</span></div>
-              <div><strong>{siteConfig.stats[1].value}+</strong><span>MW Installed</span></div>
-              <div><strong>{siteConfig.stats[2].value}+</strong><span>Years Experience</span></div>
-            </div> */}
-          </ScrollReveal>
+                      </ScrollReveal>
         </div>
       </section>
 
@@ -95,44 +96,40 @@ export default function Home() {
       <section className="section section--light">
         <div className="container">
           <SectionTitle
-            eyebrow="SOLAR SOLUTIONS"
-            title="Solar System Engineered for Your Site"
-            description="From grid-connected rooftop systems to fully independent off-grid installations, we design for the way each site actually uses power."
+            eyebrow={t("hero.solarSolutions")}
+            title={t("hero.solarSystemEngineered")}
+            description={t("hero.solarSolutionsDescription")}
           />
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
             <ScrollReveal>
               <div className="home-solution-card">
                 <div className="home-solution-card__media">
-                  <img src="https://5.imimg.com/data5/SELLER/Default/2025/11/561181140/VF/UO/FX/17639025/10-kw-grid-solar-power-park.jpg" alt="On-grid rooftop solar installation" />
+                  <img src="https://5.imimg.com/data5/SELLER/Default/2025/11/561181140/VF/UO/FX/17639025/10-kw-grid-solar-power-park.jpg" alt={t("home.onGridAlt")} />
                 </div>
                 <div className="home-solution-card__body">
                   <span className="home-solution-card__icon"><Sun size={22} /></span>
-                  <h3>On-grid Solar</h3>
-                  <p>Grid-connected commercial, industrial and rooftop systems that reduce energy costs while staying integrated with the utility grid through net metering.</p>
+                  <h3>{t("home.onGridTitle")}</h3>
+                  <p>{t("home.onGridDescription")}</p>
                   <ul className="home-solution-benefits">
-                    <li><CheckCircle2 size={16} /> Lower electricity bills through offset generation</li>
-                    <li><CheckCircle2 size={16} /> Net metering and grid integration handled end-to-end</li>
-                    <li><CheckCircle2 size={16} /> No battery storage required, lower upfront cost</li>
+                    {t("home.onGridBenefits", { returnObjects: true }).map((item) => <li key={item}><CheckCircle2 size={16} /> {item}</li>)}
                   </ul>
-                  <NavLink to="/solar-solutions/on-grid" className="btn btn--outline-blue btn--sm">Learn More <ArrowRight size={16} /></NavLink>
+                  <NavLink to="/solar-solutions/on-grid" className="btn btn--outline-blue btn--sm">{t("home.learnMore")} <ArrowRight size={16} /></NavLink>
                 </div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={1}>
               <div className="home-solution-card is-reversed">
                 <div className="home-solution-card__media">
-                  <img src="https://www.klkindia.com/wp-content/uploads/2025/09/solar-off-grid.webp"alt="Off-grid solar system with battery storage" />
+                  <img src="https://www.klkindia.com/wp-content/uploads/2025/09/solar-off-grid.webp" alt={t("home.offGridAlt")} />
                 </div>
                 <div className="home-solution-card__body">
                   <span className="home-solution-card__icon"><BatteryCharging size={22} /></span>
-                  <h3>Off-grid Solar</h3>
-                  <p>Independent solar and battery storage systems for remote sites, backup power needs, and locations where grid access is limited or unreliable.</p>
+                  <h3>{t("home.offGridTitle")}</h3>
+                  <p>{t("home.offGridDescription")}</p>
                   <ul className="home-solution-benefits">
-                    <li><CheckCircle2 size={16} /> Reliable power in remote and rural locations</li>
-                    <li><CheckCircle2 size={16} /> Battery storage sized for backup requirements</li>
-                    <li><CheckCircle2 size={16} /> Energy independence from grid outages</li>
+                    {t("home.offGridBenefits", { returnObjects: true }).map((item) => <li key={item}><CheckCircle2 size={16} /> {item}</li>)}
                   </ul>
-                  <NavLink to="/solar-solutions/off-grid" className="btn btn--outline-blue btn--sm">Learn More <ArrowRight size={16} /></NavLink>
+                  <NavLink to="/solar-solutions/off-grid" className="btn btn--outline-blue btn--sm">{t("home.learnMore")} <ArrowRight size={16} /></NavLink>
                 </div>
               </div>
             </ScrollReveal>
@@ -148,21 +145,24 @@ export default function Home() {
       <section className="section" id="services">
         <div className="container">
           <SectionTitle
-            eyebrow="ENGINEERING & EPC SERVICES"
-            title="Electrical Infrastructure, Built to Last"
-            description="Beyond solar, we deliver the transmission, substation and specialised electrical infrastructure that large-scale energy projects depend on."
+            eyebrow={t("home.servicesEyebrow")}
+            title={t("home.infrastructureTitle")}
+            description={t("home.infrastructureDescription")}
           />
           <div className="card-grid card-grid--3">
-            {Object.entries(services).map(([slug, s], i) => (
+            {Object.entries(services).map(([slug, s], i) => {
+              const translated = t(`serviceDetails.${serviceKeyMap[slug]}`, { returnObjects: true });
+              return (
               <ServiceCard
                 key={slug}
                 icon={s.icon}
-                title={s.shortTitle}
-                description={s.heroSubtitle}
+                title={translated.shortTitle}
+                description={translated.heroSubtitle}
                 path={`/services/${slug}`}
                 delay={(i % 3) + 1}
               />
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -178,15 +178,15 @@ export default function Home() {
       {/* Why Choose Us */}
       <section className="section">
         <div className="container">
-          <SectionTitle eyebrow="WHY CHOOSE US" title="A Partner for the Full Project Lifecycle" center />
+          <SectionTitle eyebrow={t("home.whyChooseUs")} title={t("home.lifecycleTitle")} center />
           <div className="card-grid card-grid--2" style={{ maxWidth: 980, margin: "0 auto" }}>
             {whyChooseUs.map((w, i) => (
               <ScrollReveal key={w.title} delay={(i % 4) + 1}>
                 <div className="why-card">
                   <span className="why-card__icon"><w.icon size={19} /></span>
                   <div>
-                    <h3>{w.title}</h3>
-                    <p>{w.desc}</p>
+                    <h3>{whyItems[i].title}</h3>
+                    <p>{whyItems[i].description}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -201,7 +201,7 @@ export default function Home() {
       {/* EPC Process */}
       <section className="section section--light">
         <div className="container">
-          <SectionTitle eyebrow="OUR EPC APPROACH" title="From Consultation to Long-Term Support" />
+          <SectionTitle eyebrow={t("home.epcApproach")} title={t("home.epcProcessTitle")} />
           <ProcessTimeline />
         </div>
       </section>
@@ -238,25 +238,23 @@ export default function Home() {
       {/* Sustainability / Impact */}
       <section className="impact-section">
         <div className="container">
-          <div className="eyebrow-line" style={{ color: "var(--sky-blue)" }}>SUSTAINABILITY</div>
-          <h2>Infrastructure Built for a Lower-Carbon Grid</h2>
+          <div className="eyebrow-line" style={{ color: "var(--sky-blue)" }}>{t("home.sustainability")}</div>
+          <h2>{t("home.sustainabilityTitle")}</h2>
           <p style={{ maxWidth: "60ch" }}>
-            Every solar project we deliver displaces grid-dependent generation.
-            Across our installed base, that adds up to a measurable reduction in
-            long-term carbon emissions for the clients and communities we serve.
+            {t("home.sustainabilityDescription")}
           </p>
           <div className="impact-grid">
             <div className="impact-card">
               <div className="impact-card__value">340+ MW</div>
-              <div className="impact-card__label">Cumulative solar capacity installed</div>
+              <div className="impact-card__label">{t("home.impact.capacity")}</div>
             </div>
             <div className="impact-card">
               <div className="impact-card__value">~2.1 lakh</div>
-              <div className="impact-card__label">Tonnes of CO₂ offset annually (est.)</div>
+              <div className="impact-card__label">{t("home.impact.emissions")}</div>
             </div>
             <div className="impact-card">
               <div className="impact-card__value">12 states</div>
-              <div className="impact-card__label">Where our projects operate</div>
+              <div className="impact-card__label">{t("home.impact.states")}</div>
             </div>
           </div>
         </div>
@@ -268,12 +266,12 @@ export default function Home() {
       {/* Contact CTA */}
       <section className="cta-band">
         <div className="container">
-          <h2>Book Your Solar Consultation</h2>
+          <h2>{t("home.contactTitle")}</h2>
           <p style={{ margin: "0 auto 8px", maxWidth: 500 }}>
-            Connect with solar experts discuss your energy needs, system size, and the right solar solution for your property.
+            {t("home.contactDescription")}
           </p>
           <NavLink to="/contact" className="btn btn--primary">
-            Contact Us <ArrowRight />
+            {t("nav.contactUs")} <ArrowRight />
           </NavLink>
         </div>
       </section>

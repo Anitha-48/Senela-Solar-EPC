@@ -1,10 +1,13 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PageHero from "../components/PageHero";
 import ContactForm from "../components/ContactForm";
 import { siteConfig } from "../config/siteConfig";
 import "../styles/contact.css";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <div className="contact-page">
 
@@ -16,15 +19,13 @@ export default function Contact() {
           <div className="contact-info">
 
             <div className="eyebrow-line">
-              CONTACT INFORMATION
+              {t("contact.information")}
             </div>
 
-            <h2>Reach Our Team</h2>
+            <h2>{t("contact.reachTeam")}</h2>
 
             <p className="contact-intro">
-              Have a question about our solar solutions or want to discuss
-              your project? Our team is ready to help you find the right
-              solution.
+              {t("contact.intro")}
             </p>
 
             <div className="contact-details">
@@ -37,7 +38,7 @@ export default function Contact() {
 
                 <div>
                   <span className="contact-item__label">
-                    Address
+                    {t("contact.address")}
                   </span>
 
                   <span className="contact-item__text">
@@ -56,7 +57,7 @@ export default function Contact() {
 
                 <div>
                   <span className="contact-item__label">
-                    Phone
+                    {t("contact.phone")}
                   </span>
 
                   <span className="contact-item__text">
@@ -73,7 +74,7 @@ export default function Contact() {
 
                 <div>
                   <span className="contact-item__label">
-                    Email
+                    {t("contact.email")}
                   </span>
 
                   <span className="contact-item__text">

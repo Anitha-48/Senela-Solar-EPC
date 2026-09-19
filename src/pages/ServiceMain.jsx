@@ -1,5 +1,6 @@
 import { ArrowRight, Sun, Factory, Wrench, Building2, Wallet, Home } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import PageHero from "../components/PageHero";
 import SectionTitle from "../components/SectionTitle";
@@ -94,6 +95,9 @@ const services = [
 ];
 
 export default function ServicePage() {
+  const { t } = useTranslation();
+  const translatedServices = t("services.items", { returnObjects: true });
+
   return (
     <div className="services-page">
 
@@ -104,28 +108,23 @@ export default function ServicePage() {
 
           <ScrollReveal>
             <div className="services-intro__content">
-              <span className="services-label">WHAT WE DO</span>
+              <span className="services-label">{t("services.whatWeDo")}</span>
 
               <h2>
-                Complete Solar Solutions
+                {t("services.introTitle").split(" From Concept to Energy")[0]}
                 <span> From Concept to Energy</span>
               </h2>
 
               <p>
-                We provide integrated solar energy services designed to meet
-                the requirements of residential, commercial, industrial, and
-                large-scale solar projects.
+                {t("services.introDescriptionOne")}
               </p>
 
               <p>
-                Our approach combines engineering expertise, quality
-                components, efficient project execution, and dependable
-                after-sales support to deliver solar systems built for
-                long-term performance.
+                {t("services.introDescriptionTwo")}
               </p>
 
               <NavLink to="/contact" className="services-btn">
-                Discuss Your Project
+                {t("epc.discussProject")}
                 <ArrowRight size={18} />
               </NavLink>
             </div>
@@ -136,12 +135,12 @@ export default function ServicePage() {
               <div className="services-intro__image-wrapper">
                 <img
                   src="https://bharataawaz.com/wp-content/uploads/2026/06/ba_8c28b0541d432e79cbeca32301518b39.webp"
-                  alt="Solar energy project"
+                        alt={t("accessibility.solarInstallation")}
                 />
 
                 <div className="services-intro__badge">
                   <strong>6+</strong>
-                  <span>Solar Services</span>
+                  <span>{t("services.serviceCount")}</span>
                 </div>
               </div>
             </div>
@@ -156,15 +155,16 @@ export default function ServicePage() {
 
           <ScrollReveal>
             <SectionTitle
-              eyebrow="OUR SERVICES"
-              title="Solutions for Every Solar Requirement"
-              description="Explore our range of solar energy services designed to support projects from individual homes to large-scale solar developments."
+              eyebrow={t("services.ourServices")}
+              title={t("services.servicesTitle")}
+              description={t("services.servicesDescription")}
             />
           </ScrollReveal>
 
           <div className="services-grid">
 
             {services.map((service, index) => {
+              const translated = translatedServices[index];
               const Icon = service.icon;
 
               return (
@@ -176,7 +176,7 @@ export default function ServicePage() {
                     <div className="service-card__image">
                       <img
                         src={service.image}
-                        alt={service.title}
+                        alt={translated.title}
                       />
 
                       <div className="service-card__overlay" />
@@ -194,15 +194,15 @@ export default function ServicePage() {
                     <div className="service-card__content">
 
                       <span className="service-card__category">
-                        {service.shortTitle}
+                        {translated.shortTitle}
                       </span>
 
-                      <h3>{service.title}</h3>
+                      <h3>{translated.title}</h3>
 
-                      <p>{service.description}</p>
+                      <p>{translated.description}</p>
 
                       <ul>
-                        {service.points.map((point) => (
+                        {translated.points.map((point) => (
                           <li key={point}>
                             <span className="service-check">✓</span>
                             {point}
@@ -214,7 +214,7 @@ export default function ServicePage() {
                         to="/contact"
                         className="service-card__link"
                       >
-                        Enquire Now
+                        {t("services.enquireNow")}
                         <ArrowRight size={17} />
                       </NavLink>
 
@@ -238,22 +238,21 @@ export default function ServicePage() {
             <div className="services-cta__box">
 
               <div>
-                <span className="services-label">
-                  READY TO GO SOLAR?
+                  <span className="services-label">
+                  {t("services.readyToGoSolar")}
                 </span>
 
                 <h2>
-                  Let's Build a Smarter Energy Future
+                  {t("services.ctaTitle")}
                 </h2>
 
                 <p>
-                  Tell us about your solar requirements and our team will help
-                  you identify the right solution for your project.
+                  {t("services.ctaDescription")}
                 </p>
               </div>
 
               <NavLink to="/contact" className="services-cta__button">
-                Start Your Project
+                {t("epc.startProject")}
                 <ArrowRight size={18} />
               </NavLink>
 

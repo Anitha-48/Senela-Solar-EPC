@@ -247,6 +247,58 @@
   font-weight: 600;
 }
 
+.navbar__language {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 1px solid rgba(15, 75, 130, 0.12);
+  border-radius: 7px;
+  background: #fff;
+}
+
+.navbar__language button {
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 4px;
+  color: #17324d;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.navbar__language button:hover,
+.navbar__language button.is-active {
+  color: #116bc0;
+  background: #eef7ff;
+}
+
+@media (min-width: 901px) {
+  .navbar--tamil .navbar__inner {
+    gap: 14px;
+  }
+
+  .navbar--tamil .navbar__logo-img {
+    width: 210px;
+  }
+
+  .navbar--tamil .navbar__links {
+    gap: 0;
+  }
+
+  .navbar--tamil .navbar__link {
+    padding: 0 9px;
+    font-size: 13px;
+  }
+
+  .navbar--tamil .navbar__link::after {
+    left: 9px;
+    right: 9px;
+  }
+}
+
 
 /* =========================================
    CHEVRON

@@ -1,9 +1,11 @@
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Zap, Sun, PanelsTopLeft, Ruler, Wallet, TrendingUp, Leaf, ArrowRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { calculatorConfig as cfg } from "../config/calculatorConfig";
 
 export default function SolarCalculator() {
+  const { t } = useTranslation();
   const [systemType, setSystemType] = useState("residential");
   const [monthlyBill, setMonthlyBill] = useState(4000);
   const [tariff, setTariff] = useState(cfg.defaultTariff);
@@ -53,22 +55,22 @@ export default function SolarCalculator() {
     <div className="calculator bracket-frame" style={{ padding: 0 }}>
       <div className="calculator__grid">
         <div className="calculator__form">
-          <div className="mono-label" style={{ marginBottom: 14 }}>STEP 01 — SYSTEM DETAILS</div>
+          <div className="mono-label" style={{ marginBottom: 14 }}>{t("calculator.stepDetails")}</div>
           <div className="calc-tabs">
-            {cfg.systemTypes.map((t) => (
+            {cfg.systemTypes.map((system) => (
               <button
-                key={t.id}
-                className={`calc-tab ${systemType === t.id ? "is-active" : ""}`}
-                onClick={() => setSystemType(t.id)}
+                key={system.id}
+                className={`calc-tab ${systemType === system.id ? "is-active" : ""}`}
+                onClick={() => setSystemType(system.id)}
                 type="button"
               >
-                {t.label}
+                {t(`calculator.${system.id}`)}
               </button>
             ))}
           </div>
 
           <div className="field-group">
-            <label htmlFor="monthlyBill">Average Monthly Electricity Bill</label>
+            <label htmlFor="monthlyBill">{t("calculator.averageMonthlyBill")}</label>
             <div className="field-input-wrap">
               <input
                 id="monthlyBill"
@@ -77,12 +79,12 @@ export default function SolarCalculator() {
                 value={monthlyBill}
                 onChange={(e) => setMonthlyBill(Number(e.target.value))}
               />
-              <span className="field-unit">₹ / month</span>
+              <span className="field-unit">{t("calculator.monthlyUnit")}</span>
             </div>
           </div>
 
           <div className="field-group">
-            <label htmlFor="tariff">Electricity Tariff</label>
+            <label htmlFor="tariff">{t("calculator.electricityTariff")}</label>
             <div className="field-input-wrap">
               <input
                 id="tariff"
@@ -92,13 +94,13 @@ export default function SolarCalculator() {
                 value={tariff}
                 onChange={(e) => setTariff(Number(e.target.value))}
               />
-              <span className="field-unit">₹ / kWh</span>
+              <span className="field-unit">{t("calculator.tariffUnit")}</span>
             </div>
-            <div className="field-hint">Check your latest electricity bill for the exact per-unit rate.</div>
+            <div className="field-hint">{t("calculator.latestBillHint")}</div>
           </div>
 
           <div className="field-group">
-            <label htmlFor="roofArea">Available Rooftop Area</label>
+            <label htmlFor="roofArea">{t("calculator.availableRooftopArea")}</label>
             <div className="field-input-wrap">
               <input
                 id="roofArea"
@@ -107,20 +109,18 @@ export default function SolarCalculator() {
                 value={roofArea}
                 onChange={(e) => setRoofArea(Number(e.target.value))}
               />
-              <span className="field-unit">sq. ft</span>
+              <span className="field-unit">{t("calculator.roofUnit")}</span>
             </div>
           </div>
 
           <div className="calc-disclaimer">
-            This calculator provides an approximate estimate. Actual system sizing and
-            savings depend on site conditions, location, tariff, shadow analysis, system
-            design and other technical factors.
+            {t("calculator.calculatorDisclaimer")}
           </div>
         </div>
 
         <div className="calculator__results">
           <div className="result-headline">
-            <div className="mono-label">RECOMMENDED SYSTEM CAPACITY</div>
+            <div className="mono-label">{t("calculator.recommendedCapacity")}</div>
             <span className="result-headline__value">{results.recommendedKw}</span>
             <span className="result-headline__unit">kW</span>
           </div>
@@ -129,46 +129,46 @@ export default function SolarCalculator() {
             <div className="result-card">
               <Sun className="result-card__icon" size={20} />
               <div className="result-card__value">{results.monthlyGeneration.toLocaleString("en-IN")} kWh</div>
-              <div className="result-card__label">Est. Monthly Generation</div>
+              <div className="result-card__label">{t("calculator.estimatedMonthlyGeneration")}</div>
             </div>
             <div className="result-card">
               <Zap className="result-card__icon" size={20} />
               <div className="result-card__value">{results.annualGeneration.toLocaleString("en-IN")} kWh</div>
-              <div className="result-card__label">Est. Annual Generation</div>
+              <div className="result-card__label">{t("calculator.estimatedAnnualGeneration")}</div>
             </div>
             <div className="result-card">
               <PanelsTopLeft className="result-card__icon" size={20} />
-              <div className="result-card__value">{results.panelCount} panels</div>
-              <div className="result-card__label">Approx. Panel Count ({cfg.panelWattage} Wp)</div>
+              <div className="result-card__value">{results.panelCount} {t("calculator.panels")}</div>
+              <div className="result-card__label">{t("calculator.approximatePanelCount", { wattage: cfg.panelWattage })}</div>
             </div>
             <div className="result-card">
               <Ruler className="result-card__icon" size={20} />
               <div className="result-card__value">{results.requiredRoofArea} sq. ft</div>
-              <div className="result-card__label">Required Roof Area</div>
+              <div className="result-card__label">{t("calculator.requiredRoofArea")}</div>
             </div>
             <div className="result-card">
               <Wallet className="result-card__icon" size={20} />
               <div className="result-card__value">₹{results.annualSavings.toLocaleString("en-IN")}</div>
-              <div className="result-card__label">Est. Annual Savings</div>
+              <div className="result-card__label">{t("calculator.estimatedAnnualSavings")}</div>
             </div>
             <div className="result-card">
               <TrendingUp className="result-card__icon" size={20} />
-              <div className="result-card__value">{results.paybackYears} yrs</div>
-              <div className="result-card__label">Approx. Payback Period</div>
+              <div className="result-card__value">{results.paybackYears} {t("calculator.years")}</div>
+              <div className="result-card__label">{t("calculator.approximatePayback")}</div>
             </div>
           </div>
 
           <div className="result-card" style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 14 }}>
             <Leaf className="result-card__icon" size={22} style={{ marginBottom: 0 }} />
             <div>
-              <div className="result-card__value">{results.co2ReductionTonnes} tonnes/year</div>
-              <div className="result-card__label">Estimated CO₂ Reduction</div>
+              <div className="result-card__value">{results.co2ReductionTonnes} {t("calculator.tonnesPerYear")}</div>
+              <div className="result-card__label">{t("calculator.estimatedCo2Reduction")}</div>
             </div>
           </div>
 
           <div className="result-cta">
             <NavLink to="/contact" className="btn btn--primary">
-              Get a Detailed Solar Quote <ArrowRight size={18} />
+              {t("calculator.detailedQuote")} <ArrowRight size={18} />
             </NavLink>
           </div>
         </div>

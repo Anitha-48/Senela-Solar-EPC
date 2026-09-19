@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Send, CheckCircle2 } from "lucide-react";
 
 const serviceOptions = [
@@ -20,6 +21,7 @@ const initialState = {
 };
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -28,12 +30,12 @@ export default function ContactForm() {
 
   const validate = () => {
     const errs = {};
-    if (!form.fullName.trim()) errs.fullName = "Full name is required.";
-    if (!form.email.trim()) errs.email = "Email is required.";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) errs.email = "Enter a valid email address.";
-    if (!form.phone.trim()) errs.phone = "Phone number is required.";
-    if (!form.interestedService) errs.interestedService = "Please select a service.";
-    if (!form.message.trim()) errs.message = "Please add a short message about your project.";
+    if (!form.fullName.trim()) errs.fullName = t("contact.validation.fullNameRequired");
+    if (!form.email.trim()) errs.email = t("contact.validation.emailRequired");
+    else if (!/^\S+@\S+\.\S+$/.test(form.email)) errs.email = t("contact.validation.emailInvalid");
+    if (!form.phone.trim()) errs.phone = t("contact.validation.phoneRequired");
+    if (!form.interestedService) errs.interestedService = t("contact.validation.serviceRequired");
+    if (!form.message.trim()) errs.message = t("contact.validation.messageRequired");
     return errs;
   };
 
@@ -65,9 +67,9 @@ export default function ContactForm() {
     return (
       <div className="bracket-frame" style={{ textAlign: "center", padding: 48 }}>
         <CheckCircle2 size={40} color="var(--pro-blue)" style={{ marginBottom: 16 }} />
-        <h3>Thank you — your enquiry has been received</h3>
-        <p>Our engineering team will get in touch within 1–2 business days to discuss your project.</p>
-        <button className="btn btn--outline-blue" onClick={() => setSubmitted(false)}>Submit another enquiry</button>
+        <h3>{t("contact.successTitle")}</h3>
+        <p>{t("contact.successDescription")}</p>
+        <button className="btn btn--outline-blue" onClick={() => setSubmitted(false)}>{t("contact.submitAnother")}</button>
       </div>
     );
   }
@@ -76,48 +78,48 @@ export default function ContactForm() {
     <form className="bracket-frame" onSubmit={handleSubmit} noValidate>
       <div className="two-col-list" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px 24px", borderBottom: "none" }}>
         <div className="field-group">
-          <label htmlFor="fullName">Full Name *</label>
+          <label htmlFor="fullName">{t("contact.fullName")} *</label>
           <input id="fullName" value={form.fullName} onChange={update("fullName")} aria-invalid={!!errors.fullName} />
           {errors.fullName && <div className="field-hint" style={{ color: "#C0392B" }}>{errors.fullName}</div>}
         </div>
         <div className="field-group">
-          <label htmlFor="companyName">Company Name</label>
+          <label htmlFor="companyName">{t("contact.companyName")}</label>
           <input id="companyName" value={form.companyName} onChange={update("companyName")} />
         </div>
         <div className="field-group">
-          <label htmlFor="email">Email *</label>
+          <label htmlFor="email">{t("contact.email")} *</label>
           <input id="email" type="email" value={form.email} onChange={update("email")} aria-invalid={!!errors.email} />
           {errors.email && <div className="field-hint" style={{ color: "#C0392B" }}>{errors.email}</div>}
         </div>
         <div className="field-group">
-          <label htmlFor="phone">Phone *</label>
+          <label htmlFor="phone">{t("contact.phone")} *</label>
           <input id="phone" type="tel" value={form.phone} onChange={update("phone")} aria-invalid={!!errors.phone} />
           {errors.phone && <div className="field-hint" style={{ color: "#C0392B" }}>{errors.phone}</div>}
         </div>
         <div className="field-group">
-          <label htmlFor="country">Country</label>
+          <label htmlFor="country">{t("contact.country")}</label>
           <input id="country" value={form.country} onChange={update("country")} />
         </div>
         <div className="field-group">
-          <label htmlFor="interestedService">Interested Service *</label>
+          <label htmlFor="interestedService">{t("contact.interestedService")} *</label>
           <select id="interestedService" value={form.interestedService} onChange={update("interestedService")} aria-invalid={!!errors.interestedService}>
-            <option value="">Select a service</option>
-            {serviceOptions.map((s) => <option key={s} value={s}>{s}</option>)}
+            <option value="">{t("contact.selectService")}</option>
+            {serviceOptions.map((s, index) => <option key={s} value={s}>{t("contact.serviceOptions", { returnObjects: true })[index]}</option>)}
           </select>
           {errors.interestedService && <div className="field-hint" style={{ color: "#C0392B" }}>{errors.interestedService}</div>}
         </div>
         <div className="field-group">
-          <label htmlFor="projectType">Project Type</label>
-          <input id="projectType" placeholder="e.g. New installation, upgrade, consultation" value={form.projectType} onChange={update("projectType")} />
+          <label htmlFor="projectType">{t("contact.projectType")}</label>
+          <input id="projectType" placeholder={t("contact.projectTypePlaceholder")} value={form.projectType} onChange={update("projectType")} />
         </div>
         <div className="field-group">
-          <label htmlFor="estimatedCapacity">Estimated Capacity</label>
-          <input id="estimatedCapacity" placeholder="e.g. 500 kW, 5 MW" value={form.estimatedCapacity} onChange={update("estimatedCapacity")} />
+          <label htmlFor="estimatedCapacity">{t("contact.estimatedCapacity")}</label>
+          <input id="estimatedCapacity" placeholder={t("contact.estimatedCapacityPlaceholder")} value={form.estimatedCapacity} onChange={update("estimatedCapacity")} />
         </div>
       </div>
 
       <div className="field-group">
-        <label htmlFor="message">Message *</label>
+        <label htmlFor="message">{t("contact.message")} *</label>
         <textarea
           id="message"
           rows={5}
@@ -134,7 +136,7 @@ export default function ContactForm() {
       </div>
 
       <button type="submit" className="btn btn--primary">
-        Request a Consultation <Send size={17} />
+        {t("contact.requestConsultation")} <Send size={17} />
       </button>
     </form>
   );

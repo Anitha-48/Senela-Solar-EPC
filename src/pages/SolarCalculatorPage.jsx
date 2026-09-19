@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../styles/solarcalculator.css";
 
 /* =========================================================================
@@ -187,6 +188,7 @@ const IconLeaf = () => (
    COMPONENT
    ========================================================================= */
 export default function SolarCalculator() {
+  const { t } = useTranslation();
   const [stateKey, setStateKey] = useState("tamilnadu");
   const [category, setCategory] = useState("residential");
   const [bill, setBill] = useState("");
@@ -198,14 +200,14 @@ export default function SolarCalculator() {
     const billNum = parseFloat(bill);
 
     if (!billNum || billNum <= 0) {
-      setError("Enter your monthly electricity bill amount to continue.");
+      setError(t("calculator.errorRequired"));
       setResult(null);
       return;
     }
 
     const output = runCalculation(stateKey, category, billNum);
     if (!output) {
-      setError("That amount is too low to estimate — try a higher bill value.");
+      setError(t("calculator.errorTooLow"));
       setResult(null);
       return;
     }
@@ -226,10 +228,9 @@ export default function SolarCalculator() {
     <div className="scal">
       <header className="scal__header">
         <p className="scal__eyebrow"></p>
-        <h1 className="scal__title">Solar Savings Calculator</h1>
+        <h1 className="scal__title">{t("calculator.title")}</h1>
         <p className="scal__subtitle">
-          Enter a few details from your electricity bill to get a system size
-          and savings estimate for Tamil Nadu, Karnataka and Pondicherry.
+          {t("calculator.subtitle")}
         </p>
       </header>
 
@@ -237,21 +238,21 @@ export default function SolarCalculator() {
         {/* ---------------- FORM PANEL ---------------- */}
         <form className="scal__form" onSubmit={handleSubmit}>
           <label className="scal__field">
-            <span className="scal__label">State</span>
+            <span className="scal__label">{t("calculator.state")}</span>
             <select
               className="scal__select"
               value={stateKey}
               onChange={(e) => setStateKey(e.target.value)}
             >
-              <option value="tamilnadu">Tamil Nadu</option>
-              <option value="pondicherry">Pondicherry</option>
-              <option value="karnataka">Karnataka</option>
+              <option value="tamilnadu">{t("calculator.tamilNadu")}</option>
+              <option value="pondicherry">{t("calculator.pondicherry")}</option>
+              <option value="karnataka">{t("calculator.karnataka")}</option>
             </select>
           </label>
 
           <div className="scal__field">
-            <span className="scal__label">Category</span>
-            <div className="scal__toggle" role="radiogroup" aria-label="Category">
+            <span className="scal__label">{t("calculator.category")}</span>
+            <div className="scal__toggle" role="radiogroup" aria-label={t("calculator.category")}>
               {["residential", "industrial"].map((c) => (
                 <button
                   type="button"
@@ -260,20 +261,20 @@ export default function SolarCalculator() {
                   onClick={() => setCategory(c)}
                   aria-pressed={category === c}
                 >
-                  {c === "residential" ? "Residential" : "Industrial"}
+                  {c === "residential" ? t("calculator.residential") : t("calculator.industrial")}
                 </button>
               ))}
             </div>
           </div>
 
           <label className="scal__field">
-            <span className="scal__label">Monthly electricity bill (₹)</span>
+            <span className="scal__label">{t("calculator.monthlyBill")}</span>
             <input
               className="scal__input"
               type="number"
               inputMode="decimal"
               min="0"
-              placeholder="e.g. 5000"
+              placeholder={t("calculator.monthlyBillPlaceholder")}
               value={bill}
               onChange={(e) => setBill(e.target.value)}
             />
@@ -282,14 +283,11 @@ export default function SolarCalculator() {
           {error && <p className="scal__error">{error}</p>}
 
           <button type="submit" className="scal__submit">
-            Calculate
+            {t("calculator.calculate")}
           </button>
 
           <p className="scal__disclaimer">
-            Estimates are based on representative {TARIFF_DATA[stateKey].discom}{" "}
-            slab tariffs. Fixed charges, duty, subsidy schemes and FPPCA
-            surcharges are not included — use this for sizing guidance, and
-            confirm the final commercial quote against the live tariff order.
+            {t("calculator.disclaimer", { discom: TARIFF_DATA[stateKey].discom })}
           </p>
         </form>
 
@@ -298,22 +296,19 @@ export default function SolarCalculator() {
           {!result ? (
             <div className="scal__placeholder">
               <p>
-                Fill in the form and click <strong>Calculate</strong> to see
-                the suggested system size and savings.
+                {t("calculator.fillForm")}
               </p>
             </div>
           ) : (
             <>
               <div className="scal__basis">
-                Based on an estimated{" "}
-                <strong>{fmtNum(result.estimatedUnits)} units/month</strong>{" "}
-                under {result.discom} {category} tariff.
+                {t("calculator.estimatedUnits", { units: fmtNum(result.estimatedUnits), discom: result.discom, category: category === "residential" ? t("calculator.residential") : t("calculator.industrial") })}
               </div>
 
               <div className="scal__hero">
                 <IconCapacity />
                 <div>
-                  <p className="scal__heroLabel">Suggested System Capacity</p>
+                  <p className="scal__heroLabel">{t("calculator.suggestedCapacity")}</p>
                   <p className="scal__heroValue">
                     {result.suggestedCapacity} <span>kW</span>
                   </p>
@@ -325,7 +320,7 @@ export default function SolarCalculator() {
                   <div className="scal__meterIcon">
                     <IconEnergy />
                   </div>
-                  <span className="scal__meterLabel">Monthly Saving</span>
+                  <span className="scal__meterLabel">{t("calculator.monthlySaving")}</span>
                   <span className="scal__meterValue">
                     {fmtNum(result.monthlySavingKWh)} kWh
                   </span>
@@ -335,7 +330,7 @@ export default function SolarCalculator() {
                   <div className="scal__meterIcon">
                     <IconRupee />
                   </div>
-                  <span className="scal__meterLabel">Monthly Saving</span>
+                  <span className="scal__meterLabel">{t("calculator.monthlySaving")}</span>
                   <span className="scal__meterValue">
                     {fmtINR(result.monthlySavingINR)}
                   </span>
@@ -345,7 +340,7 @@ export default function SolarCalculator() {
                   <div className="scal__meterIcon">
                     <IconSpace />
                   </div>
-                  <span className="scal__meterLabel">Required Space</span>
+                  <span className="scal__meterLabel">{t("calculator.requiredSpace")}</span>
                   <span className="scal__meterValue">
                     {fmtNum(result.requiredSpace)} sq.ft
                   </span>
@@ -355,7 +350,7 @@ export default function SolarCalculator() {
                   <div className="scal__meterIcon">
                     <IconLeaf />
                   </div>
-                  <span className="scal__meterLabel">CO₂ Reduction / Year</span>
+                  <span className="scal__meterLabel">{t("calculator.co2Reduction")}</span>
                   <span className="scal__meterValue">
                     {fmtNum(result.co2KgPerYear)} kg
                     <small> ({result.co2TonsPerYear} t)</small>

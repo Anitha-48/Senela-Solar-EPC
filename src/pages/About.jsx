@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import {
   ArrowRight,
@@ -24,6 +25,17 @@ import StatCounter from "../components/StatCounter";
 import { siteConfig } from "../config/siteConfig";
 
 export default function About() {
+  const { t } = useTranslation();
+  const whyItems = t("about.whyItems", { returnObjects: true });
+  const highlights = t("about.highlights", { returnObjects: true });
+  const gallery = t("about.gallery", { returnObjects: true });
+  const expertiseItems = t("about.expertiseItems", { returnObjects: true });
+  const galleryImages = [
+    "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1200&auto=format&fit=crop",
+    "https://media.istockphoto.com/id/1405880267/photo/two-engineers-installing-solar-panels-on-roof.jpg?s=612x612&w=0&k=20&c=OvQDbJaTnMM4jPfIA3y5vrO88i98NZJRahZtnYFZCq0=",
+  ];
+
   return (
     <div className="about-page">
 
@@ -40,37 +52,29 @@ export default function About() {
           <ScrollReveal className="split-section__media">
             <img
               src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1000&auto=format&fit=crop"
-              alt="Solar panels generating clean energy"
+              alt={t("accessibility.solarPanelsCleanEnergy")}
             />
           </ScrollReveal>
 
           <ScrollReveal delay={1}>
             <div className="eyebrow-line">
-              COMPANY OVERVIEW
+              {t("about.companyOverview")}
             </div>
 
             <h2>
-              Engineering Solar. Powering a Sustainable Future.
+              {t("about.overviewTitle")}
             </h2>
 
             <p>
-              {siteConfig.companyName} is a solar energy and engineering
-              company committed to delivering reliable, efficient and
-              sustainable solar power solutions for residential, commercial,
-              industrial and institutional customers.
+              {t("about.overviewParagraphOne", { companyName: siteConfig.companyName })}
             </p>
 
             <p>
-              From site assessment and system design to installation,
-              commissioning and ongoing maintenance, we provide end-to-end
-              solar solutions designed around our customers' energy
-              requirements and long-term goals.
+              {t("about.overviewParagraphTwo")}
             </p>
 
             <p>
-              With a focus on quality, engineering excellence and professional
-              execution, we help our customers reduce energy costs, improve
-              energy independence and move towards a cleaner energy future.
+              {t("about.overviewParagraphThree")}
             </p>
           </ScrollReveal>
 
@@ -86,9 +90,9 @@ export default function About() {
         <div className="container">
 
           <SectionTitle
-            eyebrow="WHY SENELA"
-            title="Why Choose Senela for Your Solar Journey?"
-            description="We combine engineering expertise, quality technology and professional execution to deliver solar solutions built for long-term performance."
+            eyebrow={t("about.whySenela")}
+            title={t("about.whySenelaTitle")}
+            description={t("about.whySenelaDescription")}
           />
 
           <div className="why-senela__wrapper">
@@ -100,7 +104,7 @@ export default function About() {
 
                 <img
                   src="https://cdn.pixabay.com/photo/2017/09/12/13/21/photovoltaic-system-2742302_640.jpg"
-                  alt="Senela solar energy installation"
+                  alt={t("accessibility.senelaInstallation")}
                 />
 
                 {/* Floating Card */}
@@ -109,10 +113,8 @@ export default function About() {
                   <Sun size={26} />
 
                   <div>
-                    <strong>Clean Energy</strong>
-                    <span>
-                      Powering a brighter future
-                    </span>
+                    <strong>{t("about.cleanEnergy")}</strong>
+                    <span>{t("about.brighterFuture")}</span>
                   </div>
                 </div>
               </div>
@@ -121,8 +123,7 @@ export default function About() {
             {/* RIGHT CONTENT */}
             <div className="why-senela__content">
 
-              {/* ITEM 1 */}
-              <ScrollReveal delay={0}>
+              {whyItems.map((item, index) => <ScrollReveal key={item.title} delay={index}>
 
                 <div className="why-senela__item">
 
@@ -132,94 +133,17 @@ export default function About() {
 
                   <div>
                     <h3>
-                      Reliable Solar Solutions
+                      {item.title}
                     </h3>
 
                     <p>
-                      Efficient and dependable solar systems engineered
-                      to deliver consistent energy performance.
+                      {item.description}
                     </p>
                   </div>
 
                 </div>
 
-              </ScrollReveal>
-
-
-              {/* ITEM 2 */}
-              <ScrollReveal delay={1}>
-
-                <div className="why-senela__item">
-
-                  <div className="why-senela__icon">
-                    <BadgeCheck size={25} />
-                  </div>
-
-                  <div>
-                    <h3>
-                      Quality First Approach
-                    </h3>
-
-                    <p>
-                      We focus on quality components, careful installation
-                      and structured project execution from start to finish.
-                    </p>
-                  </div>
-
-                </div>
-
-              </ScrollReveal>
-
-
-              {/* ITEM 3 */}
-              <ScrollReveal delay={2}>
-
-                <div className="why-senela__item">
-
-                  <div className="why-senela__icon">
-                    <TrendingUp size={25} />
-                  </div>
-
-                  <div>
-                    <h3>
-                      Built for Long-Term Value
-                    </h3>
-
-                    <p>
-                      Our solar solutions are designed to reduce energy
-                      costs and provide sustainable value for years to come.
-                    </p>
-                  </div>
-
-                </div>
-
-              </ScrollReveal>
-
-
-              {/* ITEM 4 */}
-              <ScrollReveal delay={3}>
-
-                <div className="why-senela__item">
-
-                  <div className="why-senela__icon">
-                    <Globe2 size={25} />
-                  </div>
-
-                  <div>
-                    <h3>
-                      End-to-End Expertise
-                    </h3>
-
-                    <p>
-                      From consultation and design to installation,
-                      commissioning and maintenance, we manage the complete
-                      solar journey.
-                    </p>
-                  </div>
-
-                </div>
-
-              </ScrollReveal>
+              </ScrollReveal>)}
 
             </div>
 
@@ -230,33 +154,9 @@ export default function About() {
 
           <div className="why-senela__highlights">
 
-            <ScrollReveal delay={0}>
-              <div className="why-highlight">
-                <CircleCheck size={20} />
-                <span>Professional Execution</span>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={1}>
-              <div className="why-highlight">
-                <CircleCheck size={20} />
-                <span>Energy-Efficient Systems</span>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={2}>
-              <div className="why-highlight">
-                <CircleCheck size={20} />
-                <span>Customer-Focused Service</span>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={3}>
-              <div className="why-highlight">
-                <CircleCheck size={20} />
-                <span>Sustainable Future</span>
-              </div>
-            </ScrollReveal>
+            {highlights.map((highlight, index) => <ScrollReveal key={highlight} delay={index}>
+              <div className="why-highlight"><CircleCheck size={20} /><span>{highlight}</span></div>
+            </ScrollReveal>)}
 
           </div>
 
@@ -291,13 +191,11 @@ export default function About() {
                 </span>
 
                 <h3>
-                  Our Vision
+                  {t("about.visionTitle")}
                 </h3>
 
                 <p>
-                  To become a trusted solar energy partner by accelerating
-                  the adoption of clean, reliable and affordable renewable
-                  energy across India.
+                  {t("about.visionDescription")}
                 </p>
 
               </div>
@@ -319,13 +217,11 @@ export default function About() {
                 </span>
 
                 <h3>
-                  Our Mission
+                  {t("about.missionTitle")}
                 </h3>
 
                 <p>
-                  To deliver high-quality solar energy solutions through
-                  engineering excellence, reliable technology, professional
-                  execution and dedicated customer support.
+                  {t("about.missionDescription")}
                 </p>
 
               </div>
@@ -347,40 +243,15 @@ export default function About() {
         <div className="container">
 
           <SectionTitle
-            eyebrow="OUR WORK"
-            title="Built on real projects, real impact and real expertise"
-            description="We bring engineering discipline, field experience and a long-term view to every solar installation we deliver."
+            eyebrow={t("about.ourWork")}
+            title={t("about.ourWorkTitle")}
+            description={t("about.ourWorkDescription")}
           />
 
 
           <div className="about-gallery">
 
-            {[
-              {
-                image:
-                  "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1200&auto=format&fit=crop",
-                title: "Project Delivery",
-                text:
-                  "From feasibility to commissioning, our team manages solar projects with precision and accountability.",
-              },
-
-              {
-                image:
-                  "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1200&auto=format&fit=crop",
-                title: "Engineering Insight",
-                text:
-                  "We design systems around site conditions, load profiles and long-term performance goals.",
-              },
-
-              {
-                image:
-                  "https://media.istockphoto.com/id/1405880267/photo/two-engineers-installing-solar-panels-on-roof.jpg?s=612x612&w=0&k=20&c=OvQDbJaTnMM4jPfIA3y5vrO88i98NZJRahZtnYFZCq0=",
-                title: "Cleaner Energy",
-                text:
-                  "Every project helps customers lower energy costs while building a more sustainable future.",
-              },
-            ].map((item, index) => (
-
+            {gallery.map((item, index) => (
               <ScrollReveal
                 key={item.title}
                 delay={index}
@@ -390,7 +261,7 @@ export default function About() {
                 <div className="about-gallery__media">
 
                   <img
-                    src={item.image}
+                    src={galleryImages[index]}
                     alt={item.title}
                   />
 
@@ -429,8 +300,8 @@ export default function About() {
   <div className="container">
 
     <SectionTitle
-      eyebrow="OUR EXPERTISE"
-      title="Powering a Smarter Future"
+      eyebrow={t("about.expertise")}
+      title={t("about.expertiseTitle")}
     />
 
     <div className="expertise-circle-layout">
@@ -446,7 +317,7 @@ export default function About() {
             </div>
             <div>
               <span>01</span>
-              <strong>Solar EPC</strong>
+              <strong>{expertiseItems[0]}</strong>
             </div>
           </div>
         </ScrollReveal>
@@ -458,7 +329,7 @@ export default function About() {
             </div>
             <div>
               <span>02</span>
-              <strong>Rooftop Solar</strong>
+              <strong>{expertiseItems[1]}</strong>
             </div>
           </div>
         </ScrollReveal>
@@ -470,7 +341,7 @@ export default function About() {
             </div>
             <div>
               <span>03</span>
-              <strong>Industrial Solar</strong>
+              <strong>{expertiseItems[2]}</strong>
             </div>
           </div>
         </ScrollReveal>
@@ -486,15 +357,15 @@ export default function About() {
 
           <img
             src="https://solarcrowncommercial.com/wp-content/uploads/2024/03/AdobeStock_557346755-scaled.jpeg"
-            alt="Solar Energy"
+            alt={t("about.solarEnergyAlt")}
           />
 
           <div className="expertise-circle-overlay"></div>
 
           <div className="expertise-circle-badge">
             <Sun size={30} />
-            <strong>SOLAR</strong>
-            <small>ENERGY</small>
+            <strong>{t("about.solar")}</strong>
+            <small>{t("about.energy")}</small>
           </div>
 
           {/* Rotating ring */}
@@ -518,7 +389,7 @@ export default function About() {
             </div>
             <div>
               <span>04</span>
-              <strong>Commercial Solar</strong>
+              <strong>{expertiseItems[3]}</strong>
             </div>
           </div>
         </ScrollReveal>
@@ -530,7 +401,7 @@ export default function About() {
             </div>
             <div>
               <span>05</span>
-              <strong>Ground Mounted</strong>
+              <strong>{expertiseItems[4]}</strong>
             </div>
           </div>
         </ScrollReveal>
@@ -542,7 +413,7 @@ export default function About() {
             </div>
             <div>
               <span>06</span>
-              <strong>O&M Services</strong>
+              <strong>{expertiseItems[5]}</strong>
             </div>
           </div>
         </ScrollReveal>
@@ -1044,13 +915,11 @@ export default function About() {
               </span>
 
               <h3>
-                Quality & Safety
+                {t("about.qualityTitle")}
               </h3>
 
               <p>
-                We follow structured quality-control and safety practices
-                throughout the project lifecycle, from installation to
-                testing and commissioning.
+                {t("about.qualityDescription")}
               </p>
 
             </div>
@@ -1069,13 +938,11 @@ export default function About() {
               </span>
 
               <h3>
-                Engineering Excellence
+                {t("about.engineeringExcellenceTitle")}
               </h3>
 
               <p>
-                Our approach combines site assessment, energy analysis,
-                system sizing and technical design to create efficient
-                and practical solar solutions.
+                {t("about.engineeringExcellenceDescription")}
               </p>
 
             </div>
@@ -1094,13 +961,11 @@ export default function About() {
               </span>
 
               <h3>
-                Sustainability
+                {t("about.sustainabilityTitle")}
               </h3>
 
               <p>
-                We help customers reduce dependence on conventional energy,
-                lower long-term electricity costs and contribute to a cleaner
-                and more sustainable future.
+                {t("about.sustainabilityDescription")}
               </p>
 
             </div>

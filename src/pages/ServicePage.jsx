@@ -1,4 +1,5 @@
 import { useParams, NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   ShieldCheck,
   Zap,
@@ -110,12 +111,24 @@ const defaultSpecifications = [
 
 export default function ServicePage() {
   const { serviceSlug } = useParams();
+  const { t } = useTranslation();
+  const serviceKeyMap = {
+    "power-distribution-transmission": "powerDistributionTransmission",
+    "ehv-substation": "ehvSubstation",
+    "htls-reconductoring": "htlsReconductoring",
+    "railway-electrification": "railwayElectrification",
+    "solar-power-projects": "solarPowerProjects",
+    "water-management": "waterManagement",
+  };
 
   /*
    * Find service safely
    */
   const service = serviceSlug
     ? services[serviceSlug]
+    : undefined;
+  const translatedService = serviceSlug && serviceKeyMap[serviceSlug]
+    ? t(`serviceDetails.${serviceKeyMap[serviceSlug]}`, { returnObjects: true })
     : undefined;
 
   /*
@@ -129,14 +142,14 @@ export default function ServicePage() {
             <ShieldCheck size={35} />
           </div>
 
-          <h1>Service Not Found</h1>
+          <h1>{t("errors.serviceNotFound")}</h1>
 
           <p>
-            The requested service could not be found.
+            {t("errors.serviceUnavailable")}
           </p>
 
           <NavLink to="/services">
-            Back to Services
+            {t("errors.backServices")}
           </NavLink>
         </div>
 
@@ -209,7 +222,10 @@ export default function ServicePage() {
    * Capabilities
    */
   const specifications =
-    Array.isArray(service.specifications) &&
+    Array.isArray(translatedService?.capabilities) &&
+    translatedService.capabilities.length
+      ? translatedService.capabilities
+      : Array.isArray(service.specifications) &&
     service.specifications.length
       ? service.specifications
       : Array.isArray(service.capabilities) &&
@@ -243,7 +259,7 @@ export default function ServicePage() {
         >
           <img
             src={heroImage}
-            alt={service.title}
+            alt={translatedService?.title || service.title}
           />
         </motion.div>
 
@@ -261,16 +277,15 @@ export default function ServicePage() {
             variants={fadeUp}
           >
             <span />
-            SENELA INTERNATIONAL
+            {t("servicePage.brand")}
           </motion.div>
 
           <motion.h1 variants={fadeUp}>
-            {service.title}
+            {translatedService?.title || service.title}
           </motion.h1>
 
           <motion.p variants={fadeUp}>
-            {service.overview ||
-              "Professional engineering solutions designed for quality, reliability and long-term performance."}
+            {translatedService?.overview || t("servicePage.defaultHeroDescription")}
           </motion.p>
 
           <motion.div variants={fadeUp}>
@@ -278,7 +293,7 @@ export default function ServicePage() {
               to="/contact"
               className="hero-button"
             >
-              Discuss Your Project
+              {t("epc.discussProject")}
               <ArrowRight size={17} />
             </NavLink>
           </motion.div>
@@ -308,35 +323,34 @@ export default function ServicePage() {
 
             <div className="section-label">
               <span />
-              ABOUT THE SERVICE
+              {t("servicePage.aboutService")}
             </div>
 
             <h2>
-              Built for
+              {t("servicePage.builtFor")}
               <br />
-              <strong>Performance.</strong>
+              <strong>{t("servicePage.performance")}</strong>
             </h2>
 
             <p>
-              {service.overview ||
-                "We deliver dependable engineering solutions with a strong focus on quality, safety, precision and efficient project execution."}
+              {translatedService?.overview || t("servicePage.defaultOverview")}
             </p>
 
             <div className="overview-points">
 
               <div>
                 <CheckCircle2 size={18} />
-                <span>Quality Focused</span>
+                <span>{t("servicePage.qualityFocused")}</span>
               </div>
 
               <div>
                 <CheckCircle2 size={18} />
-                <span>Safety Driven</span>
+                <span>{t("servicePage.safetyDriven")}</span>
               </div>
 
               <div>
                 <CheckCircle2 size={18} />
-                <span>Reliable Delivery</span>
+                <span>{t("servicePage.reliableDelivery")}</span>
               </div>
 
             </div>
@@ -354,11 +368,11 @@ export default function ServicePage() {
 
             <img
               src={overviewImage}
-              alt={service.title}
+              alt={translatedService?.title || service.title}
             />
 
             <div className="image-caption">
-              SENELA INTERNATIONAL
+              {t("servicePage.brand")}
             </div>
 
           </motion.div>
@@ -384,18 +398,17 @@ export default function ServicePage() {
 
           <div className="section-label">
             <span />
-            OUR CAPABILITIES
+            {t("servicePage.capabilities")}
           </div>
 
           <h2>
-            What We
+            {t("servicePage.whatWeDeliver").replace(" Deliver.", "")}
             <br />
             <strong>Deliver.</strong>
           </h2>
 
           <p>
-            Practical engineering capabilities backed by
-            professional execution and quality standards.
+            {t("servicePage.capabilitiesDescription")}
           </p>
 
         </motion.div>
@@ -435,8 +448,7 @@ export default function ServicePage() {
                 <h3>{item}</h3>
 
                 <p>
-                  Professional execution focused on
-                  quality, precision and reliability.
+                  {t("servicePage.capabilityCardDescription", "Professional execution focused on quality, precision and reliability.")}
                 </p>
 
               </motion.div>
@@ -464,17 +476,17 @@ export default function ServicePage() {
 
           <img
             src={processImage}
-            alt="Senela International"
+            alt={t("servicePage.serviceAlt")}
           />
 
           <div className="approach-overlay" />
 
           <div className="approach-caption">
-            <span>OUR APPROACH</span>
+            <span>{t("servicePage.approach")}</span>
             <strong>
-              From Concept
+              {t("servicePage.fromConcept")}
               <br />
-              to Completion.
+              {t("servicePage.toCompletion")}
             </strong>
           </div>
 
@@ -491,19 +503,17 @@ export default function ServicePage() {
 
           <div className="section-label">
             <span />
-            HOW WE WORK
+            {t("servicePage.howWeWork")}
           </div>
 
           <h2>
-            Simple.
+            {t("servicePage.simple")}
             <br />
-            <strong>Precise.</strong>
+            <strong>{t("servicePage.precise")}</strong>
           </h2>
 
           <p>
-            We follow a structured process to ensure
-            efficient execution and dependable project
-            delivery.
+            {t("servicePage.processDescription")}
           </p>
 
 
@@ -516,11 +526,8 @@ export default function ServicePage() {
 
               <div>
                 <small>01</small>
-                <h3>Understand</h3>
-                <p>
-                  Understand project requirements and
-                  technical objectives.
-                </p>
+                <h3>{t("servicePage.understand")}</h3>
+                <p>{t("servicePage.understandDescription")}</p>
               </div>
             </div>
 
@@ -532,11 +539,8 @@ export default function ServicePage() {
 
               <div>
                 <small>02</small>
-                <h3>Plan</h3>
-                <p>
-                  Develop practical solutions and
-                  execution plans.
-                </p>
+                <h3>{t("servicePage.plan")}</h3>
+                <p>{t("servicePage.planDescription")}</p>
               </div>
             </div>
 
@@ -548,11 +552,8 @@ export default function ServicePage() {
 
               <div>
                 <small>03</small>
-                <h3>Execute</h3>
-                <p>
-                  Execute with attention to quality,
-                  safety and precision.
-                </p>
+                <h3>{t("servicePage.execute")}</h3>
+                <p>{t("servicePage.executeDescription")}</p>
               </div>
             </div>
 
@@ -582,17 +583,15 @@ export default function ServicePage() {
           <div>
 
             <div className="cta-label">
-              SENELA INTERNATIONAL
+              {t("servicePage.brand")}
             </div>
 
             <h2>
-              Have a Project
-              <br />
-              <strong>in Mind?</strong>
+              {t("servicePage.projectCtaTitle")}
             </h2>
 
             <p>
-              Let's discuss your engineering requirements.
+              {t("servicePage.projectCtaDescription")}
             </p>
 
           </div>
@@ -602,7 +601,7 @@ export default function ServicePage() {
             to="/contact"
             className="cta-button"
           >
-            Contact / Enquiry
+            {t("servicePage.contactEnquiry")}
             <ArrowRight size={18} />
           </NavLink>
 

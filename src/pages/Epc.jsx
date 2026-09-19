@@ -18,6 +18,7 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "../components/ScrollReveal";
 import "../styles/epc.css";
 
@@ -76,25 +77,31 @@ const projectTypes = [
 ];
 
 export default function Epc() {
+  const { t } = useTranslation();
+  const translatedOfferings = t("epc.offerings", { returnObjects: true });
+  const translatedProcessSteps = t("epc.processSteps", { returnObjects: true });
+  const translatedBenefits = t("epc.benefits", { returnObjects: true });
+  const translatedProjectTypes = t("epc.projectTypes", { returnObjects: true });
+
   return (
     <main className="epc-page">
       <section className="epc-hero">
         <div className="epc-hero__overlay" />
         <div className="container epc-hero__content">
           <ScrollReveal>
-            <div className="epc-hero__eyebrow"><span />SOLAR EPC</div>
-            <h1>Solar EPC <span>Projects</span></h1>
-            <p>Engineering reliable solar solutions from concept to commissioning and beyond.</p>
+            <div className="epc-hero__eyebrow"><span />{t("epc.eyebrow")}</div>
+            <h1><span className="epc-hero__title-word">{t("epc.titleFirst")}</span> <span className="epc-hero__title-word">{t("epc.titleMiddle")}</span> <span className="epc-hero__title-accent">{t("epc.titleAccent")}</span></h1>
+            <p>{t("epc.description")}</p>
             <div className="epc-hero__buttons">
-              <a href="/contact" className="epc-btn epc-btn--primary">Start Your Project <ArrowUpRight size={19} /></a>
-              <a href="#epc-services" className="epc-btn epc-btn--outline">Explore Solutions</a>
+              <a href="/contact" className="epc-btn epc-btn--primary">{t("epc.startProject")} <ArrowUpRight size={19} /></a>
+              <a href="#epc-services" className="epc-btn epc-btn--outline">{t("epc.exploreSolutions")}</a>
             </div>
           </ScrollReveal>
         </div>
         <div className="epc-hero__bottom">
-          <div><strong>30+</strong><span>Years Experience</span></div>
-          <div><strong>100+</strong><span>Projects</span></div>
-          <div><strong>360°</strong><span>EPC Solutions</span></div>
+          <div><strong>30+</strong><span>{t("epc.yearsExperience")}</span></div>
+          <div><strong>100+</strong><span>{t("epc.projects")}</span></div>
+          <div><strong>360°</strong><span>{t("epc.epcSolutions")}</span></div>
         </div>
       </section>
 
@@ -102,21 +109,19 @@ export default function Epc() {
         <div className="container epc-intro__grid">
           <ScrollReveal>
             <div className="epc-intro__content">
-              <p className="eyebrow">SOLAR EPC EXPERTISE</p>
-              <h2>Engineering Solar. <span>Delivering Power.</span></h2>
-              <p className="epc-intro__description">We provide complete solar EPC solutions covering engineering, procurement, construction, commissioning and long-term technical support.</p>
-              <p>Our integrated approach brings together engineering expertise, project management and field execution to deliver dependable renewable energy infrastructure.</p>
+              <p className="eyebrow">{t("epc.introEyebrow")}</p>
+              <h2>{t("epc.introTitle").split(". ")[0]}. <span>{t("epc.introTitle").split(". ").slice(1).join(". ")}</span></h2>
+              <p className="epc-intro__description">{t("epc.introDescriptionOne")}</p>
+              <p>{t("epc.introDescriptionTwo")}</p>
               <div className="epc-mini-points">
-                <div><BadgeCheck size={20} /><span>Integrated EPC Execution</span></div>
-                <div><BadgeCheck size={20} /><span>Quality-Focused Engineering</span></div>
-                <div><BadgeCheck size={20} /><span>Long-Term Technical Support</span></div>
+                {t("epc.introPoints", { returnObjects: true }).map((point) => <div key={point}><BadgeCheck size={20} /><span>{point}</span></div>)}
               </div>
             </div>
           </ScrollReveal>
           <ScrollReveal>
             <div className="epc-intro__image">
-              <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1400&q=85" alt="Solar power installation" />
-              <div className="epc-image-badge"><Sun size={21} /><div><strong>Clean Energy</strong><span>Built for tomorrow</span></div></div>
+              <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1400&q=85" alt={t("accessibility.solarInstallation")} />
+              <div className="epc-image-badge"><Sun size={21} /><div><strong>{t("epc.cleanEnergy")}</strong><span>{t("epc.builtForTomorrow")}</span></div></div>
             </div>
           </ScrollReveal>
         </div>
@@ -124,26 +129,27 @@ export default function Epc() {
 
       <section className="section epc-services" id="epc-services">
         <div className="container">
-          <SectionHeading eyebrow="WHAT WE DELIVER" title={<>Complete Solar <span>EPC Expertise</span></>} description="From early-stage development to construction and operations, our solutions cover the complete solar project lifecycle." />
+          <SectionHeading eyebrow={t("epc.whatWeDeliver")} title={t("epc.servicesTitle")} description={t("epc.servicesDescription")} />
           <div className="epc-services__grid">
-            {offerings.map((item) => {
+            {offerings.map((item, index) => {
+              const translated = translatedOfferings[index];
               const Icon = item.icon;
               return <ScrollReveal key={item.number}><article className={`epc-service-card ${item.featured ? "epc-service-card--featured" : ""}`}>
                 <div className="epc-service-card__image"><img src={item.image} alt={item.title} /><div className="epc-service-card__number">{item.number}</div></div>
-                <div className="epc-service-card__body"><div className="epc-service-card__icon"><Icon size={28} /></div><p className="epc-service-card__label">{item.shortTitle}</p><h3>{item.title}</h3><p className="epc-service-card__description">{item.description}</p><div className="epc-card-features">{item.features.map((feature) => <div key={feature}><CheckCircle2 size={16} /><span>{feature}</span></div>)}</div></div>
+                <div className="epc-service-card__body"><div className="epc-service-card__icon"><Icon size={28} /></div><p className="epc-service-card__label">{translated.shortTitle}</p><h3>{translated.title}</h3><p className="epc-service-card__description">{translated.description}</p><div className="epc-card-features">{translated.features.map((feature) => <div key={feature}><CheckCircle2 size={16} /><span>{feature}</span></div>)}</div></div>
               </article></ScrollReveal>;
             })}
           </div>
         </div>
       </section>
 
-      <section className="section epc-process"><div className="epc-process__overlay" /><div className="container epc-process__container"><SectionHeading eyebrow="OUR PROCESS" title={<>From Concept <span>To Commissioning</span></>} description="A structured EPC workflow designed to keep every stage of your solar project coordinated and efficient." /><div className="epc-process__grid">{processSteps.map(([number, title, description, Icon]) => <ScrollReveal key={number}><div className="epc-process-card"><div className="epc-process-card__top"><span>{number}</span><div className="epc-process-card__icon"><Icon size={24} /></div></div><h3>{title}</h3><p>{description}</p></div></ScrollReveal>)}</div></div></section>
+      <section className="section epc-process"><div className="epc-process__overlay" /><div className="container epc-process__container"><SectionHeading eyebrow={t("epc.ourProcess")} title={t("epc.processTitle")} description={t("epc.processDescription")} /><div className="epc-process__grid">{processSteps.map(([number, title, description, Icon], index) => <ScrollReveal key={number}><div className="epc-process-card"><div className="epc-process-card__top"><span>{number}</span><div className="epc-process-card__icon"><Icon size={24} /></div></div><h3>{translatedProcessSteps[index].title}</h3><p>{translatedProcessSteps[index].description}</p></div></ScrollReveal>)}</div></div></section>
 
-      <section className="section epc-benefits"><div className="container"><SectionHeading eyebrow="WHY OUR APPROACH" title={<>Built Around <span>Performance</span></>} description="Every project is planned around quality, reliability, efficiency and long-term performance." /><div className="epc-benefits__grid">{benefits.map(([title, description, Icon], index) => <ScrollReveal key={title}><div className="epc-benefit-card"><span className="epc-benefit-card__number">0{index + 1}</span><div className="epc-benefit-card__icon"><Icon size={26} /></div><h3>{title}</h3><p>{description}</p></div></ScrollReveal>)}</div></div></section>
+      <section className="section epc-benefits"><div className="container"><SectionHeading eyebrow={t("epc.whyOurApproach")} title={t("epc.performanceTitle")} description={t("epc.performanceDescription")} /><div className="epc-benefits__grid">{benefits.map(([title, description, Icon], index) => <ScrollReveal key={title}><div className="epc-benefit-card"><span className="epc-benefit-card__number">0{index + 1}</span><div className="epc-benefit-card__icon"><Icon size={26} /></div><h3>{translatedBenefits[index].title}</h3><p>{translatedBenefits[index].description}</p></div></ScrollReveal>)}</div></div></section>
 
-      <section className="section epc-projects"><div className="container"><SectionHeading eyebrow="PROJECT APPLICATIONS" title={<>Solar Solutions <span>For Every Space</span></>} description="Flexible solar EPC solutions for industrial, commercial and large-scale applications." /><div className="epc-projects__grid">{projectTypes.map(([title, description, image, Icon]) => <ScrollReveal key={title}><article className="epc-project-card"><div className="epc-project-card__image"><img src={image} alt={title} /><div className="epc-project-card__icon"><Icon size={22} /></div></div><div className="epc-project-card__content"><h3>{title}</h3><p>{description}</p><a href="/contact">Discuss Your Project <ArrowUpRight size={17} /></a></div></article></ScrollReveal>)}</div></div></section>
+      <section className="section epc-projects"><div className="container"><SectionHeading eyebrow={t("epc.projectApplications")} title={t("epc.solutionsTitle")} description={t("epc.solutionsDescription")} /><div className="epc-projects__grid">{projectTypes.map(([title, description, image, Icon], index) => <ScrollReveal key={title}><article className="epc-project-card"><div className="epc-project-card__image"><img src={image} alt={translatedProjectTypes[index].title} /><div className="epc-project-card__icon"><Icon size={22} /></div></div><div className="epc-project-card__content"><h3>{translatedProjectTypes[index].title}</h3><p>{translatedProjectTypes[index].description}</p><a href="/contact">{t("epc.discussProject", "Discuss Your Project")} <ArrowUpRight size={17} /></a></div></article></ScrollReveal>)}</div></div></section>
 
-      <section className="epc-capability"><div className="container epc-capability__grid"><ScrollReveal><div className="epc-capability__image"><img src="https://media.licdn.com/dms/image/v2/D5612AQFd0X4B-peq4A/article-cover_image-shrink_720_1280/B56ZTl59uMHEAI-/0/1739023967771?e=2147483647&v=beta&t=I7A97nAVhQeHO6zE7_5eNZyTyaEduQOUFW3hwvnnwrI" alt="Solar panels and renewable energy" /></div></ScrollReveal><ScrollReveal><div className="epc-capability__content"><p className="eyebrow">ENGINEERED FOR PERFORMANCE</p><h2>Reliable Energy. <span>Responsible Future.</span></h2><p>We combine engineering knowledge, project execution and renewable energy technology to create dependable solar infrastructure for businesses and industries.</p><div className="epc-capability__list"><div><Zap size={20} /><span>Efficient Solar Systems</span></div><div><Wrench size={20} /><span>Professional Installation</span></div><div><ShieldCheck size={20} /><span>Quality & Safety Focus</span></div><div><Activity size={20} /><span>Long-Term Performance</span></div></div></div></ScrollReveal></div></section>
+      <section className="epc-capability"><div className="container epc-capability__grid"><ScrollReveal><div className="epc-capability__image"><img src="https://media.licdn.com/dms/image/v2/D5612AQFd0X4B-peq4A/article-cover_image-shrink_720_1280/B56ZTl59uMHEAI-/0/1739023967771?e=2147483647&v=beta&t=I7A97nAVhQeHO6zE7_5eNZyTyaEduQOUFW3hwvnnwrI" alt={t("accessibility.solarPanelsCleanEnergy")} /></div></ScrollReveal><ScrollReveal><div className="epc-capability__content"><p className="eyebrow">{t("epc.engineeredForPerformance")}</p><h2>{t("epc.capabilityTitle")}</h2><p>{t("epc.capabilityDescription")}</p><div className="epc-capability__list">{t("epc.capabilityPoints", { returnObjects: true }).map((point) => <div key={point}><Zap size={20} /><span>{point}</span></div>)}</div></div></ScrollReveal></div></section>
 
          </main>
   );

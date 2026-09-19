@@ -98,7 +98,7 @@
    * Move complete text toward the right/form
    */
   padding-left: 100px;
-  padding-right: 20px;
+  padding-right: 10px;
 
   text-align: center;
   color: #000000;
@@ -188,7 +188,7 @@
 
   line-height: 1.45;
 
-  color: #1e293b;
+  color: #fcfcfd;
 
   font-weight: 500;
 

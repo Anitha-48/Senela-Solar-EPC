@@ -15,6 +15,7 @@ import { siteConfig } from "../config/siteConfig";
 import { services } from "../config/services";
 import { projects } from "../config/projects";
 
+
 const featuredProject = {
   title: "500 kWp Rooftop Solar Project",
   category: "COMMERCIAL SOLAR",

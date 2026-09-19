@@ -1,0 +1,601 @@
+/* =========================================================
+   ON-GRID SOLAR PAGE
+   Solar EPC Blue Theme
+   ========================================================= */
+
+.on-grid-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #172b4d;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================================================
+   COMMON SECTION
+   ========================================================= */
+
+.on-grid-page .section {
+  position: relative;
+  width: 100%;
+  padding: 90px 0;
+}
+
+.on-grid-page .section--light {
+  background: #f5f8fc;
+}
+
+.on-grid-page .container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   OVERVIEW / SPLIT SECTION
+   ========================================================= */
+
+.on-grid-page .split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+/* Image */
+
+.on-grid-page .split-section__media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.on-grid-page .split-section__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+.on-grid-page .split-section__media img {
+  display: block;
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.on-grid-page .split-section__media:hover img {
+  transform: scale(1.025);
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.on-grid-page .eyebrow-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  color: #0b63ce;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.on-grid-page .eyebrow-line::before {
+  content: "";
+  width: 32px;
+  height: 2px;
+  background: #0b63ce;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.on-grid-page h2 {
+  margin: 0 0 22px;
+  color: #13294b;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.on-grid-page h3 {
+  margin: 22px 0 12px;
+  color: #17345f;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.on-grid-page p {
+  margin: 0 0 18px;
+  color: #5d6b7d;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.on-grid-page p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   CARD GRID
+   ========================================================= */
+
+.on-grid-page .card-grid {
+  display: grid;
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.on-grid-page .card-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* =========================================================
+   BRACKET FRAME CARDS
+   ========================================================= */
+
+.on-grid-page .bracket-frame {
+  position: relative;
+  height: 100%;
+  padding: 30px;
+
+  background: #ffffff;
+  border: 1px solid #dce5f0;
+
+  box-shadow: 0 8px 25px rgba(22, 55, 95, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Blue engineering corners */
+
+.on-grid-page .bracket-frame::before,
+.on-grid-page .bracket-frame::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+}
+
+.on-grid-page .bracket-frame::before {
+  top: -1px;
+  left: -1px;
+
+  border-top: 2px solid #0b63ce;
+  border-left: 2px solid #0b63ce;
+}
+
+.on-grid-page .bracket-frame::after {
+  right: -1px;
+  bottom: -1px;
+
+  border-right: 2px solid #0b63ce;
+  border-bottom: 2px solid #0b63ce;
+}
+
+.on-grid-page .bracket-frame:hover {
+  transform: translateY(-5px);
+
+  border-color: #b8cce5;
+
+  box-shadow:
+    0 18px 40px rgba(11, 65, 125, 0.11);
+}
+
+/* =========================================================
+   HOW IT WORKS CARDS
+   ========================================================= */
+
+.on-grid-page .how-it-works-card {
+  overflow: hidden;
+}
+
+.on-grid-page .how-it-works-card__media {
+  width: 100%;
+  height: 210px;
+
+  margin-bottom: 22px;
+  overflow: hidden;
+
+  background: #eaf1f9;
+}
+
+.on-grid-page .how-it-works-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.on-grid-page .how-it-works-card:hover
+.how-it-works-card__media img {
+  transform: scale(1.045);
+}
+
+/* =========================================================
+   ICON BOX
+   ========================================================= */
+
+.on-grid-page .solution-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin-top: -2px;
+
+  color: #0b63ce;
+  background: #edf5ff;
+
+  border: 1px solid #c9def6;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.on-grid-page .bracket-frame:hover
+.solution-card__icon {
+  color: #ffffff;
+  background: #0b63ce;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TWO COLUMN BENEFITS
+   ========================================================= */
+
+.on-grid-page .two-col-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 0 60px;
+
+  margin: 50px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.on-grid-page .two-col-list li {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  min-height: 68px;
+  padding: 18px 0 18px 30px;
+
+  color: #35465d;
+  font-size: 16px;
+  line-height: 1.6;
+
+  border-bottom: 1px solid #e2e9f2;
+}
+
+/* Blue check indicator */
+
+.on-grid-page .two-col-list li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 19px;
+  height: 19px;
+
+  color: #ffffff;
+  background: #0b63ce;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* =========================================================
+   APPLICATION CARDS
+   ========================================================= */
+
+.on-grid-page .application-card {
+  overflow: hidden;
+}
+
+.on-grid-page .application-card__media {
+  width: 100%;
+  height: 210px;
+
+  margin-bottom: 22px;
+  overflow: hidden;
+
+  background: #eaf1f9;
+}
+
+.on-grid-page .application-card__media img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.on-grid-page .application-card:hover
+.application-card__media img {
+  transform: scale(1.045);
+}
+
+/* =========================================================
+   ENGINEERING SECTION
+   ========================================================= */
+
+.on-grid-page .section:nth-of-type(5) .bracket-frame {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(235, 244, 255, 0.65),
+      rgba(255, 255, 255, 1) 55%
+    );
+}
+
+/* Engineering cards have slightly more technical feel */
+
+.on-grid-page .section:nth-of-type(5)
+.bracket-frame::before {
+  border-color: #1674df;
+}
+
+.on-grid-page .section:nth-of-type(5)
+.bracket-frame::after {
+  border-color: #1674df;
+}
+
+/* =========================================================
+   SECTION TITLE SUPPORT
+   ========================================================= */
+
+.on-grid-page .section-title {
+  max-width: 780px;
+}
+
+.on-grid-page .section-title h2 {
+  margin-bottom: 16px;
+}
+
+.on-grid-page .section-title p {
+  max-width: 720px;
+}
+
+/* =========================================================
+   SUBTLE TECHNICAL BACKGROUND
+   ========================================================= */
+
+.on-grid-page .section--light {
+  position: relative;
+}
+
+.on-grid-page .section--light::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.45;
+
+  background-image:
+    linear-gradient(
+      rgba(11, 99, 206, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(11, 99, 206, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+}
+
+.on-grid-page .section--light > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   IMAGE LOADING / SAFETY
+   ========================================================= */
+
+.on-grid-page img {
+  max-width: 100%;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .on-grid-page .section {
+    padding: 75px 0;
+  }
+
+  .on-grid-page .split-section {
+    gap: 45px;
+  }
+
+  .on-grid-page .split-section__media img {
+    height: 400px;
+  }
+
+  .on-grid-page .card-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .on-grid-page .two-col-list {
+    gap: 0 40px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .on-grid-page .section {
+    padding: 60px 0;
+  }
+
+  .on-grid-page .container {
+    width: min(92%, 520px);
+  }
+
+  .on-grid-page .split-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .on-grid-page .split-section__media {
+    order: 1;
+  }
+
+  .on-grid-page .split-section__media img {
+    height: 320px;
+  }
+
+  .on-grid-page .split-section > div:last-child {
+    order: 2;
+  }
+
+  .on-grid-page h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .on-grid-page h3 {
+    font-size: 20px;
+  }
+
+  .on-grid-page p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .on-grid-page .card-grid {
+    margin-top: 35px;
+  }
+
+  .on-grid-page .card-grid--3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .on-grid-page .bracket-frame {
+    padding: 24px;
+  }
+
+  .on-grid-page .how-it-works-card__media,
+  .on-grid-page .application-card__media {
+    height: 210px;
+  }
+
+  .on-grid-page .two-col-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    margin-top: 30px;
+  }
+
+  .on-grid-page .two-col-list li {
+    font-size: 15px;
+    padding: 15px 0 15px 30px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+  .on-grid-page .section {
+    padding: 50px 0;
+  }
+
+  .on-grid-page .container {
+    width: 92%;
+  }
+
+  .on-grid-page .split-section__media img {
+    height: 260px;
+  }
+
+  .on-grid-page h2 {
+    font-size: 28px;
+  }
+
+  .on-grid-page h3 {
+    font-size: 19px;
+  }
+
+  .on-grid-page .bracket-frame {
+    padding: 20px;
+  }
+
+  .on-grid-page .how-it-works-card__media,
+  .on-grid-page .application-card__media {
+    height: 190px;
+  }
+
+  .on-grid-page .solution-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .on-grid-page *,
+  .on-grid-page *::before,
+  .on-grid-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

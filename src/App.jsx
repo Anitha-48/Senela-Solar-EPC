@@ -15,6 +15,7 @@ import SolarCalculatorPage from "./pages/SolarCalculatorPage";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import LegalPage from "./pages/LegalPage";
+import Epc from "./pages/Epc";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -34,6 +35,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/epc" element={<Epc />} />
           <Route path="/solar-solutions" element={<SolarSolutionsPage />} />
           <Route path="/solar-solutions/on-grid" element={<OnGridSolar />} />
           <Route path="/solar-solutions/off-grid" element={<OffGridSolar />} />

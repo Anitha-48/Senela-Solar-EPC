@@ -18,19 +18,26 @@
   width: 100%;
   min-height: 760px;
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(360px, 0.9fr);
+
+  /*
+    LEFT  = 57%
+    RIGHT = 43%
+  */
+  grid-template-columns: 57% 43%;
+
   align-items: stretch;
 }
 
 /* =========================================================
-   LEFT IMAGE
+   LEFT IMAGE PANEL
    ========================================================= */
 
 .hero__image-panel {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 760px;
+  min-height: calc(100vh - 100px);
+  background-color: black;
   overflow: hidden;
   background: #dfeafc;
 }
@@ -39,7 +46,9 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+   margin-top:-50px;
+  object-fit: contain;
   object-position: center center;
 }
 
@@ -58,7 +67,7 @@
 
   box-sizing: border-box;
 
-  padding: 24px 4%;
+  padding: 30px 4%;
 
   background: #f3f7fc;
 }
@@ -71,7 +80,7 @@
 .hero__form-section {
   width: 100%;
   min-width: 0;
-  max-width: 720px;
+  max-width: 650px;
 
   display: flex;
   align-items: center;
@@ -92,20 +101,20 @@
   position: relative;
 
   width: 100%;
-  max-width: 640px;
+  max-width: 600px;
   min-width: 0;
 
   box-sizing: border-box;
 
-  padding: 28px 30px;
-margin-top:60px;
+  padding: 24px 28px;
+  margin: 0;
+  margin-top:-80px;
   background: #ffffff;
-
   color: #1e293b;
 
   border: 1px solid #e2e8f0;
+  border-radius: 18px;
 
-  border-radius: 22px;
   box-shadow:
     0 18px 45px rgba(15, 23, 42, 0.10),
     0 4px 15px rgba(15, 23, 42, 0.05);
@@ -119,21 +128,19 @@ margin-top:60px;
    ========================================================= */
 
 .solar-form-header {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   text-align: left;
 }
 
 .solar-form-header h3 {
-  margin: 0 0 7px;
+  margin: 0 0 6px;
 
   color: #102445;
 
-  font-size: clamp(1.55rem, 2vw, 2.05rem);
-
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
   line-height: 1.2;
 
   font-weight: 750;
-
   letter-spacing: -0.3px;
 }
 
@@ -142,9 +149,8 @@ margin-top:60px;
 
   color: #64748b;
 
-  font-size: 0.92rem;
-
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 
@@ -158,7 +164,7 @@ margin-top:60px;
   display: flex;
   flex-direction: column;
 
-  gap: 16px;
+  gap: 12px;
 }
 
 
@@ -169,27 +175,27 @@ margin-top:60px;
 .solar-form-body input[type="text"],
 .solar-form-body input[type="tel"] {
   width: 100%;
-  height: 60px;
+  height: 52px;
 
-  padding: 0 16px;
+  padding: 0 14px;
 
   box-sizing: border-box;
 
   border: 1px solid #dce4ee;
-  border-radius: 12px;
+  border-radius: 10px;
 
   background: #ffffff;
-
   color: #334155;
 
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 
   outline: none;
 
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .solar-form-body input::placeholder {
@@ -201,6 +207,8 @@ margin-top:60px;
 
   box-shadow:
     0 0 0 3px rgba(30, 77, 143, 0.10);
+
+  background: #ffffff;
 }
 
 
@@ -212,7 +220,7 @@ margin-top:60px;
   display: flex;
   flex-direction: column;
 
-  gap: 9px;
+  gap: 7px;
 }
 
 .form-group label {
@@ -220,8 +228,7 @@ margin-top:60px;
 
   color: #526174;
 
-  font-size: 0.78rem;
-
+  font-size: 0.76rem;
   line-height: 1.3;
 
   font-weight: 600;
@@ -244,22 +251,19 @@ margin-top:60px;
 
 .bill-options button {
   min-width: 0;
-  min-height: 48px;
+  min-height: 44px;
 
   padding: 6px 5px;
 
   border: 1px solid #dce4ee;
-
-  border-radius: 10px;
+  border-radius: 9px;
 
   background: #ffffff;
-
   color: #475569;
 
   font-family: inherit;
 
-  font-size: 0.72rem;
-
+  font-size: 0.70rem;
   line-height: 1.2;
 
   font-weight: 600;
@@ -275,15 +279,12 @@ margin-top:60px;
 
 .bill-options button:hover {
   background: #f8fafc;
-
   border-color: #bfcddd;
 }
 
 .bill-options button.active {
   background: #1e4d8f;
-
   border-color: #1e4d8f;
-
   color: #ffffff;
 }
 
@@ -302,9 +303,8 @@ margin-top:60px;
 
   color: #64748b;
 
-  font-size: 0.69rem;
-
-  line-height: 1.45;
+  font-size: 0.67rem;
+  line-height: 1.4;
 }
 
 .checkbox-group input {
@@ -329,23 +329,22 @@ margin-top:60px;
 
 .submit-btn {
   width: 100%;
+
   align-self: center;
 
-  min-height: 50px;
-  padding: 12px 16px;
+  min-height: 48px;
+
+  padding: 11px 16px;
 
   border: none;
-
-  border-radius: 10px;
+  border-radius: 9px;
 
   background: #1e4d8f;
-
   color: #ffffff;
 
   font-family: inherit;
 
-  font-size: 0.88rem;
-
+  font-size: 0.84rem;
   font-weight: 750;
 
   line-height: 1.2;
@@ -384,8 +383,10 @@ margin-top:60px;
    ========================================================= */
 
 @media (min-width: 1400px) {
+
   .hero__content-wrapper {
     min-height: 760px;
+    grid-template-columns: 55% 45%;
   }
 
   .hero__image-panel {
@@ -393,27 +394,27 @@ margin-top:60px;
   }
 
   .hero__content-panel {
-    padding-left: 4.5%;
-    padding-right: 4.5%;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 
   .solar-form-card {
-    max-width: 640px;
-
-    padding: 28px 30px;
+    max-width: 620px;
+    padding: 26px 30px;
   }
 }
 
 
 /* =========================================================
-   TABLET
+   TABLET / SMALL DESKTOP
    ========================================================= */
 
 @media (max-width: 1100px) {
+
   .hero__content-wrapper {
     min-height: 650px;
 
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 52% 48%;
   }
 
   .hero__image-panel {
@@ -421,22 +422,28 @@ margin-top:60px;
   }
 
   .hero__content-panel {
-    padding: 30px 4%;
+    padding: 25px 3%;
+  }
+
+  .hero__form-section {
+    max-width: 100%;
   }
 
   .solar-form-card {
-    padding: 30px 28px;
+    max-width: 100%;
 
-    border-radius: 18px;
+    padding: 24px 22px;
+
+    border-radius: 16px;
   }
 
   .solar-form-header h3 {
-    font-size: 1.55rem;
+    font-size: 1.45rem;
   }
 
   .solar-form-body input[type="text"],
   .solar-form-body input[type="tel"] {
-    height: 54px;
+    height: 50px;
   }
 
   .bill-options {
@@ -444,11 +451,11 @@ margin-top:60px;
   }
 
   .bill-options button {
-    min-height: 44px;
+    min-height: 43px;
   }
 
   .submit-btn {
-    min-height: 54px;
+    min-height: 50px;
   }
 }
 
@@ -458,46 +465,75 @@ margin-top:60px;
    ========================================================= */
 
 @media (max-width: 900px) {
-  .hero__content-wrapper {
-    display: flex;
 
+  .hero {
+    overflow: visible;
+  }
+
+  .hero__content-wrapper {
+    width: 100%;
+
+    display: flex;
     flex-direction: column;
 
     min-height: auto;
   }
 
-  /*
-    IMAGE FIRST
-  */
+
+  /* -------------------------------------------------------
+     IMAGE FIRST
+     ------------------------------------------------------- */
+
   .hero__image-panel {
     width: 100%;
 
-    min-height: 420px;
-
-    height: 420px;
+    height: auto;
+    min-height: 0;
 
     order: 1;
+
+    display: block;
+
+    background: #dce8f5;
   }
 
-  /*
-    FORM SECOND
-  */
+  .hero__image-panel img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center center;
+  }
+
+
+  /* -------------------------------------------------------
+     FORM SECOND
+     ------------------------------------------------------- */
+
   .hero__content-panel {
     width: 100%;
 
     order: 2;
 
-    padding: 40px 6%;
+    padding: 32px 6%;
+
+    background: #eef4fb;
   }
 
   .hero__form-section {
+    width: 100%;
     max-width: 700px;
+
+    margin: 0 auto;
   }
 
   .solar-form-card {
+    width: 100%;
     max-width: 700px;
 
-    padding: 32px;
+    padding: 28px;
   }
 }
 
@@ -507,6 +543,7 @@ margin-top:60px;
    ========================================================= */
 
 @media (max-width: 600px) {
+
   .hero {
     width: 100%;
 
@@ -527,28 +564,33 @@ margin-top:60px;
 
   /* -------------------------------------------------------
      MOBILE IMAGE
+     IMPORTANT: DO NOT FORCE HEIGHT
      ------------------------------------------------------- */
 
   .hero__image-panel {
     width: 100%;
 
-    height: 320px;
-
-    min-height: 320px;
+    height: auto;
+    min-height: 0;
 
     order: 1;
+
+    display: block;
+
+    overflow: hidden;
+
+    background: #dce8f5;
   }
 
   .hero__image-panel img {
     width: 100%;
-    height: 100%;
-     margin-top:40px;
-    object-fit: ;
+    height: auto;
 
-    /*
-      Change this to center top if the important
-      part of your image is at the top.
-    */
+    margin: 0;
+
+    display: block;
+
+    object-fit: contain;
     object-position: center center;
   }
 
@@ -560,7 +602,7 @@ margin-top:60px;
   .hero__content-panel {
     width: 100%;
 
-    padding: 24px 14px 32px;
+    padding: 22px 12px 30px;
 
     background: #eef4fb;
 
@@ -585,9 +627,9 @@ margin-top:60px;
 
     max-width: 100%;
 
-    padding: 24px 17px;
+    padding: 22px 16px;
 
-    border-radius: 16px;
+    border-radius: 15px;
 
     box-shadow:
       0 12px 30px rgba(15, 23, 42, 0.10);
@@ -599,7 +641,7 @@ margin-top:60px;
      ------------------------------------------------------- */
 
   .solar-form-header {
-    margin-bottom: 19px;
+    margin-bottom: 17px;
 
     text-align: left;
   }
@@ -607,13 +649,13 @@ margin-top:60px;
   .solar-form-header h3 {
     margin-bottom: 6px;
 
-    font-size: 1.3rem;
+    font-size: 1.28rem;
 
     line-height: 1.25;
   }
 
   .solar-form-header p {
-    font-size: 0.78rem;
+    font-size: 0.77rem;
 
     line-height: 1.45;
   }
@@ -624,7 +666,7 @@ margin-top:60px;
      ------------------------------------------------------- */
 
   .solar-form-body {
-    gap: 13px;
+    gap: 12px;
   }
 
 
@@ -634,27 +676,32 @@ margin-top:60px;
 
   .solar-form-body input[type="text"],
   .solar-form-body input[type="tel"] {
-    height: 50px;
+    height: 49px;
 
     padding: 0 13px;
 
     border-radius: 9px;
 
-    font-size: 0.86rem;
+    font-size: 0.85rem;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE FORM GROUP
+     ------------------------------------------------------- */
+
+  .form-group {
+    gap: 7px;
+  }
+
+  .form-group label {
+    font-size: 0.73rem;
   }
 
 
   /* -------------------------------------------------------
      MOBILE BILL OPTIONS
      ------------------------------------------------------- */
-
-  .form-group {
-    gap: 8px;
-  }
-
-  .form-group label {
-    font-size: 0.74rem;
-  }
 
   .bill-options {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -669,7 +716,7 @@ margin-top:60px;
 
     border-radius: 8px;
 
-    font-size: 0.66rem;
+    font-size: 0.65rem;
   }
 
 
@@ -680,7 +727,7 @@ margin-top:60px;
   .checkbox-group {
     gap: 7px;
 
-    font-size: 0.66rem;
+    font-size: 0.65rem;
 
     line-height: 1.4;
   }
@@ -691,13 +738,13 @@ margin-top:60px;
      ------------------------------------------------------- */
 
   .submit-btn {
-    min-height: 50px;
+    min-height: 49px;
 
     padding: 10px 12px;
 
     border-radius: 9px;
 
-    font-size: 0.74rem;
+    font-size: 0.73rem;
   }
 }
 
@@ -707,10 +754,18 @@ margin-top:60px;
    ========================================================= */
 
 @media (max-width: 380px) {
-  .hero__image-panel {
-    height: 280px;
 
-    min-height: 280px;
+  .hero__image-panel {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .hero__image-panel img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
   }
 
   .hero__content-panel {
@@ -719,7 +774,7 @@ margin-top:60px;
 
   .solar-form-card {
     padding: 20px 14px;
-
+   margin-top:40px;
     border-radius: 14px;
   }
 
@@ -727,11 +782,38 @@ margin-top:60px;
     font-size: 1.18rem;
   }
 
+  .solar-form-header p {
+    font-size: 0.74rem;
+  }
+
+  .solar-form-body {
+    gap: 11px;
+  }
+
+  .solar-form-body input[type="text"],
+  .solar-form-body input[type="tel"] {
+    height: 47px;
+
+    font-size: 0.82rem;
+  }
+
+  .bill-options {
+    gap: 6px;
+  }
+
   .bill-options button {
+    min-height: 40px;
+
     font-size: 0.61rem;
   }
 
+  .checkbox-group {
+    font-size: 0.62rem;
+  }
+
   .submit-btn {
+    min-height: 47px;
+
     font-size: 0.68rem;
   }
 }

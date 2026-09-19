@@ -21,7 +21,7 @@ import PageHero from "../components/PageHero";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import ProcessTimeline from "../components/ProcessTimeline";
-
+import "../styles/ongrid.css";
 const steps = [
   {
     title: "Site Assessment",
@@ -128,8 +128,7 @@ export default function OnGridSolar() {
                 </div>
 
                 <span className="solution-card__icon">
-                  <Sun size={22} />
-                </span>
+                                  </span>
 
                 <h3>Generate</h3>
 
@@ -152,7 +151,7 @@ export default function OnGridSolar() {
                 </div>
 
                 <span className="solution-card__icon">
-                  <PlugZap size={22} />
+                 
                 </span>
 
                 <h3>Use Solar Power</h3>
@@ -176,7 +175,7 @@ export default function OnGridSolar() {
                 </div>
 
                 <span className="solution-card__icon">
-                  <Gauge size={22} />
+                  
                 </span>
 
                 <h3>Export Surplus</h3>
@@ -375,7 +374,7 @@ export default function OnGridSolar() {
               <div className="bracket-frame">
 
                 <span className="solution-card__icon">
-                  <Cpu size={22} />
+                 
                 </span>
 
                 <h3>System Optimisation</h3>
@@ -411,44 +410,9 @@ export default function OnGridSolar() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="section section--light">
-        <div className="container">
-
-          <SectionTitle
-            eyebrow="OUR PROCESS"
-            title="From Site Visit to Grid Connection"
-            description="A structured project process designed to make your transition to solar simple, transparent and reliable."
-          />
-
-          <ProcessTimeline steps={steps} />
-
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="cta-band">
-        <div className="container">
-
-          <h2>
-            Ready to Make the Switch to Solar?
-          </h2>
-
-          <p>
-            Discover the right on-grid solar solution for your home,
-            commercial property or industrial facility.
-          </p>
-
-          <NavLink
-            to="/solar-calculator"
-            className="btn btn--primary"
-          >
-            Calculate Your Solar Potential
-            <ArrowRight />
-          </NavLink>
-
-        </div>
-      </section>
+      
+      
+    
     </div>
   );
 }

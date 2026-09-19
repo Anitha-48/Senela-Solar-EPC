@@ -1,11 +1,8 @@
-
 import { NavLink } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
-  BatteryFull,
   MapPinOff,
-  Radio,
   Tractor,
   Building2,
   Home,
@@ -15,10 +12,12 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { motion } from "framer-motion";
+
 import PageHero from "../components/PageHero";
 import SectionTitle from "../components/SectionTitle";
-import ScrollReveal from "../components/ScrollReveal";
 import ProcessTimeline from "../components/ProcessTimeline";
+
+import "../styles/offgrid.css";
 
 const steps = [
   {
@@ -60,21 +59,6 @@ const sectionReveal = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
-const fadeLeft = {
-  hidden: {
-    opacity: 0,
-    x: -80,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
     transition: {
       duration: 0.8,
       ease: "easeOut",
@@ -158,10 +142,17 @@ const listReveal = {
 
 export default function OffGridSolar() {
   return (
-    <>
-      <PageHero
-        
-      />
+    <div className="off-grid-page">
+
+      {/* =====================================================
+          PAGE HERO
+      ===================================================== */}
+
+      <PageHero />
+
+      {/* =====================================================
+          OVERVIEW
+      ===================================================== */}
 
       <motion.section
         className="section"
@@ -200,7 +191,9 @@ export default function OffGridSolar() {
             viewport={{ once: false, amount: 0.3 }}
           >
             <div className="eyebrow-line">OVERVIEW</div>
+
             <h2>Power Independent of the Grid</h2>
+
             <p>
               Off-grid solar systems combine solar panels with battery storage
               to provide a fully independent power supply — no grid connection
@@ -215,6 +208,7 @@ export default function OffGridSolar() {
               being oversized or undersized for the application.
             </p>
           </motion.div>
+
         </div>
       </motion.section>
 
@@ -245,6 +239,7 @@ export default function OffGridSolar() {
           >
 
             {/* Generate & Store */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -257,6 +252,7 @@ export default function OffGridSolar() {
                   stiffness: 250,
                 }}
               >
+
                 <motion.div
                   className="how-it-works-card__media"
                   whileHover={{ scale: 1.04 }}
@@ -276,9 +272,7 @@ export default function OffGridSolar() {
                     duration: 2.5,
                     repeat: Infinity,
                   }}
-                >
-                  <BatteryFull size={22} />
-                </motion.span>
+                />
 
                 <h3>Generate &amp; Store</h3>
 
@@ -286,10 +280,12 @@ export default function OffGridSolar() {
                   Solar panels charge a battery bank sized for your daily load
                   and required backup duration.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Manage */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -298,6 +294,7 @@ export default function OffGridSolar() {
                   scale: 1.02,
                 }}
               >
+
                 <motion.div
                   className="how-it-works-card__media"
                   whileHover={{ scale: 1.04 }}
@@ -317,9 +314,7 @@ export default function OffGridSolar() {
                     duration: 3,
                     repeat: Infinity,
                   }}
-                >
-                  <Radio size={22} />
-                </motion.span>
+                />
 
                 <h3>Manage</h3>
 
@@ -327,10 +322,12 @@ export default function OffGridSolar() {
                   A charge controller and inverter manage power flow and
                   protect the battery bank from over-discharge.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Supply */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -339,6 +336,7 @@ export default function OffGridSolar() {
                   scale: 1.02,
                 }}
               >
+
                 <motion.div
                   className="how-it-works-card__media"
                   whileHover={{ scale: 1.04 }}
@@ -358,9 +356,7 @@ export default function OffGridSolar() {
                     duration: 2,
                     repeat: Infinity,
                   }}
-                >
-                  <CheckCircle2 size={22} />
-                </motion.span>
+                />
 
                 <h3>Supply</h3>
 
@@ -368,6 +364,7 @@ export default function OffGridSolar() {
                   Stored energy powers your site independently of grid
                   availability, day or night.
                 </p>
+
               </motion.div>
             </motion.div>
 
@@ -402,6 +399,7 @@ export default function OffGridSolar() {
           >
 
             {/* Remote Homes */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -410,23 +408,30 @@ export default function OffGridSolar() {
                   scale: 1.03,
                 }}
               >
+
                 <motion.span
                   className="solution-card__icon"
                   animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                  }}
                 >
                   <Home size={22} />
                 </motion.span>
 
                 <h3>Remote Homes</h3>
+
                 <p>
                   Reliable solar power for homes in areas without grid
                   connectivity.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Rural */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -435,23 +440,30 @@ export default function OffGridSolar() {
                   scale: 1.03,
                 }}
               >
+
                 <motion.span
                   className="solution-card__icon"
                   animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                  }}
                 >
                   <Tractor size={22} />
                 </motion.span>
 
                 <h3>Rural &amp; Agricultural</h3>
+
                 <p>
                   Power for farms, irrigation systems, agricultural equipment,
                   and rural facilities.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Telecom */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -460,23 +472,30 @@ export default function OffGridSolar() {
                   scale: 1.03,
                 }}
               >
+
                 <motion.span
                   className="solution-card__icon"
                   animate={{ scale: [1, 1.12, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
                 >
                   <Wifi size={22} />
                 </motion.span>
 
                 <h3>Telecom Towers</h3>
+
                 <p>
                   Reliable independent power for telecom and communication
                   infrastructure.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Remote Industries */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -485,23 +504,30 @@ export default function OffGridSolar() {
                   scale: 1.03,
                 }}
               >
+
                 <motion.span
                   className="solution-card__icon"
                   animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 2.8, repeat: Infinity }}
+                  transition={{
+                    duration: 2.8,
+                    repeat: Infinity,
+                  }}
                 >
                   <Factory size={22} />
                 </motion.span>
 
                 <h3>Remote Industries</h3>
+
                 <p>
                   Energy solutions for construction sites, mining areas, and
                   remote industrial locations.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Schools */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -510,23 +536,30 @@ export default function OffGridSolar() {
                   scale: 1.03,
                 }}
               >
+
                 <motion.span
                   className="solution-card__icon"
                   animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2.4, repeat: Infinity }}
+                  transition={{
+                    duration: 2.4,
+                    repeat: Infinity,
+                  }}
                 >
                   <Hospital size={22} />
                 </motion.span>
 
                 <h3>Schools &amp; Healthcare</h3>
+
                 <p>
                   Dependable electricity for schools, clinics, hospitals, and
                   community facilities.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Lighting */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
@@ -535,22 +568,28 @@ export default function OffGridSolar() {
                   scale: 1.03,
                 }}
               >
+
                 <motion.span
                   className="solution-card__icon"
                   animate={{
                     scale: [1, 1.15, 1],
                     rotate: [0, 5, -5, 0],
                   }}
-                  transition={{ duration: 2.5, repeat: Infinity }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                  }}
                 >
                   <Lightbulb size={22} />
                 </motion.span>
 
                 <h3>Street Lighting</h3>
+
                 <p>
                   Standalone solar-powered lighting for roads, campuses,
                   villages, and public spaces.
                 </p>
+
               </motion.div>
             </motion.div>
 
@@ -577,6 +616,7 @@ export default function OffGridSolar() {
           />
 
           <motion.ul className="two-col-list">
+
             {[
               "Reliable power in remote and rural locations",
               "Independence from grid outages and instability",
@@ -585,14 +625,19 @@ export default function OffGridSolar() {
               "Scalable for homes, telecom sites or facilities",
               "Reduced dependence on diesel generator backup",
             ].map((item, index) => (
+
               <motion.li
                 key={item}
                 custom={index}
                 variants={listReveal}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{
+                  once: false,
+                  amount: 0.2,
+                }}
               >
+
                 <motion.span
                   animate={{
                     scale: [1, 1.15, 1],
@@ -607,8 +652,11 @@ export default function OffGridSolar() {
                 </motion.span>
 
                 {item}
+
               </motion.li>
+
             ))}
+
           </motion.ul>
 
         </div>
@@ -641,11 +689,16 @@ export default function OffGridSolar() {
           >
 
             {/* Remote Sites */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
-                whileHover={{ y: -12, scale: 1.03 }}
+                whileHover={{
+                  y: -12,
+                  scale: 1.03,
+                }}
               >
+
                 <motion.div
                   className="application-card__media"
                   whileHover={{ scale: 1.05 }}
@@ -659,24 +712,34 @@ export default function OffGridSolar() {
                 <motion.span
                   className="solution-card__icon"
                   animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                  }}
                 >
                   <MapPinOff size={22} />
                 </motion.span>
 
                 <h3>Remote Sites</h3>
+
                 <p>
                   Locations without practical access to grid infrastructure.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Rural Infrastructure */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
-                whileHover={{ y: -12, scale: 1.03 }}
+                whileHover={{
+                  y: -12,
+                  scale: 1.03,
+                }}
               >
+
                 <motion.div
                   className="application-card__media"
                   whileHover={{ scale: 1.05 }}
@@ -689,26 +752,38 @@ export default function OffGridSolar() {
 
                 <motion.span
                   className="solution-card__icon"
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
+                  animate={{
+                    rotate: [0, 5, -5, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                  }}
                 >
                   <Tractor size={22} />
                 </motion.span>
 
                 <h3>Rural Infrastructure</h3>
+
                 <p>
                   Agricultural and rural facilities needing independent power
                   supply.
                 </p>
+
               </motion.div>
             </motion.div>
 
             {/* Critical Backup */}
+
             <motion.div variants={cardReveal}>
               <motion.div
                 className="bracket-frame"
-                whileHover={{ y: -12, scale: 1.03 }}
+                whileHover={{
+                  y: -12,
+                  scale: 1.03,
+                }}
               >
+
                 <motion.div
                   className="application-card__media"
                   whileHover={{ scale: 1.05 }}
@@ -721,17 +796,24 @@ export default function OffGridSolar() {
 
                 <motion.span
                   className="solution-card__icon"
-                  animate={{ scale: [1, 1.12, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                  animate={{
+                    scale: [1, 1.12, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
                 >
                   <Building2 size={22} />
                 </motion.span>
 
                 <h3>Critical Backup</h3>
+
                 <p>
                   Facilities requiring guaranteed backup power independent of
                   grid reliability.
                 </p>
+
               </motion.div>
             </motion.div>
 
@@ -739,70 +821,8 @@ export default function OffGridSolar() {
         </div>
       </motion.section>
 
-      {/* =====================================================
-          PROCESS
-      ===================================================== */}
-
-      <motion.section
-        className="section section--light"
-        variants={sectionReveal}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.15 }}
-      >
-        <div className="container">
-
-          <SectionTitle
-            eyebrow="OUR PROCESS"
-            title="From Load Study to Independent Power"
-          />
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.2 }}
-          >
-            <ProcessTimeline steps={steps} />
-          </motion.div>
-
-        </div>
-      </motion.section>
-
-      {/* =====================================================
-          CTA
-      ===================================================== */}
-
-      <motion.section
-        className="cta-band"
-        initial={{ opacity: 0, scale: 0.96 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: false, amount: 0.25 }}
-      >
-        <div className="container">
-
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: false }}
-          >
-            Need a Reliable Off-grid Power Solution?
-          </motion.h2>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            <NavLink to="/contact" className="btn btn--primary">
-              Talk to Our Engineers <ArrowRight />
-            </NavLink>
-          </motion.div>
-
-        </div>
-      </motion.section>
-    </>
+     
+      
+    </div>
   );
 }
-

@@ -2,6 +2,7 @@
 export const navigation = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
+  { label: "EPC", path: "/epc" },
   {
     label: "Solar Solutions",
     path: "/solar-solutions",

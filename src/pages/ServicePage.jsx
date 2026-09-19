@@ -717,8 +717,8 @@ export default function ServicePage() {
           color: white;
 
           font-family:
-            Georgia,
-            "Times New Roman",
+            Inter,
+            "Inter",
             serif;
 
           font-size:
@@ -819,7 +819,7 @@ export default function ServicePage() {
 
           color: #123b5a;
 
-          font-family: Georgia, serif;
+          font-family: "Inter", serif;
 
           font-size:
             clamp(40px, 4.5vw, 60px);

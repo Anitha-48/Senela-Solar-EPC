@@ -649,6 +649,11 @@
   flex-shrink: 0;
 }
 
+.home-solution-card__body .btn {
+  width: min(220px, 100%);
+  justify-content: center;
+}
+
 @media (max-width: 992px) {
   .home-solution-card {
     grid-template-columns: 1fr;
@@ -717,7 +722,7 @@
   background: var(--light-blue);
   color: var(--pro-blue);
   border-radius: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .service-card h3 {
   font-size: 1.25rem;

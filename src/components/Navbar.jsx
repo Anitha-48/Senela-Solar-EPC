@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, Zap, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, X, Zap, ArrowRight, Weight } from "lucide-react";
 import { navigation } from "../config/navigation";
 import { siteConfig } from "../config/siteConfig";
 
@@ -50,9 +50,9 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <NavLink to="/contact" className="btn btn--primary btn--sm navbar__cta">
-            Get Solar Estimate <ArrowRight size={16} />
-          </NavLink>
+          {/* <p style={{ fontFamily: "Inter", fontWeight: 700 }}>
+            Call Us: 9585901999
+          </p> */}
 
           <button className="navbar__hamburger menu-toggle" onClick={() => setMobileOpen(true)} aria-label="Open menu">
             <Menu size={26} />

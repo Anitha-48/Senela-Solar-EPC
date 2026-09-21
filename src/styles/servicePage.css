@@ -697,33 +697,31 @@ body {
 @media (max-width: 600px) {
 
   .service-hero {
-    height: 440px;
+    height: 500px;
   }
 
   .hero-content {
-    padding: 26px 20px;
+    padding: 35px 24px;
   }
 
   .hero-content h1 {
-    font-size: 38px;
-    line-height: 1.08;
+    font-size: 44px;
   }
 
   .hero-content p {
     font-size: 13px;
-    line-height: 1.7;
   }
 
   .service-overview {
-    padding: 46px 20px;
+    padding: 65px 24px;
   }
 
   .overview-image {
-    height: 260px;
+    height: 290px;
   }
 
   .capabilities {
-    padding: 46px 20px;
+    padding: 65px 24px;
   }
 
   .capability-grid {
@@ -748,7 +746,7 @@ body {
   }
 
   .service-cta {
-    padding: 44px 20px;
+    padding: 60px 24px;
   }
 
   .cta-button {

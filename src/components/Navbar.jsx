@@ -51,15 +51,9 @@ export default function Navbar() {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
   }, [mobileOpen]);
 
-  useEffect(() => {
-    const language = i18n.resolvedLanguage || "en";
-    document.documentElement.lang = language;
-    document.documentElement.setAttribute("data-language", language);
-  }, [i18n.resolvedLanguage]);
-
   return (
     <>
-      <header className={`navbar ${scrolled ? "is-scrolled" : ""} ${i18n.resolvedLanguage === "ta" ? "navbar--tamil" : ""}`} lang={i18n.resolvedLanguage}>
+      <header className={`navbar ${scrolled ? "is-scrolled" : ""} ${i18n.resolvedLanguage === "ta" ? "navbar--tamil" : ""}`}>
         <div className="navbar__inner">
           <NavLink to="/" className="navbar__logo">
             <img src="/src/assets/images/logo.jpeg" alt={t("accessibility.logo")} className="navbar__logo-img" />
@@ -101,7 +95,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      <div className={`mobile-menu ${mobileOpen ? "is-open" : ""}`} role="dialog" aria-modal="true" lang={i18n.resolvedLanguage}>
+      <div className={`mobile-menu ${mobileOpen ? "is-open" : ""}`} role="dialog" aria-modal="true">
         <div className="mobile-menu__header">
           <span className="navbar__logo">
             <img src="/src/assets/images/logo.jpeg" alt={t("accessibility.logo")} className="navbar__logo-img" />

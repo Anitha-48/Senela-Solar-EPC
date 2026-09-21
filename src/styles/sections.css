@@ -2270,27 +2270,6 @@
 
 @media (max-width: 768px) {
 
-  .section--light:has(.epc-flow-container)::before {
-    width: 220px;
-    height: 220px;
-    top: -100px;
-    right: 0;
-  }
-
-  .impact-section::before {
-    width: 220px;
-    height: 220px;
-    top: -100px;
-    right: 0;
-  }
-
-  .impact-section::after {
-    width: 180px;
-    height: 180px;
-    left: 0;
-    bottom: -60px;
-  }
-
   .section {
     padding: 65px 0;
   }

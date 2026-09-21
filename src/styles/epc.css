@@ -1303,15 +1303,15 @@
 @media (max-width: 700px) {
 
   .epc-page .container {
-    width: min(100% - 24px, 1180px);
+    width: min(100% - 30px, 1180px);
   }
 
   .epc-page .section {
-    padding: 46px 0;
+    padding: 65px 0;
   }
 
   .epc-hero {
-    min-height: 560px;
+    min-height: 680px;
     background-position: center center;
     background-size: cover;
   }
@@ -1326,9 +1326,9 @@
   }
 
   .epc-hero__content {
-    width: min(100% - 24px, 520px);
-    padding-top: 60px;
-    padding-bottom: 126px;
+    width: min(100% - 30px, 520px);
+    padding-top: 78px;
+    padding-bottom: 170px;
   }
 
   .epc-hero h1 {

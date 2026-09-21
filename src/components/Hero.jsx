@@ -5,10 +5,10 @@ import BgImage from "../assets/images/solar1.bg.jpg";
 import "../styles/hero.css";
 
 export default function Hero() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <section className="hero hero--split" lang={i18n.resolvedLanguage}>
+    <section className="hero hero--split">
       <div className="hero__inner">
         <div className="hero__content-wrapper hero__content-wrapper--overlay">
           <div className="hero__image-panel">

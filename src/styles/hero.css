@@ -31,14 +31,12 @@
    ========================================================= */
 
 .hero__image-panel {
-  position: sticky;
-  top: 80px;
+  position: relative;
   width: 100%;
   height: var(--hero-height);
   min-height: var(--hero-height);
   overflow: hidden;
-  background: #0b2a5b;
-  z-index: 1;
+  background: #010408;
 }
 
 .hero__image-panel > img {
@@ -112,7 +110,13 @@
 
 .hero .hero__headline span {
   display: block;
-  color: rgb(27, 27, 126) !important;
+  max-width: 100%;
+  background: linear-gradient(90deg, #eaf8ff 0%, #c2c9cc 18%, #000407 42%, #0d4fa8 68%, #051f4c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 /* the last line gets the accent colour */

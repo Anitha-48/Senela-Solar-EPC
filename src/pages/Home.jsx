@@ -143,33 +143,7 @@ export default function Home() {
 
 
 
-      {/* Engineering & EPC Services */}
-      <section className="section" id="services">
-        <div className="container">
-          <SectionTitle
-            eyebrow={t("home.servicesEyebrow")}
-            title={t("home.infrastructureTitle")}
-            description={t("home.infrastructureDescription")}
-          />
-          <div className="card-grid card-grid--3">
-            {Object.entries(services).map(([slug, s], i) => {
-              const translated = t(`serviceDetails.${serviceKeyMap[slug]}`, { returnObjects: true });
-              return (
-              <ServiceCard
-                key={slug}
-                icon={s.icon}
-                title={translated.shortTitle}
-                description={translated.heroSubtitle}
-                path={`/services/${slug}`}
-                delay={(i % 3) + 1}
-              />
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-
+      
 
            
 

@@ -115,10 +115,6 @@
   color: rgb(27, 27, 126) !important;
 }
 
-/* the last line gets the accent colour */
-.hero .hero__headline span:last-child {
-  color:  !important;
-}
 
 .hero__price-line {
   margin: 0 auto 12px;

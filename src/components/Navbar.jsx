@@ -62,7 +62,7 @@ export default function Navbar() {
       <header className={`navbar ${scrolled ? "is-scrolled" : ""} ${i18n.resolvedLanguage === "ta" ? "navbar--tamil" : ""}`} lang={i18n.resolvedLanguage}>
         <div className="navbar__inner">
           <NavLink to="/" className="navbar__logo">
-            <img src="/src/assets/images/logo.jpeg" alt={t("accessibility.logo")} className="navbar__logo-img" />
+            <img src="../assets/images/Senela-logo.jpeg" alt={t("accessibility.logo")} className="navbar__logo-img" />
           </NavLink>
 
           <nav className="navbar__links" aria-label={t("nav.primary")}>
@@ -110,7 +110,7 @@ export default function Navbar() {
             <X size={26} />
           </button>
         </div>
-        <div className="mobile-menu__body">
+        <div className="mobile-menu__body"> 
           {navigation.map((item) => (
             <div key={item.label}>
               {item.children ? (

@@ -31,12 +31,14 @@
    ========================================================= */
 
 .hero__image-panel {
-  position: relative;
+  position: sticky;
+  top: 80px;
   width: 100%;
   height: var(--hero-height);
   min-height: var(--hero-height);
   overflow: hidden;
   background: #0b2a5b;
+  z-index: 1;
 }
 
 .hero__image-panel > img {

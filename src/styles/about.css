@@ -669,7 +669,7 @@
 @media (max-width: 768px) {
 
   .about-page .section {
-    padding: 65px 0;
+    padding: 46px 0;
   }
 
   .about-page .container {
@@ -786,18 +786,17 @@
 @media (max-width: 480px) {
 
   .about-page .section {
-    padding: 52px 0;
+    padding: 42px 0;
   }
 
   .about-page .container {
     width: 90%;
-    
   }
 
   .about-page .split-section__media img {
-    height: 280px;
+    height: 260px;
     object-fit: cover;
-    border-radius: ;
+    border-radius: 12px;
   }
 
   .about-page .split-section h2 {

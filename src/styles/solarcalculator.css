@@ -416,6 +416,36 @@
   color: var(--scal-ink);
 }
 
+@media (max-width: 720px) {
+  .scal {
+    margin: 18px auto;
+    padding: 18px 12px 28px;
+  }
+
+  .scal__header {
+    margin-bottom: 22px;
+  }
+
+  .scal__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .scal__form,
+  .scal__results {
+    position: static;
+  }
+
+  .scal__results {
+    min-height: auto;
+    padding: 20px 16px;
+  }
+
+  .scal__submit {
+    min-height: 48px;
+  }
+}
+
 
 /* ============================================================
    RESULT HERO

@@ -223,8 +223,12 @@
 
 @media (max-width: 700px) {
 
+  .contact-page {
+    padding-top: 20px;
+  }
+
   .contact-section {
-    padding: 55px 0;
+    padding: 45px 0;
   }
 
   .contact-layout {
@@ -267,8 +271,12 @@
 
 @media (max-width: 500px) {
 
+  .contact-page {
+    padding-top: 10px;
+  }
+
   .contact-section {
-    padding: 45px 0;
+    padding: 38px 0;
   }
 
   .contact-info h2 {

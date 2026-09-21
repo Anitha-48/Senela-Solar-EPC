@@ -653,8 +653,8 @@
   }
 
   .split-section__media img {
-    height: 300px;
-    margin-top: 40px;
+    height: 280px;
+    margin-top: 0;
   }
 
   .split-section h2 {
@@ -674,8 +674,8 @@
   }
 
   .detailed-solutions-grid {
-    gap: 22px;
-    margin-top: 32px;
+    gap: 18px;
+    margin-top: 22px;
   }
 
   .detailed-solution-card__media,
@@ -731,7 +731,7 @@
   }
 
   .split-section__media img {
-    height: 280px;
+    height: 250px;
   }
 
   .split-section h2 {

@@ -82,7 +82,6 @@
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
-
   text-align: center;
   color: #ffffff;
  
@@ -94,7 +93,6 @@
 
 .hero .hero__headline {
   margin: 0 0 18px;
-
   font-family: "Inter", sans-serif;
   /* font-size: clamp(32px, 3.6vw, 54px); */
   font-size: 44px;
@@ -102,9 +100,8 @@
   line-height: 1;
   letter-spacing: -1.2px;
   color: #ffffff !important;
-  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45), 0 4px 22px rgba(0, 0, 0, 0.55); */
+   /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45), 0 4px 22px rgba(0, 0, 0, 0.55); */
 }
-
 .hero .hero__headline span {
   display: block;
   color: rgb(27, 27, 126) !important;
@@ -113,13 +110,10 @@
 
 .hero__price-line {
   margin: 0 auto 12px;
-
   font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
-
-  color: ;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 

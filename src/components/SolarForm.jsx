@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import "../styles/solarform.css";
 
 const billOptions = [
   "Less than ₹1500",

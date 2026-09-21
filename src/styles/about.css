@@ -686,6 +686,8 @@
 
   .about-page .split-section__media img {
     height: 350px;
+    border-radius:1px;
+   
   }
 
   .about-page .split-section__media::before,
@@ -789,11 +791,13 @@
 
   .about-page .container {
     width: 90%;
+    
   }
 
   .about-page .split-section__media img {
     height: 280px;
-    border-radius: 14px;
+    object-fit: cover;
+    border-radius: ;
   }
 
   .about-page .split-section h2 {

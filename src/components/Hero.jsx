@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { Phone, ShieldCheck, Zap } from "lucide-react";
 import SolarForm from "./SolarForm";
-import BgImage from "../assets/images/solar-bg.jpeg";
+import BgImage from "../assets/images/solar1.bg.jpg";
+import "../styles/hero.css";
 
 export default function Hero() {
   const { t } = useTranslation();

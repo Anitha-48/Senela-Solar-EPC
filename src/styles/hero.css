@@ -1,522 +1,218 @@
 /* =========================================================
-   SOLAR HERO - SPLIT IMAGE + FORM
+   SOLAR EPC HERO
+   Left: consultation form | Center: text | Right: family
    ========================================================= */
 
-.hero {
-  position: relative;
+.hero--split {
+  --hero-height: 680px;
+  /* How far the photo is pushed to the right.
+     Bigger value = family moves further right. Try 6% to 16%. */
+  --hero-shift: 10%;
+
+  /* MOBILE: height of the photo area (form sits below it).
+     Taller = family appears lower, below the text. */
+  --hero-mobile-height: 740px;
+  /* MOBILE: which part of the photo is shown (0% = left, 100% = right) */
+  --hero-mobile-x: 88%;
+
   width: 100%;
   overflow: hidden;
-  font-family: "Inter", sans-serif;
-  background: #eef4fb;
+  background: #0b2a5b; /* dark blue, so no white ever shows */
 }
 
-.hero__inner {
-  width: 100%;
-}
-
-.hero__content-wrapper {
-  width: 100%;
-  min-height: 760px;
-  display: grid;
-
-  /*
-    LEFT  = 57%
-    RIGHT = 43%
-  */
-  grid-template-columns: 57% 43%;
-
-  align-items: stretch;
-}
-
+.hero__inner,
 .hero__content-wrapper--overlay {
+  width: 100%;
   display: block;
 }
 
 /* =========================================================
-   LEFT IMAGE PANEL
+   HERO IMAGE  (fixed height, fills the whole panel)
    ========================================================= */
 
 .hero__image-panel {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: calc(100vh - 100px);
-  background-color: black;
+  height: var(--hero-height);
+  min-height: var(--hero-height);
   overflow: hidden;
-  background: #dfeafc;
+  background: #0b2a5b;
 }
 
-.hero__image-panel img {
-  display: block;
-  width: 100%;
+.hero__image-panel > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* image is a little wider than the panel, anchored at the left,
+     so everything in the photo (the family) slides to the right */
+  width: calc(100% + var(--hero-shift));
+  max-width: none;
   height: 100%;
-  margin-top: -50px;
-  object-fit: contain;
-  object-position: center center;
-  filter: brightness(0.75) saturate(0.9);
+
+  display: block;
+  object-fit: cover;
+  object-position: left 40%;
 }
+
+/* =========================================================
+   OVERLAY GRID:  [ form ] [ text ] [ family space ]
+   ========================================================= */
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 410px minmax(0, 1fr) minmax(0, 0.6fr);
+  grid-template-areas: "form text family";
+  align-items: center;
   gap: 30px;
-  padding: 36px 38px 30px 38px;
-  z-index: 1;
-  color: #fff;
-  background: rgba(10, 22, 33, 0.18);
+
+  padding: 35px 40px;
+  background: transparent;
+}
+
+.hero__form-floating {
+  grid-area: form;
+  width: 100%;
+  max-width: 410px;
+  margin: 0;
 }
 
 .hero__text-panel {
-  flex: 1.3;
-  max-width: 820px;
-  padding-top: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  grid-area: text;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+
   text-align: center;
+  color: #ffffff;
 }
 
-.hero__headline {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.04em;
-  font-weight: 900;
-  font-size: clamp(2rem, 2.8vw, 4.2rem);
-  line-height: 0.96;
-  letter-spacing: -0.05em;
-  text-transform: none;
-  color: rgba(255, 255, 255, 0.96);
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+/* =========================================================
+   TEXT  (colors forced so global h1 styles can't turn it blue)
+   ========================================================= */
+
+.hero .hero__headline {
+  margin: 0 0 18px;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(32px, 3.6vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+
+  color: #ffffff !important;
+  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45), 0 4px 22px rgba(0, 0, 0, 0.55); */
+}
+
+.hero .hero__headline span {
+  display: block;
+  color: rgb(27, 27, 126) !important;
+}
+
+/* the last line gets the accent colour */
+.hero .hero__headline span:last-child {
+  color:  !important;
 }
 
 .hero__price-line {
-  margin-top: 16px;
-  font-size: clamp(1.05rem, 1.5vw, 1.8rem);
-  line-height: 1.2;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.97);
-  letter-spacing: -0.03em;
-  text-align: center;
+  margin: 0 auto 12px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .hero__price-line span {
-  color: #d9f1ff;
+  font-weight: 800;
+  color:black ;
 }
 
 .hero__subtext {
-  margin-top: 10px;
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: clamp(0.92rem, 1vw, 1.2rem);
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.82);
-  font-weight: 500;
-  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 22px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
+
+/* =========================================================
+   FEATURE PILLS
+   ========================================================= */
 
 .hero__feature-row {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 16px;
-  justify-content: center;
+  margin-bottom: 24px;
 }
 
 .hero__feature-pill {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
-  padding: 10px 12px;
-  font-size: 0.8rem;
-  line-height: 1.2;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.96);
-  text-align: center;
+  gap: 7px;
+
+  padding: 9px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.14);
+
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-.hero__feature-icon {
-  color: #ffd76a;
-  font-size: 0.9rem;
-}
+/* =========================================================
+   CALL BUTTON
+   ========================================================= */
 
 .hero__contact-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 18px;
-  padding: 14px 22px;
-  border-radius: 12px;
-  background: rgba(9, 111, 191, 0.78);
-  color: white;
+  gap: 9px;
+
+  padding: 13px 26px;
+
+  border-radius: 6px;
+  background: #1565c0;
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-  box-shadow: 0 10px 20px rgba(9, 111, 191, 0.18);
-  align-self: center;
+
+  box-shadow: 0 8px 22px rgba(21, 101, 192, 0.45);
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.hero__form-floating {
-  width: min(430px, 36vw);
-  min-width: 300px;
-  z-index: 2;
+.hero__contact-btn:hover {
+  background: #0b3d91;
+  transform: translateY(-2px);
 }
 
-.hero__form-floating .solar-form-card {
-  margin-top: 0;
-  border-radius: 18px;
-  padding: 22px 20px;
-  max-width: 100%;
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.2);
-}
-
-.hero__form-floating .solar-form-header h3 {
-  font-size: clamp(1.2rem, 1.4vw, 1.7rem);
-}
-
-.hero__form-floating .solar-form-header p {
-  font-size: 0.8rem;
-}
-
-.hero__form-floating .solar-form-body input[type="text"],
-.hero__form-floating .solar-form-body input[type="tel"] {
-  height: 44px;
-  font-size: 0.82rem;
-}
-
-.hero__form-floating .bill-options {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.hero__form-floating .submit-btn {
-  min-height: 46px;
-  font-size: 0.8rem;
-}
-
-/* =========================================================
-   RIGHT FORM PANEL
-   ========================================================= */
-
-.hero__content-panel {
-  width: 100%;
-  min-width: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-sizing: border-box;
-
-  padding: 30px 4%;
-
-  background: #f3f7fc;
-}
-
-/* =========================================================
-   FORM SECTION
-   ========================================================= */
-
-.hero__form-section {
-  width: 100%;
-  min-width: 0;
-  max-width: 650px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 0;
-  padding: 0;
-
-  box-sizing: border-box;
-}
-
-/* =========================================================
-   FORM CARD
-   ========================================================= */
-
-.solar-form-card {
-  position: relative;
-
-  width: 100%;
-  max-width: 600px;
-  min-width: 0;
-
-  box-sizing: border-box;
-
-  padding: 24px 28px;
-  margin: 0;
-  margin-top: -80px;
-  background: #ffffff;
-  color: #1e293b;
-
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
-
-  box-shadow:
-    0 18px 45px rgba(15, 23, 42, 0.10),
-    0 4px 15px rgba(15, 23, 42, 0.05);
-
-  text-align: left;
-}
-
-/* =========================================================
-   FORM HEADER
-   ========================================================= */
-
-.solar-form-header {
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-.solar-form-header h3 {
-  margin: 0 0 6px;
-
-  color: #102445;
-
-  font-size: clamp(1.45rem, 2vw, 1.9rem);
-  line-height: 1.2;
-
-  font-weight: 750;
-  letter-spacing: -0.3px;
-}
-
-.solar-form-header p {
-  margin: 0;
-
-  color: #64748b;
-
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
-
-/* =========================================================
-   FORM BODY
-   ========================================================= */
-
-.solar-form-body {
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 12px;
-}
-
-/* =========================================================
-   INPUTS
-   ========================================================= */
-
-.solar-form-body input[type="text"],
-.solar-form-body input[type="tel"] {
-  width: 100%;
-  height: 52px;
-
-  padding: 0 14px;
-
-  box-sizing: border-box;
-
-  border: 1px solid #dce4ee;
-  border-radius: 10px;
-
-  background: #ffffff;
-  color: #334155;
-
-  font-family: inherit;
-  font-size: 0.92rem;
-
-  outline: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.solar-form-body input::placeholder {
-  color: #8b98a9;
-}
-
-.solar-form-body input:focus {
-  border-color: #1e4d8f;
-
-  box-shadow:
-    0 0 0 3px rgba(30, 77, 143, 0.10);
-
-  background: #ffffff;
-}
-
-/* =========================================================
-   FORM GROUP
-   ========================================================= */
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-
-  gap: 7px;
-}
-
-.form-group label {
-  margin: 0;
-
-  color: #526174;
-
-  font-size: 0.76rem;
-  line-height: 1.3;
-
-  font-weight: 600;
-}
-
-/* =========================================================
-   BILL OPTIONS
-   ========================================================= */
-
-.bill-options {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  gap: 8px;
-}
-
-.bill-options button {
-  min-width: 0;
-  min-height: 44px;
-
-  padding: 6px 5px;
-
-  border: 1px solid #dce4ee;
-  border-radius: 9px;
-
-  background: #ffffff;
-  color: #475569;
-
-  font-family: inherit;
-
-  font-size: 0.70rem;
-  line-height: 1.2;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.bill-options button:hover {
-  background: #f8fafc;
-  border-color: #bfcddd;
-}
-
-.bill-options button.active {
-  background: #1e4d8f;
-  border-color: #1e4d8f;
-  color: #ffffff;
-}
-
-/* =========================================================
-   CHECKBOX
-   ========================================================= */
-
-.checkbox-group {
-  display: flex;
-  align-items: flex-start;
-
-  gap: 8px;
-
-  margin: 2px 0;
-
-  color: #64748b;
-
-  font-size: 0.67rem;
-  line-height: 1.4;
-}
-
-.checkbox-group input {
-  flex: 0 0 auto;
-
-  width: 14px;
-  height: 14px;
-
-  margin: 2px 0 0;
-
-  cursor: pointer;
-}
-
-.checkbox-group label {
-  cursor: pointer;
-}
-
-/* =========================================================
-   SUBMIT BUTTON
-   ========================================================= */
-
-.submit-btn {
-  width: 100%;
-
-  align-self: center;
-
-  min-height: 48px;
-
-  padding: 11px 16px;
-
-  border: none;
-  border-radius: 9px;
-
-  background: #1e4d8f;
-  color: #ffffff;
-
-  font-family: inherit;
-
-  font-size: 0.84rem;
-  font-weight: 750;
-
-  line-height: 1.2;
-
-  letter-spacing: 0.2px;
-
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 7px 20px rgba(30, 77, 143, 0.20);
-
-  transition:
-    background 0.25s ease,
-    transform 0.2s ease,
-    box-shadow 0.25s ease;
-}
-
-.submit-btn:hover {
-  background: #2863b2;
-
-  box-shadow:
-    0 10px 25px rgba(30, 77, 143, 0.27);
-
-  transform: translateY(-1px);
-}
-
-.submit-btn:active {
-  transform: scale(0.98);
+.hero__contact-btn:focus-visible,
+.hero__feature-pill:focus-visible {
+  outline: 3px solid #ffd54a;
+  outline-offset: 3px;
 }
 
 /* =========================================================
@@ -524,424 +220,198 @@
    ========================================================= */
 
 @media (min-width: 1400px) {
-
-  .hero__content-wrapper {
-    min-height: 760px;
-    grid-template-columns: 55% 45%;
+  .hero--split {
+    --hero-height: 700px;
   }
 
-  .hero__image-panel {
-    min-height: 760px;
+  .hero__overlay {
+    grid-template-columns: 430px minmax(0, 1fr) minmax(0, 0.7fr);
+    padding: 40px 70px;
+    gap: 40px;
   }
 
-  .hero__content-panel {
-    padding-left: 4%;
-    padding-right: 4%;
-  }
-
-  .solar-form-card {
-    max-width: 620px;
-    padding: 26px 30px;
+  .hero__form-floating {
+    max-width: 430px;
   }
 }
 
 /* =========================================================
-   TABLET / SMALL DESKTOP
+   TABLET
    ========================================================= */
 
 @media (max-width: 1100px) {
-
-  .hero__content-wrapper {
-    min-height: 650px;
-
-    grid-template-columns: 52% 48%;
+  .hero--split {
+    --hero-height: 640px;
+    --hero-shift: 6%;
   }
 
-  .hero__image-panel {
-    min-height: 650px;
+  .hero__overlay {
+    grid-template-columns: 370px minmax(0, 1fr);
+    grid-template-areas: "form text";
+    gap: 24px;
+    padding: 30px;
   }
 
-  .hero__content-panel {
-    padding: 25px 3%;
+  .hero__form-floating {
+    max-width: 370px;
   }
 
-  .hero__form-section {
-    max-width: 100%;
-  }
-
-  .solar-form-card {
-    max-width: 100%;
-
-    padding: 24px 22px;
-
-    border-radius: 16px;
-  }
-
-  .solar-form-header h3 {
-    font-size: 1.45rem;
-  }
-
-  .solar-form-body input[type="text"],
-  .solar-form-body input[type="tel"] {
-    height: 50px;
-  }
-
-  .bill-options {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .bill-options button {
-    min-height: 43px;
-  }
-
-  .submit-btn {
-    min-height: 50px;
-  }
-}
-
-/* =========================================================
-   MOBILE / SMALL TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  .hero {
-    overflow: visible;
-  }
-
-  .hero__content-wrapper {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    min-height: auto;
-  }
-
-  /* -------------------------------------------------------
-     IMAGE FIRST
-     ------------------------------------------------------- */
-
-  .hero__image-panel {
-    width: 100%;
-
-    height: auto;
-    min-height: 0;
-
-    order: 1;
-
-    display: block;
-
-    background: #dce8f5;
-  }
-
-  .hero__image-panel img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-
-    object-fit: contain;
-    object-position: center center;
-  }
-
-  /* -------------------------------------------------------
-     FORM SECOND
-     ------------------------------------------------------- */
-
-  .hero__content-panel {
-    width: 100%;
-
-    order: 2;
-
-    padding: 32px 6%;
-
-    background: #eef4fb;
-  }
-
-  .hero__form-section {
-    width: 100%;
-    max-width: 700px;
-
-    margin: 0 auto;
-  }
-
-  .solar-form-card {
-    width: 100%;
-    max-width: 700px;
-
-    padding: 28px;
+  .hero .hero__headline {
+    font-size: 36px;
   }
 }
 
 /* =========================================================
    MOBILE
+   Photo area (text on top, solar panels + family visible)
+   Form sits BELOW the photo, on its own light background,
+   so it appears when the visitor scrolls down.
    ========================================================= */
 
-@media (max-width: 600px) {
-
-  .hero {
-    width: 100%;
-
-    overflow: visible;
-
-    background: #eef4fb;
+@media (max-width: 768px) {
+  .hero--split {
+    --hero-shift: 0%;
   }
 
-  .hero__content-wrapper {
+  .hero__image-panel {
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    background: #eef4fb; /* light area behind the form */
+  }
+
+  /* photo covers only the top block, not the form */
+  .hero__image-panel > img {
+    top: 0;
+    left: 0;
     width: 100%;
+    height: var(--hero-mobile-height);
+    object-fit: cover;
+    object-position: var(--hero-mobile-x) center;
+  }
+
+  .hero__overlay {
+    position: relative;
+    inset: auto;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 0;
 
-    min-height: auto;
+    padding: 0 20px 44px;
   }
 
-  /* -------------------------------------------------------
-     MOBILE IMAGE
-     IMPORTANT: DO NOT FORCE HEIGHT
-     ------------------------------------------------------- */
-
-  .hero__image-panel {
-    width: 100%;
-
-    height: auto;
-    min-height: 0;
-
+  /* text stays in the top part of the photo */
+  .hero__text-panel {
     order: 1;
-
-    display: block;
-
-    overflow: hidden;
-
-    background: #dce8f5;
-  }
-
-  .hero__image-panel img {
-    width: 100%;
-    height: auto;
-
-    margin: 0;
-
-    display: block;
-
-    object-fit: contain;
-    object-position: center center;
-  }
-
-  /* -------------------------------------------------------
-     MOBILE FORM AREA
-     ------------------------------------------------------- */
-
-  .hero__content-panel {
-    width: 100%;
-
-    padding: 22px 12px 30px;
-
-    background: #eef4fb;
-
+    max-width: 650px;
+    min-height: var(--hero-mobile-height);
+    padding-top: 34px;
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
 
-  .hero__form-section {
+  .hero__form-floating {
+    order: 2;
     width: 100%;
-
-    max-width: 100%;
-
-    margin: 0 auto;
+    max-width: 430px;
+    margin: 28px auto 0;
   }
 
-  /* -------------------------------------------------------
-     MOBILE FORM CARD
-     ------------------------------------------------------- */
-
-  .solar-form-card {
-    width: 100%;
-
-    max-width: 100%;
-
-    padding: 22px 16px;
-
-    border-radius: 15px;
-
-    box-shadow:
-      0 12px 30px rgba(15, 23, 42, 0.10);
+  .hero .hero__headline {
+    font-size: clamp(27px, 7.4vw, 38px);
+    margin-bottom: 14px;
   }
 
-  /* -------------------------------------------------------
-     MOBILE HEADER
-     ------------------------------------------------------- */
-
-  .solar-form-header {
-    margin-bottom: 17px;
-
-    text-align: center;
+  .hero__price-line {
+    font-size: 16px;
+    margin-bottom: 12px;
   }
 
-  .solar-form-header h3 {
-    margin-bottom: 6px;
-
-    font-size: 1.28rem;
-
-    line-height: 1.25;
+  /* hidden on mobile so the family stays visible under the text */
+  .hero__subtext {
+    display: none;
   }
 
-  .solar-form-header p {
-    font-size: 0.77rem;
-
-    line-height: 1.45;
-  }
-
-  /* -------------------------------------------------------
-     MOBILE FORM
-     ------------------------------------------------------- */
-
-  .solar-form-body {
-    gap: 12px;
-  }
-
-  /* -------------------------------------------------------
-     MOBILE INPUTS
-     ------------------------------------------------------- */
-
-  .solar-form-body input[type="text"],
-  .solar-form-body input[type="tel"] {
-    height: 49px;
-
-    padding: 0 13px;
-
-    border-radius: 9px;
-
-    font-size: 0.85rem;
-  }
-
-  /* -------------------------------------------------------
-     MOBILE FORM GROUP
-     ------------------------------------------------------- */
-
-  .form-group {
+  .hero__feature-row {
     gap: 7px;
+    margin-bottom: 18px;
+    background:;
+    position:relative;
+    top:80px;
+    
   }
 
-  .form-group label {
-    font-size: 0.73rem;
-  }
-
-  /* -------------------------------------------------------
-     MOBILE BILL OPTIONS
-     ------------------------------------------------------- */
-
-  .bill-options {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 7px;
-  }
-
-  .bill-options button {
-    min-height: 42px;
-
-    padding: 5px 4px;
-
-    border-radius: 8px;
-
-    font-size: 0.65rem;
-  }
-
-  /* -------------------------------------------------------
-     MOBILE CHECKBOX
-     ------------------------------------------------------- */
-
-  .checkbox-group {
-    gap: 7px;
-
-    font-size: 0.65rem;
-
-    line-height: 1.4;
-  }
-
-  /* -------------------------------------------------------
-     MOBILE BUTTON
-     ------------------------------------------------------- */
-
-  .submit-btn {
-    min-height: 49px;
-
-    padding: 10px 12px;
-
-    border-radius: 9px;
-
-    font-size: 0.73rem;
+  .hero__feature-pill {
+    font-size: 11px;
+    padding: 7px 10px;
   }
 }
 
 /* =========================================================
-   VERY SMALL MOBILE
+   SMALL MOBILE
    ========================================================= */
 
-@media (max-width: 380px) {
-
-  .hero__image-panel {
-    width: 100%;
-    height: auto;
-    min-height: 0;
+@media (max-width: 480px) {
+  .hero--split {
+    --hero-mobile-height: 700px;
   }
 
-  .hero__image-panel img {
-    width: 100%;
-    height: auto;
-
-    object-fit: contain;
+  .hero__overlay {
+    padding: 0 14px 38px;
   }
 
-  .hero__content-panel {
-    padding: 18px 10px 26px;
+  .hero__text-panel {
+    padding-top: 28px;
   }
 
-  .solar-form-card {
-    padding: 20px 14px;
-    margin-top: 40px;
-    border-radius: 14px;
+  .hero .hero__headline {
+    font-size: 27px;
   }
 
-  .solar-form-header h3 {
-    font-size: 1.18rem;
+  .hero__price-line {
+    font-size: 14px;
   }
 
-  .solar-form-header p {
-    font-size: 0.74rem;
-  }
-
-  .solar-form-body {
-    gap: 11px;
-  }
-
-  .solar-form-body input[type="text"],
-  .solar-form-body input[type="tel"] {
-    height: 47px;
-
-    font-size: 0.82rem;
-  }
-
-  .bill-options {
-    gap: 6px;
-  }
-
-  .bill-options button {
-    min-height: 40px;
-
-    font-size: 0.61rem;
-  }
-
-  .checkbox-group {
-    font-size: 0.62rem;
-  }
-
-  .submit-btn {
-    min-height: 47px;
-
-    font-size: 0.68rem;
+  .hero__contact-btn {
+    padding: 12px 22px;
+    position:relative;
+    top:80px;
+    width:240px;
   }
 }
 
+/* =========================================================
+   TAMIL (applied when the section has lang="ta")
+   Inter has no Tamil glyphs, so use Noto Sans Tamil.
+   Tamil text is longer and needs no negative letter-spacing.
+   ========================================================= */
 
+.hero:lang(ta) .hero__headline,
+.hero:lang(ta) .hero__price-line,
+.hero:lang(ta) .hero__subtext,
+.hero:lang(ta) .hero__feature-pill,
+.hero:lang(ta) .hero__contact-btn {
+  font-family: "Noto Sans Tamil", "Inter", sans-serif;
+}
 
+.hero:lang(ta) .hero__headline {
+  font-size: clamp(26px, 3vw, 44px);
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.hero:lang(ta) .hero__subtext {
+  line-height: 1.85;
+}
+
+@media (max-width: 768px) {
+  .hero:lang(ta) .hero__headline {
+    font-size: clamp(24px, 6.5vw, 34px);
+  }
+}

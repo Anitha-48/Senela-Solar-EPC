@@ -14,6 +14,7 @@ import ProcessTimeline from "../components/ProcessTimeline";
 import { siteConfig } from "../config/siteConfig";
 import { services } from "../config/services";
 import { projects } from "../config/projects";
+import "../styles/sections.css";
 
 
 const featuredProject = {
@@ -210,28 +211,7 @@ export default function Home() {
 
 
 
-      {/* Home contact CTA
-      <section className="home-contact-cta">
-        <div className="container">
-          <h2>Power Your Home. Power Your Future.</h2>
-          <p>Join thousands of customers who have already made the switch to solar.</p>
-          <div className="home-contact-cta__actions" aria-label="Contact options">
-            <a className="home-contact-cta__button home-contact-cta__button--phone" href="tel:+919962492612">
-              <Phone size={21} aria-hidden="true" />
-              <span>9585901999</span>
-            </a>
-            <a className="home-contact-cta__button" href="https://wa.me/9585901999" target="_blank" rel="noreferrer">
-              <MessageCircle size={21} aria-hidden="true" />
-              <span>WhatsApp</span>
-            </a>
-            <a className="home-contact-cta__button" href="info@senelainternational.com">
-              <Mail size={21} aria-hidden="true" />
-              <span>info@senelainternational.com</span>
-            </a>
-          </div>
-        </div>
-      </section> */}
-
+    
 
 
 

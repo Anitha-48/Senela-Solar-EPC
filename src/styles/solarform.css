@@ -1,0 +1,231 @@
+/* =========================================================
+   SOLAR CONSULTATION FORM
+   (position is controlled by .hero__form-floating in hero.css,
+    so the card itself must NOT be absolutely positioned)
+   ========================================================= */
+
+.solar-form-card {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+
+  padding: 24px 22px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+
+  color: #172033;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.solar-form-header {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.solar-form-header h3 {
+  margin: 0 0 7px;
+  color: #0b3d91;
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.solar-form-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FORM BODY
+   ========================================================= */
+
+.solar-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.solar-form-body input[type="text"],
+.solar-form-body input[type="tel"] {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 13px;
+  box-sizing: border-box;
+
+  border: 1px solid #d8e1ec;
+  border-radius: 6px;
+  background: #ffffff;
+
+  color: #172033;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.solar-form-body input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.12);
+}
+
+.solar-form-body input::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   BILL SECTION
+   ========================================================= */
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bill-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+
+.bill-options button {
+  min-height: 36px;
+  padding: 7px 8px;
+
+  border: 1px solid #d8e1ec;
+  border-radius: 5px;
+  background: #ffffff;
+
+  color: #475569;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* the 5th option ("More than ₹8000") spans the full row
+   so the grid looks balanced */
+.bill-options button:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.bill-options button:hover {
+  border-color: #1976d2;
+  color: #1565c0;
+}
+
+.bill-options button.active {
+  border-color: #1565c0;
+  background: #eaf4ff;
+  color: #0b3d91;
+  font-weight: 700;
+}
+
+.bill-options button:focus-visible,
+.submit-btn:focus-visible {
+  outline: 3px solid rgba(25, 118, 210, 0.45);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.checkbox-group input {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: #1565c0;
+}
+
+.checkbox-group label {
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.submit-btn {
+  width: 100%;
+  min-height: 44px;
+
+  border: none;
+  border-radius: 6px;
+  background: #1565c0;
+
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.submit-btn:hover {
+  background: #0b3d91;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   MOBILE FORM
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .solar-form-card {
+    max-width: 430px;
+    padding: 22px 20px;
+  }
+
+  .solar-form-header h3 {
+    font-size: 20px;
+  }
+
+  .solar-form-header p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solar-form-card {
+    padding: 20px 17px;
+    border-radius: 10px;
+  }
+
+  .bill-options {
+    grid-template-columns: 1fr;
+  }
+}

@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import { ChevronDown, Menu, X, Zap, ArrowRight, Weight } from "lucide-react";
 import { navigation } from "../config/navigation";
 import { siteConfig } from "../config/siteConfig";
+import "../styles/navbar.css";
+import logo from "../assets/images/Senela-logo.jpeg";
 
 const navigationLabelKeys = {
   "/": "nav.home",
@@ -62,7 +64,7 @@ export default function Navbar() {
       <header className={`navbar ${scrolled ? "is-scrolled" : ""} ${i18n.resolvedLanguage === "ta" ? "navbar--tamil" : ""}`} lang={i18n.resolvedLanguage}>
         <div className="navbar__inner">
           <NavLink to="/" className="navbar__logo">
-            <img src="../assets/images/Senela-logo.jpeg" alt={t("accessibility.logo")} className="navbar__logo-img" />
+            <img src= {logo} alt={t("accessibility.logo")} className="navbar__logo-img" />
           </NavLink>
 
           <nav className="navbar__links" aria-label={t("nav.primary")}>
@@ -82,11 +84,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* <p style={{ fontFamily: "Inter", fontWeight: 700 }}>
-            Call Us: 9585901999
-          </p> */}
-
-          <div className="navbar__language" role="group" aria-label={t("language.selector")}>
+                   <div className="navbar__language" role="group" aria-label={t("language.selector")}>
             <button type="button" className={i18n.resolvedLanguage === "en" ? "is-active" : ""} onClick={() => changeLanguage("en")} aria-pressed={i18n.resolvedLanguage === "en"}>
               {t("language.english")}
             </button>
@@ -104,7 +102,7 @@ export default function Navbar() {
       <div className={`mobile-menu ${mobileOpen ? "is-open" : ""}`} role="dialog" aria-modal="true" lang={i18n.resolvedLanguage}>
         <div className="mobile-menu__header">
           <span className="navbar__logo">
-            <img src="/src/assets/images/logo.jpeg" alt={t("accessibility.logo")} className="navbar__logo-img" />
+            <img src={logo} alt={t("accessibility.logo")} className="navbar__logo-img" />
           </span>
           <button onClick={() => setMobileOpen(false)} aria-label={t("nav.closeMenu")} style={{ background: "none", border: "none", color: "var(--deep-blue)" }}>
             <X size={26} />

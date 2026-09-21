@@ -12,10 +12,10 @@
   height: 100px;
 
   z-index: 1000;
-
+  position:fixed;
   background: white;
 
-  border-bottom: 1px solid rgba(15, 75, 130, 0.08);
+  /* border-bottom: 1px solid rgba(15, 75, 130, 0.08); */
 
   transition:
     height 0.3s ease,
@@ -73,20 +73,16 @@
 /* =========================================
    LOGO
 ========================================= */
-
 .navbar__logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   padding: 0;
   border: none;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-
   text-decoration: none;
   transition: none;
 }

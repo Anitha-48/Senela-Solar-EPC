@@ -5,13 +5,8 @@
 
 .hero--split {
   --hero-height: 680px;
-  /* How far the photo is pushed to the right.
-     Bigger value = family moves further right. Try 6% to 16%. */
-  --hero-shift: 10%;
-
-  /* MOBILE: height of the photo area (form sits below it).
-     Taller = family appears lower, below the text. */
-  --hero-mobile-height: 740px;
+    --hero-shift: 10%;
+    --hero-mobile-height: 740px;
   /* MOBILE: which part of the photo is shown (0% = left, 100% = right) */
   --hero-mobile-x: 88%;
 
@@ -64,16 +59,15 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
-
+  z-index: ;
   display: grid;
   grid-template-columns: 410px minmax(0, 1fr) minmax(0, 0.6fr);
   grid-template-areas: "form text family";
   align-items: center;
   gap: 30px;
-
   padding: 35px 40px;
   background: transparent;
+  
 }
 
 .hero__form-floating {
@@ -91,6 +85,7 @@
 
   text-align: center;
   color: #ffffff;
+ 
 }
 
 /* =========================================================
@@ -101,11 +96,11 @@
   margin: 0 0 18px;
 
   font-family: "Inter", sans-serif;
-  font-size: clamp(32px, 3.6vw, 54px);
+  /* font-size: clamp(32px, 3.6vw, 54px); */
+  font-size: 44px;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -1.2px;
-
   color: #ffffff !important;
   /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45), 0 4px 22px rgba(0, 0, 0, 0.55); */
 }
@@ -124,13 +119,13 @@
   font-weight: 600;
   line-height: 1.5;
 
-  color: white;
+  color: ;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .hero__price-line span {
   font-weight: 800;
-  color:black ;
+  color:#1565c0 ;
 }
 
 .hero__subtext {
@@ -307,7 +302,7 @@
     min-height: var(--hero-mobile-height);
     padding-top: 34px;
     box-sizing: border-box;
-
+    /* background: red; */
     display: flex;
     flex-direction: column;
     align-items: center;

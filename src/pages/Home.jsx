@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   ArrowRight, CheckCircle2, ShieldCheck, Users, Cpu, Leaf, Clock, Award,
-  Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail, Home as HomeIcon, Factory,
+  Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail,
 } from "lucide-react";
 import Hero from "../components/Hero";
 import { Link } from "react-router-dom";
@@ -101,18 +101,16 @@ export default function Home() {
     {/* Section Header */}
     <div className="home-solutions-header">
       <span className="home-solutions-tag">
-        OUR SOLUTIONS
+        {t("home.solutionsTag")}
       </span>
 
       <h2>
-        Solar Energy Solutions
-        <span> for Every Need</span>
+        {t("home.solutionsTitle")}
+        <span>{t("home.solutionsTitleAccent")}</span>
       </h2>
 
       <p>
-        From residential rooftops to large-scale industrial and
-        integrated EPC projects, we provide reliable and
-        sustainable solar energy solutions.
+        {t("home.solutionsDescription")}
       </p>
     </div>
 
@@ -121,118 +119,93 @@ export default function Home() {
 
       {/* Residential */}
       <div className="home-solution-card">
-
-        <div className="home-solution-icon">
-          <HomeIcon size={32} />
+        <div className="home-solution-media">
+          <img
+            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&auto=format&fit=crop"
+            alt={t("home.residentialAlt")}
+          />
         </div>
 
         <div className="home-solution-content">
-
-          <span className="home-solution-number">
-            01
-          </span>
-          <h3>Residential Solar</h3>
-          <p>
-            Reliable solar power solutions for homes, villas,
-            apartments and residential buildings. Reduce
-            electricity costs and generate clean energy for
-            your home.
-          </p>
+          <span className="home-solution-number">01</span>
+          <h3>{t("home.residentialTitle")}</h3>
+          <p>{t("home.residentialDescription")}</p>
           <ul>
-            <li>Rooftop Solar</li>
-            <li>On-Grid Solar</li>
-            <li>Off-Grid Solar</li>
-            <li>Hybrid Solar</li>
+            <li>{t("home.residentialListOne")}</li>
+            <li>{t("home.residentialListTwo")}</li>
+            <li>{t("home.residentialListThree")}</li>
+            <li>{t("home.residentialListFour")}</li>
           </ul>
 
           <Link
             to="/solar-solutions/residential"
             className="home-solution-btn"
           >
-            More Details
+            {t("home.moreDetails")}
             <span>→</span>
           </Link>
-
         </div>
       </div>
 
-
       {/* Commercial & Industrial */}
       <div className="home-solution-card">
-
-        <div className="home-solution-icon">
-          <Factory size={32} />
+        <div className="home-solution-media">
+          <img
+            src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=900&auto=format&fit=crop"
+            alt={t("home.commercialAlt")}
+          />
         </div>
 
         <div className="home-solution-content">
-
-          <span className="home-solution-number">
-            02
-          </span>
-
-          <h3>Commercial & Industrial Solar</h3>
-
-          <p>
-            High-performance solar solutions for factories,
-            industries, offices, warehouses and commercial
-            establishments.
-          </p>
+          <span className="home-solution-number">02</span>
+          <h3>{t("home.commercialTitle")}</h3>
+          <p>{t("home.commercialDescription")}</p>
 
           <ul>
-            <li>Industrial Rooftop Solar</li>
-            <li>Ground-Mounted Solar</li>
-            <li>Captive Solar Plants</li>
-            <li>Large-Scale On-Grid Systems</li>
+            <li>{t("home.commercialListOne")}</li>
+            <li>{t("home.commercialListTwo")}</li>
+            <li>{t("home.commercialListThree")}</li>
+            <li>{t("home.commercialListFour")}</li>
           </ul>
 
           <Link
             to="/solar-solutions/industrial"
             className="home-solution-btn"
           >
-            More Details
+            {t("home.moreDetails")}
             <span>→</span>
           </Link>
-
         </div>
       </div>
 
-
       {/* Integrated EPC */}
       <div className="home-solution-card">
-
-        <div className="home-solution-icon">
-          <Zap size={32} />
+        <div className="home-solution-media">
+          <img
+            src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop"
+            alt={t("home.utilityAlt")}
+          />
         </div>
 
         <div className="home-solution-content">
-
-          <span className="home-solution-number">
-            03
-          </span>
-
-          <h3>Utility-Scale & Integrated EPC Projects</h3>
-
-          <p>
-            Complete engineering, procurement and construction
-            solutions for large-scale solar and infrastructure
-            projects.
-          </p>
+          <span className="home-solution-number">03</span>
+          <h3>{t("home.utilityTitle")}</h3>
+          <p>{t("home.utilityDescription")}</p>
 
           <ul>
-            <li>Solar Power Plants</li>
-            <li>Power Distribution & Transmission</li>
-            <li>EHV Substations</li>
-            <li>Complete EPC Execution</li>
+            <li>{t("home.utilityListOne")}</li>
+            <li>{t("home.utilityListTwo")}</li>
+            <li>{t("home.utilityListThree")}</li>
+            <li>{t("home.utilityListFour")}</li>
           </ul>
 
           <Link
             to="/solar-solutions/integrated-epc"
             className="home-solution-btn"
           >
-            More Details
+            {t("home.moreDetails")}
             <span>→</span>
           </Link>
-
         </div>
       </div>
 

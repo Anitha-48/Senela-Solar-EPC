@@ -144,6 +144,7 @@
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 24px;
+  
 
 }
 
@@ -355,6 +356,9 @@
      }
   .hero__price-line span{
      color:black;
+  }
+  .hero__feature-pill{
+    background-color: white;
   }
     .hero__contact-btn {
     padding: 12px 22px;

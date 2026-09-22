@@ -8,7 +8,7 @@ export const navigation = [
     path: "/solar-solutions",
     children: [
       { label: "Residential Solar", path: "/solar-solutions/residential" },
-      { label: "Commercial Solar", path: "/solar-solutions/commercial" },
+      { label: "Industrial Solar", path: "/solar-solutions/industrial" },
       { label: "Utility-Scale & Integrated EPC Projects", path: "/solar-solutions/utility-scale" },
     ],
   },

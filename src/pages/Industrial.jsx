@@ -4,7 +4,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import SectionTitle from "../components/SectionTitle";
 
 import "../styles/serviceLanding.css";
-import "../styles/industrialSolar.css";
+import "../styles/.css";
 
 /* =========================================================
    INDUSTRIAL SOLAR PROJECTS

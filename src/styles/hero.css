@@ -59,7 +59,6 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  z-index: ;
   display: grid;
   grid-template-columns: 410px minmax(0, 1fr) minmax(0, 0.6fr);
   grid-template-areas: "form text family";
@@ -106,8 +105,6 @@
   display: block;
   color: rgb(27, 27, 126) !important;
 }
-
-
 .hero__price-line {
   margin: 0 auto 12px;
   font-family: "Inter", sans-serif;
@@ -115,13 +112,13 @@
   font-weight: 600;
   line-height: 1.5;
   color:white;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  background-color: rgba(9, 8, 8, 0.35);
 }
 
 .hero__price-line span {
   font-weight: 800;
-  color:rgb(255, 165, 39);
-}
+  color:white;
+ }
 
 .hero__subtext {
   max-width: 540px;
@@ -161,17 +158,14 @@
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.14);
 
-  color: white ;
+  color:black ;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
 
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
 
-/* =========================================================
-   CALL BUTTON
-   ========================================================= */
 
 .hero__contact-btn {
   display: inline-flex;
@@ -200,7 +194,6 @@
   outline: 3px solid #ffd54a;
   outline-offset: 3px;
 }
-
 /* =========================================================
    LARGE DESKTOP
    ========================================================= */
@@ -275,7 +268,6 @@
     object-fit: cover;
     object-position: var(--hero-mobile-x) center;
   }
-
   .hero__overlay {
     position: relative;
     inset: auto;
@@ -314,7 +306,6 @@
     margin-bottom: 14px;
     
   }
-
   .hero__price-line {
     font-size: 16px;
     margin-bottom: 12px;
@@ -324,7 +315,6 @@
   .hero__subtext {
     display: none;
   }
-
   .hero__feature-row {
     gap: 7px;
     margin-bottom: 18px;
@@ -339,11 +329,6 @@
     padding: 7px 10px;
   }
 }
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
 @media (max-width: 480px) {
   .hero--split {
     --hero-mobile-height: 700px;
@@ -366,32 +351,28 @@
   .hero__price-line {
     font-size: 14px;
     color:black;
-    
-  }
+    background-color: transparent;
+     }
   .hero__price-line span{
      color:black;
   }
-
-  .hero__contact-btn {
+    .hero__contact-btn {
     padding: 12px 22px;
     position:relative;
     top:200px;
-     width:240px;
+     width:240px; 
+     
   }
 }
 
-/* =========================================================
-   TAMIL (applied when the section has lang="ta")
-   Inter has no Tamil glyphs, so use Noto Sans Tamil.
-   Tamil text is longer and needs no negative letter-spacing.
-   ========================================================= */
-
+/* tamil */
 .hero:lang(ta) .hero__headline,
 .hero:lang(ta) .hero__price-line,
 .hero:lang(ta) .hero__subtext,
 .hero:lang(ta) .hero__feature-pill,
 .hero:lang(ta) .hero__contact-btn {
   font-family: "Noto Sans Tamil", "Inter", sans-serif;
+  font-size:10px;
 }
 
 .hero:lang(ta) .hero__headline {
@@ -406,6 +387,25 @@
 
 @media (max-width: 768px) {
   .hero:lang(ta) .hero__headline {
-    font-size: clamp(24px, 6.5vw, 34px);
+    font-size: clamp(21px, 5.4vw, 29px);
+  }
+
+  .hero:lang(ta) .hero__feature-row {
+    max-width: 290px;
+    gap: 6px;
+  }
+
+  .hero:lang(ta) .hero__feature-pill {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .hero:lang(ta) .hero__contact-btn {
+    width: 240px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    font-size: 13px;
+    line-height: 1.4;
   }
 }

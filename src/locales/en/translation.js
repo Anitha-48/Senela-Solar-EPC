@@ -40,7 +40,7 @@ const translation = {
     callNow: "Call Now",
     whoWeAre: "WHO WE ARE",
     aboutCompany: "About Our Company",
-    solarSolutions: "SOLAR SOLUTIONS",
+    solarSolutions: "SOLAR SYSTEM",
     solarSystemEngineered: "Solar System Engineered for Your Site",
     solarSolutionsDescription: "From grid-connected rooftop systems to fully independent off-grid installations, we design for the way each site actually uses power.",
   },

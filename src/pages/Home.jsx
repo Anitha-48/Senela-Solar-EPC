@@ -2,9 +2,10 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   ArrowRight, CheckCircle2, ShieldCheck, Users, Cpu, Leaf, Clock, Award,
-  Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail,
+  Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail, Home as HomeIcon, Factory,
 } from "lucide-react";
 import Hero from "../components/Hero";
+import { Link } from "react-router-dom";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import StatCounter from "../components/StatCounter";
@@ -63,10 +64,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
-
-      
-
+      <Hero />     
       {/* About / Company introduction */}
       <section className="section">
         <div className="container split-section">
@@ -93,8 +91,164 @@ export default function Home() {
         </div>
       </section>
 
+ {/* =============================
+    SOLAR SOLUTIONS-Types
+======================================= */}
 
-      {/* Solar Solutions */}
+<section className="home-solutions-section">
+  <div className="home-solutions-container">
+
+    {/* Section Header */}
+    <div className="home-solutions-header">
+      <span className="home-solutions-tag">
+        OUR SOLUTIONS
+      </span>
+
+      <h2>
+        Solar Energy Solutions
+        <span> for Every Need</span>
+      </h2>
+
+      <p>
+        From residential rooftops to large-scale industrial and
+        integrated EPC projects, we provide reliable and
+        sustainable solar energy solutions.
+      </p>
+    </div>
+
+    {/* Solution Cards */}
+    <div className="home-solutions-grid">
+
+      {/* Residential */}
+      <div className="home-solution-card">
+
+        <div className="home-solution-icon">
+          <HomeIcon size={32} />
+        </div>
+
+        <div className="home-solution-content">
+
+          <span className="home-solution-number">
+            01
+          </span>
+
+          <h3>Residential Solar</h3>
+
+          <p>
+            Reliable solar power solutions for homes, villas,
+            apartments and residential buildings. Reduce
+            electricity costs and generate clean energy for
+            your home.
+          </p>
+
+          <ul>
+            <li>Rooftop Solar</li>
+            <li>On-Grid Solar</li>
+            <li>Off-Grid Solar</li>
+            <li>Hybrid Solar</li>
+          </ul>
+
+          <Link
+            to="/solar-solutions/residential"
+            className="home-solution-btn"
+          >
+            More Details
+            <span>→</span>
+          </Link>
+
+        </div>
+      </div>
+
+
+      {/* Commercial & Industrial */}
+      <div className="home-solution-card">
+
+        <div className="home-solution-icon">
+          <Factory size={32} />
+        </div>
+
+        <div className="home-solution-content">
+
+          <span className="home-solution-number">
+            02
+          </span>
+
+          <h3>Commercial & Industrial Solar</h3>
+
+          <p>
+            High-performance solar solutions for factories,
+            industries, offices, warehouses and commercial
+            establishments.
+          </p>
+
+          <ul>
+            <li>Industrial Rooftop Solar</li>
+            <li>Ground-Mounted Solar</li>
+            <li>Captive Solar Plants</li>
+            <li>Large-Scale On-Grid Systems</li>
+          </ul>
+
+          <Link
+            to="/solar-solutions/industrial"
+            className="home-solution-btn"
+          >
+            More Details
+            <span>→</span>
+          </Link>
+
+        </div>
+      </div>
+
+
+      {/* Integrated EPC */}
+      <div className="home-solution-card">
+
+        <div className="home-solution-icon">
+          <Zap size={32} />
+        </div>
+
+        <div className="home-solution-content">
+
+          <span className="home-solution-number">
+            03
+          </span>
+
+          <h3>Utility-Scale & Integrated EPC Projects</h3>
+
+          <p>
+            Complete engineering, procurement and construction
+            solutions for large-scale solar and infrastructure
+            projects.
+          </p>
+
+          <ul>
+            <li>Solar Power Plants</li>
+            <li>Power Distribution & Transmission</li>
+            <li>EHV Substations</li>
+            <li>Complete EPC Execution</li>
+          </ul>
+
+          <Link
+            to="/solar-solutions/integrated-epc"
+            className="home-solution-btn"
+          >
+            More Details
+            <span>→</span>
+          </Link>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+      {/* SOLAR SYSTEMS */}
 <section className="section section--light">
   <div className="container">
 
@@ -235,6 +389,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
 
       {/* Why Choose Us */}
       <section className="section">

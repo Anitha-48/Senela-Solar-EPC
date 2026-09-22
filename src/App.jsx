@@ -9,6 +9,9 @@ import OnGridSolar from "./pages/OnGridSolar";
 import HybridGridSolar from "./pages/HybridGridSolar";
 import OffGridSolar from "./pages/OffGridSolar";
 import SolarSolutionsPage from "./pages/SolarSolutionsPage";
+import ResidentialSolarPage from "./pages/ResidentialSolarPage";
+import CommercialSolarPage from "./pages/CommercialSolarPage";
+import UtilityScaleSolarPage from "./pages/UtilityScaleSolarPage";
 import ProjectDetail from "./pages/ProjectDetail";
 import ServicePage from "./pages/ServicePage";
 import ServiceMain from "./pages/ServiceMain";
@@ -38,6 +41,9 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/epc" element={<Epc />} />
           <Route path="/solar-solutions" element={<SolarSolutionsPage />} />
+          <Route path="/solar-solutions/residential" element={<ResidentialSolarPage />} />
+          <Route path="/solar-solutions/commercial" element={<CommercialSolarPage />} />
+          <Route path="/solar-solutions/utility-scale" element={<UtilityScaleSolarPage />} />
           <Route path="/solar-solutions/on-grid" element={<OnGridSolar />} />
           <Route path="/solar-solutions/hybrid-grid" element={<HybridGridSolar />} />
           <Route path="/solar-solutions/off-grid" element={<OffGridSolar />} />

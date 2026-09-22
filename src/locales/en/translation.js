@@ -816,6 +816,181 @@ const translation = {
     message: "I would like to inquire about your solar solutions. Please provide Further information.",
   },
 
+  solarServicePages: {
+    residential: {
+      breadcrumb: "HOME › RESIDENTIAL SOLAR SOLUTIONS",
+      eyebrow: "IS THIS RIGHT FOR YOU?",
+      title: "Smart Residential Solar Solutions for Modern Homes",
+      description: [
+        "For families using multiple appliances, EV charging, or higher daytime consumption, residential solar installation helps reduce monthly electricity bills and supports long-term energy savings.",
+        "We design customized rooftop systems for apartments, villas, bungalows, and residential communities with a focus on energy efficiency, roof suitability, and backup flexibility."
+      ],
+      sectionTitles: {
+        highlights: "RESIDENTIAL SOLAR",
+        highlightsTitle: "Built for homes with comfort, savings and reliability in mind",
+        highlightsDescription: "Whether you live in a high-rise apartment or a standalone villa, we help you choose a system that suits your roof, consumption pattern and energy goals.",
+        system: "SYSTEM BASICS",
+        systemTitle: "Key components of a residential solar installation",
+        systemDescription: "Every home solar solution is built around reliable generation, conversion and power management components.",
+        process: "INSTALLATION PROCESS",
+        processTitle: "Our solar installation process",
+        processDescription: "We manage the complete journey from site assessment to system commissioning and support.",
+        benefits: "WHY CHOOSE SOLAR",
+        benefitsTitle: "Clean energy that saves more every day",
+        benefitsDescription: "Residential solar systems lower utility dependence and help homeowners build a more sustainable future.",
+        faq: "FAQS",
+        faqTitle: "Frequently asked questions",
+        faqDescription: "Everything you need to know about residential solar installation."
+      },
+      highlights: [
+        { title: "Live in High-Rise Apartments", description: "Suitable for apartments, villas, bungalows, and residential societies with usable rooftop space.", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&auto=format&fit=crop" },
+        { title: "Own an Independent House", description: "Ideal for homes with shadow-free rooftop space and higher daytime consumption patterns.", image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=900&auto=format&fit=crop" },
+        { title: "Frequent Power Cuts", description: "Add a hybrid inverter and battery backup for uninterrupted home power supply during outages.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop" },
+        { title: "Government Subsidy Benefits", description: "We assist with PM Surya Ghar subsidy applications, documentation and eligibility guidance.", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop" },
+        { title: "Better Property Value", description: "Solar-powered homes are attractive to modern buyers who value lower operating costs and sustainability.", image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=900&auto=format&fit=crop" },
+        { title: "Save More Every Month", description: "Reduce dependency on grid power and enjoy lower electricity bills month after month.", image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=900&auto=format&fit=crop" }
+      ],
+      systemComponents: [
+        { title: "Panels", description: "High-efficiency photovoltaic modules engineered for long-term residential output." },
+        { title: "Inverter", description: "Energy conversion and system optimization for stable power delivery to your home." },
+        { title: "Battery", description: "Optional backup storage to support critical loads during grid interruptions." },
+        { title: "Power Usage", description: "Smart system sizing based on your actual home consumption and roof potential." }
+      ],
+      installationSteps: [
+        { title: "Load & Shadow Analysis", description: "We study your electricity usage, rooftop condition, and sunlight exposure before final design." },
+        { title: "Engineering & System Design", description: "Our team prepares the SLD, structure layout and optimized solar design according to site conditions." },
+        { title: "Solar Module Installation", description: "High-performance panels are mounted on durable structures for maximum efficiency and safety." },
+        { title: "Grid & Net Meter Integration", description: "Inverter configuration, electrical protection and net-meter support are completed professionally." },
+        { title: "Monitoring & Maintenance Support", description: "We help you track performance and provide guidance for sustained system efficiency." }
+      ],
+      reasons: [
+        "Reduce monthly electricity bills with cleaner energy generation",
+        "Improve energy security and lower dependence on grid power",
+        "Support long-term savings with a resilient rooftop system",
+        "Get reliable installation guidance and after-sales support"
+      ],
+      faqs: [
+        { question: "Can I install solar panels on my home's rooftop?", answer: "Yes. Homes with suitable rooftop space and adequate sunlight exposure can install a residential solar system tailored to their electricity usage and roof area." },
+        { question: "Can I get a subsidy for residential solar installation?", answer: "Eligible households may qualify for subsidy assistance under government rooftop programs. We provide guidance and documentation support for the application process." },
+        { question: "Can solar systems work during power cuts?", answer: "Yes. Hybrid systems with battery backup can continue supplying electricity for essential loads when the grid is unavailable." },
+        { question: "How long does installation take?", answer: "Residential rooftop installations are typically completed within a few working days after approvals, material availability and site readiness." }
+      ],
+      cta: {
+        eyebrow: "GET STARTED TODAY",
+        title: "Ready to switch to clean solar energy?",
+        description: "Let us help you plan, design and execute a reliable solar solution for your home, business or industry.",
+        primary: "Get Free Consultation",
+        secondary: "Call Now"
+      }
+    },
+    commercial: {
+      breadcrumb: "HOME › COMMERCIAL SOLAR",
+      eyebrow: "SMART COMMERCIAL SOLAR",
+      title: "Solar solutions built for business performance and growth.",
+      description: [
+        "Commercial and industrial solar systems help organisations lower operating costs, reduce dependence on grid power and improve energy resilience.",
+        "We deliver rooftop and ground-mounted solar solutions designed around your operational profile, tariff structure and long-term financial goals."
+      ],
+      sectionTitles: {
+        highlights: "BUSINESS VALUE",
+        highlightsTitle: "Designed for cost reduction and operational stability",
+        highlightsDescription: "Our commercial systems are engineered to support productivity while creating long-term savings.",
+        benefits: "OPERATIONAL BENEFITS",
+        benefitsTitle: "Why commercial solar works",
+        benefitsDescription: "The best systems are planned around utility tariffs, operating hours and long-term efficiency goals.",
+        process: "EXECUTION",
+        processTitle: "Full EPC support from concept to commissioning",
+        processDescription: "We coordinate design, procurement, installation and testing so accountability remains clear throughout the project.",
+        faq: "FAQS",
+        faqTitle: "Frequently asked questions",
+        faqDescription: "Helpful answers for commercial solar planning and execution."
+      },
+      highlights: [
+        { title: "Commercial Rooftop Systems", description: "Turn unused rooftop space into productive power generation for offices, retail stores, campuses and warehouses.", image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=900&auto=format&fit=crop" },
+        { title: "Industrial Energy Savings", description: "Reduce operating costs for factories, plants and industrial facilities with reliable on-site generation.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop" },
+        { title: "Energy Management", description: "Optimise generation, monitor performance and keep operations efficient with engineering-led execution.", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop" }
+      ],
+      advantages: [
+        "Lower monthly electricity costs through captive generation",
+        "Improve power reliability for production and business operations",
+        "Reduce exposure to peak demand and utility tariff volatility",
+        "Support future capacity expansion with scalable system design",
+        "Grid-connected systems with net-metering support in suitable locations",
+        "Professional engineering, installation and commissioning support"
+      ],
+      processSteps: [
+        { title: "Load & Energy Review", description: "We analyse consumption, utility tariffs, operating hours and rooftop feasibility before final design." },
+        { title: "System Engineering", description: "We size the plant, configure electrical layouts and incorporate maintenance and safety requirements." },
+        { title: "Procurement & Installation", description: "We manage equipment supply, installation, testing, and commissioning with end-to-end accountability." }
+      ],
+      faqs: [
+        { question: "Can solar help reduce my business electricity bills?", answer: "Yes. Commercial solar systems generate on-site power that reduces grid consumption and can significantly lower operating expenses." },
+        { question: "Can the system be scaled later?", answer: "Yes. Our system designs can be planned to support future expansion as your energy demands grow." },
+        { question: "Do you provide turnkey execution?", answer: "Yes. We handle engineering, approvals, procurement, installation, testing and commissioning across the full project lifecycle." }
+      ],
+      cta: {
+        eyebrow: "GET STARTED TODAY",
+        title: "Ready to cut costs with commercial solar?",
+        description: "Let us help you plan, design and execute a solar system that supports your operational goals and long-term energy strategy.",
+        primary: "Get Free Consultation",
+        secondary: "Call Now"
+      }
+    },
+    utilityScale: {
+      breadcrumb: "HOME › UTILITY-SCALE & EPC PROJECTS",
+      eyebrow: "INTEGRATED EPC EXECUTION",
+      title: "Large-scale solar execution for high-impact energy projects.",
+      description: [
+        "We deliver utility-scale solar and integrated EPC projects that demand disciplined execution, strong engineering and reliable commissioning in complex project environments.",
+        "Our teams work across solar generation, power distribution and electrical infrastructure to ensure each project is ready for operational performance from day one."
+      ],
+      sectionTitles: {
+        capabilities: "PROJECT CAPABILITIES",
+        capabilitiesTitle: "Integrated execution for utility and infrastructure-scale developments",
+        capabilitiesDescription: "We align technical planning, procurement and site execution to reduce risk and improve delivery quality.",
+        benefits: "BENEFITS",
+        benefitsTitle: "Built for large-scale energy outcomes",
+        benefitsDescription: "Every project is shaped around schedule discipline, engineering quality and long-term operational readiness.",
+        scope: "DELIVERY SCOPE",
+        scopeTitle: "A practical, accountable project model",
+        scopeDescription: "Our EPC approach keeps engineering, installation and commissioning aligned under one delivery framework.",
+        faq: "FAQS",
+        faqTitle: "Frequently asked questions",
+        faqDescription: "Key questions about large-scale solar and EPC execution."
+      },
+      capabilities: [
+        { title: "Utility-Scale Solar Parks", description: "Large-capacity ground-mounted systems engineered for generation efficiency, grid compatibility and long-term performance.", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop" },
+        { title: "Integrated EPC Delivery", description: "Single-point accountability across engineering, procurement, construction, testing and commissioning.", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&auto=format&fit=crop" },
+        { title: "Power Infrastructure", description: "Support for substations, transmission-linked infrastructure and execution-ready power project scopes.", image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=900&auto=format&fit=crop" }
+      ],
+      benefits: [
+        "High-capacity renewable generation designed for large-scale energy needs",
+        "Seamless coordination between solar plant design and power infrastructure requirements",
+        "End-to-end EPC management from site planning to grid synchronisation",
+        "Structured execution for utility, industrial and infrastructure-driven projects",
+        "Focus on safety, performance monitoring and operational continuity",
+        "Scalable project delivery with engineering-led accountability"
+      ],
+      projectScope: [
+        { title: "Site Assessment", description: "Feasibility review, land and technical viability analysis, and initial planning for project viability." },
+        { title: "Design & Engineering", description: "System layout, electrical design, civil planning and technical documentation for execution." },
+        { title: "Construction & Commissioning", description: "Procurement, installation, testing, protection coordination and final energisation for reliable handover." }
+      ],
+      faqs: [
+        { question: "What types of projects do you execute?", answer: "We support utility-scale solar parks, industrial solar developments, electrical infrastructure and integrated EPC project work." },
+        { question: "Do you handle the complete EPC scope?", answer: "Yes. Our project teams manage engineering, procurement, construction, testing, commissioning and handover under one execution framework." },
+        { question: "How do you reduce project risk?", answer: "By coordinating design, procurement and site execution carefully, we reduce interface problems and improve schedule reliability." }
+      ],
+      cta: {
+        eyebrow: "GET STARTED TODAY",
+        title: "Need a large-scale solar partner?",
+        description: "Let us help you plan and deliver a reliable solar and EPC project tailored to your technical and operational requirements.",
+        primary: "Get Free Consultation",
+        secondary: "Call Now"
+      }
+    }
+  },
+
   faq: {},
 };
 

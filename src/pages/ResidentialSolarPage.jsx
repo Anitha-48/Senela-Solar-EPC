@@ -358,62 +358,8 @@ function ResidentialSolarPage() {
         </div>
       </section>
 
-      {/* ================= TESTIMONIALS ================= */}
-      <section className="service-section residential-testimonials">
-        <div className="service-container">
-          <ScrollReveal>
-            <SectionTitle
-              eyebrow="CUSTOMER STORIES"
-              title="Homes That Made the Switch"
-              description="Every residential project starts with a different requirement. Here are a few examples of what homeowners value in their solar journey."
-            />
-          </ScrollReveal>
-
-          <div className="residential-testimonial-grid">
-            {testimonials.map((testimonial, index) => (
-              <ScrollReveal key={testimonial.name} delay={index * 100}>
-                <article className="residential-testimonial-card">
-                  <div className="testimonial-stars">★★★★★</div>
-
-                  <p>"{testimonial.quote}"</p>
-
-                  <div className="testimonial-author">
-                    <strong>{testimonial.name}</strong>
-                    <span>{testimonial.role}</span>
-                  </div>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ================= CTA ================= */}
-      <section className="service-cta residential-cta">
-        <div className="service-container">
-          <ScrollReveal>
-            <div className="residential-cta__inner">
-              <div>
-                <span className="residential-hero__eyebrow">
-                  READY FOR SOLAR?
-                </span>
-
-                <h2>Turn Your Rooftop Into a Power Source</h2>
-
-                <p>
-                  Tell us about your home, electricity usage and available
-                  rooftop space. Our team can help you explore a suitable
-                  residential solar solution.
-                </p>
-              </div>
-
-              <Link to="/contact" className="service-btn service-btn--light">
-                Start Your Solar Journey
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      
+     
 
       {/* ================= FAQ ================= */}
       <section className="service-section residential-faq">

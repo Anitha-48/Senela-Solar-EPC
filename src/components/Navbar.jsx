@@ -16,6 +16,9 @@ const navigationLabelKeys = {
   "/solar-solutions/commercial": "nav.commercialSolar",
   "/solar-solutions/utility-scale": "nav.utilityScaleSolar",
   "/services": "nav.services",
+  "/solar-solutions/on-grid": "nav.onGridSolar",
+  "/solar-solutions/off-grid": "nav.offGridSolar",
+  "/solar-solutions/hybrid-grid": "nav.hybridGridSolar",
   "/solar-solutions/industrial": "nav.commercialIndustrialSolar",
   "/solar-solutions/integrated-epc": "nav.integratedEpcProjects",
   "/services/power-distribution-transmission": "nav.powerDistributionTransmission",
@@ -109,17 +112,24 @@ useEffect(() => {
         </div>
         <div className="mobile-menu__body"> 
           {navigation.map((item) => (
-            <div key={item.label}>
+            <div key={item.label} className="mobile-menu__group">
               {item.children ? (
                 <>
                   <button
-                    className="mobile-menu__link"
-                    style={{ width: "100%", background: "none", border: "none", borderBottom: "1px solid var(--grey-100)" }}
+                    className="mobile-menu__submenu-toggle"
                     onClick={() => setOpenSub(openSub === item.label ? null : item.label)}
+                    aria-label={`${getLabel(item.path)} submenu`}
+                    aria-expanded={openSub === item.label}
                   >
-                    {getLabel(item.path)}
                     <ChevronDown size={18} style={{ transform: openSub === item.label ? "rotate(180deg)" : "none", transition: "transform 0.2s" }} />
                   </button>
+                  <NavLink
+                    to={item.path}
+                    className="mobile-menu__link"
+                    end={item.path === "/"}
+                  >
+                    {getLabel(item.path)}
+                  </NavLink>
                   <div className={`mobile-menu__sub ${openSub === item.label ? "is-open" : ""}`}>
                     {item.children.map((child) => (
                       <NavLink key={child.path} to={child.path}>{getLabel(child.path)}</NavLink>

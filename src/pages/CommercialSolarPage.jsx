@@ -2,115 +2,440 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "../components/ScrollReveal";
 import SectionTitle from "../components/SectionTitle";
-import "../styles/serviceLanding.css";
 
-export default function CommercialSolarPage() {
+import "../styles/serviceLanding.css";
+import "../styles/commercial.css";
+
+const projectImages = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85",
+    key: "industrialRooftop",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85",
+    key: "factorySolar",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=85",
+    key: "commercialBuilding",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=85",
+    key: "warehouseSolar",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85",
+    key: "industrialEnergy",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1509390144018-eeaf65052242?auto=format&fit=crop&w=1200&q=85",
+    key: "businessSolar",
+  },
+];
+
+function CommercialIndustrialSolarPage() {
   const { t } = useTranslation();
-  const page = t("solarServicePages.commercial", { returnObjects: true });
-  const highlights = t("solarServicePages.commercial.highlights", { returnObjects: true });
-  const advantages = t("solarServicePages.commercial.advantages", { returnObjects: true });
-  const processSteps = t("solarServicePages.commercial.processSteps", { returnObjects: true });
-  const faqs = t("solarServicePages.commercial.faqs", { returnObjects: true });
+
+  const source = t("solarServicePages.commercial", {
+    returnObjects: true,
+  });
+
+  const page = {
+    hero: {
+      eyebrow: source.eyebrow,
+      title: source.title,
+      titleHighlight: "",
+      description1: source.description?.[0],
+      description2: source.description?.[1],
+      primaryButton: source.cta?.primary,
+      secondaryButton: source.cta?.secondary,
+      imageAlt: source.imageAlt,
+      badgeTitle: source.badgeTitle,
+      badgeText: source.badgeText,
+    },
+    solutions: source.highlights?.map((item, index) => ({
+      number: String(index + 1).padStart(2, "0"),
+      title: item.title,
+      text: item.description,
+    })) || [],
+    components: source.processSteps?.map((item, index) => ({
+      number: String(index + 1).padStart(2, "0"),
+      title: item.title,
+      text: item.description,
+    })) || [],
+    faqs: source.faqs || [],
+    projects: Object.fromEntries(
+      (source.highlights || []).map((item, index) => [
+        projectImages[index]?.key,
+        { title: item.title, text: item.description },
+      ])
+    ),
+    solutionsSection: {
+      eyebrow: source.sectionTitles?.highlights,
+      title: source.sectionTitles?.highlightsTitle,
+      description: source.sectionTitles?.highlightsDescription,
+    },
+    systemSection: {
+      eyebrow: source.sectionTitles?.process,
+      title: source.sectionTitles?.processTitle,
+      description: source.sectionTitles?.processDescription,
+      imageAlt: source.systemImageAlt,
+    },
+    projectsSection: {
+      eyebrow: source.sectionTitles?.benefits,
+      title: source.sectionTitles?.benefitsTitle,
+      description: source.sectionTitles?.benefitsDescription,
+    },
+    epc: {
+      eyebrow: source.epc.eyebrow,
+      title: source.epc.title,
+      description1: source.cta?.description,
+      description2: source.processSteps?.[0]?.description,
+      button: source.cta?.primary,
+      imageAlt: source.epc.imageAlt,
+    },
+    faqSection: {
+      eyebrow: source.sectionTitles?.faq,
+      title: source.sectionTitles?.faqTitle,
+      description: source.sectionTitles?.faqDescription,
+    },
+    cta: {
+      eyebrow: source.cta?.eyebrow,
+      title: source.cta?.title,
+      description: source.cta?.description,
+      button: source.cta?.primary,
+    },
+  };
+
+  const { solutions, components, faqs, projects } = page;
 
   return (
-    <div className="service-landing-page">
-      <section className="service-landing-section">
-        <div className="container service-landing-hero">
-          <ScrollReveal className="service-landing-hero__media">
+    <main className="service-landing-page commercial-industrial-page">
+
+      {/* ================= HERO ================= */}
+      <section className="commercial-industrial-hero">
+        <div className="commercial-industrial-hero__container">
+
+          <div className="commercial-industrial-hero__content">
+
+            <span className="commercial-industrial-hero__eyebrow">
+              {page.hero.eyebrow}
+            </span>
+
+            <h1>
+              {page.hero.title}
+              <span>{page.hero.titleHighlight}</span>
+            </h1>
+
+            <p>{page.hero.description1}</p>
+
+            <p>{page.hero.description2}</p>
+
+            <div className="commercial-industrial-hero__actions">
+
+              <Link
+                to="/contact"
+                className="service-btn service-btn--primary"
+              >
+                {page.hero.primaryButton}
+              </Link>
+
+              <a
+                href="#solutions"
+                className="service-btn service-btn--secondary"
+              >
+                {page.hero.secondaryButton}
+              </a>
+
+            </div>
+          </div>
+
+          <div className="commercial-industrial-hero__image">
+
             <img
-              src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1200&auto=format&fit=crop"
-              alt={page.title}
+              src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1400&q=85"
+              alt={page.hero.imageAlt}
+            />
+
+            <div className="commercial-industrial-hero__badge">
+              <strong>{page.hero.badgeTitle}</strong>
+              <span>{page.hero.badgeText}</span>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= SOLUTIONS ================= */}
+      <section
+        className="service-section commercial-industrial-intro"
+        id="solutions"
+      >
+        <div className="service-container">
+
+          <ScrollReveal>
+            <SectionTitle
+              eyebrow={page.solutionsSection.eyebrow}
+              title={page.solutionsSection.title}
+              description={page.solutionsSection.description}
             />
           </ScrollReveal>
 
-          <ScrollReveal delay={1} className="service-landing-hero__content">
-            <div className="service-landing-breadcrumb">{page.breadcrumb}</div>
-            <div className="service-landing-eyebrow">{page.eyebrow}</div>
-            <h2>{page.title}</h2>
-            {page.description.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+          <div className="commercial-industrial-solution-grid">
+
+            {solutions.map((solution, index) => (
+              <ScrollReveal
+                key={solution.number}
+                delay={index * 70}
+              >
+                <article className="commercial-industrial-solution-card">
+
+                  <span>{solution.number}</span>
+
+                  <h3>{solution.title}</h3>
+
+                  <p>{solution.text}</p>
+
+                </article>
+              </ScrollReveal>
             ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SOLAR SYSTEM ================= */}
+      <section className="service-section industrial-system-section">
+        <div className="service-container">
+
+          <ScrollReveal>
+            <SectionTitle
+              eyebrow={page.systemSection.eyebrow}
+              title={page.systemSection.title}
+              description={page.systemSection.description}
+            />
           </ScrollReveal>
-        </div>
-      </section>
 
-      
+          <div className="industrial-system-layout">
 
-      <section className="service-landing-section">
-        <div className="container">
-          <SectionTitle
-            eyebrow={page.sectionTitles.benefits}
-            title={page.sectionTitles.benefitsTitle}
-            description={page.sectionTitles.benefitsDescription}
-          />
-          <ul className="service-landing-list">
-            {advantages.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+            <ScrollReveal>
+              <div className="industrial-system-image">
+                <img
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=85"
+                  alt={page.systemSection.imageAlt}
+                />
+              </div>
+            </ScrollReveal>
 
-      <section className="service-landing-section service-landing-section--light" >
-        <div className="container">
-          <SectionTitle
-            eyebrow={page.sectionTitles.process}
-            title={page.sectionTitles.processTitle}
-            description={page.sectionTitles.processDescription}
-          />
+            <div className="industrial-system-components">
 
-          <div className="service-landing-grid service-landing-grid--3">
-            {processSteps.map((item, index) => (
-              <ScrollReveal key={item.title} delay={index}>
-                <div className="service-landing-feature">
-                  <div className="service-landing-feature__body">
-                    <div className="service-landing-eyebrow">0{index + 1}</div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+              {components.map((component, index) => (
+                <ScrollReveal
+                  key={component.number}
+                  delay={index * 70}
+                >
+                  <article className="industrial-component-card">
 
-      <section className="service-landing-section">
-        <div className="container">
-          <SectionTitle
-            eyebrow={page.sectionTitles.faq}
-            title={page.sectionTitles.faqTitle}
-            description={page.sectionTitles.faqDescription}
-          />
+                    <span className="industrial-component-number">
+                      {component.number}
+                    </span>
 
-          <div className="service-landing-grid service-landing-grid--3">
-            {faqs.map((item, index) => (
-              <ScrollReveal key={item.question} delay={index}>
-                <div className="service-landing-faq">
-                  <div className="service-landing-faq__body">
-                    <h3>{item.question}</h3>
-                    <p>{item.answer}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+                    <div>
+                      <h3>{component.title}</h3>
+                      <p>{component.text}</p>
+                    </div>
 
-      <section className="service-landing-section">
-        <div className="container">
-          <div className="service-landing-cta">
-            <div className="service-landing-eyebrow" style={{ background: "rgba(255,255,255,0.12)", color: "#fff" }}>{page.cta.eyebrow}</div>
-            <h2>{page.cta.title}</h2>
-            <p>{page.cta.description}</p>
-            <div className="service-landing-actions">
-              <Link to="/contact" className="service-landing-btn service-landing-btn--primary">{page.cta.primary}</Link>
-              <a href="tel:+919876543210" className="service-landing-btn service-landing-btn--secondary">{page.cta.secondary}</a>
+                  </article>
+                </ScrollReveal>
+              ))}
+
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* ================= PROJECTS ================= */}
+      <section
+        className="service-section commercial-industrial-projects"
+        id="projects"
+      >
+        <div className="service-container">
+
+          <ScrollReveal>
+            <SectionTitle
+              eyebrow={page.projectsSection.eyebrow}
+              title={page.projectsSection.title}
+              description={page.projectsSection.description}
+            />
+          </ScrollReveal>
+
+          <div className="commercial-industrial-project-grid">
+
+            {projectImages.map((project, index) => {
+
+              const projectData = projects[project.key] || {
+                title: source.projectFallbackTitle,
+                text: source.projectFallbackText,
+              };
+
+              return (
+                <ScrollReveal
+                  key={project.key}
+                  delay={index * 70}
+                >
+                  <article className="commercial-industrial-project-card">
+
+                    <div className="commercial-industrial-project-image">
+
+                      <img
+                        src={project.image}
+                        alt={projectData.title}
+                      />
+
+                      <span>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                    </div>
+
+                    <div className="commercial-industrial-project-content">
+
+                      <h3>{projectData.title}</h3>
+
+                      <p>{projectData.text}</p>
+
+                    </div>
+
+                  </article>
+                </ScrollReveal>
+              );
+            })}
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= EPC ================= */}
+      <section className="service-section commercial-industrial-epc">
+        <div className="service-container">
+
+          <div className="commercial-industrial-epc-box">
+
+            <ScrollReveal>
+              <div className="commercial-industrial-epc-content">
+
+                <span className="commercial-industrial-hero__eyebrow">
+                  {page.epc.eyebrow}
+                </span>
+
+                <h2>{page.epc.title}</h2>
+
+                <p>{page.epc.description1}</p>
+
+                <p>{page.epc.description2}</p>
+
+                <Link
+                  to="/services/epc"
+                  className="service-btn service-btn--primary"
+                >
+                  {page.epc.button}
+                </Link>
+
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <div className="commercial-industrial-epc-image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=85"
+                  alt={page.epc.imageAlt}
+                />
+
+              </div>
+            </ScrollReveal>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FAQ ================= */}
+      <section className="service-section commercial-industrial-faq">
+        <div className="service-container">
+
+          <ScrollReveal>
+            <SectionTitle
+              eyebrow={page.faqSection.eyebrow}
+              title={page.faqSection.title}
+              description={page.faqSection.description}
+            />
+          </ScrollReveal>
+
+          <div className="commercial-industrial-faq-list">
+
+            {faqs.map((faq, index) => (
+              <ScrollReveal
+                key={faq.question}
+                delay={index * 60}
+              >
+                <details className="commercial-industrial-faq-item">
+
+                  <summary>
+                    <span>{faq.question}</span>
+                    <b>+</b>
+                  </summary>
+
+                  <p>{faq.answer}</p>
+
+                </details>
+              </ScrollReveal>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="commercial-industrial-cta">
+
+        <div className="service-container">
+
+          <div className="commercial-industrial-cta__inner">
+
+            <div>
+
+              <span className="commercial-industrial-hero__eyebrow">
+                {page.cta.eyebrow}
+              </span>
+
+              <h2>{page.cta.title}</h2>
+
+              <p>{page.cta.description}</p>
+
+            </div>
+
+            <Link
+              to="/contact"
+              className="service-btn service-btn--light"
+            >
+              {page.cta.button}
+            </Link>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
   );
 }
+
+export default CommercialIndustrialSolarPage;

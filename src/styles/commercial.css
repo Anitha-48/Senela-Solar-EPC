@@ -1,0 +1,1190 @@
+/* =========================================================
+   COMMERCIAL & INDUSTRIAL SOLAR PAGE
+   Related to Residential Solar Page
+   Theme: Professional Blue + Light Blue
+   Font: Inter
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE BASE
+   ========================================================= */
+
+.commercial-industrial-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #172033;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.commercial-industrial-page *,
+.commercial-industrial-page *::before,
+.commercial-industrial-page *::after {
+  box-sizing: border-box;
+}
+
+.commercial-industrial-page .service-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.commercial-industrial-hero {
+  width: 100%;
+  padding: 70px 0;
+  background: #f7f9fc;
+}
+
+.commercial-industrial-hero__container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.82fr);
+  gap: 70px;
+  align-items: center;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.commercial-industrial-hero__content {
+  width: 100%;
+  max-width: 650px;
+}
+
+.commercial-industrial-hero__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: #1e4171;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.commercial-industrial-hero__content h1 {
+  margin: 0 0 24px;
+
+  color: #101828;
+
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.commercial-industrial-hero__content h1 span {
+  display: block;
+  color: #3c77c9;
+}
+
+.commercial-industrial-hero__content p {
+  max-width: 620px;
+
+  margin: 0 0 14px;
+
+  color: #667085;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.commercial-industrial-hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+.commercial-industrial-page .service-btn {
+  min-height: 48px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.commercial-industrial-page .service-btn:hover {
+  transform: translateY(-2px);
+}
+
+.commercial-industrial-page .service-btn--primary {
+  background: #1677ff;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(22, 119, 255, 0.2);
+}
+
+.commercial-industrial-page .service-btn--secondary {
+  background: #ffffff;
+  color: #101828;
+  border: 1px solid #d0d5dd;
+}
+
+.commercial-industrial-page .service-btn--light {
+  background: #ffffff;
+  color: #1677ff;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.commercial-industrial-page .primary-btn,
+.commercial-industrial-page .secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 13px 24px;
+
+  border-radius: 8px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.commercial-industrial-page .primary-btn {
+  border: 1px solid #1565c0;
+
+  background: #1565c0;
+  color: #ffffff;
+}
+
+.commercial-industrial-page .primary-btn:hover {
+  background: #0b3d91;
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(21, 101, 192, 0.22);
+}
+
+.commercial-industrial-page .secondary-btn {
+  border: 1px solid #c8d8ea;
+
+  background: #ffffff;
+  color: #1565c0;
+}
+
+.commercial-industrial-page .secondary-btn:hover {
+  border-color: #1565c0;
+  background: #f4f9ff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.commercial-industrial-hero__image {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+  justify-self: end;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  background: #dfefff;
+
+  box-shadow: 0 20px 50px rgba(11, 61, 145, 0.14);
+}
+
+.commercial-industrial-hero__image img {
+  display: block;
+
+  width: 100%;
+  height: 420px;
+
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.commercial-industrial-hero__image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 61, 145, 0.02),
+      rgba(11, 61, 145, 0.18)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO BADGE
+   ========================================================= */
+
+.commercial-industrial-hero__badge {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  z-index: 2;
+
+  max-width: 260px;
+
+  padding: 18px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(8px);
+}
+
+.commercial-industrial-hero__badge strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #0b3d91;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.commercial-industrial-hero__badge span {
+  color: #637083;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+   ========================================================= */
+
+.commercial-industrial-page .service-section {
+  width: 100%;
+  padding: 90px 0;
+}
+
+.commercial-industrial-page .service-section:nth-child(even) {
+  background: #f8fbff;
+}
+
+
+/* =========================================================
+   INTRO / SOLUTIONS SECTION
+   ========================================================= */
+
+.commercial-industrial-intro {
+  background: #ffffff;
+}
+
+.commercial-industrial-intro .section-eyebrow {
+  margin-bottom: 12px;
+
+  color: #1976d2;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.commercial-industrial-intro h2 {
+  margin: 0 0 18px;
+
+  color: #0b3d91;
+
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.commercial-industrial-intro p {
+  margin: 0;
+
+  color: #617084;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SOLUTION GRID
+   ========================================================= */
+
+.commercial-industrial-solution-grid {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.commercial-industrial-solution-card {
+  position: relative;
+
+  min-height: 230px;
+
+  padding: 30px;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  background: #f8fafc;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.commercial-industrial-solution-card:hover {
+
+  border-color: #b7d5ff;
+
+  box-shadow: 0 16px 35px rgba(16, 24, 40, 0.08);
+}
+
+.commercial-industrial-solution-card > span {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #1677ff;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.commercial-industrial-solution-card h3 {
+  margin: 0 0 12px;
+
+  color: #101828;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.commercial-industrial-solution-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   INDUSTRIAL SYSTEM SECTION
+   ========================================================= */
+
+.industrial-system-section {
+  background: #ffffff;
+}
+
+.industrial-system-layout {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: minmax(380px, 0.9fr) minmax(0, 1.1fr);
+
+  gap: 55px;
+
+  margin-top: 50px;
+  align-items: start;
+}
+
+
+/* =========================================================
+   SYSTEM IMAGE
+   ========================================================= */
+
+.industrial-system-image {
+  position: relative;
+
+  width: 100%;
+  height: 540px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #eaf4ff;
+
+  box-shadow: 0 18px 45px rgba(11, 61, 145, 0.12);
+}
+
+.industrial-system-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   SYSTEM COMPONENTS
+   ========================================================= */
+
+.industrial-system-components {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.industrial-component-card {
+  min-height: 190px;
+  padding: 24px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  border: 1px solid #e0eaf4;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.industrial-component-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #b8d3ee;
+
+  box-shadow: 0 14px 30px rgba(11, 61, 145, 0.08);
+}
+
+.industrial-component-card .industrial-component-number {
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+
+  background: #eaf3ff;
+  color: #1677ff;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.industrial-component-card h3 {
+  margin: 0 0 10px;
+
+  color: #123f78;
+
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.industrial-component-card p {
+  margin: 0;
+
+  color: #6a7789;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROJECTS SECTION
+   ========================================================= */
+
+.commercial-industrial-projects {
+  background: #f7fbff;
+}
+
+.commercial-industrial-project-grid {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.commercial-industrial-project-card {
+  min-width: 0;
+  overflow: hidden;
+
+  border: 1px solid #e0eaf4;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.commercial-industrial-project-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 40px rgba(11, 61, 145, 0.11);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+   ========================================================= */
+
+.commercial-industrial-project-image {
+  width: 100%;
+  height: 230px;
+
+  overflow: hidden;
+
+  background: #eaf4ff;
+}
+
+.commercial-industrial-project-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.commercial-industrial-project-card:hover
+.commercial-industrial-project-image img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+   ========================================================= */
+
+.commercial-industrial-project-content {
+  padding: 24px;
+}
+
+.commercial-industrial-project-content h3 {
+  margin: 0 0 10px;
+
+  color: #123f78;
+
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.commercial-industrial-project-content p {
+  margin: 0;
+
+  color: #69778a;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   EPC SECTION
+   ========================================================= */
+
+.commercial-industrial-epc {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.commercial-industrial-epc-box {
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+
+  align-items: stretch;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #0b3d91;
+
+  box-shadow: 0 20px 50px rgba(11, 61, 145, 0.16);
+}
+
+.commercial-industrial-epc-content {
+  padding: 55px;
+}
+
+.commercial-industrial-epc-content .commercial-industrial-hero__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #8dccff;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.commercial-industrial-epc-content h2 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.commercial-industrial-epc-content p {
+  margin: 0 0 15px;
+
+  color: #dbeaff;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.commercial-industrial-epc-content .primary-btn {
+  margin-top: 15px;
+
+  background: #ffffff;
+  color: #0b3d91;
+
+  border-color: #ffffff;
+}
+
+.commercial-industrial-epc-content .primary-btn:hover {
+  background: #eaf4ff;
+}
+
+.commercial-industrial-epc-image {
+  min-height: 430px;
+}
+
+.commercial-industrial-epc-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   FAQ SECTION
+   ========================================================= */
+
+.commercial-industrial-faq {
+  background: #f7fbff;
+}
+
+.commercial-industrial-faq-list {
+  max-width: 900px;
+
+  margin: 45px auto 0;
+}
+
+.commercial-industrial-faq-item {
+  margin-bottom: 14px;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.commercial-industrial-faq-item:hover {
+  border-color: #bcd4eb;
+
+  box-shadow: 0 8px 22px rgba(11, 61, 145, 0.06);
+}
+
+.commercial-industrial-faq-item h3 {
+  margin: 0 0 10px;
+
+  color: #123f78;
+
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.commercial-industrial-faq-item summary {
+  min-height: 65px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  list-style: none;
+  color: #101828;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.commercial-industrial-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.commercial-industrial-faq-item summary b {
+  flex: 0 0 auto;
+  color: #1677ff;
+  font-size: 22px;
+  font-weight: 400;
+  transition: transform 0.25s ease;
+}
+
+.commercial-industrial-faq-item[open] summary b {
+  transform: rotate(45deg);
+}
+
+.commercial-industrial-faq-item p {
+  margin: 0;
+
+  padding: 0 22px 22px;
+
+  color: #69778a;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CTA SECTION
+   ========================================================= */
+
+.commercial-industrial-cta {
+  padding: 80px 0;
+  background: #1677ff;
+}
+
+.commercial-industrial-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.commercial-industrial-cta__inner .commercial-industrial-hero__eyebrow {
+  margin-bottom: 14px;
+
+  color: #dcecff;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.commercial-industrial-cta__inner h2 {
+  max-width: 680px;
+  margin: 0 0 16px;
+
+  color: #ffffff;
+
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.commercial-industrial-cta__inner p {
+  max-width: 650px;
+  margin: 0;
+
+  color: #eaf3ff;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.commercial-industrial-cta__inner .service-btn {
+  flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .commercial-industrial-hero__container {
+    gap: 40px;
+  }
+
+  .commercial-industrial-hero__content h1 {
+    font-size: 46px;
+  }
+
+  .commercial-industrial-solution-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .commercial-industrial-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .industrial-system-layout {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .industrial-system-image {
+    height: 480px;
+  }
+
+  .commercial-industrial-epc-box {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-industrial-epc-image {
+    min-height: 380px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .commercial-industrial-hero {
+    padding: 55px 0 65px;
+  }
+
+  .commercial-industrial-hero__container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .commercial-industrial-hero__content {
+    max-width: 100%;
+
+    text-align: center;
+  }
+
+  .commercial-industrial-hero__actions {
+    justify-content: center;
+  }
+
+  .commercial-industrial-hero__image {
+    min-height: 420px;
+  }
+
+  .commercial-industrial-hero__image img {
+    min-height: 420px;
+  }
+
+  .commercial-industrial-page .service-section {
+    padding: 70px 0;
+  }
+
+  .commercial-industrial-epc-content {
+    padding: 45px 35px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .commercial-industrial-page .service-container {
+    width: calc(100% - 30px);
+  }
+
+  .commercial-industrial-hero {
+    padding: 45px 0 55px;
+  }
+
+  .commercial-industrial-hero__container {
+    width: calc(100% - 30px);
+  }
+
+  .commercial-industrial-hero__eyebrow {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .commercial-industrial-hero__content h1 {
+    font-size: 36px;
+    line-height: 1.12;
+    letter-spacing: -0.8px;
+  }
+
+  .commercial-industrial-hero__content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .commercial-industrial-hero__actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .commercial-industrial-page .service-btn--primary,
+  .commercial-industrial-page .service-btn--secondary {
+    width: 100%;
+  }
+
+  .commercial-industrial-hero__image {
+    min-height: 0;
+
+    border-radius: 16px;
+  }
+
+  .commercial-industrial-hero__image img {
+    height: 300px;
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .commercial-industrial-hero__badge {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+
+    max-width: none;
+
+    padding: 14px 16px;
+  }
+
+  .commercial-industrial-page .service-section {
+    padding: 60px 0;
+  }
+
+  .commercial-industrial-intro {
+    margin-bottom: 35px;
+  }
+
+  .commercial-industrial-intro h2 {
+    font-size: 30px;
+  }
+
+  .commercial-industrial-intro p {
+    font-size: 14px;
+  }
+
+  .commercial-industrial-solution-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .commercial-industrial-solution-card {
+    min-height: auto;
+
+    padding: 24px;
+  }
+
+  .industrial-system-layout {
+    gap: 30px;
+  }
+
+  .industrial-system-image {
+    height: 280px;
+
+    border-radius: 16px;
+  }
+
+  .industrial-system-components {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .industrial-component-card {
+    padding: 20px;
+  }
+
+  .commercial-industrial-project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .commercial-industrial-project-image {
+    height: 220px;
+  }
+
+  .commercial-industrial-project-content {
+    padding: 21px;
+  }
+
+  .commercial-industrial-epc {
+    padding: 60px 0;
+  }
+
+  .commercial-industrial-epc-box {
+    border-radius: 16px;
+  }
+
+  .commercial-industrial-epc-content {
+    padding: 35px 25px;
+  }
+
+  .commercial-industrial-epc-content h2 {
+    font-size: 30px;
+  }
+
+  .commercial-industrial-epc-content p {
+    font-size: 14px;
+  }
+
+  .commercial-industrial-epc-image {
+    min-height: 280px;
+  }
+
+  .commercial-industrial-faq-list {
+    margin-top: 30px;
+  }
+
+  .commercial-industrial-faq-item {
+    padding: 0;
+  }
+
+  .commercial-industrial-faq-item summary {
+    min-height: 60px;
+    padding: 17px;
+    font-size: 13px;
+  }
+
+  .commercial-industrial-faq-item h3 {
+    font-size: 15px;
+  }
+
+  .commercial-industrial-faq-item p {
+    padding: 0 17px 18px;
+    font-size: 13px;
+  }
+
+  .commercial-industrial-cta {
+    padding: 65px 0;
+  }
+
+  .commercial-industrial-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .commercial-industrial-cta__inner h2 {
+    font-size: 30px;
+  }
+
+  .commercial-industrial-cta__inner p {
+    font-size: 14px;
+  }
+
+  .commercial-industrial-cta__inner .service-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .commercial-industrial-hero__content h1 {
+    font-size: 31px;
+  }
+
+  .commercial-industrial-hero__image,
+  .commercial-industrial-hero__image img {
+    min-height: 300px;
+  }
+
+  .commercial-industrial-solution-card {
+    padding: 20px;
+  }
+
+  .industrial-component-card {
+    padding: 18px;
+  }
+
+  .commercial-industrial-project-content {
+    padding: 18px;
+  }
+
+  .commercial-industrial-epc-content {
+    padding: 30px 20px;
+  }
+
+  .commercial-industrial-epc-content h2 {
+    font-size: 27px;
+  }
+}

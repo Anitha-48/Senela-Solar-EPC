@@ -664,6 +664,29 @@
   padding-left: 8px;
 }
 
+.mobile-menu__group {
+  position: relative;
+}
+
+.mobile-menu__submenu-toggle {
+  position: absolute;
+  right: 20px;
+  width: 42px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #17324d;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.mobile-menu__submenu-toggle:hover {
+  color: #096dc3;
+}
+
 
 /* =========================================
    MOBILE SUBMENU

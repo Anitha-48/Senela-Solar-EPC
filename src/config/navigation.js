@@ -16,9 +16,9 @@ export const navigation = [
     label: "Services",
     path: "/services",
     children: [
-      { label: "Residential Solar", path: "/solar-solutions/residential" },
-      { label: "Commercial & Industrial Solar", path: "/solar-solutions/industrial" },
-      { label: "Utility-Scale & Integrated EPC Projects", path: "/solar-solutions/integrated-epc" },
+      { label: "On-grid Solar", path: "/solar-solutions/on-grid" },
+      { label: "Off-grid Solar", path: "/solar-solutions/off-grid" },
+      { label: "Hybrid Grid Solar", path: "/solar-solutions/hybrid-grid" },
     ],
   },
   { label: "Solar Calculator", path: "/solar-calculator" },

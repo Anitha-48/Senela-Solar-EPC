@@ -17,6 +17,8 @@ const translation = {
     services: "Services",
     residentialSolar: "Residential Solar",
     commercialIndustrialSolar: "Commercial & Industrial Solar",
+    commercialSolar: "Commercial Solar",
+    utilityScaleSolar: "Utility-Scale & Integrated EPC Projects",
     integratedEpcProjects: "Utility-Scale & Integrated EPC Projects",
     powerDistributionTransmission: "Power Distribution & Transmission",
     ehvSubstation: "EHV Substation",
@@ -816,6 +818,66 @@ const translation = {
     message: "I would like to inquire about your solar solutions. Please provide Further information.",
   },
 
+  solarSolutionsPage: {
+    hero: {
+      eyebrow: "OUR SOLAR SOLUTIONS",
+      title: "Solar Energy Solutions",
+      titleHighlight: "Built Around Your Energy Needs",
+      description: "From homes and businesses to utility-scale projects, we design solar systems around the way each site uses energy.",
+      primaryButton: "Get a Consultation",
+      secondaryButton: "Explore Solutions",
+      imageAlt: "Solar panels and clean energy system",
+      badgeTitle: "Clean Energy",
+      badgeText: "Designed for long-term performance",
+    },
+    solutionsSection: {
+      eyebrow: "OUR SOLUTIONS",
+      title: "Choose the Right Solar Solution",
+      description: "Reliable solar systems for residential, commercial, industrial and utility-scale applications.",
+    },
+    solutions: {
+      residential: { title: "Residential Solar", description: "Rooftop solar systems for homes, villas and residential communities.", imageAlt: "Residential rooftop solar", points: ["Lower household electricity bills", "On-grid, off-grid and hybrid options", "Professional installation and support"] },
+      commercial: { title: "Commercial Solar", description: "Efficient solar systems for offices, shops, institutions and commercial buildings.", imageAlt: "Commercial rooftop solar", points: ["Reduce operating costs", "Use rooftops and open spaces productively", "Scalable systems for growing businesses"] },
+      industrial: { title: "Industrial Solar", description: "High-capacity solar solutions for factories, warehouses and industrial facilities.", imageAlt: "Industrial solar installation", points: ["Support large daytime loads", "Improve energy reliability", "Engineering-led EPC execution"] },
+      utility: { title: "Utility-Scale & Integrated EPC", description: "Large-scale solar and integrated EPC delivery for utility and infrastructure projects.", imageAlt: "Utility-scale solar project", points: ["Utility-scale generation", "Integrated electrical infrastructure", "End-to-end project delivery"] },
+    },
+    viewDetails: "View Details",
+    utilitySection: {
+      eyebrow: "UTILITY-SCALE SOLAR",
+      title: "Large-Scale Solar and Integrated EPC Delivery",
+      description: "We coordinate engineering, procurement, construction and commissioning for complex solar and power infrastructure projects.",
+      imageAlt: "Utility-scale solar panels",
+      points: [
+        { number: "01", title: "Engineering", text: "Site assessment, system design and technical planning." },
+        { number: "02", title: "Procurement", text: "Quality equipment and coordinated project sourcing." },
+        { number: "03", title: "Execution", text: "Construction, testing and commissioning with clear accountability." },
+      ],
+      button: "Explore Utility-Scale Solar",
+    },
+    integratedEpc: {
+      eyebrow: "INTEGRATED EPC",
+      title: "One Team From Planning to Commissioning",
+      description: "Our integrated approach keeps every project stage aligned for dependable delivery.",
+      projects: {
+        engineering: { title: "Engineering", text: "Practical designs shaped around site conditions and project requirements." },
+        procurement: { title: "Procurement", text: "Coordinated equipment sourcing with quality and schedule control." },
+        installation: { title: "Installation", text: "Safe, disciplined construction and electrical installation." },
+        commissioning: { title: "Commissioning", text: "Testing, grid coordination and reliable project handover." },
+      },
+      button: "View EPC Services",
+    },
+    projectSection: { eyebrow: "PROJECT HIGHLIGHTS", title: "Solar Projects Across Different Scales", description: "Explore the range of energy solutions we deliver for homes, businesses and infrastructure projects." },
+    projectHighlights: {
+      utility: { title: "Utility-Scale Solar", description: "Large-scale generation designed for efficiency and grid stability." },
+      factory: { title: "Solar for Factory", description: "Optimised energy solutions that lower industrial operating costs." },
+      openAccess: { title: "Green Energy OA", description: "Sustainable open-access power delivery for eligible businesses." },
+      rooftop: { title: "Residential Rooftop", description: "Clean energy systems that help homes reduce grid dependence." },
+      financed: { title: "Financed Solar Plant", description: "Flexible financing options for practical solar investment." },
+      zeroUpfront: { title: "Zero Upfront", description: "Innovative models that make the transition to solar easier." },
+    },
+    cta: { eyebrow: "START YOUR PROJECT", title: "Ready to plan your solar future?", description: "Talk to our team about a solar solution designed for your site and energy goals.", button: "Contact Us" },
+  },
+
   solarServicePages: {
     residential: {
       breadcrumb: "HOME › RESIDENTIAL SOLAR SOLUTIONS",
@@ -887,6 +949,12 @@ const translation = {
       breadcrumb: "HOME › COMMERCIAL SOLAR",
       eyebrow: "SMART COMMERCIAL SOLAR",
       title: "Solar solutions built for business performance and growth.",
+      imageAlt: "Commercial solar installation",
+      badgeTitle: "Commercial Solar",
+      badgeText: "Built for lower costs and reliable operations",
+      systemImageAlt: "Commercial solar system installation",
+      projectFallbackTitle: "Commercial Solar Project",
+      projectFallbackText: "Solar solutions designed for reliable commercial energy performance.",
       description: [
         "Commercial and industrial solar systems help organisations lower operating costs, reduce dependence on grid power and improve energy resilience.",
         "We deliver rooftop and ground-mounted solar solutions designed around your operational profile, tariff structure and long-term financial goals."
@@ -934,12 +1002,21 @@ const translation = {
         description: "Let us help you plan, design and execute a solar system that supports your operational goals and long-term energy strategy.",
         primary: "Get Free Consultation",
         secondary: "Call Now"
+      },
+      epc: {
+        eyebrow: "COMMERCIAL SOLAR EPC",
+        title: "A complete solar project delivered with one accountable team.",
+        imageAlt: "Commercial solar EPC project"
       }
     },
     utilityScale: {
       breadcrumb: "HOME › UTILITY-SCALE & EPC PROJECTS",
       eyebrow: "INTEGRATED EPC EXECUTION",
       title: "Large-scale solar execution for high-impact energy projects.",
+      titleHighlight: "Integrated EPC Delivery",
+      imageAlt: "Utility-scale solar project",
+      badgeTitle: "Integrated EPC",
+      badgeText: "From engineering through commissioning",
       description: [
         "We deliver utility-scale solar and integrated EPC projects that demand disciplined execution, strong engineering and reliable commissioning in complex project environments.",
         "Our teams work across solar generation, power distribution and electrical infrastructure to ensure each project is ready for operational performance from day one."

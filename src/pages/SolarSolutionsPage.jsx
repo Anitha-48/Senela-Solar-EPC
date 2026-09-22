@@ -1,173 +1,523 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ArrowRight, Sun, BatteryCharging, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight,
+  Sun,
+  Home,
+  Building2,
+  Factory,
+  PanelsTopLeft,
+  Settings,
+  CheckCircle2,
+} from "lucide-react";
+
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
+
 import "../styles/solarsolutions.css";
 
-const solutions = [
+const solutionCards = [
   {
-    id: "on-grid",
-    title: "On-grid Solar Systems",
-    description: "Ideal for commercial and industrial facilities looking to reduce electricity bills. Surplus energy is fed back into the utility grid through net-metering.",
-    points: [
-      "Lower electricity bills through offset generation",
-      "Net metering and grid integration handled end-to-end",
-      "No battery storage required, lower upfront cost"
-    ],
-    icon: Sun,
-    image: "https://5.imimg.com/data5/SELLER/Default/2025/11/561181140/VF/UO/FX/17639025/10-kw-grid-solar-power-park.jpg",
-    path: "/solar-solutions/on-grid"
+    id: "residential",
+    icon: Home,
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+    path: "/solar-solutions/residential",
   },
   {
-    id: "hybrid-grid",
-    title: "Hybrid Grid Solar Systems",
-    description: "Designed for properties that want solar savings with backup resilience, using battery storage to store excess generation and support critical loads during outages.",
-    points: [
-      "Optimised use of solar generation with battery backup",
-      "Reliable power during grid outages and peak tariff periods",
-      "Smart energy management for critical loads and business continuity"
-    ],
-    icon: BatteryCharging,
-    image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1200&auto=format&fit=crop",
-    path: "/solar-solutions/hybrid-grid"
+    id: "commercial",
+    icon: Building2,
+    image:
+      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
+    path: "/solar-solutions/commercial-industrial",
   },
   {
-    id: "off-grid",
-    title: "Off-grid Solar Systems",
-    description: "Perfect for remote locations or critical backup needs. Combines solar generation with advanced battery storage for complete energy independence.",
-    points: [
-      "Reliable power in remote and rural locations",
-      "Battery storage sized for backup requirements",
-      "Energy independence from grid outages"
-    ],
-    icon: BatteryCharging,
-    image: "https://www.klkindia.com/wp-content/uploads/2025/09/solar-off-grid.webp",
-    path: "/solar-solutions/off-grid"
-  }
+    id: "industrial",
+    icon: Factory,
+    image:
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&auto=format&fit=crop",
+    path: "/solar-solutions/commercial-industrial",
+  },
+  {
+    id: "utility",
+    icon: PanelsTopLeft,
+    image:
+      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1200&auto=format&fit=crop",
+    path: "/solar-solutions/utility-scale",
+  },
+];
+
+const integratedEpc = [
+  {
+    id: "engineering",
+    number: "01",
+    icon: Settings,
+  },
+  {
+    id: "procurement",
+    number: "02",
+    icon: Building2,
+  },
+  {
+    id: "installation",
+    number: "03",
+    icon: Factory,
+  },
+  {
+    id: "commissioning",
+    number: "04",
+    icon: CheckCircle2,
+  },
 ];
 
 const projectHighlights = [
-  { title: "Utility Scale", capacity: "91 MWp", description: "Large-scale power generation designed for maximum efficiency and grid stability." },
-  { title: "Solar for Factory", capacity: "30 KWp", description: "Optimized energy solutions for industrial units to lower operational costs." },
-  { title: "Green Energy OA", capacity: "12 MWp", description: "Sustainable energy projects focused on open-access power delivery." },
-  { title: "Home Roof-top Solar", capacity: "3 KWp", description: "Clean, renewable energy for residential homes to achieve energy independence." },
-  { title: "Financed Solar Plant", capacity: "12 KWp", description: "Accessible solar installations with flexible financing options for businesses." },
-  { title: "Zero Upfront", capacity: "100 KWp", description: "Innovative zero-investment models to transition to green energy immediately." },
+  {
+    id: "utility",
+    capacity: "91 MWp",
+  },
+  {
+    id: "factory",
+    capacity: "30 KWp",
+  },
+  {
+    id: "openAccess",
+    capacity: "12 MWp",
+  },
+  {
+    id: "rooftop",
+    capacity: "3 KWp",
+  },
+  {
+    id: "financed",
+    capacity: "12 KWp",
+  },
+  {
+    id: "zeroUpfront",
+    capacity: "100 KWp",
+  },
 ];
 
 export default function SolarSolutionsPage() {
   const { t } = useTranslation();
-  const translatedSolutions = t("solutions.items", { returnObjects: true });
-  const translatedHighlights = t("solutions.projectHighlights", { returnObjects: true });
+
+  const solutions = t("solarSolutionsPage.solutions", {
+    returnObjects: true,
+  });
+
+  const epcProjects = t("solarSolutionsPage.integratedEpc.projects", {
+    returnObjects: true,
+  });
+
+  const highlights = t("solarSolutionsPage.projectHighlights", {
+    returnObjects: true,
+  });
+
+  const solutionItems = Array.isArray(solutions) ? solutions : [];
+  const utilityPoints = t("solarSolutionsPage.utilitySection.points", {
+    returnObjects: true,
+  });
+  const utilityItems = Array.isArray(utilityPoints) ? utilityPoints : [];
 
   return (
-    <>
-      <section className="section">
+    <main className="solar-solutions-page">
+
+      {/* =====================================================
+          HERO / INTRODUCTION
+      ===================================================== */}
+
+      <section className="solar-solutions-hero">
         <div className="container">
-          <div className="split-section">
-            <ScrollReveal className="split-section__media">
-              <img src="https://sunapecopower.com/wp-content/uploads/2024/08/choose-and-install-solar-panels.png" alt={t("accessibility.solarInstallation")} />
-            </ScrollReveal>
-            <ScrollReveal delay={1}>
-              <div className="eyebrow-line">{t("solutions.specialization")}</div>
-              <h2>{t("solutions.title")}</h2>
-              <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                {translatedSolutions.map((solution, index) => (
-                  <div key={solutions[index].id} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', fontWeight: '500' }}>
-                    <span style={{ color: 'var(--pro-blue)', fontWeight: 'bold' }}>{index + 1}.</span> {solution.title}
-                  </div>
-                ))}
+          <div className="solar-solutions-hero__grid">
+
+            <ScrollReveal className="solar-solutions-hero__content">
+              <span className="solar-solutions-hero__eyebrow">
+                {t("solarSolutionsPage.hero.eyebrow")}
+              </span>
+
+              <h1>
+                {t("solarSolutionsPage.hero.title")}
+                <span>
+                  {t("solarSolutionsPage.hero.titleHighlight")}
+                </span>
+              </h1>
+
+              <p>
+                {t("solarSolutionsPage.hero.description")}
+              </p>
+
+              <div className="solar-solutions-hero__actions">
+                <NavLink
+                  to="/contact"
+                  className="btn btn--primary"
+                >
+                  {t("solarSolutionsPage.hero.primaryButton")}
+                  <ArrowRight size={17} />
+                </NavLink>
+
+                <NavLink
+                  to="#solar-solutions"
+                  className="btn btn--outline-blue"
+                >
+                  {t("solarSolutionsPage.hero.secondaryButton")}
+                </NavLink>
               </div>
             </ScrollReveal>
+
+            <ScrollReveal
+              delay={1}
+              className="solar-solutions-hero__media"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1400&auto=format&fit=crop"
+                alt={t("solarSolutionsPage.hero.imageAlt")}
+              />
+
+              <div className="solar-solutions-hero__badge">
+                <Sun size={24} />
+
+                <div>
+                  <strong>
+                    {t("solarSolutionsPage.hero.badgeTitle")}
+                  </strong>
+
+                  <span>
+                    {t("solarSolutionsPage.hero.badgeText")}
+                  </span>
+                </div>
+              </div>
+            </ScrollReveal>
+
           </div>
         </div>
       </section>
 
-      <section className="section section--light">
+
+      {/* =====================================================
+          SOLAR SOLUTION TYPES
+      ===================================================== */}
+
+      <section
+        id="solar-solutions"
+        className="section section--light solar-solution-types"
+      >
         <div className="container">
-          <SectionTitle 
-            eyebrow={t("solutions.offerings")} 
-            title={t("solutions.chooseSystemTitle")} 
-            description={t("solutions.chooseSystemDescription")}
+
+          <SectionTitle
+            eyebrow={t("solarSolutionsPage.solutionsSection.eyebrow")}
+            title={t("solarSolutionsPage.solutionsSection.title")}
+            description={t(
+              "solarSolutionsPage.solutionsSection.description"
+            )}
           />
-          
-          <div className="detailed-solutions-grid">
-            {solutions.map((s, i) => {
-              const translated = translatedSolutions[i];
+
+          <div className="solar-solution-grid">
+
+            {solutionCards.map((card, index) => {
+              const solution = solutions?.[card.id];
+
+              if (!solution) return null;
+
+              const Icon = card.icon;
+
               return (
-              <ScrollReveal key={s.id} delay={i}>
-                <div
-                  className={`detailed-solution-card ${i % 2 !== 0 ? "is-reversed" : ""}`}
+                <ScrollReveal
+                  key={card.id}
+                  delay={index}
                 >
-                  <div className="detailed-solution-card__media">
-                    <img src={s.image} alt={translated.title} />
-                  </div>
+                  <article className="solar-solution-card">
 
-                  <div className="detailed-solution-card__body">
-                    <span className="detailed-solution-card__icon">
-                      <s.icon size={22} />
-                    </span>
+                    <div className="solar-solution-card__image">
+                      <img
+                        src={card.image}
+                        alt={solution.imageAlt || solution.title}
+                      />
 
-                    <h3>{translated.title}</h3>
-
-                    <p>{translated.description}</p>
-
-                    <div className="detailed-solution-points">
-                      {translated.points.map((point, idx) => (
-                        <div key={idx} className="detailed-solution-point">
-                          <CheckCircle2 size={16} />
-                          <span>{point}</span>
-                        </div>
-                      ))}
+                      <span className="solar-solution-card__number">
+                        0{index + 1}
+                      </span>
                     </div>
 
-                    <NavLink
-                      to={s.path}
-                      className="btn btn--outline-blue btn--sm"
-                    >
-                      {t("solutions.viewMore")}
-                      <ArrowRight
-                        size={16}
-                        style={{
-                          transform: i !== 0 ? "rotate(180deg)" : "none"
-                        }}
-                      />
-                    </NavLink>
-                  </div>
-                </div>
-              </ScrollReveal>
+                    <div className="solar-solution-card__body">
+
+                      <div className="solar-solution-card__icon">
+                        <Icon size={23} />
+                      </div>
+
+                      <h3>{solution.title}</h3>
+
+                      <p>{solution.description}</p>
+
+                      <div className="solar-solution-card__points">
+
+                        {solution.points?.map((point, pointIndex) => (
+                          <div
+                            key={pointIndex}
+                            className="solar-solution-card__point"
+                          >
+                            <CheckCircle2 size={16} />
+
+                            <span>{point}</span>
+                          </div>
+                        ))}
+
+                      </div>
+
+                      <NavLink
+                        to={card.path}
+                        className="solar-solution-card__link"
+                      >
+                        {t("solarSolutionsPage.viewDetails")}
+
+                        <ArrowRight size={16} />
+                      </NavLink>
+
+                    </div>
+                  </article>
+                </ScrollReveal>
               );
             })}
+
           </div>
         </div>
       </section>
 
-      <section className="section">
+
+      {/* =====================================================
+          UTILITY SCALE SOLAR
+      ===================================================== */}
+
+      <section className="solar-utility-section">
         <div className="container">
-          <SectionTitle 
-            eyebrow={t("solutions.milestones")} 
-            title={t("solutions.trackRecordTitle")} 
-            description={t("solutions.trackRecordDescription")}
-          />
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '40px' }}>
-            {projectHighlights.map((project, i) => (
-              <ScrollReveal key={i} delay={i % 3}>
-                <div className="why-card" style={{ height: '100%' }}>
-                  <div className="why-card__icon">
-                    <Sun size={24} />
+
+          <div className="solar-utility-layout">
+
+            <ScrollReveal className="solar-utility-image">
+              <img
+                src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1400&auto=format&fit=crop"
+                alt={t(
+                  "solarSolutionsPage.utilitySection.imageAlt"
+                )}
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              delay={1}
+              className="solar-utility-content"
+            >
+              <span className="solar-section-eyebrow">
+                {t("solarSolutionsPage.utilitySection.eyebrow")}
+              </span>
+
+              <h2>
+                {t("solarSolutionsPage.utilitySection.title")}
+              </h2>
+
+              <p>
+                {t("solarSolutionsPage.utilitySection.description")}
+              </p>
+
+              <div className="solar-utility-points">
+
+                {utilityItems.map((point, index) => (
+                  <div
+                    key={index}
+                    className="solar-utility-point"
+                  >
+                    <span>{point.number}</span>
+
+                    <div>
+                      <h3>{point.title}</h3>
+                      <p>{point.text}</p>
+                    </div>
                   </div>
-                  <div className="why-card__content">
-                    <h3 style={{ marginBottom: '5px', fontSize: '1.2rem' }}>{translatedHighlights[i].title} - {translatedHighlights[i].capacity}</h3>
-                    <p>{translatedHighlights[i].description}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                ))}
+
+              </div>
+
+              <NavLink
+                to="/solar-solutions/utility-scale"
+                className="btn btn--primary"
+              >
+                {t("solarSolutionsPage.utilitySection.button")}
+                <ArrowRight size={17} />
+              </NavLink>
+
+            </ScrollReveal>
+
           </div>
         </div>
       </section>
-    </>
+
+
+      {/* =====================================================
+          INTEGRATED EPC
+      ===================================================== */}
+
+      <section className="solar-integrated-epc">
+        <div className="container">
+
+          <SectionTitle
+            eyebrow={t(
+              "solarSolutionsPage.integratedEpc.eyebrow"
+            )}
+            title={t(
+              "solarSolutionsPage.integratedEpc.title"
+            )}
+            description={t(
+              "solarSolutionsPage.integratedEpc.description"
+            )}
+          />
+
+          <div className="solar-epc-grid">
+
+            {integratedEpc.map((item, index) => {
+              const project = epcProjects?.[item.id];
+
+              if (!project) return null;
+
+              const Icon = item.icon;
+
+              return (
+                <ScrollReveal
+                  key={item.id}
+                  delay={index}
+                >
+                  <article className="solar-epc-card">
+
+                    <div className="solar-epc-card__number">
+                      {item.number}
+                    </div>
+
+                    <div className="solar-epc-card__icon">
+                      <Icon size={22} />
+                    </div>
+
+                    <h3>{project.title}</h3>
+
+                    <p>{project.text}</p>
+
+                    <div className="solar-epc-card__line" />
+
+                  </article>
+                </ScrollReveal>
+              );
+            })}
+
+          </div>
+
+          <div className="solar-integrated-epc__button">
+            <NavLink
+              to="/services/epc"
+              className="btn btn--outline-blue"
+            >
+              {t("solarSolutionsPage.integratedEpc.button")}
+              <ArrowRight size={17} />
+            </NavLink>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          PROJECT HIGHLIGHTS
+      ===================================================== */}
+
+      <section className="section solar-project-highlights">
+        <div className="container">
+
+          <SectionTitle
+            eyebrow={t(
+              "solarSolutionsPage.projectSection.eyebrow"
+            )}
+            title={t(
+              "solarSolutionsPage.projectSection.title"
+            )}
+            description={t(
+              "solarSolutionsPage.projectSection.description"
+            )}
+          />
+
+          <div className="solar-project-grid">
+
+            {projectHighlights.map((project, index) => {
+              const highlight = highlights?.[project.id];
+
+              if (!highlight) return null;
+
+              return (
+                <ScrollReveal
+                  key={project.id}
+                  delay={index % 3}
+                >
+                  <div className="solar-project-card">
+
+                    <div className="solar-project-card__icon">
+                      <Sun size={24} />
+                    </div>
+
+                    <div className="solar-project-card__content">
+
+                      <span>
+                        {project.capacity}
+                      </span>
+
+                      <h3>
+                        {highlight.title}
+                      </h3>
+
+                      <p>
+                        {highlight.description}
+                      </p>
+
+                    </div>
+
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <section className="solar-solutions-cta">
+        <div className="container">
+
+          <ScrollReveal className="solar-solutions-cta__inner">
+
+            <div>
+              <span className="solar-section-eyebrow">
+                {t("solarSolutionsPage.cta.eyebrow")}
+              </span>
+
+              <h2>
+                {t("solarSolutionsPage.cta.title")}
+              </h2>
+
+              <p>
+                {t("solarSolutionsPage.cta.description")}
+              </p>
+            </div>
+
+            <NavLink
+              to="/contact"
+              className="btn btn--primary"
+            >
+              {t("solarSolutionsPage.cta.button")}
+              <ArrowRight size={17} />
+            </NavLink>
+
+          </ScrollReveal>
+
+        </div>
+      </section>
+
+    </main>
   );
 }

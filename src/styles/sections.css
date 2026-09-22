@@ -6,10 +6,6 @@
    ========================================================= */
 
 
-/* =========================================================
-   SECTION
-   ========================================================= */
-
 .section--light {
   width: 100%;
   padding: 90px 0;
@@ -17,20 +13,10 @@
   background: #f5f9fe;
 }
 
-
-/* =========================================================
-   SECTION CONTAINER
-   ========================================================= */
-
 .section--light .container {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 }
-
-
-/* =========================================================
-   SOLAR SOLUTION CARD
-   ========================================================= */
 
 .home-solution-card {
   display: grid;
@@ -318,6 +304,225 @@
 .home-solution-card.is-reversed
 .home-solution-card__body {
   order: 1;
+}
+/* =========================================================
+   SOLAR SOLUTIONS LIST
+   ========================================================= */
+
+.home-solutions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+
+/* =========================================================
+   HYBRID SOLAR CARD
+   Image Left | Content Right
+   ========================================================= */
+
+.home-solution-card--hybrid {
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================================================
+   HYBRID IMAGE
+   ========================================================= */
+
+.home-solution-card--hybrid .home-solution-card__media {
+  order: 1;
+}
+
+
+/* =========================================================
+   HYBRID CONTENT
+   ========================================================= */
+
+.home-solution-card--hybrid .home-solution-card__body {
+  order: 2;
+}
+
+
+/* =========================================================
+   HYBRID ICON
+   ========================================================= */
+
+.home-solution-card__icon--hybrid {
+  color: #1565c0;
+  background: #eaf4ff;
+  border-color: #cfe4f8;
+}
+
+
+/* Hybrid icon hover */
+
+.home-solution-card--hybrid:hover
+.home-solution-card__icon--hybrid {
+  color: #ffffff;
+  background: #1565c0;
+  border-color: #1565c0;
+}
+
+
+/* =========================================================
+   HYBRID TITLE
+   ========================================================= */
+
+.home-solution-card--hybrid
+.home-solution-card__body h3 {
+  color: #172033;
+}
+
+
+/* =========================================================
+   HYBRID DESCRIPTION
+   ========================================================= */
+
+.home-solution-card--hybrid
+.home-solution-card__body p {
+  color: #5d6b7d;
+}
+
+
+/* =========================================================
+   HYBRID BENEFITS
+   ========================================================= */
+
+.home-solution-card--hybrid
+.home-solution-benefits li svg {
+  color: #2e9d59;
+}
+
+
+/* =========================================================
+   HYBRID HOVER
+   ========================================================= */
+
+.home-solution-card--hybrid:hover {
+  border-color: #bcd8f3;
+  box-shadow:
+    0 18px 40px rgba(11, 61, 145, 0.14);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .home-solution-card--hybrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__body {
+    padding: 35px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__body h3 {
+    font-size: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .home-solution-card--hybrid {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__media {
+    order: 1;
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__body {
+    order: 2;
+    padding: 32px 26px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__body h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__body p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .home-solutions-list {
+    gap: 22px;
+  }
+
+  .home-solution-card--hybrid {
+    border-radius: 14px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__media {
+    min-height: 220px;
+    height: 220px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__body {
+    padding: 27px 20px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 16px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-card__body h3 {
+    font-size: 21px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-benefits {
+    gap: 9px;
+    margin-bottom: 22px;
+  }
+
+  .home-solution-card--hybrid
+  .home-solution-benefits li {
+    font-size: 13px;
+    align-items: flex-start;
+  }
+
+  .home-solution-card--hybrid
+  .btn--outline-blue {
+    width: 100%;
+  }
+
 }
 
 
@@ -867,14 +1072,8 @@
   }
 }
 
-
-```css
 /* =========================================================
-   SOLAR EPC HOME PAGE
-   WHY CHOOSE US + EPC APPROACH + SUSTAINABILITY
-   Blue Solar EPC Theme
-   Font: Inter
-   Mobile Responsive
+   SOLAR EPC HOME PAG
    ========================================================= */
 
 
@@ -1101,13 +1300,6 @@
   font-size: 0.9rem;
   line-height: 1.7;
 }
-
-
-/* =========================================================
-   EPC APPROACH SECTION
-   ========================================================= */
-
-```css
 /* =========================================================
    OUR EPC APPROACH
    CLEAN LARGE IMAGE + TEXT CARD
@@ -1136,22 +1328,11 @@
   pointer-events: none;
 }
 
-
-/* =========================================================
-   MAIN EPC CONTAINER
-   ========================================================= */
-
 .epc-flow-container {
   width: 100%;
   position: relative;
   z-index: 2;
 }
-
-
-/* =========================================================
-   EPC GRID
-   ========================================================= */
-
 .epc-flow-grid {
   display: grid;
 
@@ -1162,10 +1343,6 @@
   align-items: start;
 }
 
-
-/* =========================================================
-   LEFT TIMELINE
-   ========================================================= */
 
 .epc-flow-nav {
   position: relative;
@@ -1205,10 +1382,6 @@
 }
 
 
-/* =========================================================
-   EPC STEP
-   ========================================================= */
-
 .epc-flow-step {
   position: relative;
 
@@ -1230,10 +1403,6 @@
   transform: translateX(4px);
 }
 
-
-/* =========================================================
-   STEP MARKER
-   ========================================================= */
 
 .epc-flow-step__marker {
   position: relative;
@@ -1281,11 +1450,6 @@
   display: none;
 }
 
-
-/* =========================================================
-   STEP CONTENT
-   ========================================================= */
-
 .epc-flow-step__content {
   flex: 1;
 
@@ -1332,10 +1496,6 @@
 }
 
 
-/* =========================================================
-   ACTIVE STEP
-   ========================================================= */
-
 .epc-flow-step.is-active {
   transform: translateX(5px);
 }
@@ -1363,9 +1523,6 @@
 }
 
 
-/* =========================================================
-   RIGHT CONTENT CARD
-   ========================================================= */
 
 .epc-flow-display {
   position: relative;
@@ -1385,9 +1542,6 @@
 }
 
 
-/* =========================================================
-   INDIVIDUAL PANEL
-   ========================================================= */
 
 .epc-flow-panel {
   position: absolute;
@@ -1418,31 +1572,17 @@
 }
 
 
-/* =========================================================
-   LARGE IMAGE
-   ========================================================= */
-
 .epc-flow-panel__media {
   /* position: relative; */
 
   width: 100%;
   height:280px;
-  /*
-     Consistent image ratio.
-     Every EPC image gets the same visual height.
-  */
-
-  
-
-  min-height: 360px;
+    min-height: 360px;
 
   overflow: hidden;
 
   background: #e8f3ff;
 }
-
-
-/* Image overlay */
 
 .epc-flow-panel__media::after {
   content: "";
@@ -1461,9 +1601,6 @@
   pointer-events: none;
 }
 
-
-/* Actual image */
-
 .epc-flow-panel__media img {
   width: 100%;
   height: 100%;
@@ -1481,11 +1618,6 @@
   transform: scale(1.015);
 }
 
-
-/* =========================================================
-   TEXT BELOW IMAGE
-   ========================================================= */
-
 .epc-flow-panel__text {
   display: flex;
   flex-direction: column;
@@ -1494,11 +1626,6 @@
 
   background: #ffffff;
 }
-
-
-/* =========================================================
-   STEP LABEL
-   ========================================================= */
 
 .epc-flow-panel__eyebrow {
   display: inline-flex;
@@ -1517,10 +1644,6 @@
 }
 
 
-/* =========================================================
-   TITLE
-   ========================================================= */
-
 .epc-flow-panel__title {
   margin: 0 0 10px;
 
@@ -1535,11 +1658,6 @@
   letter-spacing: -0.025em;
 }
 
-
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
-
 .epc-flow-panel__desc {
   max-width: 760px;
 
@@ -1551,11 +1669,6 @@
 
   line-height: 1.75;
 }
-
-
-/* =========================================================
-   SPECIALIZED PHASE
-   ========================================================= */
 
 .epc-flow-panel__meta {
   margin-top: 20px;
@@ -1583,10 +1696,6 @@
   color: #42a5f5;
 }
 
-
-/* =========================================================
-   TABLET
-   ========================================================= */
 
 @media (max-width: 1000px) {
 

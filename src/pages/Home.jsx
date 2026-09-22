@@ -95,61 +95,146 @@ export default function Home() {
 
 
       {/* Solar Solutions */}
-      <section className="section section--light">
-        <div className="container">
-          <SectionTitle
-            eyebrow={t("hero.solarSolutions")}
-            title={t("hero.solarSystemEngineered")}
-            description={t("hero.solarSolutionsDescription")}
-          />
-          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-            <ScrollReveal>
-              <div className="home-solution-card">
-                <div className="home-solution-card__media">
-                  <img src="https://5.imimg.com/data5/SELLER/Default/2025/11/561181140/VF/UO/FX/17639025/10-kw-grid-solar-power-park.jpg" alt={t("home.onGridAlt")} />
-                </div>
-                <div className="home-solution-card__body">
-                  <span className="home-solution-card__icon"><Sun size={22} /></span>
-                  <h3>{t("home.onGridTitle")}</h3>
-                  <p>{t("home.onGridDescription")}</p>
-                  <ul className="home-solution-benefits">
-                    {t("home.onGridBenefits", { returnObjects: true }).map((item) => <li key={item}><CheckCircle2 size={16} /> {item}</li>)}
-                  </ul>
-                  <NavLink to="/solar-solutions/on-grid" className="btn btn--outline-blue btn--sm">{t("home.learnMore")} <ArrowRight size={16} /></NavLink>
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={1}>
-              <div className="home-solution-card is-reversed">
-                <div className="home-solution-card__media">
-                  <img src="https://www.klkindia.com/wp-content/uploads/2025/09/solar-off-grid.webp" alt={t("home.offGridAlt")} />
-                </div>
-                <div className="home-solution-card__body">
-                  <span className="home-solution-card__icon"><BatteryCharging size={22} /></span>
-                  <h3>{t("home.offGridTitle")}</h3>
-                  <p>{t("home.offGridDescription")}</p>
-                  <ul className="home-solution-benefits">
-                    {t("home.offGridBenefits", { returnObjects: true }).map((item) => <li key={item}><CheckCircle2 size={16} /> {item}</li>)}
-                  </ul>
-                  <NavLink to="/solar-solutions/off-grid" className="btn btn--outline-blue btn--sm">{t("home.learnMore")} <ArrowRight size={16} /></NavLink>
-                </div>
-              </div>
-            </ScrollReveal>
+<section className="section section--light">
+  <div className="container">
+
+    <SectionTitle
+      eyebrow={t("hero.solarSolutions")}
+      title={t("hero.solarSystemEngineered")}
+      description={t("hero.solarSolutionsDescription")}
+    />
+
+    <div className="home-solutions-list">
+
+      {/* ON GRID */}
+      <ScrollReveal>
+        <div className="home-solution-card">
+          <div className="home-solution-card__media">
+            <img
+              src="https://5.imimg.com/data5/SELLER/Default/2025/11/561181140/VF/UO/FX/17639025/10-kw-grid-solar-power-park.jpg"
+              alt={t("home.onGridAlt")}
+            />
+          </div>
+
+          <div className="home-solution-card__body">
+            <span className="home-solution-card__icon">
+              <Sun size={22} />
+            </span>
+
+            <h3>{t("home.onGridTitle")}</h3>
+
+            <p>{t("home.onGridDescription")}</p>
+
+            <ul className="home-solution-benefits">
+              {t("home.onGridBenefits", {
+                returnObjects: true,
+              }).map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <NavLink
+              to="/solar-solutions/on-grid"
+              className="btn btn--outline-blue btn--sm"
+            >
+              {t("home.learnMore")}
+              <ArrowRight size={16} />
+            </NavLink>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
+      {/* OFF GRID */}
+      <ScrollReveal delay={1}>
+        <div className="home-solution-card is-reversed">
+          <div className="home-solution-card__media">
+            <img
+              src="https://www.klkindia.com/wp-content/uploads/2025/09/solar-off-grid.webp"
+              alt={t("home.offGridAlt")}
+            />
+          </div>
 
+          <div className="home-solution-card__body">
+            <span className="home-solution-card__icon">
+              <BatteryCharging size={22} />
+            </span>
 
+            <h3>{t("home.offGridTitle")}</h3>
 
+            <p>{t("home.offGridDescription")}</p>
 
-      
+            <ul className="home-solution-benefits">
+              {t("home.offGridBenefits", {
+                returnObjects: true,
+              }).map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </li>
+              ))}
+            </ul>
 
-           
+            <NavLink
+              to="/solar-solutions/off-grid"
+              className="btn btn--outline-blue btn--sm"
+            >
+              {t("home.learnMore")}
+              <ArrowRight size={16} />
+            </NavLink>
+          </div>
+        </div>
+      </ScrollReveal>
 
+      {/* HYBRID */}
+      <ScrollReveal delay={2}>
+        <div className="home-solution-card home-solution-card--hybrid">
 
+          <div className="home-solution-card__media">
+            <img
+              src="https://www.pvmars.com/wp-content/uploads/2024/05/wind-solar-hybrid-system.webp"
+              alt={t("home.hybridAlt")}
+            />
+          </div>
 
+          <div className="home-solution-card__body">
 
+            <span className="home-solution-card__icon home-solution-card__icon--hybrid">
+              <Sun size={22} />
+            </span>
+
+            <h3>{t("home.hybridTitle")}</h3>
+
+            <p>{t("home.hybridDescription")}</p>
+
+            <ul className="home-solution-benefits">
+              {t("home.hybridBenefits", {
+                returnObjects: true,
+              }).map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <NavLink
+              to="/solar-solutions/hybrid"
+              className="btn btn--outline-blue btn--sm"
+            >
+              {t("home.learnMore")}
+              <ArrowRight size={16} />
+            </NavLink>
+
+          </div>
+        </div>
+      </ScrollReveal>
+
+    </div>
+  </div>
+</section>
 
       {/* Why Choose Us */}
       <section className="section">

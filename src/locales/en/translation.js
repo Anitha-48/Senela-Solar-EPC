@@ -52,6 +52,7 @@ const translation = {
     learnMore: "Learn More",
     onGridAlt: "On-grid rooftop solar installation",
     offGridAlt: "Off-grid solar system with battery storage",
+    hybridAlt: "Hybrid solar system with battery storage",
     servicesAlt: "Solar energy project",
     servicesEyebrow: "ENGINEERING & EPC SERVICES",
     aboutTitle: "Engineering Energy. Building a Sustainable Future.",
@@ -71,6 +72,15 @@ const translation = {
       "Battery storage sized for backup requirements",
       "Energy independence from grid outages",
     ],
+    hybridTitle: "Hybrid Solar",
+    hybridDescription:
+    "Solar systems that combine solar generation, battery storage and grid connectivity for reliable power and greater energy independence.",
+    hybridBenefits: [
+  "Solar power with battery storage",
+  "Backup power during grid outages",
+  "Reduced dependency on the utility grid",
+  "Efficient energy management",
+],
     engineeringServices: "ENGINEERING & EPC SERVICES",
     infrastructureTitle: "Electrical Infrastructure, Built to Last",
     infrastructureDescription: "Beyond solar, we deliver the transmission, substation and specialised electrical infrastructure that large-scale energy projects depend on.",

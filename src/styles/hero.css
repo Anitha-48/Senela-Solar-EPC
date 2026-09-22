@@ -114,12 +114,13 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
+  color:white;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .hero__price-line span {
   font-weight: 800;
-  color:#1565c0 ;
+  color:rgb(255, 165, 39);
 }
 
 .hero__subtext {
@@ -130,7 +131,8 @@
   font-size: 15px;
   line-height: 1.7;
 
-  color: rgba(255, 255, 255, 0.95);
+  color:blue ;
+  display: none;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
@@ -159,7 +161,7 @@
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.14);
 
-  color: #ffffff;
+  color: white ;
   font-size: 13px;
   font-weight: 600;
 
@@ -308,8 +310,9 @@
   }
 
   .hero .hero__headline {
-    font-size: clamp(27px, 7.4vw, 38px);
+    /* font-size: clamp(27px, 7.4vw, 38px); */
     margin-bottom: 14px;
+    
   }
 
   .hero__price-line {
@@ -356,10 +359,17 @@
 
   .hero .hero__headline {
     font-size: 27px;
+    /* background-color: red; */
+    
   }
 
   .hero__price-line {
     font-size: 14px;
+    color:black;
+    
+  }
+  .hero__price-line span{
+     color:black;
   }
 
   .hero__contact-btn {

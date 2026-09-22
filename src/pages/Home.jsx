@@ -169,7 +169,7 @@ export default function Home() {
           </ul>
 
           <Link
-            to="/solar-solutions/commercial"
+            to="/solar-solutions/industrial"
             className="home-solution-btn"
           >
             {t("home.moreDetails")}

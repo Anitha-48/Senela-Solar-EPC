@@ -141,37 +141,31 @@ function ResidentialSolarPage() {
         <div className="residential-hero__container">
           <div className="residential-hero__content">
             <span className="residential-hero__eyebrow">
-              RESIDENTIAL SOLAR
+              {page.eyebrow}
             </span>
 
             <h1>
-              Power Your Home
-              <span> With Clean Solar Energy</span>
+              {page.title}
             </h1>
 
             <p>
-              Transform your rooftop into a reliable source of clean
-              electricity with a residential solar system designed around
-              your home's energy needs.
+              {page.description?.[0]}
             </p>
 
             <p>
-              From compact homes to large villas, we design and deliver
-              rooftop solar solutions that make better use of your roof,
-              reduce dependence on conventional electricity and support
-              long-term energy savings.
+              {page.description?.[1]}
             </p>
 
             <div className="residential-hero__actions">
               <Link to="/contact" className="service-btn service-btn--primary">
-                Get a Solar Consultation
+                {page.cta?.primary}
               </Link>
 
               <a
                 href="#projects"
                 className="service-btn service-btn--secondary"
               >
-                View Projects
+                {page.cta?.secondary}
               </a>
             </div>
           </div>
@@ -195,9 +189,9 @@ function ResidentialSolarPage() {
         <div className="service-container">
           <ScrollReveal>
             <SectionTitle
-              eyebrow="SOLAR FOR EVERY HOME"
-              title="Designed Around the Way Your Home Uses Energy"
-              description="Every home has different electricity requirements. Our residential solar solutions are planned around your roof, energy consumption and future power needs."
+              eyebrow={page.sectionTitles?.highlights}
+              title={page.sectionTitles?.highlightsTitle}
+              description={page.sectionTitles?.highlightsDescription}
             />
           </ScrollReveal>
 
@@ -205,10 +199,10 @@ function ResidentialSolarPage() {
             <ScrollReveal>
               <div className="residential-highlight-card">
                 <span>01</span>
-                <h3>Independent Homes</h3>
+                  <h3>{page.highlights?.[0]?.title || "Independent Homes"}</h3>
                 <p>
-                  Practical rooftop solar systems for independent houses,
-                  villas and family homes.
+                    {page.highlights?.[0]?.description ||
+                      "Practical rooftop solar systems for independent houses, villas and family homes."}
                 </p>
               </div>
             </ScrollReveal>
@@ -216,10 +210,10 @@ function ResidentialSolarPage() {
             <ScrollReveal>
               <div className="residential-highlight-card">
                 <span>02</span>
-                <h3>High Energy Homes</h3>
+                <h3>{page.highlights?.[1]?.title || "High Energy Homes"}</h3>
                 <p>
-                  Solar systems designed for homes with higher electricity
-                  consumption and multiple appliances.
+                  {page.highlights?.[1]?.description ||
+                    "Solar systems designed for homes with higher electricity consumption and multiple appliances."}
                 </p>
               </div>
             </ScrollReveal>
@@ -227,10 +221,10 @@ function ResidentialSolarPage() {
             <ScrollReveal>
               <div className="residential-highlight-card">
                 <span>03</span>
-                <h3>New Home Projects</h3>
+                <h3>{page.highlights?.[2]?.title || "New Home Projects"}</h3>
                 <p>
-                  Plan your rooftop solar system from the beginning of your
-                  new home construction or renovation.
+                  {page.highlights?.[2]?.description ||
+                    "Plan your rooftop solar system from the beginning of your new home construction or renovation."}
                 </p>
               </div>
             </ScrollReveal>
@@ -243,9 +237,9 @@ function ResidentialSolarPage() {
         <div className="service-container">
           <ScrollReveal>
             <SectionTitle
-              eyebrow="HOW YOUR SYSTEM WORKS"
-              title="Inside Your Solar System"
-              description="A residential solar installation is more than just panels. Each component works together to safely generate, convert, monitor and distribute solar electricity."
+              eyebrow={page.sectionTitles?.system}
+              title={page.sectionTitles?.systemTitle}
+              description={page.sectionTitles?.systemDescription}
             />
           </ScrollReveal>
 
@@ -260,16 +254,19 @@ function ResidentialSolarPage() {
             </ScrollReveal>
 
             <div className="solar-system-components">
-              {solarComponents.map((component, index) => (
-                <ScrollReveal key={component.number} delay={index * 80}>
+              {(page.systemComponents || solarComponents).map((component, index) => (
+                <ScrollReveal
+                  key={component.number || component.title}
+                  delay={index * 80}
+                >
                   <article className="solar-component-card">
                     <span className="solar-component-number">
-                      {component.number}
+                      {component.number || String(index + 1).padStart(2, "0")}
                     </span>
 
                     <div>
                       <h3>{component.title}</h3>
-                      <p>{component.text}</p>
+                      <p>{component.text || component.description}</p>
                     </div>
                   </article>
                 </ScrollReveal>
@@ -303,8 +300,8 @@ function ResidentialSolarPage() {
                   </div>
 
                   <div className="residential-project-content">
-                    <h3>{project.title}</h3>
-                    <p>{project.text}</p>
+                    <h3>{page.highlights?.[index]?.title || project.title}</h3>
+                    <p>{page.highlights?.[index]?.description || project.text}</p>
                   </div>
                 </article>
               </ScrollReveal>
@@ -366,14 +363,14 @@ function ResidentialSolarPage() {
         <div className="service-container">
           <ScrollReveal>
             <SectionTitle
-              eyebrow="FAQ"
-              title="Residential Solar FAQs"
-              description="Quick answers to common questions about rooftop solar for homes."
+              eyebrow={page.sectionTitles?.faq}
+              title={page.sectionTitles?.faqTitle}
+              description={page.sectionTitles?.faqDescription}
             />
           </ScrollReveal>
 
           <div className="residential-faq-list">
-            {faqs.map((faq, index) => (
+            {(page.faqs || faqs).map((faq, index) => (
               <ScrollReveal key={faq.question} delay={index * 60}>
                 <details className="residential-faq-item">
                   <summary>

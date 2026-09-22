@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "../components/ScrollReveal";
 import SectionTitle from "../components/SectionTitle";
 
@@ -144,6 +145,9 @@ const faqs = [
 ];
 
 function UtilitySolarPage() {
+  const { t } = useTranslation();
+  const page = t("solarServicePages.utilityScale", { returnObjects: true });
+
   return (
     <main className="service-landing-page utility-page">
 
@@ -153,25 +157,20 @@ function UtilitySolarPage() {
 
           <div className="utility-hero__content">
             <span className="utility-hero__eyebrow">
-              UTILITY SOLAR EPC
+              {page.eyebrow}
             </span>
 
             <h1>
-              Large-Scale Solar
-              <span> Built for Grid-Connected Power</span>
+              {page.title}
+              <span>{page.titleHighlight}</span>
             </h1>
 
             <p>
-              Delivering integrated utility-scale solar EPC solutions that
-              bring together renewable power generation, electrical
-              infrastructure and grid connectivity.
+              {page.description?.[0]}
             </p>
 
             <p>
-              From project engineering and procurement to construction,
-              substations, power evacuation, commissioning and operational
-              support, our approach is built around coordinated execution
-              across the complete solar power project.
+              {page.description?.[1]}
             </p>
 
             <div className="utility-hero__actions">
@@ -179,14 +178,14 @@ function UtilitySolarPage() {
                 to="/contact"
                 className="service-btn service-btn--primary"
               >
-                Discuss Your Project
+                {page.cta?.primary}
               </Link>
 
               <a
                 href="#epc-scope"
                 className="service-btn service-btn--secondary"
               >
-                Explore EPC Scope
+                {page.sectionTitles?.scope}
               </a>
             </div>
           </div>
@@ -194,14 +193,12 @@ function UtilitySolarPage() {
           <div className="utility-hero__image">
             <img
               src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=85"
-              alt="Utility scale solar power plant"
+              alt={page.imageAlt}
             />
 
             <div className="utility-hero__badge">
-              <strong>Integrated EPC</strong>
-              <span>
-                Solar generation + electrical infrastructure
-              </span>
+              <strong>{page.badgeTitle}</strong>
+              <span>{page.badgeText}</span>
             </div>
           </div>
 
@@ -214,9 +211,9 @@ function UtilitySolarPage() {
 
           <ScrollReveal>
             <SectionTitle
-              eyebrow="UTILITY SOLAR PROJECTS"
-              title="Integrated Solar Infrastructure for Large-Scale Power Generation"
-              description="Utility-scale solar projects require coordinated engineering across generation, electrical infrastructure and grid connectivity. Our EPC approach brings these project elements together within a structured execution framework."
+              eyebrow={page.sectionTitles?.capabilities}
+              title={page.sectionTitles?.capabilitiesTitle}
+              description={page.sectionTitles?.capabilitiesDescription}
             />
           </ScrollReveal>
 
@@ -270,9 +267,9 @@ function UtilitySolarPage() {
 
           <ScrollReveal>
             <SectionTitle
-              eyebrow="PROJECT INFRASTRUCTURE"
-              title="Inside an Integrated Utility Solar Project"
-              description="A utility-scale solar plant combines multiple engineering and electrical systems. Each component has a defined role in generating, controlling, evacuating and monitoring renewable power."
+              eyebrow={page.sectionTitles?.benefits}
+              title={page.sectionTitles?.benefitsTitle}
+              description={page.sectionTitles?.benefitsDescription}
             />
           </ScrollReveal>
 
@@ -288,20 +285,26 @@ function UtilitySolarPage() {
             </ScrollReveal>
 
             <div className="utility-system-components">
-              {utilityComponents.map((component, index) => (
+              {(page.benefits || utilityComponents).map((component, index) => (
                 <ScrollReveal
-                  key={component.number}
+                  key={typeof component === "string" ? component : component.number}
                   delay={index * 80}
                 >
                   <article className="utility-component-card">
 
                     <span className="utility-component-number">
-                      {component.number}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
 
                     <div>
-                      <h3>{component.title}</h3>
-                      <p>{component.text}</p>
+                      {typeof component === "string" ? (
+                        <p>{component}</p>
+                      ) : (
+                        <>
+                          <h3>{component.title}</h3>
+                          <p>{component.text}</p>
+                        </>
+                      )}
                     </div>
 
                   </article>
@@ -319,9 +322,9 @@ function UtilitySolarPage() {
 
           <ScrollReveal>
             <SectionTitle
-              eyebrow="OUR EPC APPROACH"
-              title="From Engineering to Energization"
-              description="Integrated project execution requires coordination between engineering, procurement, construction and electrical infrastructure. Our EPC workflow is structured around each stage of the project."
+              eyebrow={page.sectionTitles?.scope}
+              title={page.sectionTitles?.scopeTitle}
+              description={page.sectionTitles?.scopeDescription}
             />
           </ScrollReveal>
 
@@ -359,9 +362,9 @@ function UtilitySolarPage() {
 
           <ScrollReveal>
             <SectionTitle
-              eyebrow="UTILITY SOLAR PROJECTS"
-              title="Solar Infrastructure Designed for Scale"
-              description="Utility solar projects require carefully coordinated generation, electrical and grid infrastructure. Explore the types of large-scale solar environments our EPC approach is designed to support."
+              eyebrow={page.sectionTitles?.scope}
+              title={page.sectionTitles?.scopeTitle}
+              description={page.sectionTitles?.scopeDescription}
             />
           </ScrollReveal>
 
@@ -458,15 +461,15 @@ function UtilitySolarPage() {
 
           <ScrollReveal>
             <SectionTitle
-              eyebrow="FAQ"
-              title="Utility Solar EPC FAQs"
-              description="Answers to common questions about large-scale solar power projects and integrated EPC execution."
+              eyebrow={page.sectionTitles?.faq}
+              title={page.sectionTitles?.faqTitle}
+              description={page.sectionTitles?.faqDescription}
             />
           </ScrollReveal>
 
           <div className="utility-faq-list">
 
-            {faqs.map((faq, index) => (
+            {(page.faqs || faqs).map((faq, index) => (
               <ScrollReveal
                 key={faq.question}
                 delay={index * 60}
@@ -496,17 +499,15 @@ function UtilitySolarPage() {
 
             <div>
               <span className="utility-hero__eyebrow">
-                START YOUR PROJECT
+                {page.cta?.eyebrow}
               </span>
 
               <h2>
-                Planning a Utility-Scale Solar Project?
+                {page.cta?.title}
               </h2>
 
               <p>
-                Discuss your solar generation capacity, EPC scope, power
-                evacuation and grid infrastructure requirements with our
-                project team.
+                {page.cta?.description}
               </p>
             </div>
 
@@ -514,7 +515,7 @@ function UtilitySolarPage() {
               to="/contact"
               className="service-btn service-btn--light"
             >
-              Contact Our Team
+              {page.cta?.primary}
             </Link>
 
           </div>

@@ -14,6 +14,7 @@ export default function Footer() {
     "/#projects": "footer.projects",
     "/contact": "footer.contact",
     "/solar-solutions/on-grid": "nav.onGridSolar",
+    "/solar-solutions/hybrid-grid": "nav.hybridGridSolar",
     "/solar-solutions/off-grid": "nav.offGridSolar",
     "/solar-calculator": "footer.solarCalculator",
     "/services/power-distribution-transmission": "nav.powerDistributionTransmission",

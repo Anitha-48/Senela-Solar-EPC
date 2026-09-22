@@ -8,6 +8,7 @@ export const navigation = [
     path: "/solar-solutions",
     children: [
       { label: "On-grid Solar", path: "/solar-solutions/on-grid" },
+      { label: "Hybrid Grid Solar", path: "/solar-solutions/hybrid-grid" },
       { label: "Off-grid Solar", path: "/solar-solutions/off-grid" },
     ],
   },

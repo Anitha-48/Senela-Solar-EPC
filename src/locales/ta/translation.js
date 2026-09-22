@@ -12,6 +12,7 @@ const translation = {
     epc: "EPC",
     solarSolutions: "சூரிய ஆற்றல் தீர்வுகள்",
     onGridSolar: "On-grid சூரிய ஆற்றல்",
+    hybridGridSolar: "Hybrid Grid சூரிய ஆற்றல்",
     offGridSolar: "Off-grid சூரிய ஆற்றல்",
     services: "சேவைகள்",
     powerDistributionTransmission: "மின் விநியோகம் மற்றும் பரிமாற்றம்",
@@ -286,6 +287,7 @@ const translation = {
     trackRecordDescription: "குடியிருப்பு rooftops முதல் utility-scale plants வரை, ஒவ்வொரு kilowatt-லும் சிறப்பை வழங்குகிறோம்.",
     items: [
       { title: "On-grid சூரிய அமைப்புகள்", description: "மின் கட்டணத்தைக் குறைக்க விரும்பும் வணிக மற்றும் தொழில்துறை வசதிகளுக்கு ஏற்றது. Net-metering மூலம் உபரி ஆற்றல் utility grid-க்கு திருப்பி அனுப்பப்படுகிறது.", points: ["Offset generation மூலம் குறைந்த மின் கட்டணம்", "Net metering மற்றும் grid integration முழுமையாக கையாளுதல்", "Battery storage தேவையில்லை; ஆரம்ப செலவு குறைவு"] },
+      { title: "Hybrid Grid சூரிய அமைப்புகள்", description: "சூரிய ஆற்றலின் சேமிப்புடன் backup நம்பகத்தன்மை தேவைப்படும் சொத்துகளுக்கு ஏற்றது; உபரி சக்தியை battery-க்கு சேமித்து, outage-களின் போது critical loads-ஐ ஆதரிக்கிறது.", points: ["Battery backup உடன் சூரிய உற்பத்தி சிறப்பாகப் பயன்படுதல்", "Grid outages மற்றும் peak tariff காலங்களில் நம்பகமான மின்சாரம்", "Critical loads மற்றும் business continuity-க்கான smart energy management"] },
       { title: "Off-grid சூரிய அமைப்புகள்", description: "தொலைதூர இடங்கள் அல்லது critical backup தேவைகளுக்கு ஏற்றது. முழுமையான ஆற்றல் சுயாதீனத்திற்காக சூரிய உற்பத்தியை advanced battery storage உடன் இணைக்கிறது.", points: ["தொலைதூர மற்றும் கிராமப்புற பகுதிகளில் நம்பகமான மின்சாரம்", "Backup தேவைக்கு ஏற்ப அளவிடப்பட்ட battery storage", "Grid outage-களிலிருந்து ஆற்றல் சுயாதீனம்"] },
     ],
     projectHighlights: [
@@ -333,6 +335,52 @@ const translation = {
       { title: "சூரிய ஆற்றல் திறன்", description: "உங்கள் தளத்தின் சூரிய ஆற்றல் திறனைச் சிறப்பாகப் பயன்படுத்த orientation, கிடைக்கும் பரப்பளவு மற்றும் shading conditions-ஐ மதிப்பிடுகிறோம்." },
       { title: "அமைப்பு மேம்படுத்தல்", description: "உங்கள் நுகர்வு மற்றும் செயல்பாட்டு தேவைகளுக்கு ஏற்ப module arrangement, inverter selection மற்றும் system capacity திட்டமிடப்படுகின்றன." },
       { title: "மின் பாதுகாப்பு", description: "சரியான protection, grounding, cabling மற்றும் commissioning நடைமுறைகள் system design மற்றும் installation-ல் இணைக்கப்படுகின்றன." },
+    ],
+  },
+
+  hybridGrid: {
+    overview: "மேலோட்டம்",
+    overviewTitle: "சூழ்ச்சி மற்றும் பேட்டரி ஆதரவுடன் நம்பகமான சூரிய ஆற்றல்",
+    overviewParagraphs: [
+      "Hybrid grid சூரிய அமைப்புகள் rooftop solar generation-ஐ battery storage மற்றும் active grid இணைப்புடன் ஒருங்கிணைக்கின்றன. இதன் மூலம் தளம் பகலில் சூரிய மின்சாரத்தைப் பயன்படுத்தி, உபரி ஆற்றலை சேமித்து, grid இல்லாத நேரத்திலும் தொடர்ந்து செயல்பட முடியும்.",
+      "Critical loads கொண்ட வணிகங்கள் மற்றும் வசதிகளுக்கு, hybrid அமைப்புகள் solar generation, battery backup மற்றும் grid supply-ஐ real time-ல் சமநிலைப்படுத்தி அதிக நம்பகத்தன்மையை வழங்குகின்றன.",
+      "Senela Solar, load patterns, critical loads மற்றும் reliability requirements-ஐ அடிப்படையாகக் கொண்டு hybrid அமைப்புகளை வடிவமைக்கிறது; இதனால் வாடிக்கையாளர்கள் மின் செலவைக் குறைத்து செயல்பாட்டு தொடர்ச்சியையும் பாதுகாக்க முடியும்.",
+    ],
+    howItWorks: "இது எப்படி செயல்படுகிறது",
+    howItWorksTitle: "ஒரே smart அமைப்பில் சூரிய ஆற்றல், பேட்டரி மற்றும் grid",
+    howItWorksDescription: "Hybrid அமைப்பு solar generation, stored energy மற்றும் grid interaction-ஐ புத்திசாலித்தனமாக நிர்வகித்து, உங்கள் வசதிக்கு சேமிப்பு மற்றும் மீட்டெடுப்பின் சிறந்த சமநிலையை வழங்குகிறது.",
+    howItWorksItems: [
+      { title: "உற்பத்தி", description: "சூரிய பேனல்கள் பகல் நேரத்தில் DC மின்சாரத்தை உருவாக்கி, அதை உங்கள் load demand-க்காக பயன்படுத்தக்கூடிய AC power-ஆக மாற்றுகிறது." },
+      { title: "சேமிப்பு மற்றும் பரிமாற்றம்", description: "உபரி சூரிய ஆற்றல் battery-க்கு சேமிக்கப்பட்டு, outage, peak tariff நேரங்கள் அல்லது சூரிய உற்பத்தி குறையும் போது பயன்படுத்தப்படுகிறது." },
+      { title: "நிர்வாகம்", description: "அமைப்பு முதலில் solar power-ஐ, அடுத்து battery backup-ஐ, கடைசியாக grid-ஐ பயன்படுத்தி stability மற்றும் uptime-ஐ பராமரிக்கிறது." },
+    ],
+    benefits: "நன்மைகள்",
+    benefitsTitle: "Hybrid Solar ஏன் சிறந்தது",
+    benefitsDescription: "மின் கட்டணத்தைக் குறைத்து, முக்கிய செயல்பாடுகளை outage-களில் இருந்து பாதுகாக்க விரும்பும் வாடிக்கையாளர்களுக்கு hybrid அமைப்பு சிறந்த தேர்வாகும்.",
+    benefitItems: [
+      "பகல் நேர மின் செலவைக் குறைத்தல்",
+      "Grid failure அல்லது voltage dip-களின் போது critical loads-ஐ தொடர்ந்து இயக்குதல்",
+      "Peak tariff நேரங்களில் stored energy-ஐ பயன்படுத்தி demand charges-ஐ கட்டுப்படுத்துதல்",
+      "Uptime-ஐ இழக்காமல் diesel backup-இன் சார்பைக் குறைத்தல்",
+      "வணிக, தொழில்துறை, நிறுவன மற்றும் குடியிருப்பு வசதிகளுக்கு ஏற்றது",
+      "Backup duration, load priority மற்றும் தள வரம்புகளின் அடிப்படையில் நெகிழ்வான வடிவமைப்பு",
+      "Modern monitoring மற்றும் energy management உடன் மேம்படுத்தப்பட்ட energy resilience",
+    ],
+    applications: "பயன்பாடுகள்",
+    applicationsTitle: "Hybrid Grid Solar எங்கு பொருந்தும்",
+    applicationsDescription: "சேமிப்பு மற்றும் நம்பகமான backup power இரண்டையும் விரும்பும் சொத்துக்களுக்கு hybrid அமைப்புகள் சிறந்தவை.",
+    applicationItems: [
+      { title: "வணிக வசதிகள்", description: "ஆபீஸ்கள், கடைகள் மற்றும் சேவை நடவடிக்கைகளில் செயல்பாட்டு செலவைக் குறைக்கும் போது business continuity-ஐ உறுதி செய்கிறது." },
+      { title: "தொழில்துறை தளங்கள்", description: "உற்பத்தி தொடர்ச்சிக்கு உதவுகிறது, peak-demand exposure-ஐ குறைக்கிறது மற்றும் outage-களின் போது critical process loads-ஐ ஆதரிக்கிறது." },
+      { title: "Critical Infrastructure", description: "மருத்துவமனைகள், data rooms, pumping stations, telecom hubs மற்றும் uptime தேவைப்படும் வசதிகளுக்கு நம்பகமான மின்சாரத்தை வழங்குகிறது." },
+    ],
+    engineering: "SENELA பொறியியல்",
+    engineeringTitle: "நம்பகத்தன்மை மற்றும் செயல்திறனுக்காக வடிவமைக்கப்பட்டது",
+    engineeringDescription: "உங்கள் உண்மையான செயல்பாட்டு profile-ஐ அடிப்படையாகக் கொண்டு solar, storage மற்றும் grid கூறுகள் ஒருவருக்கொருவர் திறமையாக செயல்படும் வகையில் hybrid அமைப்புகளை நாங்கள் உருவாக்குகிறோம்.",
+    engineeringItems: [
+      { title: "Load Analysis", description: "Critical loads, peak-demand நேரங்கள் மற்றும் backup duration தேவைகளை மதிப்பாய்வு செய்து சரியான system architecture-ஐ வரையறுக்கிறோம்." },
+      { title: "Storage Sizing", description: "Battery capacity resilience, energy use மற்றும் செலவு ஆகியவற்றுக்கு இடையே சமநிலையை உருவாக்கும் வகையில், உங்கள் தள தேவைகள் மற்றும் செயல்பாட்டு எதிர்பார்ப்புகளின் அடிப்படையில் தேர்ந்தெடுக்கப்படுகிறது." },
+      { title: "System Coordination", description: "Solar inverter, battery management, grid interaction மற்றும் protection systems-ஐ ஒருங்கிணைத்து, நிலையான செயல்திறன் மற்றும் பாதுகாப்பை உறுதி செய்கிறோம்." },
     ],
   },
 
@@ -474,7 +522,7 @@ const translation = {
     successTitle: "நன்றி — உங்கள் விசாரணை பெறப்பட்டது",
     successDescription: "உங்கள் திட்டத்தைப் பற்றி விவாதிக்க எங்கள் பொறியியல் குழு 1–2 வேலை நாட்களுக்குள் உங்களைத் தொடர்புகொள்ளும்.",
     validation: { fullNameRequired: "முழுப் பெயர் அவசியம்.", emailRequired: "மின்னஞ்சல் அவசியம்.", emailInvalid: "சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்.", phoneRequired: "தொலைபேசி எண் அவசியம்.", serviceRequired: "ஒரு சேவையைத் தேர்ந்தெடுக்கவும்.", messageRequired: "உங்கள் திட்டத்தைப் பற்றிய சுருக்கமான செய்தியைச் சேர்க்கவும்." },
-    serviceOptions: ["சூரிய EPC", "On-grid சூரிய ஆற்றல்", "Off-grid சூரிய ஆற்றல்", "சூரிய மின் திட்டம்", "மின் விநியோகம் மற்றும் பரிமாற்றம்", "EHV துணை மின் நிலையம்", "HTLS Conductors மூலம் Re-conductoring", "ரயில்வே மின்மயமாக்கல்", "நீர் மேலாண்மை", "மற்றவை"],
+    serviceOptions: ["சூரிய EPC", "On-grid சூரிய ஆற்றல்", "Hybrid Grid சூரிய ஆற்றல்", "Off-grid சூரிய ஆற்றல்", "சூரிய மின் திட்டம்", "மின் விநியோகம் மற்றும் பரிமாற்றம்", "EHV துணை மின் நிலையம்", "HTLS Conductors மூலம் Re-conductoring", "ரயில்வே மின்மயமாக்கல்", "நீர் மேலாண்மை", "மற்றவை"],
   },
 
   solarForm: {

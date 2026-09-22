@@ -12,6 +12,7 @@ const translation = {
     epc: "EPC",
     solarSolutions: "Solar Solutions",
     onGridSolar: "On-grid Solar",
+    hybridGridSolar: "Hybrid Grid Solar",
     offGridSolar: "Off-grid Solar",
     services: "Services",
     powerDistributionTransmission: "Power Distribution & Transmission",
@@ -406,6 +407,7 @@ const translation = {
     trackRecordDescription: "From residential rooftops to utility-scale plants, we deliver excellence in every kilowatt.",
     items: [
       { title: "On-grid Solar Systems", description: "Ideal for commercial and industrial facilities looking to reduce electricity bills. Surplus energy is fed back into the utility grid through net-metering.", points: ["Lower electricity bills through offset generation", "Net metering and grid integration handled end-to-end", "No battery storage required, lower upfront cost"] },
+      { title: "Hybrid Grid Solar Systems", description: "Designed for properties that want solar savings with backup resilience, using battery storage to store excess generation and support critical loads during outages.", points: ["Optimised use of solar generation with battery backup", "Reliable power during grid outages and peak tariff periods", "Smart energy management for critical loads and business continuity"] },
       { title: "Off-grid Solar Systems", description: "Perfect for remote locations or critical backup needs. Combines solar generation with advanced battery storage for complete energy independence.", points: ["Reliable power in remote and rural locations", "Battery storage sized for backup requirements", "Energy independence from grid outages"] },
     ],
     projectHighlights: [
@@ -462,6 +464,52 @@ const translation = {
       { title: "Solar Potential", description: "We evaluate orientation, available area and shading conditions to make effective use of your site's solar potential." },
       { title: "System Optimisation", description: "Module arrangement, inverter selection and system capacity are planned according to your consumption and operating requirements." },
       { title: "Electrical Safety", description: "Proper protection, grounding, cabling and commissioning practices are incorporated into the system design and installation." },
+    ],
+  },
+
+  hybridGrid: {
+    overview: "OVERVIEW",
+    overviewTitle: "Reliable Solar Power With Smart Backup",
+    overviewParagraphs: [
+      "Hybrid grid solar systems combine rooftop solar generation with battery storage and an active grid connection. This allows the site to use solar power during the day, store surplus energy for later, and continue operating when the grid is unavailable.",
+      "For businesses and facilities with critical loads, hybrid systems provide greater resilience by balancing solar generation, battery backup, and grid supply in real time.",
+      "Senela Solar designs hybrid systems around load patterns, critical loads, and reliability requirements so customers can reduce electricity costs without sacrificing operational continuity.",
+    ],
+    howItWorks: "HOW IT WORKS",
+    howItWorksTitle: "Solar, Battery, and Grid in One Smart System",
+    howItWorksDescription: "A hybrid system intelligently manages solar generation, stored energy, and grid interaction so your facility gets the best balance of savings and resilience.",
+    howItWorksItems: [
+      { title: "Generate", description: "Solar panels produce DC electricity during daylight hours, which is converted into usable AC power for your load demand." },
+      { title: "Store & Shift", description: "Excess solar energy is stored in batteries and used during outages, peak tariff windows, or when solar generation is low." },
+      { title: "Manage", description: "The system prioritises solar power first, then battery backup, and only draws from the grid when required to maintain stability and uptime." },
+    ],
+    benefits: "BENEFITS",
+    benefitsTitle: "Why Hybrid Solar Makes Sense",
+    benefitsDescription: "A hybrid system is ideal for customers who want lower energy bills while protecting essential operations from outages and load interruptions.",
+    benefitItems: [
+      "Reduce daytime electricity costs with rooftop solar generation",
+      "Keep critical loads running during grid failures or voltage dips",
+      "Use stored energy during peak tariff periods to control demand charges",
+      "Lower dependence on diesel backup without sacrificing uptime",
+      "Available for commercial, industrial, institutional and residential facilities",
+      "Flexible design based on backup duration, load priority and site constraints",
+      "Improved energy resilience with modern monitoring and energy management",
+    ],
+    applications: "APPLICATIONS",
+    applicationsTitle: "Where Hybrid Grid Solar Fits",
+    applicationsDescription: "Hybrid systems are well suited to properties that need both cost savings and dependable backup power.",
+    applicationItems: [
+      { title: "Commercial Facilities", description: "Reduce operating costs while ensuring business continuity for offices, retail spaces, and service operations." },
+      { title: "Industrial Sites", description: "Support production continuity, reduce peak-demand exposure, and back up essential process loads during outages." },
+      { title: "Critical Infrastructure", description: "Provide reliable power for hospitals, data rooms, pumping stations, telecom hubs and facilities with uptime requirements." },
+    ],
+    engineering: "SENELA ENGINEERING",
+    engineeringTitle: "Designed for Reliability and Performance",
+    engineeringDescription: "We develop hybrid systems around your actual operating profile so the solar, storage, and grid components work together efficiently.",
+    engineeringItems: [
+      { title: "Load Analysis", description: "We review your critical loads, peak-demand periods, and backup duration requirements to define the correct system architecture." },
+      { title: "Storage Sizing", description: "Battery capacity is selected to balance resilience, energy use, and cost, based on your site requirements and operational expectations." },
+      { title: "System Coordination", description: "Our design integrates solar inverter, battery management, grid interaction and protection systems for consistent performance and safety." },
     ],
   },
 
@@ -622,7 +670,7 @@ const translation = {
       serviceRequired: "Please select a service.",
       messageRequired: "Please add a short message about your project.",
     },
-    serviceOptions: ["Solar EPC", "On-grid Solar", "Off-grid Solar", "Solar Power Project", "Power Distribution & Transmission", "EHV Substation", "HTLS Re-conductoring", "Railway Electrification", "Water Management", "Other"],
+    serviceOptions: ["Solar EPC", "On-grid Solar", "Hybrid Grid Solar", "Off-grid Solar", "Solar Power Project", "Power Distribution & Transmission", "EHV Substation", "HTLS Re-conductoring", "Railway Electrification", "Water Management", "Other"],
   },
 
   solarForm: {

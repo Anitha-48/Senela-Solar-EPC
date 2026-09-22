@@ -5,6 +5,7 @@ import { Send, CheckCircle2 } from "lucide-react";
 const serviceOptions = [
   "Solar EPC",
   "On-grid Solar",
+  "Hybrid Grid Solar",
   "Off-grid Solar",
   "Solar Power Project",
   "Power Distribution & Transmission",

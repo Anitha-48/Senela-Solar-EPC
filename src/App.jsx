@@ -6,6 +6,7 @@ import WhatsAppFloat from "./components/WhatsAppFloat";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import OnGridSolar from "./pages/OnGridSolar";
+import HybridGridSolar from "./pages/HybridGridSolar";
 import OffGridSolar from "./pages/OffGridSolar";
 import SolarSolutionsPage from "./pages/SolarSolutionsPage";
 import ProjectDetail from "./pages/ProjectDetail";
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/epc" element={<Epc />} />
           <Route path="/solar-solutions" element={<SolarSolutionsPage />} />
           <Route path="/solar-solutions/on-grid" element={<OnGridSolar />} />
+          <Route path="/solar-solutions/hybrid-grid" element={<HybridGridSolar />} />
           <Route path="/solar-solutions/off-grid" element={<OffGridSolar />} />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
           <Route path="/services" element={<ServiceMain />} />

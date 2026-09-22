@@ -11,6 +11,7 @@ const navigationLabelKeys = {
   "/epc": "nav.epc",
   "/solar-solutions": "nav.solarSolutions",
   "/solar-solutions/on-grid": "nav.onGridSolar",
+  "/solar-solutions/hybrid-grid": "nav.hybridGridSolar",
   "/solar-solutions/off-grid": "nav.offGridSolar",
   "/services": "nav.services",
   "/services/power-distribution-transmission": "nav.powerDistributionTransmission",

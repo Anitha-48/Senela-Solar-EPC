@@ -20,6 +20,19 @@ const solutions = [
     path: "/solar-solutions/on-grid"
   },
   {
+    id: "hybrid-grid",
+    title: "Hybrid Grid Solar Systems",
+    description: "Designed for properties that want solar savings with backup resilience, using battery storage to store excess generation and support critical loads during outages.",
+    points: [
+      "Optimised use of solar generation with battery backup",
+      "Reliable power during grid outages and peak tariff periods",
+      "Smart energy management for critical loads and business continuity"
+    ],
+    icon: BatteryCharging,
+    image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1200&auto=format&fit=crop",
+    path: "/solar-solutions/hybrid-grid"
+  },
+  {
     id: "off-grid",
     title: "Off-grid Solar Systems",
     description: "Perfect for remote locations or critical backup needs. Combines solar generation with advanced battery storage for complete energy independence.",
@@ -60,12 +73,11 @@ export default function SolarSolutionsPage() {
               <div className="eyebrow-line">{t("solutions.specialization")}</div>
               <h2>{t("solutions.title")}</h2>
               <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', fontWeight: '500' }}>
-                  <span style={{ color: 'var(--pro-blue)', fontWeight: 'bold' }}>1.</span> On-grid Solar System
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', fontWeight: '500' }}>
-                  <span style={{ color: 'var(--pro-blue)', fontWeight: 'bold' }}>2.</span> Off-grid Solar System
-                </div>
+                {translatedSolutions.map((solution, index) => (
+                  <div key={solutions[index].id} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', fontWeight: '500' }}>
+                    <span style={{ color: 'var(--pro-blue)', fontWeight: 'bold' }}>{index + 1}.</span> {solution.title}
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>

@@ -16,7 +16,6 @@ const navigationLabelKeys = {
   "/solar-solutions/commercial": "nav.commercialSolar",
   "/solar-solutions/utility-scale": "nav.utilityScaleSolar",
   "/services": "nav.services",
-  "/solar-solutions/residential": "nav.residentialSolar",
   "/solar-solutions/industrial": "nav.commercialIndustrialSolar",
   "/solar-solutions/integrated-epc": "nav.integratedEpcProjects",
   "/services/power-distribution-transmission": "nav.powerDistributionTransmission",

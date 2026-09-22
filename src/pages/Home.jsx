@@ -131,16 +131,13 @@ export default function Home() {
           <span className="home-solution-number">
             01
           </span>
-
           <h3>Residential Solar</h3>
-
           <p>
             Reliable solar power solutions for homes, villas,
             apartments and residential buildings. Reduce
             electricity costs and generate clean energy for
             your home.
           </p>
-
           <ul>
             <li>Rooftop Solar</li>
             <li>On-Grid Solar</li>

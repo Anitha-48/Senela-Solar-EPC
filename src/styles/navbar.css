@@ -50,7 +50,36 @@
   box-shadow:
     0 8px 30px rgba(8, 48, 88, 0.10);
 }
+.navbar__language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #ffffff;
+  border: 1px solid var(--grey-200, #e2e8f0);
+  border-radius: 12px;
+  padding: 4px;
+}
 
+.navbar__language button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: var(--deep-blue, #0b2545);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar__language button:hover {
+  background: var(--grey-50, #f8fafc);
+}
+
+.navbar__language button.is-active {
+  background: #eaf2fe;
+  color: #2563eb;
+}
 
 /* =========================================
    NAVBAR INNER
@@ -762,6 +791,16 @@
     justify-content: space-between !important;
     display: flex !important;
     align-items: center !important;
+    flex-wrap: nowrap;
+  }
+  .hero--split {
+    margin-top: 74px;
+  }
+  .navbar__language {
+    padding: 3px;
+    gap: 2px;
+    margin-right: 6px;
+    flex-shrink: 0;
   }
   .navbar__links,
   .navbar__cta {
@@ -773,6 +812,13 @@
   .navbar__logo-img {
     width: 140px !important;
     height: 50px !important;
+  }
+  navbar__language button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .navbar__hamburger {
+    flex-shrink: 0;
   }
 }
 
@@ -786,7 +832,9 @@
   .navbar {
     height: 70px;
   }
-
+ .hero--split {
+    margin-top: 70px;
+  }
   .navbar__inner {
     width: calc(100% - 24px);
   }
@@ -810,6 +858,10 @@
   .mobile-menu__body {
     padding-left: 16px;
     padding-right: 16px;
+  }
+  .navbar__language button {
+    padding: 5px 8px;
+    font-size: 11px;
   }
 
 }
@@ -842,4 +894,24 @@
     transition: none !important;
   }
 
+}
+.navbar--tamil .navbar__link,
+.navbar--tamil .navbar__language button {
+  font-family: "Noto Sans Tamil", "Inter", sans-serif;
+}
+
+@media (max-width: 900px) {
+  .navbar--tamil .navbar__language button {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+@media (max-width: 480px) {
+  .hero:lang(ta) .hero__headline {
+    font-size: clamp(19px, 5.2vw, 25px);
+    line-height: 1.35;
+  }
+  .hero:lang(ta) .hero__price-line {
+    font-size: 13px;
+  }
 }

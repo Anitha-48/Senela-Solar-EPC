@@ -38,7 +38,9 @@ export default function Navbar() {
   };
 
   const getLabel = (path) => t(navigationLabelKeys[path]);
-
+useEffect(() => {
+  document.documentElement.lang = i18n.resolvedLanguage;
+}, [i18n.resolvedLanguage]);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);

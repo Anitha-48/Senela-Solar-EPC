@@ -98,11 +98,7 @@ export default function Epc() {
             </div>
           </ScrollReveal>
         </div>
-        <div className="epc-hero__bottom">
-          <div><strong>30+</strong><span>{t("epc.yearsExperience")}</span></div>
-          <div><strong>100+</strong><span>{t("epc.projects")}</span></div>
-          <div><strong>360°</strong><span>{t("epc.epcSolutions")}</span></div>
-        </div>
+       
       </section>
 
       <section className="section epc-intro">

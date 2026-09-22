@@ -2,9 +2,10 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   ArrowRight, CheckCircle2, ShieldCheck, Users, Cpu, Leaf, Clock, Award,
-  Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail,
+  Zap, Sun, BatteryCharging, Phone, MessageCircle, Mail, Home as HomeIcon, Factory,
 } from "lucide-react";
 import Hero from "../components/Hero";
+import { Link } from "react-router-dom";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import StatCounter from "../components/StatCounter";
@@ -63,10 +64,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
-
-      
-
+      <Hero />     
       {/* About / Company introduction */}
       <section className="section">
         <div className="container split-section">
@@ -93,88 +91,304 @@ export default function Home() {
         </div>
       </section>
 
+ {/* =============================
+    SOLAR SOLUTIONS-Types
+======================================= */}
 
-      {/* Solar Solutions */}
-      <section className="section section--light">
-        <div className="container">
-          <SectionTitle
-            eyebrow={t("hero.solarSolutions")}
-            title={t("hero.solarSystemEngineered")}
-            description={t("hero.solarSolutionsDescription")}
-          />
-          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-            <ScrollReveal>
-              <div className="home-solution-card">
-                <div className="home-solution-card__media">
-                  <img src="https://5.imimg.com/data5/SELLER/Default/2025/11/561181140/VF/UO/FX/17639025/10-kw-grid-solar-power-park.jpg" alt={t("home.onGridAlt")} />
-                </div>
-                <div className="home-solution-card__body">
-                  <span className="home-solution-card__icon"><Sun size={22} /></span>
-                  <h3>{t("home.onGridTitle")}</h3>
-                  <p>{t("home.onGridDescription")}</p>
-                  <ul className="home-solution-benefits">
-                    {t("home.onGridBenefits", { returnObjects: true }).map((item) => <li key={item}><CheckCircle2 size={16} /> {item}</li>)}
-                  </ul>
-                  <NavLink to="/solar-solutions/on-grid" className="btn btn--outline-blue btn--sm">{t("home.learnMore")} <ArrowRight size={16} /></NavLink>
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={1}>
-              <div className="home-solution-card is-reversed">
-                <div className="home-solution-card__media">
-                  <img src="https://www.klkindia.com/wp-content/uploads/2025/09/solar-off-grid.webp" alt={t("home.offGridAlt")} />
-                </div>
-                <div className="home-solution-card__body">
-                  <span className="home-solution-card__icon"><BatteryCharging size={22} /></span>
-                  <h3>{t("home.offGridTitle")}</h3>
-                  <p>{t("home.offGridDescription")}</p>
-                  <ul className="home-solution-benefits">
-                    {t("home.offGridBenefits", { returnObjects: true }).map((item) => <li key={item}><CheckCircle2 size={16} /> {item}</li>)}
-                  </ul>
-                  <NavLink to="/solar-solutions/off-grid" className="btn btn--outline-blue btn--sm">{t("home.learnMore")} <ArrowRight size={16} /></NavLink>
-                </div>
-              </div>
-            </ScrollReveal>
+<section className="home-solutions-section">
+  <div className="home-solutions-container">
+
+    {/* Section Header */}
+    <div className="home-solutions-header">
+      <span className="home-solutions-tag">
+        OUR SOLUTIONS
+      </span>
+
+      <h2>
+        Solar Energy Solutions
+        <span> for Every Need</span>
+      </h2>
+
+      <p>
+        From residential rooftops to large-scale industrial and
+        integrated EPC projects, we provide reliable and
+        sustainable solar energy solutions.
+      </p>
+    </div>
+
+    {/* Solution Cards */}
+    <div className="home-solutions-grid">
+
+      {/* Residential */}
+      <div className="home-solution-card">
+
+        <div className="home-solution-icon">
+          <HomeIcon size={32} />
+        </div>
+
+        <div className="home-solution-content">
+
+          <span className="home-solution-number">
+            01
+          </span>
+
+          <h3>Residential Solar</h3>
+
+          <p>
+            Reliable solar power solutions for homes, villas,
+            apartments and residential buildings. Reduce
+            electricity costs and generate clean energy for
+            your home.
+          </p>
+
+          <ul>
+            <li>Rooftop Solar</li>
+            <li>On-Grid Solar</li>
+            <li>Off-Grid Solar</li>
+            <li>Hybrid Solar</li>
+          </ul>
+
+          <Link
+            to="/solar-solutions/residential"
+            className="home-solution-btn"
+          >
+            More Details
+            <span>→</span>
+          </Link>
+
+        </div>
+      </div>
+
+
+      {/* Commercial & Industrial */}
+      <div className="home-solution-card">
+
+        <div className="home-solution-icon">
+          <Factory size={32} />
+        </div>
+
+        <div className="home-solution-content">
+
+          <span className="home-solution-number">
+            02
+          </span>
+
+          <h3>Commercial & Industrial Solar</h3>
+
+          <p>
+            High-performance solar solutions for factories,
+            industries, offices, warehouses and commercial
+            establishments.
+          </p>
+
+          <ul>
+            <li>Industrial Rooftop Solar</li>
+            <li>Ground-Mounted Solar</li>
+            <li>Captive Solar Plants</li>
+            <li>Large-Scale On-Grid Systems</li>
+          </ul>
+
+          <Link
+            to="/solar-solutions/industrial"
+            className="home-solution-btn"
+          >
+            More Details
+            <span>→</span>
+          </Link>
+
+        </div>
+      </div>
+
+
+      {/* Integrated EPC */}
+      <div className="home-solution-card">
+
+        <div className="home-solution-icon">
+          <Zap size={32} />
+        </div>
+
+        <div className="home-solution-content">
+
+          <span className="home-solution-number">
+            03
+          </span>
+
+          <h3>Utility-Scale & Integrated EPC Projects</h3>
+
+          <p>
+            Complete engineering, procurement and construction
+            solutions for large-scale solar and infrastructure
+            projects.
+          </p>
+
+          <ul>
+            <li>Solar Power Plants</li>
+            <li>Power Distribution & Transmission</li>
+            <li>EHV Substations</li>
+            <li>Complete EPC Execution</li>
+          </ul>
+
+          <Link
+            to="/solar-solutions/integrated-epc"
+            className="home-solution-btn"
+          >
+            More Details
+            <span>→</span>
+          </Link>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+      {/* SOLAR SYSTEMS */}
+<section className="section section--light">
+  <div className="container">
+
+    <SectionTitle
+      eyebrow={t("hero.solarSolutions")}
+      title={t("hero.solarSystemEngineered")}
+      description={t("hero.solarSolutionsDescription")}
+    />
+
+    <div className="home-solutions-list">
+
+      {/* ON GRID */}
+      <ScrollReveal>
+        <div className="home-solution-card">
+          <div className="home-solution-card__media">
+            <img
+              src="https://5.imimg.com/data5/SELLER/Default/2025/11/561181140/VF/UO/FX/17639025/10-kw-grid-solar-power-park.jpg"
+              alt={t("home.onGridAlt")}
+            />
+          </div>
+
+          <div className="home-solution-card__body">
+            <span className="home-solution-card__icon">
+              <Sun size={22} />
+            </span>
+
+            <h3>{t("home.onGridTitle")}</h3>
+
+            <p>{t("home.onGridDescription")}</p>
+
+            <ul className="home-solution-benefits">
+              {t("home.onGridBenefits", {
+                returnObjects: true,
+              }).map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <NavLink
+              to="/solar-solutions/on-grid"
+              className="btn btn--outline-blue btn--sm"
+            >
+              {t("home.learnMore")}
+              <ArrowRight size={16} />
+            </NavLink>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
+      {/* OFF GRID */}
+      <ScrollReveal delay={1}>
+        <div className="home-solution-card is-reversed">
+          <div className="home-solution-card__media">
+            <img
+              src="https://www.klkindia.com/wp-content/uploads/2025/09/solar-off-grid.webp"
+              alt={t("home.offGridAlt")}
+            />
+          </div>
 
+          <div className="home-solution-card__body">
+            <span className="home-solution-card__icon">
+              <BatteryCharging size={22} />
+            </span>
 
+            <h3>{t("home.offGridTitle")}</h3>
 
+            <p>{t("home.offGridDescription")}</p>
 
-      {/* Engineering & EPC Services */}
-      <section className="section" id="services">
-        <div className="container">
-          <SectionTitle
-            eyebrow={t("home.servicesEyebrow")}
-            title={t("home.infrastructureTitle")}
-            description={t("home.infrastructureDescription")}
-          />
-          <div className="card-grid card-grid--3">
-            {Object.entries(services).map(([slug, s], i) => {
-              const translated = t(`serviceDetails.${serviceKeyMap[slug]}`, { returnObjects: true });
-              return (
-              <ServiceCard
-                key={slug}
-                icon={s.icon}
-                title={translated.shortTitle}
-                description={translated.heroSubtitle}
-                path={`/services/${slug}`}
-                delay={(i % 3) + 1}
-              />
-              );
-            })}
+            <ul className="home-solution-benefits">
+              {t("home.offGridBenefits", {
+                returnObjects: true,
+              }).map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <NavLink
+              to="/solar-solutions/off-grid"
+              className="btn btn--outline-blue btn--sm"
+            >
+              {t("home.learnMore")}
+              <ArrowRight size={16} />
+            </NavLink>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
+      {/* HYBRID */}
+      <ScrollReveal delay={2}>
+        <div className="home-solution-card home-solution-card--hybrid">
 
+          <div className="home-solution-card__media">
+            <img
+              src="https://www.pvmars.com/wp-content/uploads/2024/05/wind-solar-hybrid-system.webp"
+              alt={t("home.hybridAlt")}
+            />
+          </div>
 
-           
+          <div className="home-solution-card__body">
 
+            <span className="home-solution-card__icon home-solution-card__icon--hybrid">
+              <Sun size={22} />
+            </span>
 
+            <h3>{t("home.hybridTitle")}</h3>
 
+            <p>{t("home.hybridDescription")}</p>
+
+            <ul className="home-solution-benefits">
+              {t("home.hybridBenefits", {
+                returnObjects: true,
+              }).map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={16} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <NavLink
+              to="/solar-solutions/hybrid"
+              className="btn btn--outline-blue btn--sm"
+            >
+              {t("home.learnMore")}
+              <ArrowRight size={16} />
+            </NavLink>
+
+          </div>
+        </div>
+      </ScrollReveal>
+
+    </div>
+  </div>
+</section>
 
 
       {/* Why Choose Us */}

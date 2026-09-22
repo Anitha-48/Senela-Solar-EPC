@@ -1,0 +1,1135 @@
+/* =========================================================
+   RESIDENTIAL SOLAR
+   CLEAN / PROFESSIONAL / CONSISTENT ALIGNMENT
+   ========================================================= */
+
+.residential-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #101828;
+}
+
+/* =========================================================
+   COMMON CONTAINER ALIGNMENT
+   ========================================================= */
+
+.residential-page .service-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.residential-hero {
+  width: 100%;
+  padding: 70px 0;
+  background: #f7f9fc;
+}
+
+.residential-hero__container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.82fr);
+
+  gap: 70px;
+  align-items: center;
+}
+
+.residential-hero__content {
+  width: 100%;
+  max-width: 650px;
+}
+
+.residential-hero__eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+
+  color: #1677ff;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.residential-hero__content h1 {
+  margin: 0 0 24px;
+
+  color: #101828;
+
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.residential-hero__content h1 span {
+  display: block;
+  color: #1677ff;
+}
+
+.residential-hero__content > p {
+  max-width: 620px;
+
+  margin: 0 0 14px;
+
+  color: #667085;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.residential-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+.residential-hero__actions .service-btn {
+  min-width: 190px;
+}
+
+/* HERO IMAGE */
+
+.residential-hero__image {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  justify-self: end;
+}
+
+.residential-hero__image img {
+  display: block;
+
+  width: 100%;
+  height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+}
+
+/* HERO BADGE */
+
+.residential-hero__badge {
+  position: absolute;
+
+  left: -25px;
+  bottom: 25px;
+
+  min-width: 190px;
+
+  padding: 17px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+
+  box-shadow: 0 15px 40px rgba(16, 24, 40, 0.12);
+}
+
+.residential-hero__badge strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #101828;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.residential-hero__badge span {
+  display: block;
+
+  color: #667085;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SECTION SPACING
+   ========================================================= */
+
+.residential-page .service-section {
+  width: 100%;
+  padding: 90px 0;
+}
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+
+.residential-intro {
+  background: #ffffff;
+}
+
+.residential-highlight-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  margin-top: 48px;
+}
+
+.residential-highlight-card {
+  min-height: 230px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  background: #f8fafc;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.residential-highlight-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #b7d5ff;
+
+  box-shadow: 0 16px 35px rgba(16, 24, 40, 0.08);
+}
+
+.residential-highlight-card > span {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #1677ff;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.residential-highlight-card h3 {
+  margin: 0 0 12px;
+
+  color: #101828;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.residential-highlight-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   INSIDE YOUR SOLAR SYSTEM
+   ========================================================= */
+
+.solar-system-section {
+  background: #f6f9fc;
+}
+
+.solar-system-layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: minmax(380px, 0.9fr) minmax(0, 1.1fr);
+
+  gap: 55px;
+
+  margin-top: 50px;
+
+  align-items: start;
+}
+
+.solar-system-image {
+  width: 100%;
+}
+
+.solar-system-image img {
+  display: block;
+
+  width: 100%;
+  height: 540px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+}
+
+/* COMPONENT GRID */
+
+.solar-system-components {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.solar-component-card {
+  min-height: 190px;
+
+  padding: 24px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.solar-component-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 14px 30px rgba(16, 24, 40, 0.07);
+}
+
+.solar-component-number {
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf3ff;
+
+  color: #1677ff;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.solar-component-card h3 {
+  margin: 0 0 8px;
+
+  color: #101828;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.solar-component-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.residential-projects {
+  background: #ffffff;
+}
+
+.residential-project-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+
+  margin-top: 50px;
+}
+
+.residential-project-card {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.residential-project-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.1);
+}
+
+.residential-project-image {
+  position: relative;
+
+  width: 100%;
+  height: 230px;
+
+  overflow: hidden;
+}
+
+.residential-project-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.residential-project-card:hover
+.residential-project-image
+img {
+  transform: scale(1.05);
+}
+
+.residential-project-image > span {
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #1677ff;
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.residential-project-content {
+  min-height: 150px;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+}
+
+.residential-project-content h3 {
+  margin: 0 0 10px;
+
+  color: #101828;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.residential-project-content p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   GOVERNMENT SUPPORT
+   ========================================================= */
+
+.residential-support {
+  background: #f6f9fc;
+}
+
+.residential-support-box {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.85fr);
+
+  overflow: hidden;
+
+  background: #101828;
+
+  border-radius: 22px;
+}
+
+.residential-support-content {
+  padding: 60px;
+}
+
+.residential-support-content h2 {
+  max-width: 580px;
+
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.residential-support-content p {
+  max-width: 580px;
+
+  margin: 0 0 14px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.residential-support-content .service-btn {
+  margin-top: 20px;
+}
+
+.residential-support-image {
+  min-height: 450px;
+}
+
+.residential-support-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+
+.residential-testimonials {
+  background: #ffffff;
+}
+
+.residential-testimonial-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  margin-top: 48px;
+}
+
+.residential-testimonial-card {
+  min-height: 270px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f8fafc;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 16px;
+
+  box-sizing: border-box;
+}
+
+.testimonial-stars {
+  margin-bottom: 20px;
+
+  color: #f59e0b;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.residential-testimonial-card > p {
+  flex: 1;
+
+  margin: 0 0 25px;
+
+  color: #475467;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #e4e7ec;
+}
+
+.testimonial-author strong {
+  color: #101828;
+
+  font-size: 14px;
+}
+
+.testimonial-author span {
+  color: #667085;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.residential-cta {
+  width: 100%;
+
+  padding: 80px 0;
+
+  background: #1677ff;
+}
+
+.residential-cta__inner {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.residential-cta__inner > div {
+  flex: 1;
+}
+
+.residential-cta__inner h2 {
+  max-width: 680px;
+
+  margin: 0 0 16px;
+
+  color: #ffffff;
+
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.residential-cta__inner p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #eaf3ff;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.residential-cta .residential-hero__eyebrow {
+  color: #dcecff;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.residential-faq {
+  background: #f8fafc;
+}
+
+.residential-faq-list {
+  width: min(900px, 100%);
+
+  margin: 48px auto 0;
+}
+
+.residential-faq-item {
+  margin-bottom: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.residential-faq-item summary {
+  min-height: 65px;
+
+  padding: 18px 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  color: #101828;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+}
+
+.residential-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.residential-faq-item summary b {
+  flex: 0 0 auto;
+
+  color: #1677ff;
+
+  font-size: 22px;
+  font-weight: 400;
+
+  transition: transform 0.25s ease;
+}
+
+.residential-faq-item[open] summary b {
+  transform: rotate(45deg);
+}
+
+.residential-faq-item p {
+  margin: 0;
+
+  padding: 0 22px 22px;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.residential-page .service-btn {
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.residential-page .service-btn:hover {
+  transform: translateY(-2px);
+}
+
+.residential-page .service-btn--primary {
+  background: #1677ff;
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(22, 119, 255, 0.2);
+}
+
+.residential-page .service-btn--secondary {
+  background: #ffffff;
+  color: #101828;
+
+  border: 1px solid #d0d5dd;
+}
+
+.residential-page .service-btn--light {
+  background: #ffffff;
+  color: #1677ff;
+}
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .residential-hero__container {
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 0.8fr);
+    gap: 45px;
+  }
+
+  .solar-system-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .solar-system-image {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .solar-system-image img {
+    height: 400px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .residential-page .service-section {
+    padding: 70px 0;
+  }
+
+  .residential-hero {
+    padding: 55px 0;
+  }
+
+  .residential-hero__container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .residential-hero__content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .residential-hero__content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .residential-hero__actions {
+    justify-content: center;
+  }
+
+  .residential-hero__image {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .residential-hero__image img {
+    height: 380px;
+  }
+
+  .residential-highlight-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .residential-project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .residential-testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .residential-support-box {
+    grid-template-columns: 1fr;
+  }
+
+  .residential-support-image {
+    min-height: 350px;
+  }
+
+  .residential-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .residential-page .service-container,
+  .residential-hero__container {
+    width: calc(100% - 30px);
+  }
+
+  .residential-page .service-section {
+    padding: 60px 0;
+  }
+
+  .residential-hero {
+    padding: 45px 0 55px;
+  }
+
+  .residential-hero__content {
+    text-align: left;
+  }
+
+  .residential-hero__content h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  .residential-hero__content > p {
+    font-size: 14px;
+  }
+
+  .residential-hero__actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .residential-hero__actions .service-btn {
+    width: 100%;
+  }
+
+  .residential-hero__image {
+    width: 100%;
+  }
+
+  .residential-hero__image img {
+    height: 300px;
+    border-radius: 18px;
+  }
+
+  .residential-hero__badge {
+    left: 15px;
+    bottom: 15px;
+
+    min-width: auto;
+  }
+
+  /* HIGHLIGHTS */
+
+  .residential-highlight-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    margin-top: 35px;
+  }
+
+  .residential-highlight-card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  /* SOLAR SYSTEM */
+
+  .solar-system-layout {
+    gap: 30px;
+    margin-top: 35px;
+  }
+
+  .solar-system-image img {
+    height: 280px;
+    border-radius: 18px;
+  }
+
+  .solar-system-components {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .solar-component-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  /* PROJECTS */
+
+  .residential-project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-top: 35px;
+  }
+
+  .residential-project-image {
+    height: 220px;
+  }
+
+  .residential-project-content {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  /* SUPPORT */
+
+  .residential-support-box {
+    border-radius: 18px;
+  }
+
+  .residential-support-content {
+    padding: 35px 25px;
+  }
+
+  .residential-support-content h2 {
+    font-size: 32px;
+  }
+
+  .residential-support-image {
+    min-height: 270px;
+  }
+
+  /* TESTIMONIALS */
+
+  .residential-testimonial-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    margin-top: 35px;
+  }
+
+  .residential-testimonial-card {
+    min-height: auto;
+
+    padding: 25px;
+  }
+
+  /* CTA */
+
+  .residential-cta {
+    padding: 60px 0;
+  }
+
+  .residential-cta__inner {
+    gap: 30px;
+  }
+
+  .residential-cta__inner h2 {
+    font-size: 34px;
+  }
+
+  .residential-cta .service-btn {
+    width: 100%;
+  }
+
+  /* FAQ */
+
+  .residential-faq-list {
+    margin-top: 35px;
+  }
+
+  .residential-faq-item summary {
+    min-height: 60px;
+
+    padding: 17px;
+
+    font-size: 13px;
+  }
+
+  .residential-faq-item p {
+    padding: 0 17px 18px;
+
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .residential-hero__content h1 {
+    font-size: 34px;
+  }
+
+  .residential-hero__image img {
+    height: 250px;
+  }
+
+  .residential-hero__badge {
+    position: relative;
+
+    left: 0;
+    bottom: 0;
+
+    margin-top: 12px;
+  }
+
+  .solar-system-image img {
+    height: 240px;
+  }
+
+  .residential-project-image {
+    height: 200px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .residential-page *,
+  .residential-page *::before,
+  .residential-page *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

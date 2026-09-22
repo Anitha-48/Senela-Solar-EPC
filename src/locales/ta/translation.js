@@ -11,6 +11,9 @@ const translation = {
     about: "எங்களைப் பற்றி",
     epc: "EPC",
     solarSolutions: "சூரிய ஆற்றல் தீர்வுகள்",
+    residentialSolar: "குடியிருப்பு சூரிய ஆற்றல்",
+    commercialSolar: "வணிக சூரிய ஆற்றல்",
+    utilityScaleSolar: "Utility-Scale & ஒருங்கிணைந்த EPC திட்டங்கள்",
     onGridSolar: "On-grid சூரிய ஆற்றல்",
     hybridGridSolar: "Hybrid Grid சூரிய ஆற்றல்",
     offGridSolar: "Off-grid சூரிய ஆற்றல்",
@@ -635,6 +638,163 @@ const translation = {
 
   whatsapp: {
     message: "உங்கள் சூரிய ஆற்றல் தீர்வுகள் குறித்து விசாரிக்க விரும்புகிறேன். மேலும் தகவலை வழங்கவும்.",
+  },
+
+  solarServicePages: {
+    residential: {
+      breadcrumb: "முகப்பு › குடியிருப்பு சூரிய தீர்வுகள்",
+      eyebrow: "இது உங்களுக்கானதா?",
+      title: "நவீன வீடுகளுக்கான Smart Residential Solar தீர்வுகள்",
+      description: [
+        "பல மின் சாதனங்கள், EV சார்ஜிங் அல்லது அதிக பகல் நேர பயன்பாட்டைக் கொண்ட குடும்பங்களுக்கு, வீட்டு சூரிய நிறுவல் மாத மின் கட்டணத்தை குறைத்து நீண்டகால சேமிப்பை வழங்குகிறது.",
+        "வீடு, பிளாட், பண்ணை இல்லம் மற்றும் குடியிருப்பு சமூகங்களுக்காக, roof suitability, ஆற்றல் திறன் மற்றும் backup flexibility ஆகியவற்றை கணக்கில் கொண்டு தனிப்பயன் சூரிய அமைப்புகளை வடிவமைக்கிறோம்."
+      ],
+      sectionTitles: {
+        highlights: "குடியிருப்பு சூரிய ஆற்றல்",
+        highlightsTitle: "சௌகரியம், சேமிப்பு மற்றும் நம்பகத்தன்மை கொண்ட வீடுகளுக்காக வடிவமைக்கப்பட்டது",
+        highlightsDescription: "உங்கள் வீட்டின் roof area, மின் நுகர்வு மற்றும் இலக்குகளுக்கு ஏற்ற அமைப்பை நாங்கள் பரிந்துரைக்கிறோம்.",
+        system: "அமைப்பு கூறுகள்",
+        systemTitle: "குடியிருப்பு சூரிய நிறுவலின் முக்கிய கூறுகள்",
+        systemDescription: "ஒவ்வொரு வீட்டு சூரிய தீர்வும் generation, conversion மற்றும் power management ஆகிய கூறுகளுடன் வடிவமைக்கப்படுகிறது.",
+        process: "நிறுவல் செயல்முறை",
+        processTitle: "எங்கள் சூரிய நிறுவல் செயல்முறை",
+        processDescription: "தள ஆய்வு முதல் commissioning மற்றும் பராமரிப்பு வரை முழு பயணத்தையும் நாங்கள் நிர்வகிக்கிறோம்.",
+        benefits: "ஏன் சூரிய ஆற்றல்",
+        benefitsTitle: "சுத்தமான ஆற்றல், தினமும் அதிக சேமிப்பு",
+        benefitsDescription: "குடியிருப்பு சூரிய அமைப்புகள் grid-ஐச் சார்ந்திருப்பதைக் குறைத்து நிலையான எதிர்காலத்தை உருவாக்க உதவுகின்றன.",
+        faq: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+        faqTitle: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+        faqDescription: "குடியிருப்பு சூரிய நிறுவல் பற்றிய அனைத்தும்."
+      },
+      highlights: [
+        { title: "அபார்ட்மெண்ட் குடியிருப்பாளர்கள்", description: "பயன்படுத்தக்கூடிய rooftop space கொண்ட அபார்ட்மெண்ட், வீடு, பங்களா மற்றும் குடியிருப்பு சமூகங்களுக்கு ஏற்றது.", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&auto=format&fit=crop" },
+        { title: "சுயாதீன வீடு", description: "shadow-free rooftop space மற்றும் அதிக பகல் நேர நுகர்வு உள்ள வீடுகளுக்கு சிறந்தது.", image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=900&auto=format&fit=crop" },
+        { title: "அடிக்கடி மின்வெட்டு", description: "Hybrid inverter மற்றும் battery backup மூலம் outages-க்குப் பிறகும் மின்சாரம் தொடரும்.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop" },
+        { title: "அரசு மானியம்", description: "PM Surya Ghar மானியம், ஆவணங்கள் மற்றும் eligibility guidance-ஐ நாங்கள் வழங்குகிறோம்.", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop" },
+        { title: "மேம்படுத்தப்பட்ட சொத்து மதிப்பு", description: "சூரிய ஆற்றல் கொண்ட வீடுகள் குறைந்த செயல்பாட்டு செலவு மற்றும் நிலைத்தன்மையை விரும்பும் நவீன வாங்குபவர்களுக்கு பொருத்தமானவை.", image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=900&auto=format&fit=crop" },
+        { title: "ஒவ்வொரு மாதமும் சேமிப்பு", description: "grid power சார்பைக் குறைத்து ஒவ்வொரு மாதமும் குறைந்த மின் கட்டணத்தை அனுபவிக்கவும்.", image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=900&auto=format&fit=crop" }
+      ],
+      systemComponents: [
+        { title: "Panels", description: "உயர் திறன் கொண்ட photovoltaic modules, நீண்டகால வீட்டு பயன்பாட்டுக்கு வடிவமைக்கப்பட்டவை." },
+        { title: "Inverter", description: "உங்கள் வீட்டிற்கு நிலையான மின்சாரத்தை வழங்கும் energy conversion மற்றும் system optimization." },
+        { title: "Battery", description: "grid interruption காலங்களில் critical loads-க்கு optional backup storage." },
+        { title: "Power Usage", description: "உண்மையான home consumption மற்றும் roof potential-க்கேற்ப smart system sizing." }
+      ],
+      installationSteps: [
+        { title: "Load & Shadow Analysis", description: "மின் நுகர்வு, roof condition மற்றும் சூரிய வெளிப்பாடு ஆகியவற்றை ஆய்வு செய்து இறுதி வடிவமைப்பு செய்கிறோம்." },
+        { title: "Engineering & System Design", description: "Site conditions-க்கு ஏற்ப SLD, structure layout மற்றும் optimised solar design-ஐ தயாரிக்கிறோம்." },
+        { title: "Solar Module Installation", description: "உயர் செயல்திறன் கொண்ட panels-ஐ பாதுகாப்பாக and durable structures-ல் நிறுவுகிறோம்." },
+        { title: "Grid & Net Meter Integration", description: "Inverter configuration, electrical protection and net-meter support வீதம் முறையாக முடிக்கிறோம்." },
+        { title: "Monitoring & Maintenance Support", description: "செயல்திறனை கண்காணித்து தொடர்ச்சியான செயல்திறனை உறுதி செய்வோம்." }
+      ],
+      reasons: [
+        "சுத்தமான ஆற்றல் மூலம் மாத மின் கட்டணத்தை குறைக்கவும்",
+        "ஆற்றல் பாதுகாப்பை மேம்படுத்தி grid power-ஐ குறைக்கவும்",
+        "நீண்டகால சேமிப்புக்கு resilient rooftop system-ஐ வழங்கவும்",
+        "நம்பகமான installation guidance மற்றும் after-sales support பெறவும்"
+      ],
+      faqs: [
+        { question: "என் வீட்டின் rooftop-ல் solar panels நிறுவ முடியுமா?", answer: "ஆம். பொருத்தமான rooftop space மற்றும் சூரிய வெளிப்பாடு உள்ள வீடுகளில், மின் நுகர்வு மற்றும் roof area-க்கு ஏற்ற residential solar system நிறுவலாம்." },
+        { question: "குடியிருப்பு solar installation-க்கு மானியம் கிடைக்குமா?", answer: "தகுதியான வீடுகளுக்கு அரசு rooftop programs-ன் கீழ் மானியம் உதவி கிடைக்கலாம். விண்ணப்ப செயல்முறைக்கு நாங்கள் guidance மற்றும் documentation support வழங்குகிறோம்." },
+        { question: "மின் வெட்டு நேரத்தில் solar system வேலை செய்யுமா?", answer: "ஆம். battery backup கொண்ட Hybrid systems, grid unavailable ஆக இருக்கும் போது critical loads-க்கு மின்சாரத்தை வழங்கும்." },
+        { question: "நிறுவல் எவ்வளவு நேரம் எடுக்கும்?", answer: "அனுமதி, material availability மற்றும் site readiness-க்கு பிறகு குடியிருப்பு rooftop installations பொதுவாக சில வேலை நாட்களில் முடிக்கப்படும்." }
+      ],
+      cta: { eyebrow: "இன்று தொடங்குங்கள்", title: "சுத்தமான சூரிய ஆற்றலுக்கு மாற தயாரா?", description: "உங்கள் வீட்டிற்கான solar solution-ஐ திட்டமிடவும், வடிவமைக்கவும் மற்றும் செயல்படுத்தவும் நாங்கள் உதவுவோம்.", primary: "இலவச ஆலோசனை பெறுக", secondary: "இப்போது அழைக்கவும்" }
+    },
+    commercial: {
+      breadcrumb: "முகப்பு › வணிக சூரிய தீர்வுகள்",
+      eyebrow: "ஸ்மார்ட் வணிக சூரிய ஆற்றல்",
+      title: "வணிக செயல்திறன் மற்றும் வளர்ச்சிக்காக வடிவமைக்கப்பட்ட சூரிய தீர்வுகள்.",
+      description: [
+        "வணிக மற்றும் தொழில்துறை சூரிய அமைப்புகள், நிறுவனங்கள் மின் செலவைக் குறைக்கவும், grid power சார்பைக் குறைக்கவும், ஆற்றல் நம்பகத்தன்மையை மேம்படுத்தவும் உதவுகின்றன.",
+        "உங்கள் செயல்பாட்டு சுயவிவரம், tariff structure மற்றும் நீண்டகால நிதி இலக்குகளுக்கு ஏற்ற வகையில் rooftop மற்றும் ground-mounted solar தீர்வுகளை வழங்குகிறோம்."
+      ],
+      sectionTitles: {
+        highlights: "வணிக மதிப்பு",
+        highlightsTitle: "செலவு குறைப்பு மற்றும் செயல்பாட்டு நிலைத்தன்மைக்காக வடிவமைக்கப்பட்டது",
+        highlightsDescription: "எங்கள் வணிக அமைப்புகள் உற்பத்தித்திறன் மற்றும் நீண்டகால சேமிப்பை ஒரே நேரத்தில் ஆதரிக்க வடிவமைக்கப்படுகின்றன.",
+        benefits: "செயல்பாட்டு நன்மைகள்",
+        benefitsTitle: "ஏன் வணிக சூரிய ஆற்றல் வேலை செய்கிறது",
+        benefitsDescription: "சிறந்த அமைப்புகள் utility tariffs, operating hours மற்றும் நீண்டகால செயல்திறன் இலக்குகளை அடிப்படையாகக் கொண்டவை.",
+        process: "நிறுவல்",
+        processTitle: "கருத்து முதல் commissioning வரை முழுமையான EPC ஆதரவு",
+        processDescription: "வடிவமைப்பு, கொள்முதல், நிறுவல் மற்றும் சோதனை ஆகியவற்றை ஒரே கட்டுப்பாட்டின் கீழ் ஒருங்கிணைக்கிறோம்.",
+        faq: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+        faqTitle: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+        faqDescription: "வணிக சூரிய திட்டமிடல் மற்றும் செயல்படுத்தலுக்கான பயனுள்ள பதில்கள்."
+      },
+      highlights: [
+        { title: "வணிக Rooftop அமைப்புகள்", description: "அலுவலகங்கள், கடைகள், கல்லூரிகள் மற்றும் warehouses-க்கு unused rooftop space-ஐ ஆற்றல் உற்பத்தியாக மாற்றுதல்.", image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=900&auto=format&fit=crop" },
+        { title: "தொழில்துறை ஆற்றல் சேமிப்பு", description: "தொழிற்சாலைகள், ஆலைகள் மற்றும் தொழில்துறை தளங்களுக்கு நம்பகமான on-site generation மூலம் இயக்க செலவைக் குறைத்தல்.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop" },
+        { title: "Energy Management", description: "இயக்கம், monitoring மற்றும் செயல்திறன் மேம்பாடு மூலம் போதுமான மற்றும் திறமையான ஆற்றல் நிர்வாகம்.", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop" }
+      ],
+      advantages: [
+        "Captive generation மூலம் மாத மின் கட்டணத்தை குறைத்தல்",
+        "உற்பத்தி மற்றும் வணிக செயல்பாடுகளுக்கு power reliability மேம்படுத்தல்",
+        "Peak demand மற்றும் utility tariff volatility-க்கு வெளிப்பாட்டைக் குறைத்தல்",
+        "Scalable system design மூலம் future capacity expansion",
+        "Suitable locations-ல் net-metering support உடன் grid-connected systems",
+        "தொழில்முறை engineering, installation மற்றும் commissioning support"
+      ],
+      processSteps: [
+        { title: "Load & Energy Review", description: "நுகர்வு, utility tarifa, operating hours மற்றும் rooftop feasibility-ஐ ஆய்வு செய்தல்." },
+        { title: "System Engineering", description: "Plant size, electrical layouts மற்றும் maintenance, safety requirements உடன் வடிவமைத்தல்." },
+        { title: "Procurement & Installation", description: "Equipment supply, installation, testing மற்றும் commissioning வரை end-to-end accountability." }
+      ],
+      faqs: [
+        { question: "சூரிய ஆற்றல் என் வணிக மின் கட்டணத்தை குறைக்க முடியுமா?", answer: "ஆம். வணிக சூரிய அமைப்புகள் on-site power-ஐ உருவாக்கி grid consumption-ஐ குறைத்து இயக்க செலவைக் கணிசமாக குறைக்கலாம்." },
+        { question: "அமைப்பை பின்னர் விரிவாக்க முடியுமா?", answer: "ஆம். எங்கள் அமைப்புகள் உங்கள் ஆற்றல் தேவைகள் வளரும்போது future expansion-க்கு ஏற்றவாறு வடிவமைக்கப்படுகின்றன." },
+        { question: "நீங்கள் turnkey execution அளிக்கிறீர்களா?", answer: "ஆம். engineering, approvals, procurement, installation, testing மற்றும் commissioning வரை முழு lifecycle-ஐ நாங்கள் கையாளுகிறோம்." }
+      ],
+      cta: { eyebrow: "இன்று தொடங்குங்கள்", title: "வணிக சூரிய ஆற்றலுடன் செலவைக் குறைக்க தயாரா?", description: "உங்கள் செயல்பாட்டு இலக்குகள் மற்றும் நீண்டகால ஆற்றல் உத்திக்கு ஏற்ற solar system-ஐ திட்டமிடவும், வடிவமைக்கவும் மற்றும் செயல்படுத்தவும் நாங்கள் உதவுவோம்.", primary: "இலவச ஆலோசனை பெறுக", secondary: "இப்போது அழைக்கவும்" }
+    },
+    utilityScale: {
+      breadcrumb: "முகப்பு › Utility-Scale & EPC திட்டங்கள்",
+      eyebrow: "ஒருங்கிணைந்த EPC செயல்பாடு",
+      title: "உயர் தாக்கம் கொண்ட ஆற்றல் திட்டங்களுக்கான Large-scale solar execution.",
+      description: [
+        "சிக்கலான திட்ட சூழல்களில் துல்லியமான செயல்பாடு, வலுவான பொறியியல் மற்றும் நம்பகமான commissioning தேவைப்படும் utility-scale solar மற்றும் integrated EPC திட்டங்களை வழங்குகிறோம்.",
+        "சூரிய உற்பத்தி, power distribution மற்றும் மின் உள்கட்டமைப்பு ஆகிய அனைத்தையும் ஒருங்கிணைத்து ஒவ்வொரு திட்டமும் செயல்பாட்டு திறனுடன் தயாராக இருப்பதை உறுதி செய்கிறோம்."
+      ],
+      sectionTitles: {
+        capabilities: "திட்ட திறன்கள்",
+        capabilitiesTitle: "Utility மற்றும் infrastructure-scale மேம்பாடுகளுக்கான ஒருங்கிணைந்த செயல்பாடு",
+        capabilitiesDescription: "தொழில்நுட்ப திட்டமிடல், கொள்முதல் மற்றும் தள செயல்பாட்டை ஒருங்கிணைத்து ஆபத்தை குறைக்கிறோம்.",
+        benefits: "நன்மைகள்",
+        benefitsTitle: "பெரிய அளவிலான ஆற்றல் விளைவுகளுக்காக வடிவமைக்கப்பட்டுள்ளது",
+        benefitsDescription: "ஒவ்வொரு திட்டமும் schedule discipline, engineering quality மற்றும் long-term operational readiness-ஐ மையமாகக் கொண்டது.",
+        scope: "வழங்கல் எல்லை",
+        scopeTitle: "நடைமுறை மற்றும் பொறுப்பான திட்ட மாதிரி",
+        scopeDescription: "எங்கள் EPC அணுகுமுறை engineering, installation மற்றும் commissioning-ஐ ஒரே delivery framework-இல் ஒருங்கிணைக்கிறது.",
+        faq: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+        faqTitle: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+        faqDescription: "பெரிய அளவிலான சூரிய மற்றும் EPC செயல்பாடு பற்றிய முக்கிய கேள்விகள்."
+      },
+      capabilities: [
+        { title: "Utility-Scale Solar Parks", description: "மின்சாரம் உற்பத்தி, grid compatibility மற்றும் நீண்டகால செயல்திறனுக்காக வடிவமைக்கப்பட்ட large-capacity ground-mounted systems.", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop" },
+        { title: "Integrated EPC Delivery", description: "Engineering, procurement, construction, testing மற்றும் commissioning வரை single-point accountability.", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&auto=format&fit=crop" },
+        { title: "Power Infrastructure", description: "Substations, transmission-linked infrastructure மற்றும் execution-ready power project scopes-க்கான ஆதரவு.", image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=900&auto=format&fit=crop" }
+      ],
+      benefits: [
+        "பெரிய அளவிலான ஆற்றல் தேவைகளுக்காக வடிவமைக்கப்பட்ட high-capacity renewable generation",
+        "Solar plant design மற்றும் power infrastructure requirements-க்கு இடையேயான சீரான ஒருங்கிணைப்பு",
+        "Site planning முதல் grid synchronisation வரை end-to-end EPC management",
+        "Utility, industrial மற்றும் infrastructure-driven projects-க்கான கட்டமைக்கப்பட்ட செயல்பாடு",
+        "Safety, performance monitoring மற்றும் operational continuity-ஐ மையமாகக் கொண்ட அணுகுமுறை",
+        "Engineering-led accountability கொண்ட scalable project delivery"
+      ],
+      projectScope: [
+        { title: "Site Assessment", description: "Feasibility review, land and technical viability analysis, and initial planning for project viability." },
+        { title: "Design & Engineering", description: "System layout, electrical design, civil planning and technical documentation for execution." },
+        { title: "Construction & Commissioning", description: "Procurement, installation, testing, protection coordination and final energisation for reliable handover." }
+      ],
+      faqs: [
+        { question: "நீங்கள் எந்த வகையான திட்டங்களை செயல்படுத்துகிறீர்கள்?", answer: "Utility-scale solar parks, industrial solar developments, electrical infrastructure மற்றும் integrated EPC project work-ஐ நாங்கள் ஆதரிக்கிறோம்." },
+        { question: "முழுமையான EPC scope-ஐ நீங்கள் கையாளுகிறீர்களா?", answer: "ஆம். engineering, procurement, construction, testing, commissioning மற்றும் handover வரை ஒரே execution framework-கீழ் நாங்கள் கையாள்கிறோம்." },
+        { question: "நீங்கள் project risk-ஐ எவ்வாறு குறைக்கிறீர்கள்?", answer: "Design, procurement மற்றும் site execution-ஐ கவனமாக ஒருங்கிணைத்து interface problems-ஐ குறைத்து schedule reliability-ஐ மேம்படுத்துகிறோம்." }
+      ],
+      cta: { eyebrow: "இன்று தொடங்குங்கள்", title: "பெரிய அளவிலான சூரிய கூட்டாளரை தேடுகிறீர்களா?", description: "உங்கள் தொழில்நுட்ப மற்றும் செயல்பாட்டு தேவைகளுக்கு ஏற்ற solar and EPC project-ஐ திட்டமிடவும், செயல்படுத்தவும் நாங்கள் உதவுவோம்.", primary: "இலவச ஆலோசனை பெறுக", secondary: "இப்போது அழைக்கவும்" }
+    }
   },
 
   faq: {},

@@ -186,7 +186,7 @@ export default function Home() {
           </ul>
 
           <Link
-            to="/solar-solutions/industrial"
+            to="/solar-solutions/commercial"
             className="home-solution-btn"
           >
             More Details
@@ -226,7 +226,7 @@ export default function Home() {
           </ul>
 
           <Link
-            to="/solar-solutions/integrated-epc"
+            to="/solar-solutions/utility-scale"
             className="home-solution-btn"
           >
             More Details

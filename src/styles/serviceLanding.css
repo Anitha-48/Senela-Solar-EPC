@@ -1,0 +1,1535 @@
+/* =========================================================
+   SENELA SOLAR EPC
+   UNIVERSAL SERVICE LANDING PAGE CSS
+
+   Used for:
+   - Residential Solar
+   - Commercial Solar
+   - Utility Solar
+   - On-Grid Solar
+   - Off-Grid Solar
+   - EPC Services
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+.service-landing-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f9fc;
+  color: #14233d;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.service-landing-page *,
+.service-landing-page *::before,
+.service-landing-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.service-landing-page .container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.service-landing-page .service-landing-section {
+  position: relative;
+  width: 100%;
+  padding: 96px 0;
+}
+
+.service-landing-page .service-landing-section--light {
+  background: linear-gradient(
+    180deg,
+    #f6f9ff 0%,
+    #edf4ff 100%
+  );
+}
+
+.service-landing-page .service-landing-section--white {
+  background: #ffffff;
+}
+
+.service-landing-page .service-landing-section--dark {
+  background: #0d1f38;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.service-landing-page h1,
+.service-landing-page h2,
+.service-landing-page h3,
+.service-landing-page h4 {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.service-landing-page h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  color: #132949;
+}
+
+.service-landing-page h3 {
+  margin: 0 0 14px;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: 1.25;
+  color: #173155;
+}
+
+.service-landing-page h4 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: #173155;
+}
+
+.service-landing-page p {
+  margin: 0 0 18px;
+  font-size: 1.03rem;
+  line-height: 1.8;
+  color: #4c5d77;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.service-landing-page .service-landing-section-header {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.service-landing-page .service-landing-section-header h2 {
+  margin-bottom: 16px;
+}
+
+.service-landing-page .service-landing-section-header p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.service-landing-page .service-landing-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0d63d5;
+  font-weight: 800;
+}
+
+.service-landing-page .service-landing-breadcrumb::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: #0d63d5;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.service-landing-page .service-landing-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(13, 99, 213, 0.08);
+  color: #0d63d5;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   UNIVERSAL HERO
+   ========================================================= */
+
+.service-landing-page .service-landing-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 55px;
+  align-items: center;
+  min-height: 620px;
+}
+
+.service-landing-page .service-landing-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.service-landing-page .service-landing-hero__content h2 {
+  max-width: 750px;
+}
+
+.service-landing-page .service-landing-hero__content > p {
+  max-width: 680px;
+}
+
+.service-landing-page .service-landing-hero__media {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #eaf1ff;
+  box-shadow: 0 28px 60px rgba(18, 44, 98, 0.14);
+}
+
+.service-landing-page .service-landing-hero__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(11, 99, 206, 0.10),
+    transparent 55%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-landing-page .service-landing-hero__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.service-landing-page .service-landing-hero__media:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   OPTIONAL FULL-WIDTH HERO
+   ========================================================= */
+
+.service-landing-page .service-landing-hero--full {
+  display: block;
+  position: relative;
+  min-height: 620px;
+}
+
+.service-landing-page .service-landing-hero--full
+.service-landing-hero__media {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.service-landing-page .service-landing-hero--full
+.service-landing-hero__media img {
+  min-height: 100%;
+}
+
+.service-landing-page .service-landing-hero--full
+.service-landing-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 120px 0;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.service-landing-page .service-landing-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.service-landing-page .service-landing-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.service-landing-page .service-landing-btn:hover {
+  transform: translateY(-3px);
+}
+
+.service-landing-page .service-landing-btn--primary {
+  background: #0d63d5;
+  color: #ffffff;
+  box-shadow: 0 15px 30px rgba(13, 99, 213, 0.22);
+}
+
+.service-landing-page .service-landing-btn--primary:hover {
+  background: #084fae;
+  box-shadow: 0 20px 35px rgba(13, 99, 213, 0.28);
+}
+
+.service-landing-page .service-landing-btn--secondary {
+  border: 1px solid #cbd8ea;
+  color: #173155;
+  background: #ffffff;
+}
+
+.service-landing-page .service-landing-btn--secondary:hover {
+  border-color: #0d63d5;
+  color: #0d63d5;
+}
+
+
+/* =========================================================
+   GRID SYSTEM
+   ========================================================= */
+
+.service-landing-page .service-landing-grid {
+  display: grid;
+  gap: 28px;
+  margin-top: 42px;
+}
+
+.service-landing-page .service-landing-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-landing-page .service-landing-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-landing-page .service-landing-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   UNIVERSAL CARDS
+   ========================================================= */
+
+.service-landing-page .service-landing-card,
+.service-landing-page .service-landing-feature,
+.service-landing-page .service-landing-faq,
+.service-landing-page .service-landing-stat {
+  position: relative;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(170, 192, 220, 0.7);
+  border-radius: 22px;
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 38px rgba(21, 43, 80, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.service-landing-page .service-landing-card::before,
+.service-landing-page .service-landing-feature::before,
+.service-landing-page .service-landing-faq::before,
+.service-landing-page .service-landing-stat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+
+  border-top: 2px solid #0d63d5;
+  border-left: 2px solid #0d63d5;
+
+  opacity: 0.9;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.service-landing-page .service-landing-card::after,
+.service-landing-page .service-landing-feature::after,
+.service-landing-page .service-landing-faq::after,
+.service-landing-page .service-landing-stat::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+
+  border-right: 2px solid #0d63d5;
+  border-bottom: 2px solid #0d63d5;
+
+  opacity: 0.9;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.service-landing-page .service-landing-card:hover,
+.service-landing-page .service-landing-feature:hover,
+.service-landing-page .service-landing-faq:hover,
+.service-landing-page .service-landing-stat:hover {
+  transform: translateY(-8px);
+  border-color: rgba(13, 99, 213, 0.35);
+  box-shadow: 0 24px 52px rgba(18, 44, 98, 0.11);
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.service-landing-page .service-landing-card__body,
+.service-landing-page .service-landing-feature__body,
+.service-landing-page .service-landing-faq__body,
+.service-landing-page .service-landing-stat__body {
+  position: relative;
+  z-index: 3;
+  padding: 28px 26px 30px;
+}
+
+
+/* =========================================================
+   CARD ICON
+   ========================================================= */
+
+.service-landing-page .service-landing-icon {
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: rgba(13, 99, 213, 0.09);
+  color: #0d63d5;
+
+  font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   CARD MEDIA
+   ========================================================= */
+
+.service-landing-page .service-landing-card__media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #eaf1ff;
+}
+
+.service-landing-page .service-landing-card__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(11, 99, 206, 0.12),
+    transparent 55%
+  );
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-landing-page .service-landing-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.service-landing-page .service-landing-card:hover
+.service-landing-card__media img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   FEATURE SECTION
+   ========================================================= */
+
+.service-landing-page .service-landing-feature {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.service-landing-page .service-landing-feature__image {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+}
+
+.service-landing-page .service-landing-feature__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(11, 99, 206, 0.10),
+    transparent 55%
+  );
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-landing-page .service-landing-feature__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.service-landing-page .service-landing-feature:hover
+.service-landing-feature__image img {
+  transform: scale(1.05);
+}
+
+.service-landing-page .service-landing-feature__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 45px;
+}
+
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.service-landing-page .service-landing-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px 22px;
+}
+
+.service-landing-page .service-landing-list li {
+  position: relative;
+
+  padding-left: 30px;
+
+  color: #233a5a;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.service-landing-page .service-landing-list li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: #0d63d5;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.service-landing-page .service-landing-process {
+  position: relative;
+}
+
+.service-landing-page .service-landing-process::before {
+  content: "";
+
+  position: absolute;
+
+  top: 72px;
+  left: 10%;
+  right: 10%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(13, 99, 213, 0.25),
+    transparent
+  );
+
+  z-index: 0;
+}
+
+.service-landing-page .service-landing-process-card {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+
+  padding: 30px 20px;
+}
+
+.service-landing-page .service-landing-process-number {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #0d63d5;
+  color: #ffffff;
+
+  font-size: 1.05rem;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 25px rgba(13, 99, 213, 0.25);
+}
+
+.service-landing-page .service-landing-process-card h3 {
+  font-size: 1.15rem;
+}
+
+.service-landing-page .service-landing-process-card p {
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   SOLAR CALCULATOR
+   ========================================================= */
+
+.service-landing-page .service-landing-calculator {
+  max-width: 850px;
+
+  margin: 50px auto 0;
+
+  padding: 36px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(170, 192, 220, 0.7);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(21, 43, 80, 0.08);
+}
+
+.service-landing-page .service-landing-calculator h3 {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.service-landing-page .service-landing-calculator__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.service-landing-page .service-landing-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-landing-page .service-landing-field label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #233a5a;
+}
+
+.service-landing-page .service-landing-field input,
+.service-landing-page .service-landing-field select,
+.service-landing-page .service-landing-field textarea {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #cbd7e8;
+
+  border-radius: 10px;
+
+  background: #f8fbff;
+
+  color: #14233d;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-landing-page .service-landing-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.service-landing-page .service-landing-field input:focus,
+.service-landing-page .service-landing-field select:focus,
+.service-landing-page .service-landing-field textarea:focus {
+  border-color: #0d63d5;
+
+  box-shadow:
+    0 0 0 3px rgba(13, 99, 213, 0.1);
+}
+
+.service-landing-page .service-landing-calculator__result {
+  margin-top: 28px;
+
+  padding: 28px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #eef6ff,
+    #e4f0ff
+  );
+
+  text-align: center;
+}
+
+.service-landing-page .service-landing-calculator__result strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 2.2rem;
+
+  color: #0d63d5;
+}
+
+.service-landing-page .service-landing-calculator__result span {
+  color: #4c5d77;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.service-landing-page .service-landing-gallery {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 42px;
+}
+
+.service-landing-page .service-landing-gallery__item {
+  position: relative;
+
+  height: 270px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #eaf1ff;
+}
+
+.service-landing-page .service-landing-gallery__item img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.service-landing-page .service-landing-gallery__item:hover img {
+  transform: scale(1.07);
+}
+
+.service-landing-page .service-landing-gallery__overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 60px 20px 20px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(10, 25, 50, 0.85)
+  );
+
+  color: #ffffff;
+}
+
+.service-landing-page .service-landing-gallery__overlay strong {
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   INFO / SUBSIDY / EPC
+   ========================================================= */
+
+.service-landing-page .service-landing-info {
+  padding: 38px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    #eef6ff 0%,
+    #ffffff 100%
+  );
+
+  border: 1px solid #d5e2f3;
+
+  box-shadow:
+    0 18px 40px rgba(21, 43, 80, 0.06);
+}
+
+.service-landing-page .service-landing-info h3 {
+  color: #0d63d5;
+}
+
+.service-landing-page .service-landing-info p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.service-landing-page .service-landing-stat__body {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 8px;
+}
+
+.service-landing-page .service-landing-stat strong {
+  font-size: 2rem;
+
+  line-height: 1;
+
+  color: #0d63d5;
+}
+
+.service-landing-page .service-landing-stat span {
+  font-size: 0.9rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  color: #5d6b7d;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TESTIMONIAL
+   ========================================================= */
+
+.service-landing-page .service-landing-testimonial {
+  padding: 32px;
+
+  text-align: center;
+}
+
+.service-landing-page .service-landing-quote {
+  font-size: 1.05rem;
+
+  color: #233a5a;
+
+  font-style: italic;
+
+  line-height: 1.8;
+}
+
+.service-landing-page .service-landing-testimonial strong {
+  display: block;
+
+  margin-top: 20px;
+
+  color: #132949;
+}
+
+.service-landing-page .service-landing-testimonial span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 0.85rem;
+
+  color: #718096;
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.service-landing-page .service-landing-faq {
+  padding: 0;
+}
+
+.service-landing-page .service-landing-faq details {
+  position: relative;
+  z-index: 3;
+}
+
+.service-landing-page .service-landing-faq summary {
+  position: relative;
+
+  list-style: none;
+
+  cursor: pointer;
+
+  padding: 24px 58px 24px 26px;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  color: #173155;
+
+  line-height: 1.5;
+}
+
+.service-landing-page .service-landing-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-landing-page .service-landing-faq summary::after {
+  content: "+";
+
+  position: absolute;
+
+  right: 24px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 1.5rem;
+
+  color: #0d63d5;
+
+  transition: transform 0.25s ease;
+}
+
+.service-landing-page
+.service-landing-faq
+details[open]
+summary::after {
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+}
+
+.service-landing-page .service-landing-faq p {
+  padding: 0 26px 24px;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.service-landing-page .service-landing-cta {
+  padding: 70px 42px;
+
+  border-radius: 28px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #0d63d5 0%,
+    #103b7f 100%
+  );
+
+  box-shadow:
+    0 30px 56px rgba(14, 64, 140, 0.2);
+}
+
+.service-landing-page .service-landing-cta h2,
+.service-landing-page .service-landing-cta p {
+  color: #ffffff;
+}
+
+.service-landing-page .service-landing-cta h2 {
+  max-width: 850px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-landing-page .service-landing-cta p {
+  max-width: 720px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-landing-page .service-landing-cta
+.service-landing-btn--primary {
+  background: #ffffff;
+  color: #11365d;
+}
+
+.service-landing-page .service-landing-cta
+.service-landing-btn--secondary {
+  border-color: rgba(255, 255, 255, 0.42);
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   DARK SECTION SUPPORT
+   ========================================================= */
+
+.service-landing-page
+.service-landing-section--dark
+h2,
+.service-landing-page
+.service-landing-section--dark
+h3 {
+  color: #ffffff;
+}
+
+.service-landing-page
+.service-landing-section--dark
+p {
+  color: #c7d3e5;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .service-landing-page .service-landing-hero {
+    gap: 35px;
+  }
+
+  .service-landing-page .service-landing-grid--4 {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 980px
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  .service-landing-page
+  .service-landing-section {
+    padding: 78px 0;
+  }
+
+  .service-landing-page
+  .service-landing-hero {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    gap: 35px;
+  }
+
+  .service-landing-page
+  .service-landing-hero__content {
+    order: 1;
+  }
+
+  .service-landing-page
+  .service-landing-hero__media {
+    order: 2;
+
+    min-height: 430px;
+  }
+
+  .service-landing-page
+  .service-landing-hero__media img {
+    min-height: 430px;
+  }
+
+  .service-landing-page
+  .service-landing-grid--2,
+  .service-landing-page
+  .service-landing-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .service-landing-page
+  .service-landing-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-landing-page
+  .service-landing-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .service-landing-page
+  .service-landing-feature__image {
+    min-height: 340px;
+  }
+
+  .service-landing-page
+  .service-landing-process::before {
+    display: none;
+  }
+
+  .service-landing-page
+  .service-landing-gallery {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .service-landing-page
+  .service-landing-hero--full {
+    min-height: 540px;
+  }
+
+  .service-landing-page
+  .service-landing-hero--full
+  .service-landing-hero__content {
+    padding: 90px 0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 640px
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .service-landing-page .container {
+    width: calc(100% - 24px);
+  }
+
+  .service-landing-page
+  .service-landing-section {
+    padding: 62px 0;
+  }
+
+  .service-landing-page h2 {
+    font-size: 2.05rem;
+
+    letter-spacing: -0.035em;
+  }
+
+  .service-landing-page h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-landing-page p {
+    font-size: 0.96rem;
+
+    line-height: 1.7;
+  }
+
+
+  /* Hero */
+
+  .service-landing-page
+  .service-landing-hero {
+    gap: 26px;
+  }
+
+  .service-landing-page
+  .service-landing-hero__media {
+    min-height: 300px;
+
+    border-radius: 20px;
+  }
+
+  .service-landing-page
+  .service-landing-hero__media img {
+    min-height: 300px;
+  }
+
+  .service-landing-page
+  .service-landing-breadcrumb {
+    font-size: 10px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .service-landing-page
+  .service-landing-eyebrow {
+    font-size: 10px;
+  }
+
+
+  /* Buttons */
+
+  .service-landing-page
+  .service-landing-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .service-landing-page
+  .service-landing-btn {
+    width: 100%;
+  }
+
+
+  /* Grid */
+
+  .service-landing-page
+  .service-landing-grid {
+    gap: 18px;
+
+    margin-top: 30px;
+  }
+
+  .service-landing-page
+  .service-landing-grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Cards */
+
+  .service-landing-page
+  .service-landing-card__body,
+  .service-landing-page
+  .service-landing-feature__body,
+  .service-landing-page
+  .service-landing-stat__body {
+    padding: 23px 20px;
+  }
+
+  .service-landing-page
+  .service-landing-card__media {
+    height: 200px;
+  }
+
+  .service-landing-page
+  .service-landing-feature__image {
+    min-height: 250px;
+  }
+
+  .service-landing-page
+  .service-landing-feature__body {
+    padding: 28px 22px;
+  }
+
+
+  /* Lists */
+
+  .service-landing-page
+  .service-landing-list {
+    gap: 12px;
+  }
+
+  .service-landing-page
+  .service-landing-list li {
+    font-size: 0.94rem;
+  }
+
+
+  /* Calculator */
+
+  .service-landing-page
+  .service-landing-calculator {
+    margin-top: 30px;
+
+    padding: 22px 18px;
+
+    border-radius: 20px;
+  }
+
+  .service-landing-page
+  .service-landing-calculator__grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .service-landing-page
+  .service-landing-calculator__result {
+    padding: 22px 14px;
+  }
+
+  .service-landing-page
+  .service-landing-calculator__result strong {
+    font-size: 1.8rem;
+  }
+
+
+  /* Gallery */
+
+  .service-landing-page
+  .service-landing-gallery {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .service-landing-page
+  .service-landing-gallery__item {
+    height: 230px;
+  }
+
+
+  /* Info */
+
+  .service-landing-page
+  .service-landing-info {
+    padding: 24px 20px;
+
+    border-radius: 18px;
+  }
+
+
+  /* FAQ */
+
+  .service-landing-page
+  .service-landing-faq summary {
+    padding: 20px 50px 20px 20px;
+
+    font-size: 0.95rem;
+  }
+
+  .service-landing-page
+  .service-landing-faq summary::after {
+    right: 18px;
+  }
+
+  .service-landing-page
+  .service-landing-faq p {
+    padding: 0 20px 20px;
+
+    font-size: 0.92rem;
+  }
+
+
+  /* CTA */
+
+  .service-landing-page
+  .service-landing-cta {
+    padding: 45px 20px;
+
+    border-radius: 22px;
+  }
+
+  .service-landing-page
+  .service-landing-cta h2 {
+    font-size: 1.9rem;
+  }
+
+
+  /* Process */
+
+  .service-landing-page
+  .service-landing-process-card {
+    padding: 20px 15px;
+  }
+
+  .service-landing-page
+  .service-landing-process-number {
+    width: 52px;
+    height: 52px;
+  }
+
+
+  /* Full Hero */
+
+  .service-landing-page
+  .service-landing-hero--full {
+    min-height: 480px;
+  }
+
+  .service-landing-page
+  .service-landing-hero--full
+  .service-landing-hero__content {
+    padding: 70px 0;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .service-landing-page
+  .container {
+    width: calc(100% - 20px);
+  }
+
+  .service-landing-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .service-landing-page
+  .service-landing-hero__media,
+  .service-landing-page
+  .service-landing-hero__media img {
+    min-height: 260px;
+  }
+
+  .service-landing-page
+  .service-landing-btn {
+    min-height: 46px;
+
+    padding: 0 18px;
+  }
+
+  .service-landing-page
+  .service-landing-card__body,
+  .service-landing-page
+  .service-landing-feature__body {
+    padding: 20px 17px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.service-landing-page a:focus-visible,
+.service-landing-page button:focus-visible,
+.service-landing-page input:focus-visible,
+.service-landing-page select:focus-visible,
+.service-landing-page textarea:focus-visible,
+.service-landing-page summary:focus-visible {
+  outline: 3px solid rgba(13, 99, 213, 0.35);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .service-landing-page *,
+  .service-landing-page *::before,
+  .service-landing-page *::after {
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+  .service-landing-page
+  .service-landing-card:hover,
+  .service-landing-page
+  .service-landing-feature:hover,
+  .service-landing-page
+  .service-landing-stat:hover {
+    transform: none;
+  }
+
+  .service-landing-page
+  .service-landing-card:hover img,
+  .service-landing-page
+  .service-landing-feature:hover img,
+  .service-landing-page
+  .service-landing-gallery__item:hover img,
+  .service-landing-page
+  .service-landing-hero__media:hover img {
+    transform: none;
+  }
+}

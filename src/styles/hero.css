@@ -469,6 +469,7 @@
   }
   .hero__feature-pill{
     background-color: white;
+    color:black;
   }
     .hero__contact-btn {
     padding: 12px 22px;

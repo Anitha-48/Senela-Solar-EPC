@@ -44,6 +44,8 @@ const translation = {
     quickInstallation: "Quick Installation",
     longTermWarranty: "Long-Term Warranty",
     callNow: "Call Now",
+    tickerAria: "Tamil Nadu solar subsidy information",
+    ticker: "☀️ Tamil Nadu Solar Subsidy • Up to ₹1,00,000 Assistance • Residential Rooftop Solar • Check Eligibility →",
     whoWeAre: "WHO WE ARE",
     aboutCompany: "About Our Company",
     solarSolutions: "SOLAR SYSTEM",

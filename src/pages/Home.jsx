@@ -15,6 +15,7 @@ import ProcessTimeline from "../components/ProcessTimeline";
 import { siteConfig } from "../config/siteConfig";
 import { services } from "../config/services";
 import { projects } from "../config/projects";
+import epcOneImage from "../assets/images/epc-1.jpg";
 import "../styles/sections.css";
 
 
@@ -25,7 +26,7 @@ const featuredProject = {
   capacity: "500 kWp",
   type: "On-grid Solar",
   status: "Progress",
-  image: "/src/assets/images/Project2.JPG",
+  image: epcOneImage,
   scope: ["Engineering", "Installation", "Commissioning"],
   path: "/projects/featured-solar"
 };
@@ -121,7 +122,7 @@ export default function Home() {
       <div className="home-solution-card">
         <div className="home-solution-media">
           <img
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=900&auto=format&fit=crop"
+            src="https://www.jkcement.com/wp-content/uploads/2025/12/197.png"
             alt={t("home.residentialAlt")}
           />
         </div>
@@ -151,7 +152,7 @@ export default function Home() {
       <div className="home-solution-card">
         <div className="home-solution-media">
           <img
-            src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=900&auto=format&fit=crop"
+            src="https://goldisolar.com/wp-content/uploads/2023/09/The-Benefits-Of-Installing-Solar-Panels-On-A-Commercial-Building2-scaled.jpg"
             alt={t("home.commercialAlt")}
           />
         </div>
@@ -182,7 +183,7 @@ export default function Home() {
       <div className="home-solution-card">
         <div className="home-solution-media">
           <img
-            src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=900&auto=format&fit=crop"
+            src="https://png.pngtree.com/thumb_back/fh260/background/20240702/pngtree-solar-panels-with-blue-sky-and-clouds-image_15846273.jpg"
             alt={t("home.utilityAlt")}
           />
         </div>

@@ -318,7 +318,7 @@ function IndustrialSolarPage() {
               {(page.systemComponents || solarComponents).map((component, index) => (
 
                 <ScrollReveal
-                  key={component.number || component.title}
+                  key={component.number || component.title} 
                   delay={index * 80}
                 >
 

@@ -61,14 +61,14 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="hero__ticker" aria-label="Tamil Nadu solar subsidy information">
+          <div className="hero__ticker" aria-label={t("hero.tickerAria")}>
             <div className="hero__ticker-track">
               <a
                 href="https://www.youtube.com/watch?v=ZVO02VgR314&t=21s"
                 target="_blank"
                 rel="noreferrer"
               >
-                ☀️ Tamil Nadu Solar Subsidy • Up to ₹1,00,000 Assistance • Residential Rooftop Solar • Check Eligibility →
+                {t("hero.ticker")}
               </a>
               <a
                 href="https://www.youtube.com/watch?v=ZVO02VgR314&t=21s"
@@ -77,7 +77,7 @@ export default function Hero() {
                 aria-hidden="true"
                 tabIndex={-1}
               >
-                ☀️ Tamil Nadu Solar Subsidy • Up to ₹1,00,000 Assistance • Residential Rooftop Solar • Check Eligibility →
+                {t("hero.ticker")}
               </a>
             </div>
           </div>

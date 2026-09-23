@@ -1,8 +1,6 @@
 /* =========================================================
    UTILITY SOLAR
-   CLEAN / PROFESSIONAL / INTEGRATED EPC
-   SAME STRUCTURE AS RESIDENTIAL SOLAR
-   ========================================================= */
+  ========================================================= */
 
 .utility-page {
   width: 100%;
@@ -10,10 +8,6 @@
   background: #ffffff;
   color: #101828;
 }
-
-/* =========================================================
-   COMMON CONTAINER
-   ========================================================= */
 
 .utility-page .service-container {
   width: min(1180px, calc(100% - 40px));
@@ -834,10 +828,6 @@ summary b {
   color: #1677ff;
 }
 
-/* =========================================================
-   LARGE TABLET
-   ========================================================= */
-
 @media (max-width: 1050px) {
 
   .utility-hero__container {
@@ -936,11 +926,6 @@ summary b {
     align-items: flex-start;
   }
 }
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
 @media (max-width: 600px) {
 
   .utility-page .service-container,

@@ -2,32 +2,32 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "../components/ScrollReveal";
 import SectionTitle from "../components/SectionTitle";
+import epcOneImage from "../assets/images/epc-1.jpg";
+import epcTwoImage from "../assets/images/epc-2.jpeg";
 
 import "../styles/serviceLanding.css";
 import "../styles/utilityscale.css";
 
 const projectImages = [
   {
-    image:
-      "https://www.sterlingandwilsonre.com/images/business-project/mobile/17-MWp-Solar-Power-Plant-Tamil-Nadu-India/17MWp_Solar_Power_Plant_Tamil_Nadu_India_slider3.jpg",
+    image: epcOneImage,
     title: "Utility-Scale Solar Plant",
     text: "Large-scale solar generation infrastructure engineered for efficient and reliable power production.",
   },
   {
-    image:
-      "https://www.sterlingandwilsonre.com/images/business-project/mobile/17-MWp-Solar-Power-Plant-Tamil-Nadu-India/17MWp_Solar_Power_Plant_Tamil_Nadu_India_slider2.jpg",
+      image:
+    "https://enerparc.in/wp-content/uploads/2024/08/div.image_-2.webp",
     title: "Ground-Mounted Solar Project",
     text: "Ground-mounted photovoltaic systems planned around land conditions, generation targets and grid requirements.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85",
+    image: epcTwoImage,
     title: "Solar Power Infrastructure",
     text: "Integrated solar infrastructure connecting generation assets with electrical distribution and transmission systems.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=85",
+      "https://www.constructionweekonline.in/cloud/2021/11/24/SnrrCT6a-5groundmountedsolarprojects_1-1.jpg",
     title: "Large Solar EPC Project",
     text: "End-to-end EPC execution covering engineering, procurement, construction, testing and commissioning.",
   },
@@ -39,7 +39,7 @@ const projectImages = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1509390874180-6e7f2f9a0c2b?auto=format&fit=crop&w=1200&q=85",
+      "https://www.energetica-india.net/images/noticias/J6Yz5Az638ma0WTHbnJY0fN881uTSic2kMErFGGAFoWjdRFrFlWVjA0.jpg",
     title: "Integrated Renewable Energy Project",
     text: "Coordinated renewable energy infrastructure developed for long-term generation and operational performance.",
   },
@@ -192,7 +192,7 @@ function UtilitySolarPage() {
 
           <div className="utility-hero__image">
             <img
-              src="https://d382rz2cea0pah.cloudfront.net/wp-content/uploads/2022/05/Statkraft-Commissions-55-MW-Open-Access-Solar-Project-in-Tamil-Nadu.png"
+              src="https://png.pngtree.com/thumb_back/fh260/background/20240702/pngtree-solar-panels-with-blue-sky-and-clouds-image_15846273.jpg"
               alt={page.imageAlt}
             />
 

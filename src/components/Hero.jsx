@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Phone, ShieldCheck, Zap } from "lucide-react";
+import { Phone, Play, ShieldCheck, Zap } from "lucide-react";
 import SolarForm from "./SolarForm";
 import BgImage from "../assets/images/solar1.bg.jpg";
 import "../styles/hero.css";
@@ -54,9 +54,31 @@ export default function Hero() {
                 </a>
               </div>
 
+                
               <div className="hero__form-floating">
                 <SolarForm />
               </div>
+            </div>
+          </div>
+
+          <div className="hero__ticker" aria-label="Tamil Nadu solar subsidy information">
+            <div className="hero__ticker-track">
+              <a
+                href="https://www.youtube.com/watch?v=ZVO02VgR314&t=21s"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ☀️ Tamil Nadu Solar Subsidy • Up to ₹1,00,000 Assistance • Residential Rooftop Solar • Check Eligibility →
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=ZVO02VgR314&t=21s"
+                target="_blank"
+                rel="noreferrer"
+                aria-hidden="true"
+                tabIndex={-1}
+              >
+                ☀️ Tamil Nadu Solar Subsidy • Up to ₹1,00,000 Assistance • Residential Rooftop Solar • Check Eligibility →
+              </a>
             </div>
           </div>
         </div>

@@ -1,10 +1,11 @@
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ScrollReveal from "../components/ScrollReveal";
 import SectionTitle from "../components/SectionTitle";
 
 import "../styles/serviceLanding.css";
-import "../styles/.css";
+import "../styles/industrial.css";
 
 /* =========================================================
    INDUSTRIAL SOLAR PROJECTS
@@ -13,42 +14,42 @@ import "../styles/.css";
 const projectImages = [
   {
     image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQygqKx3l98dIMtHid1hFttH6u9f99fP680lnXJT9MOUUf-Smj8gpHoMP0&s=10",
     title: "Manufacturing Plant Solar",
     text:
       "Large-scale rooftop solar designed to support the high electricity requirements of manufacturing facilities.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85",
+      "https://enerparc.in/wp-content/uploads/2025/11/industrial-solar-rooftop-reduce-power-bills.jpg",
     title: "Industrial Rooftop Solar",
     text:
       "Efficient rooftop solar systems planned around available industrial roof space and energy consumption.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85",
+      "https://www.servotech.in/blog/wp-content/uploads/2026/03/WhatsApp-Image-2025-02-27-at-12.44.36.jpeg",
     title: "Factory Energy Solution",
     text:
       "Solar power solutions helping industrial facilities reduce conventional electricity dependence.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=85",
+      " https://sistinesolar.com/wp-content/uploads/2023/08/Solar-for-Warehouses5.jpg",
     title: "Warehouse Solar Project",
     text:
       "Rooftop solar planned for warehouses, logistics centres and large commercial-industrial buildings.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7wKW7g2yLIiMUEuHpJbWESK7S5e3g_YNfi1EC81vU_5_vsYooNCB339X&s=10",
     title: "Industrial Power Generation",
     text:
       "A scalable solar generation system designed for long-term industrial energy requirements.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85",
+      "https://cdn-cabda.nitrocdn.com/SVdFqKwAXGPztepQaAFhkCIrtwXjYdmL/assets/images/optimized/rev-04530b3/visolindia.com/wp-content/uploads/2020/03/industrial-solar-power-plant-500x500-2.jpg",
     title: "High-Capacity Solar Plant",
     text:
       "A high-capacity solar installation designed around facility load, available space and operating patterns.",
@@ -135,6 +136,9 @@ const faqs = [
    ========================================================= */
 
 function IndustrialSolarPage() {
+  const { t } = useTranslation();
+  const page = t("solarServicePages.industrial", { returnObjects: true });
+
   return (
     <main className="service-landing-page industrial-page">
 
@@ -148,24 +152,20 @@ function IndustrialSolarPage() {
           <div className="industrial-hero__content">
 
             <span className="industrial-hero__eyebrow">
-              INDUSTRIAL SOLAR
+              {page.eyebrow}
             </span>
 
             <h1>
-              Power Your Industry
-              <span> With Reliable Solar Energy</span>
+              {page.title}
+              <span>{page.titleHighlight}</span>
             </h1>
 
             <p>
-              Transform your industrial facility into a smarter energy
-              operation with a solar power system designed around your
-              electricity consumption, available space and operating needs.
+              {page.description?.[0]}
             </p>
 
             <p>
-              From manufacturing plants and factories to warehouses and
-              large industrial facilities, we design and deliver scalable
-              solar solutions that support long-term energy management.
+              {page.description?.[1]}
             </p>
 
             <div className="industrial-hero__actions">
@@ -174,14 +174,14 @@ function IndustrialSolarPage() {
                 to="/contact"
                 className="service-btn service-btn--primary"
               >
-                Discuss Your Project
+                {page.cta?.primary}
               </Link>
 
               <a
                 href="#projects"
                 className="service-btn service-btn--secondary"
               >
-                View Projects
+                {page.cta?.secondary}
               </a>
 
             </div>
@@ -191,13 +191,13 @@ function IndustrialSolarPage() {
           <div className="industrial-hero__image">
 
             <img
-              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=85"
-              alt="Industrial solar power installation"
+              src="https://gracerenew.com/images/solar-for-industrial.webp"
+              alt={page.imageAlt}
             />
 
             <div className="industrial-hero__badge">
-              <strong>Industrial Energy</strong>
-              <span>Designed for high-demand facilities</span>
+              <strong>{page.badgeTitle}</strong>
+              <span>{page.badgeText}</span>
             </div>
 
           </div>
@@ -217,9 +217,9 @@ function IndustrialSolarPage() {
           <ScrollReveal>
 
             <SectionTitle
-              eyebrow="SOLAR FOR INDUSTRIES"
-              title="Designed Around Your Industrial Energy Requirements"
-              description="Every industrial facility has different operating schedules, electricity loads and available installation areas. Our solar solutions are planned around your facility's specific energy requirements."
+              eyebrow={page.sectionTitles?.highlights}
+              title={page.sectionTitles?.highlightsTitle}
+              description={page.sectionTitles?.highlightsDescription}
             />
 
           </ScrollReveal>
@@ -232,11 +232,10 @@ function IndustrialSolarPage() {
 
                 <span>01</span>
 
-                <h3>Manufacturing Plants</h3>
+                <h3>{page.highlights?.[0]?.title || "Manufacturing Plants"}</h3>
 
                 <p>
-                  Solar power systems designed for manufacturing units with
-                  continuous or high electricity consumption.
+                  {page.highlights?.[0]?.description || "Solar power systems designed for manufacturing units with continuous or high electricity consumption."}
                 </p>
 
               </div>
@@ -248,11 +247,10 @@ function IndustrialSolarPage() {
 
                 <span>02</span>
 
-                <h3>Factories & Industrial Units</h3>
+                <h3>{page.highlights?.[1]?.title || "Factories & Industrial Units"}</h3>
 
                 <p>
-                  Scalable solar solutions planned around factory operations,
-                  roof availability and electrical infrastructure.
+                  {page.highlights?.[1]?.description || "Scalable solar solutions planned around factory operations, roof availability and electrical infrastructure."}
                 </p>
 
               </div>
@@ -264,11 +262,10 @@ function IndustrialSolarPage() {
 
                 <span>03</span>
 
-                <h3>Warehouses & Large Facilities</h3>
+                <h3>{page.highlights?.[2]?.title || "Warehouses & Large Facilities"}</h3>
 
                 <p>
-                  Efficient rooftop solar systems for warehouses,
-                  logistics facilities and large industrial buildings.
+                  {page.highlights?.[2]?.description || "Efficient rooftop solar systems for warehouses, logistics facilities and large industrial buildings."}
                 </p>
 
               </div>
@@ -292,9 +289,9 @@ function IndustrialSolarPage() {
           <ScrollReveal>
 
             <SectionTitle
-              eyebrow="INDUSTRIAL SOLAR SYSTEM"
-              title="Inside an Industrial Solar Power System"
-              description="An industrial solar plant combines generation, electrical infrastructure, protection, monitoring and energy management systems to deliver reliable solar power for large facilities."
+              eyebrow={page.sectionTitles?.system}
+              title={page.sectionTitles?.systemTitle}
+              description={page.sectionTitles?.systemDescription}
             />
 
           </ScrollReveal>
@@ -307,7 +304,7 @@ function IndustrialSolarPage() {
               <div className="industrial-system-image">
 
                 <img
-                  src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85"
+                  src="https://namienergy.com/wp-content/uploads/2021/07/D%E1%BB%B1-%C3%A1n-Sonadezi-Ch%C3%A2u-%C4%90%E1%BB%A9c-e1626246215874.jpg"
                   alt="Industrial solar panels"
                 />
 
@@ -318,24 +315,24 @@ function IndustrialSolarPage() {
 
             <div className="industrial-system-components">
 
-              {solarComponents.map((component, index) => (
+              {(page.systemComponents || solarComponents).map((component, index) => (
 
                 <ScrollReveal
-                  key={component.number}
+                  key={component.number || component.title}
                   delay={index * 80}
                 >
 
                   <article className="industrial-component-card">
 
                     <span className="industrial-component-number">
-                      {component.number}
+                      {component.number || String(index + 1).padStart(2, "0")}
                     </span>
 
                     <div>
 
                       <h3>{component.title}</h3>
 
-                      <p>{component.text}</p>
+                      <p>{component.text || component.description}</p>
 
                     </div>
 
@@ -403,9 +400,9 @@ function IndustrialSolarPage() {
 
                   <div className="industrial-project-content">
 
-                    <h3>{project.title}</h3>
+                    <h3>{page.projects?.[index]?.title || project.title}</h3>
 
-                    <p>{project.text}</p>
+                    <p>{page.projects?.[index]?.description || project.text}</p>
 
                   </div>
 
@@ -437,31 +434,26 @@ function IndustrialSolarPage() {
               <div className="industrial-support-content">
 
                 <span className="industrial-hero__eyebrow">
-                  INDUSTRIAL ENERGY MANAGEMENT
+                  {page.support?.eyebrow}
                 </span>
 
                 <h2>
-                  Turn Your Facility's Roof Into a Productive Energy Asset
+                  {page.support?.title}
                 </h2>
 
                 <p>
-                  Industrial solar can help facilities generate clean
-                  electricity from available rooftop or project areas while
-                  supporting better long-term energy management.
+                  {page.support?.description?.[0]}
                 </p>
 
                 <p>
-                  Our team can evaluate your facility's electricity
-                  consumption, available installation area and technical
-                  requirements to develop a solar solution suited to your
-                  project.
+                  {page.support?.description?.[1]}
                 </p>
 
                 <Link
                   to="/contact"
                   className="service-btn service-btn--primary"
                 >
-                  Plan Your Industrial Project
+                  {page.support?.button}
                 </Link>
 
               </div>
@@ -500,9 +492,9 @@ function IndustrialSolarPage() {
           <ScrollReveal>
 
             <SectionTitle
-              eyebrow="WHY INDUSTRIAL SOLAR"
-              title="Built Around Industrial Energy Needs"
-              description="A properly planned industrial solar project considers electricity consumption, operating schedules, available space and electrical infrastructure."
+              eyebrow={page.sectionTitles?.benefits}
+              title={page.sectionTitles?.benefitsTitle}
+              description={page.sectionTitles?.benefitsDescription}
             />
 
           </ScrollReveal>
@@ -515,11 +507,10 @@ function IndustrialSolarPage() {
 
                 <span>01</span>
 
-                <h3>Lower Grid Dependence</h3>
+                <h3>{page.benefits?.[0]?.title || "Lower Grid Dependence"}</h3>
 
                 <p>
-                  Generate a portion of your facility's electricity through
-                  on-site solar power.
+                  {page.benefits?.[0]?.description || "Generate a portion of your facility's electricity through on-site solar power."}
                 </p>
 
               </div>
@@ -531,11 +522,10 @@ function IndustrialSolarPage() {
 
                 <span>02</span>
 
-                <h3>Large-Scale Generation</h3>
+                <h3>{page.benefits?.[1]?.title || "Large-Scale Generation"}</h3>
 
                 <p>
-                  Solar plants can be designed for facilities with
-                  substantial electricity requirements.
+                  {page.benefits?.[1]?.description || "Solar plants can be designed for facilities with substantial electricity requirements."}
                 </p>
 
               </div>
@@ -547,11 +537,10 @@ function IndustrialSolarPage() {
 
                 <span>03</span>
 
-                <h3>Better Roof Utilisation</h3>
+                <h3>{page.benefits?.[2]?.title || "Better Roof Utilisation"}</h3>
 
                 <p>
-                  Make productive use of suitable factory and warehouse
-                  rooftop areas for solar generation.
+                  {page.benefits?.[2]?.description || "Make productive use of suitable factory and warehouse rooftop areas for solar generation."}
                 </p>
 
               </div>
@@ -563,11 +552,10 @@ function IndustrialSolarPage() {
 
                 <span>04</span>
 
-                <h3>Energy Monitoring</h3>
+                <h3>{page.benefits?.[3]?.title || "Energy Monitoring"}</h3>
 
                 <p>
-                  Monitor plant generation and system performance through
-                  modern digital monitoring solutions.
+                  {page.benefits?.[3]?.description || "Monitor plant generation and system performance through modern digital monitoring solutions."}
                 </p>
 
               </div>
@@ -593,16 +581,15 @@ function IndustrialSolarPage() {
             <div>
 
               <span className="industrial-hero__eyebrow">
-                INDUSTRIAL SOLAR SOLUTIONS
+                {page.cta?.eyebrow}
               </span>
 
               <h2>
-                Build a Smarter Energy Future for Your Industry
+                {page.cta?.title}
               </h2>
 
               <p>
-                Talk to our team about your factory, manufacturing plant,
-                warehouse or industrial solar project.
+                {page.cta?.description}
               </p>
 
             </div>
@@ -612,7 +599,7 @@ function IndustrialSolarPage() {
               to="/contact"
               className="service-btn service-btn--light"
             >
-              Request a Consultation
+              {page.cta?.primary}
             </Link>
 
           </div>
@@ -633,9 +620,9 @@ function IndustrialSolarPage() {
           <ScrollReveal>
 
             <SectionTitle
-              eyebrow="FAQ"
-              title="Industrial Solar FAQs"
-              description="Quick answers to common questions about solar power for industrial facilities."
+              eyebrow={page.sectionTitles?.faq}
+              title={page.sectionTitles?.faqTitle}
+              description={page.sectionTitles?.faqDescription}
             />
 
           </ScrollReveal>
@@ -643,7 +630,7 @@ function IndustrialSolarPage() {
 
           <div className="industrial-faq-list">
 
-            {faqs.map((faq, index) => (
+            {(page.faqs || faqs).map((faq, index) => (
 
               <ScrollReveal
                 key={faq.question}

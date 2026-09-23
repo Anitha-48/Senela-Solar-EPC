@@ -947,6 +947,82 @@ const translation = {
         secondary: "Call Now"
       }
     },
+    industrial: {
+      eyebrow: "INDUSTRIAL SOLAR",
+      title: "Power Your Industry",
+      titleHighlight: "With Reliable Solar Energy",
+      imageAlt: "Industrial solar power installation",
+      badgeTitle: "Industrial Energy",
+      badgeText: "Designed for high-demand facilities",
+      description: [
+        "Transform your industrial facility into a smarter energy operation with a solar power system designed around your electricity consumption, available space and operating needs.",
+        "From manufacturing plants and factories to warehouses and large industrial facilities, we design and deliver scalable solar solutions that support long-term energy management."
+      ],
+      sectionTitles: {
+        highlights: "SOLAR FOR INDUSTRIES",
+        highlightsTitle: "Designed Around Your Industrial Energy Requirements",
+        highlightsDescription: "Every industrial facility has different operating schedules, electricity loads and available installation areas. Our solar solutions are planned around your facility's specific energy requirements.",
+        system: "INDUSTRIAL SOLAR SYSTEM",
+        systemTitle: "Inside an Industrial Solar Power System",
+        systemDescription: "An industrial solar plant combines generation, electrical infrastructure, protection, monitoring and energy management systems to deliver reliable solar power for large facilities.",
+        benefits: "WHY INDUSTRIAL SOLAR",
+        benefitsTitle: "Built Around Industrial Energy Needs",
+        benefitsDescription: "A properly planned industrial solar project considers electricity consumption, operating schedules, available space and electrical infrastructure.",
+        faq: "FAQ",
+        faqTitle: "Industrial Solar FAQs",
+        faqDescription: "Quick answers to common questions about solar power for industrial facilities."
+      },
+      highlights: [
+        { title: "Manufacturing Plants", description: "Solar power systems designed for manufacturing units with continuous or high electricity consumption." },
+        { title: "Factories & Industrial Units", description: "Scalable solar solutions planned around factory operations, roof availability and electrical infrastructure." },
+        { title: "Warehouses & Large Facilities", description: "Efficient rooftop solar systems for warehouses, logistics facilities and large industrial buildings." }
+      ],
+      systemComponents: [
+        { number: "01", title: "High-Efficiency Solar Panels", description: "High-performance solar modules convert available sunlight into electricity for industrial operations." },
+        { number: "02", title: "Industrial Solar Inverter", description: "Industrial-grade inverters convert solar power into usable electricity and support reliable system operation." },
+        { number: "03", title: "Rooftop Mounting Structure", description: "Engineered mounting structures securely position solar modules according to the building and roof conditions." },
+        { number: "04", title: "HT / LT Electrical System", description: "Electrical infrastructure connects the solar generation system with the facility's existing power network." },
+        { number: "05", title: "Protection & Safety", description: "Protection equipment helps safeguard the solar plant, electrical network and connected industrial loads." },
+        { number: "06", title: "Monitoring & Energy Management", description: "Digital monitoring helps track generation, system performance and energy usage across the facility." }
+      ],
+      projects: [
+        { title: "Manufacturing Plant Solar", description: "Large-scale rooftop solar designed to support the high electricity requirements of manufacturing facilities." },
+        { title: "Industrial Rooftop Solar", description: "Efficient rooftop solar systems planned around available industrial roof space and energy consumption." },
+        { title: "Factory Energy Solution", description: "Solar power solutions helping industrial facilities reduce conventional electricity dependence." },
+        { title: "Warehouse Solar Project", description: "Rooftop solar planned for warehouses, logistics centres and large commercial-industrial buildings." },
+        { title: "Industrial Power Generation", description: "A scalable solar generation system designed for long-term industrial energy requirements." },
+        { title: "High-Capacity Solar Plant", description: "A high-capacity solar installation designed around facility load, available space and operating patterns." }
+      ],
+      support: {
+        eyebrow: "INDUSTRIAL ENERGY MANAGEMENT",
+        title: "Turn Your Facility's Roof Into a Productive Energy Asset",
+        description: [
+          "Industrial solar can help facilities generate clean electricity from available rooftop or project areas while supporting better long-term energy management.",
+          "Our team can evaluate your facility's electricity consumption, available installation area and technical requirements to develop a solar solution suited to your project."
+        ],
+        button: "Plan Your Industrial Project"
+      },
+      benefits: [
+        { title: "Lower Grid Dependence", description: "Generate a portion of your facility's electricity through on-site solar power." },
+        { title: "Large-Scale Generation", description: "Solar plants can be designed for facilities with substantial electricity requirements." },
+        { title: "Better Roof Utilisation", description: "Make productive use of suitable factory and warehouse rooftop areas for solar generation." },
+        { title: "Energy Monitoring", description: "Monitor plant generation and system performance through modern digital monitoring solutions." }
+      ],
+      faqs: [
+        { question: "Why should industries install solar power?", answer: "Industrial facilities often have significant electricity requirements. Solar can help generate part of the facility's electricity demand and reduce dependence on conventional grid power." },
+        { question: "Can solar be installed on an existing factory?", answer: "Yes. Existing factories and industrial buildings can be evaluated for rooftop solar based on roof condition, available area, electrical infrastructure, energy consumption and structural requirements." },
+        { question: "Can solar support high industrial electricity consumption?", answer: "Solar systems can be designed at different capacities based on the facility's electricity consumption, available installation area, operating schedule and project requirements." },
+        { question: "Can industrial solar be installed on warehouse roofs?", answer: "Yes. Large warehouse and industrial roofs can provide useful installation space for rooftop solar after structural and technical evaluation." },
+        { question: "How can industrial solar performance be monitored?", answer: "Modern solar plants can use monitoring systems to track electricity generation, inverter performance, system status and other operating parameters." }
+      ],
+      cta: {
+        eyebrow: "INDUSTRIAL SOLAR SOLUTIONS",
+        title: "Build a Smarter Energy Future for Your Industry",
+        description: "Talk to our team about your factory, manufacturing plant, warehouse or industrial solar project.",
+        primary: "Request a Consultation",
+        secondary: "View Projects"
+      }
+    },
     commercial: {
       breadcrumb: "HOME › COMMERCIAL SOLAR",
       eyebrow: "SMART COMMERCIAL SOLAR",

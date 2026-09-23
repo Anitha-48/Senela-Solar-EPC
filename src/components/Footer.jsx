@@ -83,17 +83,17 @@ export default function Footer() {
               <span>{siteConfig.workingHours}</span>
             </div>
           </div>
-        </div>
 
-        <div className="container" style={{ marginTop: 8 }}>
-          <h4 style={{ color: "var(--site)", fontSize: "0.92rem", marginBottom: 18 }}>{t("footer.services")}</h4>
-          <ul style={{ listStyle: "none", padding: 0, display: "flex", flexWrap: "wrap", gap: "12px 28px" }}>
-            {services.map((s) => (
-              <li key={s.path}>
-                <NavLink to={s.path} style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.65)" }}>{label(s.path, s.label)}</NavLink>
-              </li>
-            ))}
-          </ul>
+          <div className="footer__col footer__services-col">
+            <h4>{t("footer.services")}</h4>
+            <ul>
+              {services.map((s) => (
+                <li key={s.path}>
+                  <NavLink to={s.path}>{label(s.path, s.label)}</NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 

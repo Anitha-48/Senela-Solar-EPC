@@ -100,9 +100,8 @@ export default function Footer() {
       <div className="container footer__bottom">
         <span>© {new Date().getFullYear()} {siteConfig.companyName}. {t("footer.allRightsReserved")}</span>
         <div className="footer__bottom-links">
-          
+         </div> 
         </div>
-      </div>
     </footer>
   );
 }

@@ -3,148 +3,112 @@ import { useTranslation } from "react-i18next";
 import ScrollReveal from "../components/ScrollReveal";
 import SectionTitle from "../components/SectionTitle";
 
-import "../styles/serviceLanding.css";
 import "../styles/utilityscale.css";
-
-/* =========================================================
-   COMMERCIAL PROJECT IMAGES
-   Similar image quality/style to Residential Solar page
-   ========================================================= */
 
 const projectImages = [
   {
     image:
-      "https://asmsolarenergy.in/assets/commercial_solar.webp",
+      "https://www.tristarenergy.in/data/blogs/solar-for-auto-component-manufacturers/images/hero.jpg",
     title: "Commercial Rooftop Solar",
-    text:
-      "A rooftop solar solution designed to support the daily electricity requirements of commercial buildings.",
+    text: "A rooftop solar solution designed to support the daily electricity requirements of commercial buildings.",
   },
   {
     image:
-      "https://myrsolar.com/img/heroes/5kw-solar-system-india.webp",
+      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85",
     title: "Office Building Solar",
-    text:
-      "Solar power designed for offices and business facilities looking to reduce conventional electricity consumption.",
+    text: "Solar power designed for offices and business facilities looking to reduce conventional electricity consumption.",
   },
   {
     image:
-      "https://productimages.withfloats.com/new-converted/690e11bfaf206fe4c0b47e43.png",
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=85",
     title: "Industrial Rooftop Installation",
-    text:
-      "A larger rooftop installation planned around available roof space and operational energy demand.",
+    text: "A larger rooftop installation planned around available roof space and operational energy demand.",
   },
   {
     image:
-      "https://koshishindia.in/wp-content/uploads/2026/03/Solar-System-2Kw-1024x683.png",
+      "https://images.unsplash.com/photo-1545208942-e1e9d8f6f3a5?auto=format&fit=crop&w=1200&q=85",
     title: "Warehouse Solar Project",
-    text:
-      "A practical solar solution for warehouses and facilities with large roof areas and significant daytime loads.",
+    text: "A practical solar solution for warehouses and facilities with large roof areas and significant daytime loads.",
   },
   {
     image:
-      "https://phoenixsurveillance.in/assets/solar-panels-india-pNx-5Zjc.jpg",
+      "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=85",
     title: "Business Solar Installation",
-    text:
-      "Commercial solar designed to support predictable energy generation and better long-term electricity planning.",
+    text: "Commercial solar designed to support predictable energy generation and better long-term electricity planning.",
   },
   {
     image:
-      "https://dimansolar.com/public/uploads/project/project-97420220219.jpg",
+      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=85",
     title: "Large-Scale Rooftop System",
-    text:
-      "A scalable rooftop solar installation designed for businesses with higher electricity requirements.",
+    text: "A scalable rooftop solar installation designed for businesses with higher electricity requirements.",
   },
 ];
-
-/* =========================================================
-   COMMERCIAL SOLUTIONS
-   ========================================================= */
 
 const commercialSolutions = [
   {
     number: "01",
     title: "Office Buildings",
-    text:
-      "Solar systems designed around office electricity consumption, working hours and available rooftop space.",
+    text: "Solar systems designed around office electricity consumption, working hours and available rooftop space.",
   },
   {
     number: "02",
     title: "Retail & Commercial Spaces",
-    text:
-      "Energy solutions for retail stores, commercial complexes and business premises with regular daytime electricity demand.",
+    text: "Energy solutions for retail stores, commercial complexes and business premises with regular daytime electricity demand.",
   },
   {
     number: "03",
     title: "Warehouses",
-    text:
-      "Large rooftop areas can be utilised for solar generation to support warehouse operations and facility loads.",
+    text: "Large rooftop areas can be utilised for solar generation to support warehouse operations and facility loads.",
   },
   {
     number: "04",
     title: "Hotels & Institutions",
-    text:
-      "Solar solutions for hotels, schools, colleges and institutions with consistent electricity requirements.",
+    text: "Solar solutions for hotels, schools, colleges and institutions with consistent electricity requirements.",
   },
   {
     number: "05",
     title: "Industrial Facilities",
-    text:
-      "Higher-capacity solar systems designed around industrial operating schedules and electricity consumption patterns.",
+    text: "Higher-capacity solar systems designed around industrial operating schedules and electricity consumption patterns.",
   },
   {
     number: "06",
     title: "Business Campuses",
-    text:
-      "Scalable solar installations for multi-building campuses and commercial facilities with growing energy needs.",
+    text: "Scalable solar installations for multi-building campuses and commercial facilities with growing energy needs.",
   },
 ];
-
-/* =========================================================
-   COMMERCIAL SOLAR COMPONENTS
-   ========================================================= */
 
 const solarComponents = [
   {
     number: "01",
     title: "Solar PV Modules",
-    text:
-      "High-quality photovoltaic modules convert available sunlight into electrical energy for commercial use.",
+    text: "High-quality photovoltaic modules convert available sunlight into electrical energy for commercial use.",
   },
   {
     number: "02",
     title: "Solar Inverter",
-    text:
-      "The inverter converts DC electricity from the solar modules into usable AC electricity for the facility.",
+    text: "The inverter converts DC electricity from the solar modules into usable AC electricity for the facility.",
   },
   {
     number: "03",
     title: "Mounting Structure",
-    text:
-      "Engineered mounting structures securely support the solar modules while maintaining the required orientation.",
+    text: "Engineered mounting structures securely support the solar modules while maintaining the required orientation.",
   },
   {
     number: "04",
     title: "Electrical Protection",
-    text:
-      "Protection systems help safeguard the solar plant, electrical equipment and connected commercial loads.",
+    text: "Protection systems help safeguard the solar plant, electrical equipment and connected commercial loads.",
   },
   {
     number: "05",
     title: "Monitoring System",
-    text:
-      "Monitoring systems provide visibility into solar generation, plant performance and system operation.",
+    text: "Monitoring systems provide visibility into solar generation, plant performance and system operation.",
   },
   {
     number: "06",
     title: "Grid Integration",
-    text:
-      "Grid-connected systems allow generated solar power to work alongside the facility's existing electrical supply.",
+    text: "Grid-connected systems allow generated solar power to work alongside the facility's existing electrical supply.",
   },
 ];
-
-/* =========================================================
-   FAQ
-   ========================================================= */
 
 const faqs = [
   {
@@ -174,10 +138,6 @@ const faqs = [
   },
 ];
 
-/* =========================================================
-   COMMERCIAL SOLAR PAGE
-   ========================================================= */
-
 function CommercialSolarPage() {
   const { t } = useTranslation();
 
@@ -198,19 +158,25 @@ function CommercialSolarPage() {
           <div className="commercial-hero__content">
 
             <span className="commercial-hero__eyebrow">
-              {page.eyebrow}
+              COMMERCIAL SOLAR
             </span>
 
             <h1>
-              {page.title}
+              Power Your Business
+              <span> With Smarter Solar Energy</span>
             </h1>
 
             <p>
-              {page.description?.[0]}
+              Turn your commercial rooftop into a productive energy asset
+              with a solar system designed around your business's electricity
+              consumption, operating schedule and available space.
             </p>
 
             <p>
-              {page.description?.[1]}
+              From offices and retail buildings to warehouses, institutions
+              and industrial facilities, we design and deliver commercial
+              solar solutions focused on reliable generation, efficient
+              energy use and long-term operational value.
             </p>
 
             <div className="commercial-hero__actions">
@@ -219,32 +185,30 @@ function CommercialSolarPage() {
                 to="/contact"
                 className="service-btn service-btn--primary"
               >
-                {page.cta?.primary}
+                Get a Commercial Consultation
               </Link>
 
               <a
                 href="#projects"
                 className="service-btn service-btn--secondary"
               >
-                {page.cta?.secondary}
+                View Projects
               </a>
 
             </div>
 
           </div>
 
-          {/* HERO IMAGE */}
-
           <div className="commercial-hero__image">
 
             <img
               src="https://goldisolar.com/wp-content/uploads/2023/09/The-Benefits-Of-Installing-Solar-Panels-On-A-Commercial-Building2-scaled.jpg"
-              alt={page.imageAlt}
+              alt="Commercial rooftop solar installation"
             />
 
             <div className="commercial-hero__badge">
-              <strong>{page.badgeTitle}</strong>
-              <span>{page.badgeText}</span>
+              <strong>Business Solar</strong>
+              <span>Designed around commercial energy needs</span>
             </div>
 
           </div>
@@ -252,9 +216,8 @@ function CommercialSolarPage() {
         </div>
       </section>
 
-
       {/* =====================================================
-          {page.sectionTitles?.highlights}
+          COMMERCIAL SOLUTIONS
       ===================================================== */}
 
       <section className="service-section commercial-intro">
@@ -262,51 +225,30 @@ function CommercialSolarPage() {
         <div className="service-container">
 
           <ScrollReveal>
-
             <SectionTitle
               eyebrow="SOLAR FOR BUSINESS"
-              title={page.sectionTitles?.highlightsTitle}
-              description={page.sectionTitles?.highlightsDescription}
+              title="Designed Around Your Commercial Energy Requirements"
+              description="Every commercial facility has a different electricity profile. Our solar solutions are planned around your consumption, operating hours, available space and future energy requirements."
             />
-
           </ScrollReveal>
-
 
           <div className="commercial-highlight-grid">
 
-<<<<<<< HEAD
             {commercialSolutions.map((solution, index) => (
-
-=======
-            {(page.highlights || commercialSolutions).map((solution, index) => (
->>>>>>> 9f181237c207e94b936564fbc531f8970d699135
               <ScrollReveal
                 key={solution.number}
                 delay={index * 70}
               >
-
                 <article className="commercial-highlight-card">
 
-                  <span>
-                    {solution.number}
-                  </span>
+                  <span>{solution.number}</span>
 
-                  <h3>
-                    {solution.title}
-                  </h3>
+                  <h3>{solution.title}</h3>
 
-<<<<<<< HEAD
-                  <p>
-                    {solution.text}
-                  </p>
-=======
-                  <p>{solution.text || solution.description}</p>
->>>>>>> 9f181237c207e94b936564fbc531f8970d699135
+                  <p>{solution.text}</p>
 
                 </article>
-
               </ScrollReveal>
-
             ))}
 
           </div>
@@ -314,7 +256,6 @@ function CommercialSolarPage() {
         </div>
 
       </section>
-
 
       {/* =====================================================
           COMMERCIAL SOLAR SYSTEM
@@ -325,19 +266,14 @@ function CommercialSolarPage() {
         <div className="service-container">
 
           <ScrollReveal>
-
             <SectionTitle
-              eyebrow={page.sectionTitles?.process}
-              title={page.sectionTitles?.processTitle}
-              description={page.sectionTitles?.processDescription}
+              eyebrow="COMMERCIAL SOLAR SYSTEM"
+              title="What Goes Into a Commercial Solar Installation?"
+              description="A commercial solar plant combines multiple electrical, structural and monitoring components to safely generate and manage solar power for your facility."
             />
-
           </ScrollReveal>
 
-
           <div className="commercial-system-layout">
-
-            {/* SYSTEM IMAGE */}
 
             <ScrollReveal>
 
@@ -352,22 +288,13 @@ function CommercialSolarPage() {
 
             </ScrollReveal>
 
-
-            {/* SYSTEM COMPONENTS */}
-
             <div className="commercial-system-components">
 
-<<<<<<< HEAD
               {solarComponents.map((component, index) => (
-
-=======
-              {(page.processSteps || solarComponents).map((component, index) => (
->>>>>>> 9f181237c207e94b936564fbc531f8970d699135
                 <ScrollReveal
                   key={component.number}
                   delay={index * 80}
                 >
-
                   <article className="commercial-component-card">
 
                     <span className="commercial-component-number">
@@ -376,24 +303,14 @@ function CommercialSolarPage() {
 
                     <div>
 
-                      <h3>
-                        {component.title}
-                      </h3>
+                      <h3>{component.title}</h3>
 
-<<<<<<< HEAD
-                      <p>
-                        {component.text}
-                      </p>
-=======
-                      <p>{component.text || component.description}</p>
->>>>>>> 9f181237c207e94b936564fbc531f8970d699135
+                      <p>{component.text}</p>
 
                     </div>
 
                   </article>
-
                 </ScrollReveal>
-
               ))}
 
             </div>
@@ -404,7 +321,6 @@ function CommercialSolarPage() {
 
       </section>
 
-
       {/* =====================================================
           BUSINESS BENEFITS
       ===================================================== */}
@@ -414,95 +330,57 @@ function CommercialSolarPage() {
         <div className="service-container">
 
           <ScrollReveal>
-
             <SectionTitle
-              eyebrow={page.sectionTitles?.benefits}
-              title={page.sectionTitles?.benefitsTitle}
-              description={page.sectionTitles?.benefitsDescription}
+              eyebrow="WHY COMMERCIAL SOLAR"
+              title="Energy Planning Built for Business"
+              description="Commercial solar can become part of a broader energy strategy by using available rooftop or facility space to generate electricity where it is needed."
             />
-
           </ScrollReveal>
-
 
           <div className="commercial-benefit-grid">
 
             <ScrollReveal>
-
               <article className="commercial-benefit-card">
-
                 <span>01</span>
-
-                <h3>
-                  Reduce Grid Dependence
-                </h3>
-
+                <h3>Reduce Grid Dependence</h3>
                 <p>
                   Generate a portion of your facility's electricity through
                   on-site solar power.
                 </p>
-
               </article>
-
             </ScrollReveal>
 
-
             <ScrollReveal>
-
               <article className="commercial-benefit-card">
-
                 <span>02</span>
-
-                <h3>
-                  Use Rooftop Space
-                </h3>
-
+                <h3>Use Rooftop Space</h3>
                 <p>
                   Convert suitable commercial rooftop areas into productive
                   solar generation space.
                 </p>
-
               </article>
-
             </ScrollReveal>
 
-
             <ScrollReveal>
-
               <article className="commercial-benefit-card">
-
                 <span>03</span>
-
-                <h3>
-                  Support Daytime Loads
-                </h3>
-
+                <h3>Support Daytime Loads</h3>
                 <p>
                   Solar generation can align well with businesses that have
                   significant daytime electricity consumption.
                 </p>
-
               </article>
-
             </ScrollReveal>
 
-
             <ScrollReveal>
-
               <article className="commercial-benefit-card">
-
                 <span>04</span>
-
-                <h3>
-                  Improve Energy Planning
-                </h3>
-
+                <h3>Improve Energy Planning</h3>
                 <p>
                   Monitor solar generation and incorporate renewable energy
                   into your facility's long-term electricity planning.
                 </p>
-
               </article>
-
             </ScrollReveal>
 
           </div>
@@ -510,7 +388,6 @@ function CommercialSolarPage() {
         </div>
 
       </section>
-
 
       {/* =====================================================
           PROJECTS
@@ -524,35 +401,27 @@ function CommercialSolarPage() {
         <div className="service-container">
 
           <ScrollReveal>
-
             <SectionTitle
-              eyebrow={page.sectionTitles?.benefits}
-              title={page.sectionTitles?.benefitsTitle}
-              description={page.sectionTitles?.benefitsDescription}
+              eyebrow="OUR PROJECTS"
+              title="Solar Solutions for Commercial Facilities"
+              description="Explore commercial solar applications designed for different building types, roof layouts and energy requirements."
             />
-
           </ScrollReveal>
-
 
           <div className="commercial-project-grid">
 
             {projectImages.map((project, index) => (
-
               <ScrollReveal
                 key={project.title}
                 delay={index * 70}
               >
-
                 <article className="commercial-project-card">
-
-                  {/* PROJECT IMAGE */}
 
                   <div className="commercial-project-image">
 
                     <img
                       src={project.image}
                       alt={project.title}
-                      loading="lazy"
                     />
 
                     <span>
@@ -561,31 +430,16 @@ function CommercialSolarPage() {
 
                   </div>
 
-
-                  {/* PROJECT CONTENT */}
-
                   <div className="commercial-project-content">
 
-<<<<<<< HEAD
-                    <h3>
-                      {project.title}
-                    </h3>
+                    <h3>{project.title}</h3>
 
-                    <p>
-                      {project.text}
-                    </p>
-=======
-                    <h3>{page.highlights?.[index]?.title || project.title}</h3>
-
-                    <p>{page.highlights?.[index]?.description || project.text}</p>
->>>>>>> 9f181237c207e94b936564fbc531f8970d699135
+                    <p>{project.text}</p>
 
                   </div>
 
                 </article>
-
               </ScrollReveal>
-
             ))}
 
           </div>
@@ -593,7 +447,6 @@ function CommercialSolarPage() {
         </div>
 
       </section>
-
 
       {/* =====================================================
           COMMERCIAL SUPPORT
@@ -610,32 +463,34 @@ function CommercialSolarPage() {
               <div className="commercial-support-content">
 
                 <span className="commercial-hero__eyebrow">
-                  {page.epc?.eyebrow || page.cta?.eyebrow}
+                  COMMERCIAL SOLAR PLANNING
                 </span>
 
                 <h2>
-                  {page.epc?.title || page.cta?.title}
+                  Let's Plan the Right Solar Solution for Your Business
                 </h2>
 
                 <p>
-                  {page.cta?.description}
+                  A commercial solar project begins with understanding your
+                  electricity consumption, available roof or land area,
+                  electrical infrastructure and project objectives.
                 </p>
 
                 <p>
-                  {page.cta?.description}
+                  Our team can assess your requirements and help plan a solar
+                  solution suitable for your commercial facility.
                 </p>
 
                 <Link
                   to="/contact"
                   className="service-btn service-btn--primary"
                 >
-                  {page.cta?.primary}
+                  Discuss Your Project
                 </Link>
 
               </div>
 
             </ScrollReveal>
-
 
             <ScrollReveal>
 
@@ -644,7 +499,6 @@ function CommercialSolarPage() {
                 <img
                   src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1400&q=85"
                   alt="Commercial solar panels on building"
-                  loading="lazy"
                 />
 
               </div>
@@ -657,7 +511,6 @@ function CommercialSolarPage() {
 
       </section>
 
-
       {/* =====================================================
           FAQ
       ===================================================== */}
@@ -669,49 +522,34 @@ function CommercialSolarPage() {
           <ScrollReveal>
 
             <SectionTitle
-              eyebrow={page.sectionTitles?.faq}
-              title={page.sectionTitles?.faqTitle}
-              description={page.sectionTitles?.faqDescription}
+              eyebrow="FAQ"
+              title="Commercial Solar FAQs"
+              description="Quick answers to common questions about solar power for businesses and commercial facilities."
             />
 
           </ScrollReveal>
 
-
           <div className="commercial-faq-list">
 
-<<<<<<< HEAD
             {faqs.map((faq, index) => (
-
-=======
-            {(page.faqs || faqs).map((faq, index) => (
->>>>>>> 9f181237c207e94b936564fbc531f8970d699135
               <ScrollReveal
                 key={faq.question}
                 delay={index * 60}
               >
-
                 <details className="commercial-faq-item">
 
                   <summary>
 
-                    <span>
-                      {faq.question}
-                    </span>
+                    <span>{faq.question}</span>
 
-                    <b>
-                      +
-                    </b>
+                    <b>+</b>
 
                   </summary>
 
-                  <p>
-                    {faq.answer}
-                  </p>
+                  <p>{faq.answer}</p>
 
                 </details>
-
               </ScrollReveal>
-
             ))}
 
           </div>
@@ -719,7 +557,6 @@ function CommercialSolarPage() {
         </div>
 
       </section>
-
 
       {/* =====================================================
           FINAL CTA
@@ -734,25 +571,26 @@ function CommercialSolarPage() {
             <div>
 
               <span className="commercial-hero__eyebrow">
-                {page.cta?.eyebrow}
+                POWER YOUR BUSINESS WITH SOLAR
               </span>
 
               <h2>
-                {page.cta?.title}
+                Turn Your Commercial Space Into a Solar Energy Asset
               </h2>
 
               <p>
-                {page.cta?.description}
+                Talk to our team about your facility, electricity usage and
+                available space. We can help you explore a commercial solar
+                solution designed around your business.
               </p>
 
             </div>
-
 
             <Link
               to="/contact"
               className="service-btn service-btn--light"
             >
-              {page.cta?.primary}
+              Get Started
             </Link>
 
           </div>

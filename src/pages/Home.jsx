@@ -184,22 +184,18 @@ export default function Home() {
         <div className="home-solution-media">
           <img
             src="https://png.pngtree.com/thumb_back/fh260/background/20240702/pngtree-solar-panels-with-blue-sky-and-clouds-image_15846273.jpg"
-            alt={t("home.utilityAlt")}
-          />
+            alt={t("home.utilityAlt")}/>
         </div>
-
         <div className="home-solution-content">
           <span className="home-solution-number">03</span>
           <h3>{t("home.utilityTitle")}</h3>
           <p>{t("home.utilityDescription")}</p>
-
           <ul>
             <li>{t("home.utilityListOne")}</li>
             <li>{t("home.utilityListTwo")}</li>
             <li>{t("home.utilityListThree")}</li>
             <li>{t("home.utilityListFour")}</li>
           </ul>
-
           <Link
             to="/solar-solutions/utility-scale"
             className="home-solution-btn"

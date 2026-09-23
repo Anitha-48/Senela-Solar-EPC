@@ -557,6 +557,8 @@ const translation = {
     projectTypePlaceholder: "எ.கா. புதிய நிறுவல், upgrade, ஆலோசனை",
     estimatedCapacityPlaceholder: "எ.கா. 500 kW, 5 MW",
     requestConsultation: "ஆலோசனையைக் கோருங்கள்",
+    sending: "அனுப்புகிறது...",
+    submissionFailed: "உங்கள் விசாரணையை அனுப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
     submitAnother: "மற்றொரு விசாரணையைச் சமர்ப்பிக்கவும்",
     successTitle: "நன்றி — உங்கள் விசாரணை பெறப்பட்டது",
     successDescription: "உங்கள் திட்டத்தைப் பற்றி விவாதிக்க எங்கள் பொறியியல் குழு 1–2 வேலை நாட்களுக்குள் உங்களைத் தொடர்புகொள்ளும்.",

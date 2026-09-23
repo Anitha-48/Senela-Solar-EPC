@@ -1,61 +1,170 @@
 {
-  
+  
+
+
   "name": "solar-epc-website",
-  
+  
+
+
   "private": true,
-  
+  
+
+
   "version": "1.0.0",
-  
+  
+
+
   "type": "module",
-  
+  
+
+
   "scripts": {
-  
-    
+  
+
+
+    
+
+
   "dev": "vite",
-  
-    
+  "server": "node server.js",
+  "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
+  
+
+
+    
+
+
   "build": "vite build",
-  
-    
+  
+
+
+    
+
+
   "preview": "vite preview"
-  
+  
+
+
   },
-  
+  
+
+
   "dependencies": {
-  
-    
+  
+
+
+    
+
+
+  "concurrently": "^10.0.5",
+  
+
+
+    
+
+
+  "cors": "^2.8.6",
+  
+
+
+    
+
+
+  "dotenv": "^18.0.3",
+  
+
+
+    
+
+
+  "express": "^5.2.1",
+  
+
+
+    
+
+
   "framer-motion": "^11.3.0",
-  
-    
+  
+
+
+    
+
+
   "i18next": "^26.4.2",
-  
-    
+  
+
+
+    
+
+
   "i18next-browser-languagedetector": "^8.2.1",
-  
-    
+  
+
+
+    
+
+
   "lucide-react": "^0.383.0",
-  
-    
+  
+
+
+    
+
+
+  "nodemailer": "^10.0.10",
+  
+
+
+    
+
+
   "react": "^18.3.1",
-  
-    
+  
+
+
+    
+
+
   "react-dom": "^18.3.1",
-  
-    
+  
+
+
+    
+
+
   "react-i18next": "^17.0.14",
-  
-    
+  
+
+
+    
+
+
   "react-router-dom": "^6.26.0"
-  
+  
+
+
   },
-  
+  
+
+
   "devDependencies": {
-  
-    
+  
+
+
+    
+
+
   "@vitejs/plugin-react": "^4.3.1",
-  
-    
+  
+
+
+    
+
+
   "vite": "^5.4.0"
-  
+  
+
+
   }
 }

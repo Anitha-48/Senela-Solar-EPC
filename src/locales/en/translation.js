@@ -700,6 +700,8 @@ const translation = {
     projectTypePlaceholder: "e.g. New installation, upgrade, consultation",
     estimatedCapacityPlaceholder: "e.g. 500 kW, 5 MW",
     requestConsultation: "Request a Consultation",
+    sending: "Sending...",
+    submissionFailed: "We could not send your enquiry. Please try again.",
     submitAnother: "Submit another enquiry",
     successTitle: "Thank you — your enquiry has been received",
     successDescription: "Our engineering team will get in touch within 1–2 business days to discuss your project.",

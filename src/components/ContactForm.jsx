@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Send, CheckCircle2 } from "lucide-react";
 
@@ -26,6 +26,15 @@ export default function ContactForm() {
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [toast, setToast] = useState(null);
+
+  useEffect(() => {
+    if (!toast) return undefined;
+    const timeout = window.setTimeout(() => setToast(null), 5000);
+    return () => window.clearTimeout(timeout);
+  }, [toast]);
 
   const update = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
 
@@ -40,42 +49,52 @@ export default function ContactForm() {
     return errs;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     setErrors(errs);
-    if (Object.keys(errs).length === 0) {
-      const subject = encodeURIComponent(`New enquiry from ${form.fullName} - ${form.interestedService}`);
-      const body = encodeURIComponent(
-        `Full Name: ${form.fullName}\n` +
-        `Company Name: ${form.companyName || 'N/A'}\n` +
-        `Email: ${form.email}\n` +
-        `Phone: ${form.phone}\n` +
-        `Country: ${form.country || 'N/A'}\n` +
-        `Interested Service: ${form.interestedService}\n` +
-        `Project Type: ${form.projectType || 'N/A'}\n` +
-        `Estimated Capacity: ${form.estimatedCapacity || 'N/A'}\n\n` +
-        `Message:\n${form.message}`
-      );
+    setSubmitError("");
+    if (Object.keys(errs).length > 0) return;
 
-      window.location.href = `mailto:info@senelainternational.com?subject=${subject}&body=${body}`;
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) throw new Error("Contact form submission failed");
+
+      setToast({ type: "success", message: t("contact.successTitle") });
       setSubmitted(true);
       setForm(initialState);
+    } catch {
+      const message = t("contact.submissionFailed");
+      setSubmitError(message);
+      setToast({ type: "error", message });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   if (submitted) {
     return (
-      <div className="bracket-frame" style={{ textAlign: "center", padding: 48 }}>
-        <CheckCircle2 size={40} color="var(--pro-blue)" style={{ marginBottom: 16 }} />
-        <h3>{t("contact.successTitle")}</h3>
-        <p>{t("contact.successDescription")}</p>
-        <button className="btn btn--outline-blue" onClick={() => setSubmitted(false)}>{t("contact.submitAnother")}</button>
-      </div>
+      <>
+        {toast && <div className={`contact-toast contact-toast--${toast.type}`} role="status">{toast.message}</div>}
+        <div className="bracket-frame" style={{ textAlign: "center", padding: 48 }}>
+          <CheckCircle2 size={40} color="var(--pro-blue)" style={{ marginBottom: 16 }} />
+          <h3>{t("contact.successTitle")}</h3>
+          <p>{t("contact.successDescription")}</p>
+          <button className="btn btn--outline-blue" onClick={() => setSubmitted(false)}>{t("contact.submitAnother")}</button>
+        </div>
+      </>
     );
   }
 
   return (
+    <>
+    {toast && <div className={`contact-toast contact-toast--${toast.type}`} role="status">{toast.message}</div>}
     <form className="bracket-frame" onSubmit={handleSubmit} noValidate>
       <div className="two-col-list" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px 24px", borderBottom: "none" }}>
         <div className="field-group">
@@ -136,9 +155,11 @@ export default function ContactForm() {
         {errors.message && <div className="field-hint" style={{ color: "#C0392B" }}>{errors.message}</div>}
       </div>
 
-      <button type="submit" className="btn btn--primary">
-        {t("contact.requestConsultation")} <Send size={17} />
+      <button type="submit" className="btn btn--primary" disabled={isSubmitting}>
+        {isSubmitting ? t("contact.sending") : t("contact.requestConsultation")} <Send size={17} />
       </button>
+      {submitError && <div className="field-hint" role="alert" style={{ color: "#C0392B" }}>{submitError}</div>}
     </form>
+    </>
   );
 }

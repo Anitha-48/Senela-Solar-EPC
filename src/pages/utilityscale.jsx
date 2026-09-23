@@ -8,13 +8,13 @@ import "../styles/utilityscale.css";
 const projectImages = [
   {
     image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85",
+      "https://www.sterlingandwilsonre.com/images/business-project/mobile/17-MWp-Solar-Power-Plant-Tamil-Nadu-India/17MWp_Solar_Power_Plant_Tamil_Nadu_India_slider3.jpg",
     title: "Utility-Scale Solar Plant",
     text: "Large-scale solar generation infrastructure engineered for efficient and reliable power production.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85",
+      "https://www.sterlingandwilsonre.com/images/business-project/mobile/17-MWp-Solar-Power-Plant-Tamil-Nadu-India/17MWp_Solar_Power_Plant_Tamil_Nadu_India_slider2.jpg",
     title: "Ground-Mounted Solar Project",
     text: "Ground-mounted photovoltaic systems planned around land conditions, generation targets and grid requirements.",
   },
@@ -193,7 +193,7 @@ function UtilitySolarPage() {
 
           <div className="utility-hero__image">
             <img
-              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=85"
+              src="https://d382rz2cea0pah.cloudfront.net/wp-content/uploads/2022/05/Statkraft-Commissions-55-MW-Open-Access-Solar-Project-in-Tamil-Nadu.png"
               alt="Utility scale solar power plant"
             />
 
@@ -281,7 +281,7 @@ function UtilitySolarPage() {
             <ScrollReveal>
               <div className="utility-system-image">
                 <img
-                  src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1400&q=85"
+                  src="https://d382rz2cea0pah.cloudfront.net/wp-content/uploads/2021/09/TANGEDCO-to-Develop-a-4-GW-Solar-Park-With-Battery-Energy-Storage-in-Tamil-Nadu.jpg"
                   alt="Large scale solar power infrastructure"
                 />
               </div>

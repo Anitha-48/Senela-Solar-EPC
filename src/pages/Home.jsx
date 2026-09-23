@@ -16,6 +16,7 @@ import { siteConfig } from "../config/siteConfig";
 import { services } from "../config/services";
 import { projects } from "../config/projects";
 import epcOneImage from "../assets/images/epc-1.jpg";
+import solarOverviewImage from "../assets/images/solar1.bg.jpg";
 import "../styles/sections.css";
 
 
@@ -71,7 +72,7 @@ export default function Home() {
         <div className="container split-section">
           <ScrollReveal className="split-section__media">
             <img
-              src="https://sol-ark.com/wp-content/uploads/2025/07/commercial_solar_installations.jpeg"
+              src={solarOverviewImage}
               alt={t("home.companyOverviewAlt")}
             />
           </ScrollReveal>

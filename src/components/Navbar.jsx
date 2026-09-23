@@ -5,7 +5,7 @@ import { ChevronDown, Menu, X, Zap, ArrowRight, Weight } from "lucide-react";
 import { navigation } from "../config/navigation";
 import { siteConfig } from "../config/siteConfig";
 import "../styles/navbar.css";
-import logo from "../assets/images/Senela-logo.jpeg";
+import logo from "../assets/images/senela-solar.jpeg";
 
 const navigationLabelKeys = {
   "/": "nav.home",

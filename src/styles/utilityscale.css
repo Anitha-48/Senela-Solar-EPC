@@ -1176,9 +1176,7 @@ summary b {
   .utility-page *::before,
   .utility-page *::after {
     transition: none !important;
-
     animation: none !important;
-
     scroll-behavior: auto !important;
   }
 }

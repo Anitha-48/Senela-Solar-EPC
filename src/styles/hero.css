@@ -151,7 +151,6 @@
   color:white ;
   font-size: 13px;
   font-weight: 700;
-
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }

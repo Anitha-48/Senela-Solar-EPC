@@ -6,7 +6,7 @@ import { useEffect } from "react";
  *
  * Usage:
  *   <SEO
- *     title="About Us | Senela International Solar EPC"
+ *     title="About Us | Senela Solar EPC"
  *     description="Learn about Senela International's solar EPC expertise..."
  *   />
  */

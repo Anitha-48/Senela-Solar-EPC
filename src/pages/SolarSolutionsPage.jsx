@@ -21,28 +21,28 @@ const solutionCards = [
     id: "residential",
     icon: Home,
     image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop",
+      "https://zodiacenergy.com/images/blog/government-subsidy-on-solar-panels-in-gujarat.png",
     path: "/solar-solutions/residential",
   },
   {
     id: "commercial",
     icon: Building2,
     image:
-      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
+      "https://www.credaglobal.org/contentassets/4f4d32925a00433ca5b101bb2a9bf207/46_strat_solarroof810.jpg",
     path: "/solar-solutions/commercial-industrial",
   },
   {
     id: "industrial",
     icon: Factory,
     image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&auto=format&fit=crop",
+      "https://www.solarsysgreentech.in/images/industrial-solar-img.webp",
     path: "/solar-solutions/commercial-industrial",
   },
   {
     id: "utility",
     icon: PanelsTopLeft,
     image:
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1200&auto=format&fit=crop",
+      "https://rongkaigreenenergy.com/_next/image?url=%2Fvisuals%2Fsolution-utility-scale-solar-photorealistic.png&w=3840&q=75",
     path: "/solar-solutions/utility-scale",
   },
 ];
@@ -168,7 +168,7 @@ export default function SolarSolutionsPage() {
               className="solar-solutions-hero__media"
             >
               <img
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1400&auto=format&fit=crop"
+                src="https://uoftindiafoundation.com/wp-content/uploads/2026/05/full-shot-environmental-engineers-working-together-1024x683.jpg"
                 alt={t("solarSolutionsPage.hero.imageAlt")}
               />
 
@@ -405,17 +405,7 @@ export default function SolarSolutionsPage() {
 
           </div>
 
-          <div className="solar-integrated-epc__button">
-            <NavLink
-              to="/services/epc"
-              className="btn btn--outline-blue"
-            >
-              {t("solarSolutionsPage.integratedEpc.button")}
-              <ArrowRight size={17} />
-            </NavLink>
-          </div>
-
-        </div>
+                  </div>
       </section>
 
 

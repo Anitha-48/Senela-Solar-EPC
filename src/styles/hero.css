@@ -7,12 +7,11 @@
   --hero-height: max(640px, min(680px, calc(100vh - 145px)));
     --hero-shift: 10%;
     --hero-mobile-height: 740px;
-  /* MOBILE: which part of the photo is shown (0% = left, 100% = right) */
-  --hero-mobile-x: 88%;
+   --hero-mobile-x: 88%;
  
   width: 100%;
   overflow: hidden;
-  background: #0b2a5b; /* dark blue, so no white ever shows */
+  background: #0b2a5b; 
 }
 
 .hero__inner,
@@ -343,11 +342,10 @@
     height: auto;
     min-height: 0;
     overflow: hidden;
-    background: #eef4fb; /* light area behind the form */
+    background: #eef4fb; 
   }
 
-  /* photo covers only the top block, not the form */
-  .hero__image-panel > img {
+    .hero__image-panel > img {
     top: 0;
     left: 0;
     width: 100%;

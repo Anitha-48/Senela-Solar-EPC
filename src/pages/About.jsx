@@ -33,7 +33,7 @@ export default function About() {
   const galleryImages = [
     "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1200&auto=format&fit=crop",
-    "https://media.istockphoto.com/id/1405880267/photo/two-engineers-installing-solar-panels-on-roof.jpg?s=612x612&w=0&k=20&c=OvQDbJaTnMM4jPfIA3y5vrO88i98NZJRahZtnYFZCq0=",
+    "https://wordpress.vecurosoft.com/energiso/wp-content/uploads/2022/11/ab-3-1.jpg",
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function About() {
 
           <ScrollReveal className="split-section__media">
             <img
-              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1000&auto=format&fit=crop"
+              src="https://enerparc.in/wp-content/uploads/2025/05/Solar-Energy-Company-in-India.webp"
               alt={t("accessibility.solarPanelsCleanEnergy")}
             />
           </ScrollReveal>

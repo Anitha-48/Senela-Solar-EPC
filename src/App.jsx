@@ -20,6 +20,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import LegalPage from "./pages/LegalPage";
 import Epc from "./pages/Epc";
+import SEO from "./components/SEO";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -33,6 +34,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <ScrollToTop />
+      <SEO />
       <Navbar />
       <WhatsAppFloat />
       <main>

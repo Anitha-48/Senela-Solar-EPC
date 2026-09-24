@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://senelasolar.tech/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://senelasolar.tech/about</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/epc</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/solar-solutions</loc><priority>0.9</priority></url>
+  <url><loc>https://senelasolar.tech/solar-solutions/residential</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/solar-solutions/industrial</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/solar-solutions/utility-scale</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/solar-solutions/on-grid</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/solar-solutions/off-grid</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/solar-solutions/hybrid-grid</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/services</loc><priority>0.9</priority></url>
+  <url><loc>https://senelasolar.tech/services/power-distribution-transmission</loc><priority>0.7</priority></url>
+  <url><loc>https://senelasolar.tech/services/ehv-substation</loc><priority>0.7</priority></url>
+  <url><loc>https://senelasolar.tech/services/htls-reconductoring</loc><priority>0.7</priority></url>
+  <url><loc>https://senelasolar.tech/services/railway-electrification</loc><priority>0.7</priority></url>
+  <url><loc>https://senelasolar.tech/services/solar-power-projects</loc><priority>0.7</priority></url>
+  <url><loc>https://senelasolar.tech/services/water-management</loc><priority>0.7</priority></url>
+  <url><loc>https://senelasolar.tech/solar-calculator</loc><priority>0.7</priority></url>
+  <url><loc>https://senelasolar.tech/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://senelasolar.tech/privacy-policy</loc><priority>0.2</priority></url>
+  <url><loc>https://senelasolar.tech/terms-conditions</loc><priority>0.2</priority></url>
+</urlset>

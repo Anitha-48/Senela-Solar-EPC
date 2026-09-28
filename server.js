@@ -22,8 +22,6 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests without an Origin header
-    // and requests from allowed websites
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -31,11 +29,8 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
-
   methods: ["GET", "POST", "OPTIONS"],
-
   allowedHeaders: ["Content-Type"],
-
   optionsSuccessStatus: 204,
 };
 
@@ -118,9 +113,7 @@ function createTransporter() {
 
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-
     port: Number(process.env.SMTP_PORT || 587),
-
     secure: process.env.SMTP_SECURE === "true",
 
     auth: {
@@ -128,6 +121,14 @@ function createTransporter() {
       pass: process.env.SMTP_PASS.replace(/\s+/g, ""),
     },
   });
+}
+
+function isSmtpConfigured() {
+  return Boolean(
+    process.env.SMTP_HOST &&
+    process.env.SMTP_USER &&
+    process.env.SMTP_PASS
+  );
 }
 
 /* =========================================================
@@ -159,6 +160,13 @@ app.post("/api/contact", async (request, response) => {
     });
   }
 
+  if (!isSmtpConfigured()) {
+    return response.status(503).json({
+      ok: false,
+      message: "Contact email is not configured. Add SMTP settings to the server .env file.",
+    });
+  }
+
   try {
     /* -------------------------------------------------------
        Create SMTP transporter
@@ -179,36 +187,27 @@ app.post("/api/contact", async (request, response) => {
     ------------------------------------------------------- */
 
     const text = [
+      
       `Full Name: ${submission.fullName}`,
-
       `Company Name: ${
         submission.companyName || "N/A"
       }`,
-
       `Email: ${submission.email}`,
-
       `Phone: ${submission.phone}`,
-
       `Country: ${
         submission.country || "N/A"
       }`,
-
       `Interested Service: ${
         submission.interestedService
       }`,
-
       `Project Type: ${
         submission.projectType || "N/A"
       }`,
-
       `Estimated Capacity: ${
         submission.estimatedCapacity || "N/A"
       }`,
-
       "",
-
       "Message:",
-
       submission.message,
     ].join("\n");
 
@@ -238,6 +237,7 @@ app.post("/api/contact", async (request, response) => {
       ok: true,
       message: "Your enquiry has been sent successfully.",
     });
+
   } catch (error) {
     console.error("Contact email failed:", error);
 
@@ -275,4 +275,3 @@ app.listen(PORT, () => {
     );
   }
 });
-

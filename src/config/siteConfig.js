@@ -14,5 +14,6 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/senela-international-901730315/",
     facebook: "https://www.facebook.com/senelasolar/",
     instagram: "https://www.instagram.com/senela_solar/",
+    youtube: "https://www.youtube.com/@Senela_Solar_Solutions",
   },
 }

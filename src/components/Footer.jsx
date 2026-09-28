@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { MapPin, Phone, Mail, Linkedin, Facebook, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
 import { navigation } from "../config/navigation";
 
@@ -42,7 +42,8 @@ export default function Footer() {
               <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" aria-label={t("accessibility.linkedin")}><Linkedin /></a>
               <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" aria-label={t("accessibility.facebook")}><Facebook /></a>
               <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" aria-label={t("accessibility.instagram")}><Instagram /></a>
-                          </div>
+              <a href={siteConfig.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube"><Youtube /></a>
+            </div>
           </div>
 
           <div className="footer__col">

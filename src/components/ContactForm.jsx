@@ -58,19 +58,24 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
 
-      if (!response.ok) throw new Error("Contact form submission failed");
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        throw new Error(result?.message || "Contact form submission failed");
+      }
 
       setToast({ type: "success", message: t("contact.successTitle") });
       setSubmitted(true);
       setForm(initialState);
-    } catch {
-      const message = t("contact.submissionFailed");
+    } catch (error) {
+      const message = error instanceof Error && error.message
+        ? error.message
+        : t("contact.submissionFailed");
       setSubmitError(message);
       setToast({ type: "error", message });
     } finally {

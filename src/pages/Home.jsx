@@ -72,7 +72,7 @@ export default function Home() {
         <div className="container split-section">
           <ScrollReveal className="split-section__media">
             <img
-              src={solarOverviewImage}
+              src="https://enerparc.in/wp-content/uploads/2025/05/Solar-Energy-Company-in-India.webp"
               alt={t("home.companyOverviewAlt")}
             />
           </ScrollReveal>

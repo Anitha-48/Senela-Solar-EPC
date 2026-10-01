@@ -107,6 +107,7 @@ button { font-family: var(--font-body); cursor: pointer; }
 .section--blue { background: var(--light-blue); }
 
 .page-hero {
+  display: none;
   margin-top: 0;
   background: linear-gradient(135deg, rgba(11,61,145,0.96), rgba(21,101,192,0.9));
   color: var(--white);

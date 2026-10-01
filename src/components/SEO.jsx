@@ -10,11 +10,6 @@ const pageSeo = {
     description: "Senela International delivers solar EPC, power transmission, substations, railway electrification and water infrastructure solutions across India.",
     keywords: "solar EPC company India, solar EPC projects, utility scale solar, rooftop solar, renewable energy infrastructure",
   },
-  "/about": {
-    title: "About Senela International | Solar EPC Company India",
-    description: "Learn about Senela International's engineering expertise in solar EPC, power infrastructure, railway electrification and water management.",
-    keywords: "about Senela International, solar EPC company Chennai, renewable energy engineering India",
-  },
   "/epc": {
     title: "Solar EPC Services in India | Senela International",
     description: "End-to-end solar EPC execution from engineering and procurement through construction, commissioning and long-term support.",

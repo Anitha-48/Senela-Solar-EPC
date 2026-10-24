@@ -16,6 +16,7 @@ import { siteConfig } from "../config/siteConfig";
 import { services } from "../config/services";
 import { projects } from "../config/projects";
 import epcOneImage from "../assets/images/epc-1.jpg";
+import epcTwoImage from "../assets/images/epc-2.jpeg";
 import solarOverviewImage from "../assets/images/solar1.bg.jpg";
 import "../styles/sections.css";
 
@@ -153,7 +154,7 @@ export default function Home() {
       <div className="home-solution-card">
         <div className="home-solution-media">
           <img
-            src="https://goldisolar.com/wp-content/uploads/2023/09/The-Benefits-Of-Installing-Solar-Panels-On-A-Commercial-Building2-scaled.jpg"
+            src="https://gracerenew.com/images/solar-for-industrial.webp"
             alt={t("home.commercialAlt")}
           />
         </div>

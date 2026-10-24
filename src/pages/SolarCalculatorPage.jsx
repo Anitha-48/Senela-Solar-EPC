@@ -113,24 +113,25 @@ function unitsFromBill(bill, slabs) {
   return 0;
 }
 
-function runCalculation(stateKey, category, monthlyBill) {
+function runCalculation(stateKey, category, biMonthlyBill) {
   const stateData = TARIFF_DATA[stateKey];
   const slabs = stateData[category];
   const genFactor = stateData.genFactor;
+  const billingPeriodDays = 60; // Two-month billing cycle used in Tamil Nadu and similar state tariffs.
 
-  const units = unitsFromBill(monthlyBill, slabs);
+  const units = unitsFromBill(biMonthlyBill, slabs);
   if (units <= 0) return null;
 
-  const rawCapacity = units / (genFactor * 30);
+  const rawCapacity = units / (genFactor * billingPeriodDays);
   const suggestedCapacity = Math.max(1, Math.round(rawCapacity * 2) / 2);
 
-  const monthlyGenUnits = suggestedCapacity * genFactor * 30;
-  const monthlySavingKWh = Math.round(monthlyGenUnits);
+  const biMonthlyGenUnits = suggestedCapacity * genFactor * billingPeriodDays;
+  const biMonthlySavingKWh = Math.round(biMonthlyGenUnits);
 
-  const netUnitsAfterSolar = Math.max(0, units - monthlySavingKWh);
+  const netUnitsAfterSolar = Math.max(0, units - biMonthlyGenUnits);
   const billWithoutSolar = billFromUnits(units, slabs);
   const billWithSolar = billFromUnits(netUnitsAfterSolar, slabs);
-  const monthlySavingINR = Math.max(
+  const biMonthlySavingINR = Math.max(
     0,
     Math.round(billWithoutSolar - billWithSolar)
   );
@@ -138,13 +139,13 @@ function runCalculation(stateKey, category, monthlyBill) {
   const spaceRate = SPACE_SQFT_PER_KW[category];
   const requiredSpace = Math.round(suggestedCapacity * spaceRate);
 
-  const co2KgPerYear = Math.round(monthlySavingKWh * 12 * CO2_FACTOR_KG_PER_KWH);
+  const co2KgPerYear = Math.round(biMonthlySavingKWh * 6 * CO2_FACTOR_KG_PER_KWH);
 
   return {
     estimatedUnits: Math.round(units),
     suggestedCapacity,
-    monthlySavingKWh,
-    monthlySavingINR,
+    biMonthlySavingKWh,
+    biMonthlySavingINR,
     requiredSpace,
     co2KgPerYear,
     co2TonsPerYear: (co2KgPerYear / 1000).toFixed(2),
@@ -268,13 +269,13 @@ export default function SolarCalculator() {
           </div>
 
           <label className="scal__field">
-            <span className="scal__label">{t("calculator.monthlyBill")}</span>
+            <span className="scal__label">{t("calculator.biMonthlyBill")}</span>
             <input
               className="scal__input"
               type="number"
               inputMode="decimal"
               min="0"
-              placeholder={t("calculator.monthlyBillPlaceholder")}
+              placeholder={t("calculator.biMonthlyBillPlaceholder")}
               value={bill}
               onChange={(e) => setBill(e.target.value)}
             />
@@ -322,7 +323,7 @@ export default function SolarCalculator() {
                   </div>
                   <span className="scal__meterLabel">{t("calculator.monthlySaving")}</span>
                   <span className="scal__meterValue">
-                    {fmtNum(result.monthlySavingKWh)} kWh
+                    {fmtNum(result.biMonthlySavingKWh)} kWh
                   </span>
                 </div>
 
@@ -332,7 +333,7 @@ export default function SolarCalculator() {
                   </div>
                   <span className="scal__meterLabel">{t("calculator.monthlySaving")}</span>
                   <span className="scal__meterValue">
-                    {fmtINR(result.monthlySavingINR)}
+                    {fmtINR(result.biMonthlySavingINR)}
                   </span>
                 </div>
 
